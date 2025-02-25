@@ -1,0 +1,150 @@
+import { Meta } from "@storybook/blocks";
+import Faclon from "./assets/faclon.svg";
+
+<Meta title="Guides/Intro" />
+
+<div className="sb-container">
+    <div className="sb-section-title">
+    <div className="logo-container">
+      <img src={Faclon} alt="Faclon Design System Logo" className="logo" />
+      <div className="logo-text">
+        <span className="brand-name">Faclon</span>
+        <span className="brand-subtitle">DESIGN SYSTEM</span>
+      </div>
+    </div>
+  </div>
+
+  <div className="sb-section">
+    <h2>Why a Design System?</h2>
+    
+    <p>
+      The Faclon Design System emerged from a critical need to standardize our development practices
+      and create a more efficient, consistent, and maintainable design framework across our applications.
+      This system provides a comprehensive set of utility classes that solve common design challenges
+      while ensuring consistency and performance.
+    </p>
+
+    <h3>Key Benefits</h3>
+    
+    <div className="benefit-section">
+      <h4>🎨 Consistency Across Applications</h4>
+      <ul>
+        <li>Eliminates design inconsistencies between different developers and teams</li>
+        <li>Ensures brand identity remains uniform throughout all applications</li>
+        <li>Maintains consistent user experience across all platforms</li>
+        <li>Creates a unified visual language for our entire product ecosystem</li>
+      </ul>
+    </div>
+
+    <div className="benefit-section">
+      <h4>⚡ Development Efficiency</h4>
+      <ul>
+        <li>Reduces duplicate code and CSS declarations</li>
+        <li>Speeds up development with ready-to-use utility classes</li>
+        <li>Minimizes the need to write custom CSS for common patterns</li>
+        <li>Reduces time spent on design decisions</li>
+        <li>Simplifies maintenance and global style updates</li>
+      </ul>
+    </div>
+
+    <div className="benefit-section">
+      <h4>🚀 Performance Optimization</h4>
+      <ul>
+        <li>Reduces CSS bundle size through utility class reuse</li>
+        <li>Improves caching efficiency</li>
+        <li>Enhances runtime performance with optimized CSS</li>
+        <li>Reduces network payload through optimized stylesheets</li>
+      </ul>
+    </div>
+
+    <div className="benefit-section">
+      <h4>✅ Quality Assurance</h4>
+      <ul>
+        <li>Reduces design-related bugs and inconsistencies</li>
+        <li>Facilitates easier testing and validation</li>
+        <li>Ensures consistent responsive behavior</li>
+        <li>Improves accessibility through standardized patterns</li>
+      </ul>
+    </div>
+
+    <div className="benefit-section">
+      <h4>🤝 Team Collaboration</h4>
+      <ul>
+        <li>Provides a common language between designers and developers</li>
+        <li>Streamlines the handoff process</li>
+        <li>Reduces communication overhead</li>
+        <li>Facilitates faster onboarding for new team members</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<style>
+  {`
+    .sb-container {
+      margin-bottom: 48px;
+    }
+
+    .sb-section-title {
+      margin-bottom: 32px;
+      text-align: center;
+      justify-content: center;
+      display: flex;
+    }
+
+    .logo-container {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+
+    .logo {
+      width: 64px;
+      height: 64px;
+    }
+
+    .logo-text {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .brand-name {
+      font-size: 48px;
+      font-weight: 600;
+      line-height: 1;
+      color: #1B1B1B;
+      letter-spacing: -0.02em;
+    }
+
+    .brand-subtitle {
+      font-size: 16px;
+      font-weight: 500;
+      color: #1B1B1B;
+      letter-spacing: 0.1em;
+      margin-top: 4px;
+    }
+
+    .benefit-section {
+      margin-bottom: 32px;
+      padding: 24px;
+      border-radius: 8px;
+      background: #f8f9fa;
+    }
+
+    .benefit-section h4 {
+      margin-top: 0;
+      margin-bottom: 16px;
+      color: #2E3438;
+    }
+
+    .benefit-section ul {
+      margin: 0;
+      padding-left: 20px;
+    }
+
+    .benefit-section li {
+      margin-bottom: 8px;
+      color: #454E54;
+    }
+  `}
+</style>

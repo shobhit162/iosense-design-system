@@ -1,0 +1,702 @@
+@use "sass:map";
+
+// Convert px to rem function
+@function pxToRem($px) {
+  @return calc($px / 16) + rem;
+}
+
+// Breakpoints
+$breakpoint-mobile: 768px;
+
+* {
+  font-family: 'Noto Sans', sans-serif;    // to be confirmed later
+}
+
+// Font Family
+$font-family: (
+  'text': ('Noto Sans', sans-serif)
+);
+
+// ============================================ Font Size SCSS Start ============================================================
+
+// Global Font Size Classes
+// These are base utility classes for direct font-size application
+@each $size in (10, 12, 14, 16, 18, 20, 24, 32, 34, 36, 38, 40, 48, 56, 64, 72)
+{
+  .global-fz-#{$size} {
+    font-size: pxToRem($size);
+  }
+}
+
+// Font Size Scale Classes
+// These are semantic classes that map to different sizes on desktop and mobile
+$font-scale: (
+  "font-size-25": (
+    desktop: 10,
+    mobile: 10,
+  ),
+  "font-size-50": (
+    desktop: 12,
+    mobile: 12,
+  ),
+  "font-size-100": (
+    desktop: 14,
+    mobile: 14,
+  ),
+  "font-size-200": (
+    desktop: 16,
+    mobile: 16,
+  ),
+  "font-size-300": (
+    desktop: 18,
+    mobile: 16,
+  ),
+  "font-size-400": (
+    desktop: 20,
+    mobile: 18,
+  ),
+  "font-size-500": (
+    desktop: 24,
+    mobile: 20,
+  ),
+  "font-size-600": (
+    desktop: 32,
+    mobile: 24,
+  ),
+  "font-size-700": (
+    desktop: 40,
+    mobile: 32,
+  ),
+  "font-size-800": (
+    desktop: 48,
+    mobile: 34,
+  ),
+  "font-size-900": (
+    desktop: 56,
+    mobile: 36,
+  ),
+  "font-size-1000": (
+    desktop: 64,
+    mobile: 38,
+  ),
+  "font-size-1100": (
+    desktop: 72,
+    mobile: 40,
+  ),
+);
+
+// Generate responsive font-size classes
+@each $class, $sizes in $font-scale {
+  .#{$class} {
+    // Mobile first approach
+    font-size: pxToRem(map.get($sizes, mobile));
+
+    // Desktop styles
+    @media screen and (min-width: $breakpoint-mobile) {
+      font-size: pxToRem(map.get($sizes, desktop));
+    }
+  }
+}
+
+// ===================================================== Line Height SCSS Start ==========================================================
+
+// Global Line Height Classes
+@each $size
+  in (0, 14, 16, 18, 20, 22, 24, 26, 32, 38, 42, 46, 48, 56, 64, 70, 78)
+{
+  .global-lh-#{$size} {
+    line-height: if($size == 0, 0, pxToRem($size));
+  }
+}
+
+// Line Height Scale Classes
+$line-height-scale: (
+  'line-height-00': (
+    desktop: 0,
+    mobile: 0
+  ),
+  'line-height-25': (
+    desktop: 14,
+    mobile: 14
+  ),
+  'line-height-50': (
+    desktop: 16,
+    mobile: 16
+  ),
+  'line-height-75': (
+    desktop: 18,
+    mobile: 18
+  ),
+  'line-height-100': (
+    desktop: 20,
+    mobile: 20
+  ),
+  'line-height-200': (
+    desktop: 24,
+    mobile: 24
+  ),
+  'line-height-300': (
+    desktop: 24,
+    mobile: 22
+  ),
+  'line-height-400': (
+    desktop: 26,
+    mobile: 24
+  ),
+  'line-height-500': (
+    desktop: 32,
+    mobile: 26
+  ),
+  'line-height-600': (
+    desktop: 38,
+    mobile: 32
+  ),
+  'line-height-700': (
+    desktop: 46,
+    mobile: 38
+  ),
+  'line-height-800': (
+    desktop: 56,
+    mobile: 40
+  ),
+  'line-height-900': (
+    desktop: 64,
+    mobile: 42
+  ),
+  'line-height-1000': (
+    desktop: 70,
+    mobile: 46
+  ),
+  'line-height-1100': (
+    desktop: 78,
+    mobile: 48
+  )
+);
+
+// Generate responsive line-height classes
+@each $class, $sizes in $line-height-scale {
+  .#{$class} {
+    // Mobile first approach
+    line-height: if(
+      map.get($sizes, mobile) == 0,
+      0,
+      pxToRem(map.get($sizes, mobile))
+    );
+
+    // Desktop styles
+    @media screen and (min-width: $breakpoint-mobile) {
+      line-height: if(
+        map.get($sizes, desktop) == 0,
+        0,
+        pxToRem(map.get($sizes, desktop))
+      );
+    }
+  }
+}
+
+// ================================================= Letter Spacing SCSS Start ===================================================
+
+// Letter Spacing Map
+$letter-spacing: (
+  'compressed': -2px,
+  'condensed': -1px,
+  'normal': normal,
+  'expanded': 1px,
+  'extended': 2px
+);
+
+// Global Letter Spacing Classes
+@each $name, $value in $letter-spacing {
+  .global-ls-#{$name} {
+    letter-spacing: $value;
+  }
+}
+
+// Letter Spacing Scale Map
+$letter-spacing-scale: (
+  'letter-spacing-50': (
+    desktop: 'condensed',
+    mobile: 'condensed'
+  ),
+  'letter-spacing-100': (
+    desktop: 'normal',
+    mobile: 'normal'
+  )
+);
+
+// Generate Letter Spacing Scale Classes
+@each $class, $scales in $letter-spacing-scale {
+  .#{$class} {
+    // Mobile first approach
+    letter-spacing: map.get($letter-spacing, map.get($scales, mobile));
+
+    // Desktop styles
+    @media screen and (min-width: $breakpoint-mobile) {
+      letter-spacing: map.get($letter-spacing, map.get($scales, desktop));
+    }
+  }
+}
+
+// ====================================================== Font Weight SCSS Start =========================================================
+
+// Font Weight Map
+$font-weights: (
+  '100': 'Thin',
+  '200': 'ExtraLight',
+  '300': 'Light',
+  '400': 'Regular',
+  '500': 'Medium',
+  '600': 'SemiBold',
+  '700': 'Bold',
+  '800': 'ExtraBold',
+  '900': 'Black'
+);
+
+// Font Weight Values Map (converting names to actual weight numbers)
+$font-weight-values: (
+  'Thin': 100,
+  'ExtraLight': 200,
+  'Light': 300,
+  'Regular': 400,
+  'Medium': 500,
+  'SemiBold': 600,
+  'Bold': 700,
+  'ExtraBold': 800,
+  'Black': 900
+);
+
+// Global Font Weight Classes
+@each $number, $weight in $font-weights {
+  .global-fw-#{$number} {
+    font-weight: map.get($font-weight-values, $weight);
+  }
+}
+
+// Font Weight Scale Map
+$font-weight-scale: (
+  'font-weight-400': (
+    desktop: 'Regular',
+    mobile: 'Regular'
+  ),
+  'font-weight-500': (
+    desktop: 'Medium',
+    mobile: 'Medium'
+  ),
+  'font-weight-600': (
+    desktop: 'SemiBold',
+    mobile: 'SemiBold'
+  ),
+  'font-weight-700': (
+    desktop: 'Bold',
+    mobile: 'Bold'
+  )
+);
+
+// Generate Font Weight Scale Classes
+@each $class, $weights in $font-weight-scale {
+  .#{$class} {
+    // Mobile first approach
+    font-weight: map.get($font-weight-values, map.get($weights, mobile));
+
+    // Desktop styles
+    @media screen and (min-width: $breakpoint-mobile) {
+      font-weight: map.get($font-weight-values, map.get($weights, desktop));
+    }
+  }
+}
+
+// ====================================================== Paragraph Spacing SCSS Start ======================================================
+
+// Paragraph Spacing Values
+$paragraph-spacings: (
+  '00': 0,
+  '08': 8,
+  '10': 10,
+  '11': 11,
+  '12': 12,
+);
+
+// Global Paragraph Spacing Classes
+@each $size, $value in $paragraph-spacings {
+  .global-ps-#{$size} {
+    margin-bottom: pxToRem($value);
+  }
+}
+
+// Paragraph Spacing Scale Map
+$paragraph-spacing-scale: (
+  'paragraph-spacing-00': (
+    desktop: '00',
+    mobile: '00'
+  ),
+  'paragraph-spacing-100': (
+    desktop: '08',
+    mobile: '08'
+  ),
+  'paragraph-spacing-200': (
+    desktop: '10',
+    mobile: '10'
+  ),
+  'paragraph-spacing-300': (
+    desktop: '11',
+    mobile: '11'
+  ),
+  'paragraph-spacing-400': (
+    desktop: '12',
+    mobile: '12'
+  )
+);
+
+// Generate Paragraph Spacing Scale Classes
+@each $class, $spacings in $paragraph-spacing-scale {
+  .#{$class} {
+    // Mobile first approach
+    margin-bottom: pxToRem(map.get($paragraph-spacings, map.get($spacings, mobile)));
+
+    // Desktop styles
+    @media screen and (min-width: $breakpoint-mobile) {
+      margin-bottom: pxToRem(map.get($paragraph-spacings, map.get($spacings, desktop)));
+    }
+  }
+}
+
+// ====================================================== List Spacing SCSS Start ================================================
+
+// List Spacing Values
+$list-spacings: (
+  '00': 0,
+  '04': 4,
+  '08': 8,
+  '12': 12,
+  '16': 16,
+  '20': 20,
+  '24': 24
+);
+
+// Global List Spacing Classes
+@each $size, $value in $list-spacings {
+  .global-lis-#{$size} {
+    gap: pxToRem($value);
+    
+    // For traditional lists (ul, ol)
+    &.list-traditional {
+      > li + li {
+        margin-top: pxToRem($value);
+      }
+    }
+    
+    // For flex/grid lists
+    &.list-flex {
+      display: flex;
+      flex-direction: column;
+    }
+    
+    &.list-grid {
+      display: grid;
+    }
+  }
+}
+
+// List Spacing Scale Map
+$list-spacing-scale: (
+  'list-spacing-00': (
+    desktop: '00',
+    mobile: '00'
+  ),
+  'list-spacing-100': (
+    desktop: '08',
+    mobile: '08'
+  )
+);
+
+// Generate List Spacing Scale Classes
+@each $class, $spacings in $list-spacing-scale {
+  .#{$class} {
+    // Mobile first approach
+    gap: pxToRem(map.get($list-spacings, map.get($spacings, mobile)));
+
+    // Desktop styles
+    @media screen and (min-width: $breakpoint-mobile) {
+      gap: pxToRem(map.get($list-spacings, map.get($spacings, desktop)));
+    }
+    
+    // For traditional lists
+    &.list-traditional {
+      > li + li {
+        margin-top: pxToRem(map.get($list-spacings, map.get($spacings, mobile)));
+        
+        @media screen and (min-width: $breakpoint-mobile) {
+          margin-top: pxToRem(map.get($list-spacings, map.get($spacings, desktop)));
+        }
+      }
+    }
+  }
+}
+
+
+// ===================================================== Type Scale Tokens (as per figma) ==============================================
+
+// Type Scale Tokens - Large Screen (Desktop)
+$type-scale-large: (
+  'DisplayXLarge': (
+    font-family: map.get($font-family, 'text'),
+    font-size: 72,
+    line-height: 78,
+    font-weight: (400, 500, 600),
+    paragraph-spacing: 0
+  ),
+  'DisplayLarge': (
+    font-family: map.get($font-family, 'text'),
+    font-size: 64,
+    line-height: 70,
+    font-weight: (400, 500, 600),
+    paragraph-spacing: 0
+  ),
+  'DisplayMedium': (
+    font-family: map.get($font-family, 'text'),
+    font-size: 56,
+    line-height: 64,
+    font-weight: (400, 500, 600),
+    paragraph-spacing: 0
+  ),
+  'DisplaySmall': (
+    font-family: map.get($font-family, 'text'),
+    font-size: 48,
+    line-height: 56,
+    font-weight: (400, 500, 600),
+    paragraph-spacing: 0
+  ),
+  'Heading2XLarge': (
+    font-family: map.get($font-family, 'text'),
+    font-size: 40,
+    line-height: 46,
+    font-weight: (400, 600),
+    paragraph-spacing: 0
+  ),
+  'HeadingXLarge': (
+    font-family: map.get($font-family, 'text'),
+    font-size: 32,
+    line-height: 38,
+    font-weight: (400, 600),
+    paragraph-spacing: 0
+  ),
+  'HeadingLarge': (
+    font-family: map.get($font-family, 'text'),
+    font-size: 24,
+    line-height: 32,
+    font-weight: (400, 600),
+    paragraph-spacing: 0
+  ),
+  'HeadingMedium': (
+    font-family: map.get($font-family, 'text'),
+    font-size: 20,
+    line-height: 26,
+    font-weight: (400, 600),
+    paragraph-spacing: 0
+  ),
+  'HeadingSmall': (
+    font-family: map.get($font-family, 'text'),
+    font-size: 18,
+    line-height: 24,
+    font-weight: (400, 600),
+    paragraph-spacing: 0
+  ),
+  'BodyLarge': (
+    font-family: map.get($font-family, 'text'),
+    font-size: 16,
+    line-height: 24,
+    font-weight: (400, 500, 600),
+    paragraph-spacing: 12
+  ),
+  'BodyMedium': (
+    font-family: map.get($font-family, 'text'),
+    font-size: 14,
+    line-height: 20,
+    font-weight: (400, 500, 600),
+    paragraph-spacing: 11
+  ),
+  'BodySmall': (
+    font-family: map.get($font-family, 'text'),
+    font-size: 12,
+    line-height: 18,
+    font-weight: (400, 500, 600),
+    paragraph-spacing: 10
+  ),
+  'BodyXSmall': (
+    font-family: map.get($font-family, 'text'),
+    font-size: 10,
+    line-height: 14,
+    font-weight: (400, 500, 600),
+    paragraph-spacing: 8
+  )
+);
+
+// Type Scale Tokens - Small Screen (Mobile)
+$type-scale-small: (
+  'DisplayXLarge': (
+    font-size: 40,
+    line-height: 48
+  ),
+  'DisplayLarge': (
+    font-size: 38,
+    line-height: 46
+  ),
+  'DisplayMedium': (
+    font-size: 36,
+    line-height: 42
+  ),
+  'DisplaySmall': (
+    font-size: 34,
+    line-height: 40
+  ),
+  'Heading2XLarge': (
+    font-size: 32,
+    line-height: 38
+  ),
+  'HeadingXLarge': ( 
+    font-size: 24,
+    line-height: 32
+  ),
+  'HeadingLarge': (
+    font-size: 20,
+    line-height: 26
+  ),
+  'HeadingMedium': (
+    font-size: 18,
+    line-height: 24
+  ),
+  'HeadingSmall': (
+    font-size: 16,
+    line-height: 22
+  ),
+  'BodyLarge': (
+    font-size: 16,
+    line-height: 24
+    ),
+  'BodyMedium': (
+    font-size: 14,
+    line-height: 20
+  ),
+  'BodySmall': (
+    font-size: 12,
+    line-height: 18
+  ),
+  'BodyXSmall': (
+    font-size: 10,
+    line-height: 14
+  )
+);
+
+// Function to get weight name
+@function get-weight-name($weight) {
+  @if $weight == 400 {
+    @return 'Regular';
+  } @else if $weight == 500 {
+    @return 'Medium';
+  } @else if $weight == 600 {
+    @return 'Semibold';
+  }
+  @return '';
+}
+
+// Generate Type Scale Classes
+@each $type, $styles in $type-scale-large {
+  @each $weight in map.get($styles, 'font-weight') {
+    .#{$type}#{get-weight-name($weight)} {
+      // Base styles
+      font-family: map.get($styles, 'font-family');
+      margin-bottom: pxToRem(map.get($styles, 'paragraph-spacing'));
+      font-weight: $weight;
+      
+      // Mobile styles
+      @media screen and (max-width: $breakpoint-mobile) {
+        & {
+          font-size: pxToRem(map.get(map.get($type-scale-small, $type), 'font-size'));
+          line-height: pxToRem(map.get(map.get($type-scale-small, $type), 'line-height'));
+        }
+      }
+      
+      // Desktop styles
+      @media screen and (min-width: $breakpoint-mobile) {
+        & {
+          font-size: pxToRem(map.get($styles, 'font-size'));
+          line-height: pxToRem(map.get($styles, 'line-height'));
+        }
+      }
+      
+      // Letter spacing for Display classes
+      & {
+        @if $type == 'DisplayXLarge' or $type == 'DisplayLarge' 
+        or $type == 'DisplayMedium' or $type == 'DisplaySmall' {
+          @if $weight == 400 or $weight == 500 {
+            letter-spacing: -1px;
+          } @else if $weight == 600 {
+            letter-spacing: normal;
+          }
+        } @else {
+          letter-spacing: normal;
+        }
+      }
+    }
+  }
+}
+
+// ====================================================== Fluid Typography SCSS Start ================================================
+
+// fluid typography for smoother scaling between breakpoints
+@mixin fluid-type(     
+  $min-font-size,
+  $max-font-size,
+  $min-vw: 320,
+  $max-vw: 1200  // can be 1600 also
+) {
+  font-size: clamp(
+    pxToRem($min-font-size),
+    calc(
+      #{$min-font-size}px + (#{$max-font-size} - #{$min-font-size}) *
+        ((100vw - #{$min-vw}px) / (#{$max-vw} - #{$min-vw}))
+    ),
+    pxToRem($max-font-size)
+  );
+}
+
+// Usage example of fluid typography    
+.fluid-text {       
+  @include fluid-type(16, 32);
+}
+
+
+// Examples (Names to be changed)
+// Utility classes combining font-size and line-height
+@mixin typography-preset($font-size, $line-height) {
+  font-size: pxToRem($font-size);
+  line-height: pxToRem($line-height);
+}
+
+// Common typography presets
+.text-preset-1 {
+  @include typography-preset(16, 24);
+}
+
+.text-preset-2 {
+  @include typography-preset(18, 28);
+}
+
+// Example usage of combined typography settings
+.typography-preset {
+  @include typography-preset(16, 24);
+  letter-spacing: map.get($letter-spacing, 'normal');
+}
+
+.typography-preset-bold {
+  @include typography-preset(16, 24);
+  font-weight: map.get($font-weight-values, 'Bold');
+  letter-spacing: map.get($letter-spacing, 'normal');
+}
+
+.typography-preset-paragraph {
+  @include typography-preset(16, 24);
+  font-weight: map.get($font-weight-values, 'Regular');
+  letter-spacing: map.get($letter-spacing, 'normal');
+  margin-bottom: pxToRem(map.get($paragraph-spacings, '10'));
+}

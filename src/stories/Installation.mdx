@@ -1,0 +1,177 @@
+import { Meta } from "@storybook/blocks";
+
+<Meta title="Guides/Installation" />
+
+<div className="sb-container">
+  <div className="sb-section-title">
+    <h1>Installation Guide</h1>
+  </div>
+
+  <div className="sb-section">
+    <h2>Quick Start</h2>
+    
+    <div className="installation-step">
+      <h3>1. Get the Styles</h3>
+      <p>Clone or download the utility classes from our GitHub repository:</p>
+      
+      <div className="code-block">
+        <code>
+          https://github.com/your-username/xyz-design-system
+        </code>
+        <button className="copy-button" onClick={() => navigator.clipboard.writeText('https://github.com/your-username/xyz-design-system')}>
+          Copy
+        </button>
+      </div>
+    </div>
+
+    <div className="installation-step">
+      <h3>2. Add to Your Project</h3>
+      <p>Copy the <code>typography.scss</code> file to your project's styles/tokens directory and import it in your global styles:</p>
+      
+      <div className="code-block">
+        ```scss
+        // src/styles.scss
+        @use 'styles/tokens/typography';;
+        ```
+      </div>
+    </div>
+
+    <div className="installation-step">
+      <h3>3. Start Using</h3>
+      <p>You can now use the utility classes in your components:</p>
+      
+      <div className="code-block">
+        ```html
+        <!-- Example Usage -->
+        <h1 class="DisplayLargeRegular">
+          Large Display Heading
+        </h1>
+
+        <p class="BodyLargeRegular">
+          Regular body text with standard spacing
+        </p>
+
+        <!-- Combining Classes -->
+        <div class="HeadingMediumSemibold global-ls-extended">
+          Medium heading with extended letter spacing
+        </div>
+        ```
+      </div>
+    </div>
+
+    <div className="usage-examples">
+      <h2>Common Usage Examples</h2>
+
+      <div className="example-block">
+        <h3>Typography Combinations</h3>
+        <div className="code-block">
+          ```html
+          <!-- Heading with custom spacing -->
+          <h1 class="DisplayXLargeRegular global-ps-12">
+            Main Heading
+          </h1>
+
+          <!-- Body text with letter spacing -->
+          <p class="BodyLargeRegular global-ls-normal">
+            Regular body text with normal letter spacing
+          </p>
+
+          <!-- List with spacing -->
+          <ul class="BodyMediumRegular global-lis-16 list-traditional">
+            <li>First item</li>
+            <li>Second item</li>
+          </ul>
+          ```
+        </div>
+      </div>
+
+      <div className="example-block">
+        <h3>Responsive Text</h3>
+        <div className="code-block">
+          ```html
+          <!-- Text that adapts to screen size -->
+          <h2 class="HeadingLargeRegular">
+            This heading will adjust size automatically
+          </h2>
+          ```
+        </div>
+      </div>
+    </div>
+
+    <div className="troubleshooting">
+      <h2>Troubleshooting</h2>
+      <ul>
+        <li>Ensure your Angular project is configured to use SCSS</li>
+        <li>Check that the path to typography.scss is correct in your imports</li>
+        <li>Make sure you're using the exact class names as documented</li>
+        <li>For any issues, please refer to our <a href="https://github.com/your-username/xyz-design-system/issues">GitHub issues</a></li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<style>
+  {`
+    .sb-container {
+      margin-bottom: 48px;
+    }
+
+    .sb-section-title {
+      margin-bottom: 32px;
+    }
+
+    .installation-step {
+      margin-bottom: 32px;
+    }
+
+    .code-block {
+      position: relative;
+      background: #f8f9fa;
+      padding: 16px;
+      border-radius: 4px;
+      margin: 16px 0;
+    }
+
+    .copy-button {
+      position: absolute;
+      top: 8px;
+      right: 8px;
+      padding: 4px 8px;
+      background: #e9ecef;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+
+    .copy-button:hover {
+      background: #dee2e6;
+    }
+
+    .example-block {
+      margin-bottom: 24px;
+    }
+
+    .troubleshooting {
+      margin-top: 48px;
+      padding: 24px;
+      background: #fff3cd;
+      border-radius: 4px;
+    }
+
+    .troubleshooting ul {
+      margin: 0;
+      padding-left: 20px;
+    }
+
+    .troubleshooting li {
+      margin-bottom: 8px;
+    }
+
+    code {
+      font-family: monospace;
+      background: #e9ecef;
+      padding: 2px 4px;
+      border-radius: 2px;
+    }
+  `}
+</style>

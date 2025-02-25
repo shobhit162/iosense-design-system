@@ -1,0 +1,239 @@
+<h1 class="font-size-1100">Large Heading</h1>
+<p class="font-size-100">Normal text</p>
+
+
+<!-- Using global classes -->
+<p class="global-fz-20 global-lh-24">Text with specific size and line height</p>
+
+<!-- Using semantic scale classes -->
+<p class="font-size-100 line-height-200">Text with semantic scale values</p>
+
+<!-- Using preset combinations -->
+<p class="text-preset-1">Text with preset typography</p>
+
+<p class="global-lh-24">
+    This text will have 24px line height
+  </p>
+
+  <h1 class="font-size-500">
+    <!-- This will be:
+         - 20px on mobile
+         - 24px on desktop -->
+  </h1>
+
+
+  <!-- Using global letter spacing classes -->
+<p class="global-ls-normal">Normal letter spacing</p>
+<p class="global-ls-expanded">Expanded letter spacing</p>
+
+<!-- Using semantic scale classes -->
+<p class="letter-spacing-50">Condensed spacing</p>
+<p class="letter-spacing-100">Normal spacing</p>
+
+<!-- Combining with other typography classes -->
+<p class="global-fz-16 global-lh-24 global-ls-normal">
+  Complete typography control
+</p>
+
+
+<!-- Using global font weight classes -->
+<p class="global-fw-400">Regular text</p>
+<p class="global-fw-700">Bold text</p>
+
+<!-- Using semantic scale classes -->
+<p class="font-weight-400">Regular weight</p>
+<p class="font-weight-700">Bold weight</p>
+
+<!-- Combining all typography classes -->
+<p class="global-fz-16 global-lh-24 global-ls-normal global-fw-500">
+  Complete typography styling
+</p>
+
+<!-- Using semantic classes for all properties -->
+<p class="font-size-100 line-height-100 letter-spacing-100 font-weight-500">
+  Complete semantic styling
+</p>
+
+
+<!-- Example of a heading with complete typography control -->
+<h1 class="
+  global-fz-32        /* Font size */
+  global-lh-38        /* Line height */
+  global-ls-normal    /* Letter spacing */
+  global-fw-700       /* Font weight */
+">
+  Main Heading
+</h1>
+
+<!-- Example of body text -->
+<p class="
+  global-fz-16        /* Font size */
+  global-lh-24        /* Line height */
+  global-ls-normal    /* Letter spacing */
+  global-fw-400       /* Font weight */
+">
+  Regular body text
+</p>
+
+
+<!-- Using global paragraph spacing classes -->
+<p class="global-ps-10">
+    This paragraph has 10px bottom spacing
+  </p>
+  
+  <!-- Using semantic scale classes -->
+  <p class="paragraph-spacing-200">
+    This paragraph uses semantic spacing
+  </p>
+  
+  <!-- Complete typography example -->
+  <p class="
+    global-fz-16          /* Font size */
+    global-lh-24          /* Line height */
+    global-ls-normal      /* Letter spacing */
+    global-fw-400         /* Font weight */
+    global-ps-10          /* Paragraph spacing */
+  ">
+    Complete typography control with paragraph spacing
+  </p>
+  
+  <!-- Using semantic classes for everything -->
+  <p class="
+    font-size-100
+    line-height-100
+    letter-spacing-100
+    font-weight-400
+    paragraph-spacing-200
+  ">
+    Complete semantic styling with paragraph spacing
+  </p>
+
+
+  <article>
+    <h1 class="
+      global-fz-32 
+      global-lh-38 
+      global-fw-700 
+      global-ps-12
+    ">
+      Article Title
+    </h1>
+    
+    <p class="
+      global-fz-16 
+      global-lh-24 
+      global-fw-400 
+      global-ps-10
+    ">
+      First paragraph
+    </p>
+    
+    <p class="
+      global-fz-16 
+      global-lh-24 
+      global-fw-400 
+      global-ps-10
+    ">
+      Second paragraph
+    </p>
+  </article>
+
+
+  <div class="card">
+    <h2 class="
+      global-fz-24 
+      global-lh-32 
+      global-fw-600 
+      global-ps-08
+    ">
+      Card Title
+    </h2>
+    
+    <p class="
+      global-fz-16 
+      global-lh-24 
+      global-fw-400 
+      global-ps-00
+    ">
+      Card content with no bottom spacing
+    </p>
+  </div>
+
+
+  <!-- Traditional Unordered List -->
+   <!-- this won't work because display is block -->
+<ul class="global-lis-08 list-traditional">   
+    <li>First item</li>
+    <li>Second item</li>
+    <li>Third item</li>
+  </ul>
+  
+  <!-- Flex List -->
+  <ul class="global-lis-16 list-flex">
+    <li>First item</li>
+    <li>Second item</li>
+    <li>Third item</li>
+  </ul>
+  
+  <!-- Grid List -->
+  <ul class="global-lis-24 list-grid">
+    <li>First item</li>
+    <li>Second item</li>
+    <li>Third item</li>
+  </ul>
+  
+  <!-- Using semantic scale classes -->
+  <ul class="list-spacing-100 list-traditional">
+    <li>First item</li>
+    <li>Second item</li>
+    <li>Third item</li>
+  </ul>
+  
+  <!-- Complete list example with typography -->
+  <ul class="
+    global-lis-16
+    list-flex
+  ">
+    <li class="
+      global-fz-16
+      global-lh-24
+      global-fw-400
+    ">
+      First item
+    </li>
+    <li class="
+      global-fz-16
+      global-lh-24
+      global-fw-400
+    ">
+      Second item
+    </li>
+  </ul>
+  
+  <nav>
+    <ul class="global-lis-16 list-flex">
+      <li><a href="#">Home</a></li>
+      <li><a href="#">About</a></li>
+      <li><a href="#">Contact</a></li>
+    </ul>
+  </nav>
+
+
+  <ul class="global-lis-24 list-grid">
+    <li class="card">Card 1</li>
+    <li class="card">Card 2</li>
+    <li class="card">Card 3</li>
+  </ul>
+  
+
+  <p class="fluid-text">Fluid text example</p>
+
+
+  <!-- Display classes with different weights and letter spacing -->
+<h1 class="DisplayXLarge-400">Display XL Regular (-1% letter spacing)</h1>
+<h1 class="DisplayXLarge-500">Display XL Medium (-1% letter spacing)</h1>
+<h1 class="DisplayXLarge-600">Display XL SemiBold (0% letter spacing)</h1>
+
+<!-- Other classes with standard letter spacing -->
+<h2 class="HeadingLarge-400">Heading Large Regular (standard letter spacing)</h2>
+<p class="BodyLarge-400">Body Large Regular (standard letter spacing)</p>
