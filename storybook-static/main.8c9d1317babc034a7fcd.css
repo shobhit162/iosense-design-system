@@ -1409,36 +1409,5 @@
 }
 
 .fluid-text {
-  font-size: clamp(1rem, 16px + (32 - 16) * (100vw - 320px) / (1200 - 320), 2rem);
-}
-
-.text-preset-1 {
-  font-size: 1rem;
-  line-height: 1.5rem;
-}
-
-.text-preset-2 {
-  font-size: 1.125rem;
-  line-height: 1.75rem;
-}
-
-.typography-preset {
-  font-size: 1rem;
-  line-height: 1.5rem;
-  letter-spacing: normal;
-}
-
-.typography-preset-bold {
-  font-size: 1rem;
-  line-height: 1.5rem;
-  font-weight: 700;
-  letter-spacing: normal;
-}
-
-.typography-preset-paragraph {
-  font-size: 1rem;
-  line-height: 1.5rem;
-  font-weight: 400;
-  letter-spacing: normal;
-  margin-bottom: 0.625rem;
+  font-size: clamp(1rem, 16px + (32 - 16) * (100vw - 320px) / (1600 - 320), 2rem);
 }

@@ -648,7 +648,7 @@ $type-scale-small: (
   $min-font-size,
   $max-font-size,
   $min-vw: 320,
-  $max-vw: 1200  // can be 1600 also
+  $max-vw: 1600
 ) {
   font-size: clamp(
     pxToRem($min-font-size),
@@ -663,40 +663,4 @@ $type-scale-small: (
 // Usage example of fluid typography    
 .fluid-text {       
   @include fluid-type(16, 32);
-}
-
-
-// Examples (Names to be changed)
-// Utility classes combining font-size and line-height
-@mixin typography-preset($font-size, $line-height) {
-  font-size: pxToRem($font-size);
-  line-height: pxToRem($line-height);
-}
-
-// Common typography presets
-.text-preset-1 {
-  @include typography-preset(16, 24);
-}
-
-.text-preset-2 {
-  @include typography-preset(18, 28);
-}
-
-// Example usage of combined typography settings
-.typography-preset {
-  @include typography-preset(16, 24);
-  letter-spacing: map.get($letter-spacing, 'normal');
-}
-
-.typography-preset-bold {
-  @include typography-preset(16, 24);
-  font-weight: map.get($font-weight-values, 'Bold');
-  letter-spacing: map.get($letter-spacing, 'normal');
-}
-
-.typography-preset-paragraph {
-  @include typography-preset(16, 24);
-  font-weight: map.get($font-weight-values, 'Regular');
-  letter-spacing: map.get($letter-spacing, 'normal');
-  margin-bottom: pxToRem(map.get($paragraph-spacings, '10'));
 }

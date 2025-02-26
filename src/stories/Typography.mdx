@@ -546,10 +546,10 @@ export const typography = {
     These tokens should be used for consistent text styling across applications.
   </div>
 
-  <div className="sb-section">
-    <div className="sb-typography-demo">
+<div className="sb-section">
+<div className="sb-typography-demo">
 
-      <h2>Type Scale Classes</h2>
+<h2>Type Scale Classes</h2>
 <div className="sb-type-scale-demo">
   <h3>Display Types</h3>
   <div className="sb-type-scale-section">
@@ -642,7 +642,7 @@ export const typography = {
   </div>
 </div>
 
-      <h2>Font Weight</h2>
+<h2>Font Weight</h2>
       <table className="sb-table">
         <thead>
           <tr>
@@ -666,7 +666,7 @@ export const typography = {
         </tbody>
       </table>
 
-      <h2>Font Weight Scale Classes</h2>
+<h2>Font Weight Scale Classes</h2>
 <table className="sb-table">
   <thead>
     <tr>
@@ -685,9 +685,8 @@ export const typography = {
     ))}
   </tbody>
 </table>
-
-      <h2>Font Size</h2>
-      <div className="sb-font-size-demo">
+<h2>Font Size</h2>
+<div className="sb-font-size-demo">
         {Object.entries(typography.fontSize).map(([key, { name, value }]) => (
           <div className="sb-font-size-item" key={key}>
             <code>{name}</code>
@@ -696,9 +695,9 @@ export const typography = {
             </span>
           </div>
         ))}
-      </div>
+</div>
 
-    <h2>Font Size Scale Classes</h2>
+<h2>Font Size Scale Classes</h2>
 <table className="sb-table">
   <thead>
     <tr>
@@ -724,7 +723,7 @@ export const typography = {
   </tbody>
 </table>
 
-      <h2>Line Height</h2>
+  <h2>Line Height</h2>
   <table className="sb-table">
     <thead>
       <tr>
@@ -749,7 +748,7 @@ export const typography = {
     </tbody>
   </table>
 
-  <h2>Line Height Scale Classes</h2>
+<h2>Line Height Scale Classes</h2>
 <table className="sb-table">
   <thead>
     <tr>
@@ -800,7 +799,7 @@ export const typography = {
     </tbody>
   </table>
 
-  <h2>Letter Spacing Scale Classes</h2>
+<h2>Letter Spacing Scale Classes</h2>
 <table className="sb-table">
   <thead>
     <tr>
@@ -851,7 +850,7 @@ export const typography = {
     </tbody>
   </table>
 
-  <h2>Paragraph Spacing Scale Classes</h2>
+<h2>Paragraph Spacing Scale Classes</h2>
 <table className="sb-table">
   <thead>
     <tr>
@@ -921,8 +920,7 @@ export const typography = {
     ))}
   </div>
 
-      <h2>List Spacing Scale Classes</h2>
-
+<h2>List Spacing Scale Classes</h2>
 <table className="sb-table">
   <thead>
     <tr>
@@ -947,7 +945,87 @@ export const typography = {
     )}
   </tbody>
 </table>
+  </div>
+  </div>
+   <h2>Fluid Typography</h2>
+  
+  <div className="fluid-typography-section">
+    <p>
+      The fluid typography mixin provides smooth font scaling based on viewport width, 
+      eliminating the need for multiple breakpoints. It uses CSS clamp() to create 
+      a fluid scaling between minimum and maximum font sizes.
+    </p>
 
+    <div className="mixin-documentation">
+      <h3>Mixin Signature</h3>
+      <div className="code-block">
+        ```scss
+        @mixin fluid-type(
+          $min-font-size,    // Minimum font size (for mobile)
+          $max-font-size,    // Maximum font size (for desktop)
+          $min-vw: 320,      // Minimum viewport width
+          $max-vw: 1600      // Maximum viewport width
+        )
+        ```
+      </div>
+    </div>
+
+    <div className="usage-examples">
+      <h3>Basic Usage</h3>
+      <div className="code-block">
+        ```scss
+        .my-heading {
+          @include fluid-type(16, 32);
+        }
+        ```
+        <div className="code-description">
+          This will create text that scales from 16px at 320px viewport to 32px at 1600px viewport.
+        </div>
+      </div>
+
+      <h3>Custom Viewport Range</h3>
+      <div className="code-block">
+        ```scss
+        .hero-title {
+          @include fluid-type(24, 64, 375, 1200);
+        }
+        ```
+        <div className="code-description">
+          Scales from 24px at 375px viewport to 64px at 1200px viewport.
+        </div>
+      </div>
+    </div>
+
+    <div className="fluid-typography-tips">
+      <h3>Best Practices</h3>
+      <ul>
+        <li>Use for important headings and hero text that need smooth scaling</li>
+        <li>Consider readability limits when setting min/max sizes</li>
+        <li>Test across different devices to ensure proper scaling</li>
+        <li>Use appropriate viewport ranges for your design needs</li>
+      </ul>
+    </div>
+
+    <div className="common-use-cases">
+      <h3>Common Use Cases</h3>
+      <div className="code-block">
+        ```scss
+        // Hero Heading
+        .hero-heading {
+          @include fluid-type(32, 96);
+        }
+
+        // Section Title
+        .section-title {
+          @include fluid-type(24, 48);
+        }
+
+        // Large Paragraph
+        .lead-text {
+          @include fluid-type(16, 24);
+        }
+        ```
+      </div>
     </div>
   </div>
 </div>
@@ -1114,36 +1192,58 @@ export const typography = {
       line-height: 1.5;
     }
 
-    /* Optional: Add responsive styles */
-    @media (max-width: 768px) {
-      .sb-type-scale-item {
-        padding: 16px;
-      }
-
-      .sb-type-scale-info code {
-        font-size: 12px;
-      }
-
-      .sb-type-scale-info small {
-        font-size: 12px;
-      }
-    }
-
-    /* Optional: Add hover effect */
     .sb-type-scale-item:hover {
       box-shadow: 0 2px 8px rgba(0,0,0,0.1);
     }
 
-    /* Optional: Add a toggle for mobile/desktop preview */
-    .sb-type-scale-preview-toggle {
-      margin-bottom: 16px;
-    }
-
-    /* Optional: Add section dividers */
     h3 {
       margin-top: 32px;
       padding-bottom: 8px;
       border-bottom: 2px solid #E6E6E6;
+    }
+
+        .fluid-typography-section {
+      margin-bottom: 48px;
+    }
+
+    .mixin-documentation {
+      margin: 32px 0;
+    }
+
+    .code-block {
+      background: #f8f9fa;
+      padding: 16px;
+      border-radius: 8px;
+      margin: 16px 0;
+      position: relative;
+    }
+
+    .code-description {
+      margin-top: 8px;
+      font-size: 14px;
+      color: #666;
+    }
+
+    .fluid-typography-tips ul {
+      list-style-type: none;
+      padding: 0;
+    }
+
+    .fluid-typography-tips li {
+      margin-bottom: 8px;
+      padding-left: 24px;
+      position: relative;
+    }
+
+    .fluid-typography-tips li:before {
+      content: "•";
+      position: absolute;
+      left: 8px;
+      color: #666;
+    }
+
+    .common-use-cases {
+      margin-top: 32px;
     }
   `}
 </style>
