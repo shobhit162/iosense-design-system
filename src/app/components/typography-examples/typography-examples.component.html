@@ -230,10 +230,61 @@
 
 
   <!-- Display classes with different weights and letter spacing -->
-<h1 class="DisplayXLarge-400">Display XL Regular (-1% letter spacing)</h1>
-<h1 class="DisplayXLarge-500">Display XL Medium (-1% letter spacing)</h1>
-<h1 class="DisplayXLarge-600">Display XL SemiBold (0% letter spacing)</h1>
+<h1 class="DisplayXLargeRegular">Display XL Regular (-1% letter spacing)</h1>
+<h1 class="DisplayXLargeMedium">Display XL Medium (-1% letter spacing)</h1>
+<h1 class="DisplayXLargeSemibold">Display XL SemiBold (0% letter spacing)</h1>
 
 <!-- Other classes with standard letter spacing -->
-<h2 class="HeadingLarge-400">Heading Large Regular (standard letter spacing)</h2>
-<p class="BodyLarge-400">Body Large Regular (standard letter spacing)</p>
+<h2 class="HeadingLargeRegular">Heading Large Regular (standard letter spacing)</h2>
+<p class="BodyLargeRegular">Body Large Regular (standard letter spacing)</p>
+
+
+<!-- Border Width -->
+<div class="global-bw-thin">1px border</div>
+<div class="global-bw-t-thick">1.5px top border</div>
+
+<!-- Border Style -->
+<div class="global-bs-dashed">Dashed border</div>
+
+<!-- Border Radius -->
+<div class="global-br-medium">4px border radius all corners</div>
+<div class="global-br-t-large">8px border radius top corners only</div>
+<div class="global-br-tl-small">2px border radius top-left only</div>
+
+<!-- Combined -->
+<div class="global-bw-thin global-bs-solid global-br-medium">
+  1px solid border with 4px border radius
+</div>
+
+
+<!-- Basic elevation classes -->
+<div class="global-el-ultraLowRaised">Ultra Low Elevation</div>
+<div class="global-el-lowRaised">Low Elevation</div>
+<div class="global-el-midRaised">Medium Elevation</div>
+<div class="global-el-highRaised">High Elevation</div>
+<div class="global-el-ultraHighRaised">Ultra High Elevation</div>
+
+<!-- Individual shadow layers -->
+<div class="global-el-midRaised-1">Only first shadow layer</div>
+
+<!-- Using with other utilities -->
+<div class="global-el-highRaised global-br-medium">
+  Elevated card with border radius
+</div>
+
+<!-- Margin -->
+<div class="global-m-04">All sides margin 12px</div>
+<div class="global-mx-05">Horizontal margin 16px</div>
+
+<!-- Padding -->
+<div class="global-p-06">All sides padding 20px</div>
+<div class="global-py-07">Vertical padding 24px</div>
+
+<!-- Gap -->
+<div class="global-gap-08">Gap between flex/grid items 32px</div>
+
+<!-- Gutter -->
+<div class="global-gutter-04">
+  <div>Child elements with 12px padding</div>
+  <div>Child elements with 12px padding</div>
+</div>

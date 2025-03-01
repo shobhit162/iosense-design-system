@@ -1,0 +1,275 @@
+import { Meta } from "@storybook/blocks";
+
+<Meta title="Tokens/Elevation" />
+
+export const elevation = {
+  shadows: {
+    'ultraLowRaised': {
+      name: 'global-el-ultraLowRaised',
+      layers: [
+        { x: 0, y: 2, blur: 1, spread: -1 },
+        { x: 0, y: 1, blur: 1, spread: 0 },
+        { x: 0, y: 1, blur: 3, spread: 0 }
+      ]
+    },
+    'lowRaised': {
+      name: 'global-el-lowRaised',
+      layers: [
+        { x: 0, y: 3, blur: 3, spread: -2 },
+        { x: 0, y: 3, blur: 4, spread: 0 },
+        { x: 0, y: 1, blur: 8, spread: 0 }
+      ]
+    },
+    'midRaised': {
+      name: 'global-el-midRaised',
+      layers: [
+        { x: 0, y: 3, blur: 5, spread: -1 },
+        { x: 0, y: 6, blur: 10, spread: 0 },
+        { x: 0, y: 1, blur: 18, spread: 0 }
+      ]
+    },
+    'highRaised': {
+      name: 'global-el-highRaised',
+      layers: [
+        { x: 0, y: 5, blur: 5, spread: -3 },
+        { x: 0, y: 8, blur: 10, spread: 1 },
+        { x: 0, y: 3, blur: 14, spread: 2 }
+      ]
+    },
+    'ultraHighRaised': {
+      name: 'global-el-ultraHighRaised',
+      layers: [
+        { x: 0, y: 7, blur: 8, spread: -4 },
+        { x: 0, y: 12, blur: 17, spread: 2 },
+        { x: 0, y: 5, blur: 22, spread: 4 }
+      ]
+    }
+  }
+};
+
+<div className="sb-container">
+  <div className="sb-section-title">
+    # Elevation
+    These tokens provide consistent elevation and depth through box shadows across the application.
+  </div>
+
+  <div className="sb-section">
+    <div className="sb-elevation-demo">
+      <h2>Elevation Levels</h2>
+      <div className="sb-demo-section">
+        {Object.entries(elevation.shadows).map(([key, { name, layers }]) => (
+          <div className="sb-demo-item" key={key}>
+            <div className="sb-demo-info">
+              <code>{name}</code>
+              <div className="sb-shadow-layers">
+                {layers.map((layer, index) => (
+                  <div key={index} className="sb-shadow-layer">
+                    <small>
+                      Layer {index + 1}: {layer.x}px {layer.y}px {layer.blur}px {layer.spread}px
+                    </small>
+                  </div>
+                ))}
+              </div>
+            </div>
+            <div 
+              className="sb-demo-box"
+              style={{ 
+                boxShadow: layers.map(layer => 
+                  `${layer.x}px ${layer.y}px ${layer.blur}px ${layer.spread}px rgba(0,0,0,0.1)`
+                ).join(', ')
+              }}
+            >
+              {key}
+            </div>
+          </div>
+        ))}
+      </div>
+
+      <h2>Individual Shadow Layers</h2>
+      <div>
+        {Object.entries(elevation.shadows).map(([key, { name, layers }]) => (
+          <div key={key} className="sb-layer-demo">
+            <h3>{key}</h3>
+            <div className="sb-layer-examples">
+              {layers.map((layer, index) => (
+                <div key={index} className="sb-layer-item">
+                  <code>{name}-{index + 1}</code>
+                  <div 
+                    className="sb-demo-box"
+                    style={{ 
+                      boxShadow: `${layer.x}px ${layer.y}px ${layer.blur}px ${layer.spread}px rgba(0,0,0,0.1)`
+                    }}
+                  >
+                    Layer {index + 1}
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        ))}
+      </div>
+
+      <h2>Custom Color Shadows</h2>
+      <div>
+        <div className="sb-demo-item">
+          <div className="sb-demo-info">
+            <code>@mixin elevation($level, $color)</code>
+            <small>Customize shadow color using the elevation mixin</small>
+          </div>
+          <div className="sb-color-examples">
+            {['#0066FF', '#FF0066', '#66FF00'].map((color) => (
+              <div 
+                key={color}
+                className="sb-demo-box"
+                style={{ 
+                  boxShadow: elevation.shadows.midRaised.layers.map(layer => 
+                    `${layer.x}px ${layer.y}px ${layer.blur}px ${layer.spread}px ${color}33`
+                  ).join(', ')
+                }}
+              >
+                Color: {color}
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+
+      <h2>Usage Examples</h2>
+      <div className="sb-code-block">
+        ```html
+        <!-- Basic elevation -->
+        <div class="global-el-ultraLowRaised">
+          Ultra Low Raised Element
+        </div>
+
+        <!-- Higher elevation -->
+        <div class="global-el-highRaised">
+          High Raised Element
+        </div>
+
+        <!-- Single shadow layer -->
+        <div class="global-el-midRaised-2">
+          Mid Raised - Layer 2 Only
+        </div>
+        ```
+
+        ```scss
+        // Custom color using mixin
+        .custom-shadow {
+          @include elevation('midRaised', rgba(0, 102, 255, 0.2));
+        }
+        ```
+      </div>
+    </div>
+  </div>
+</div>
+
+<style>
+  {`
+    .sb-container {
+      margin-bottom: 48px;
+    }
+
+    .sb-section-title {
+      margin-bottom: 32px;
+    }
+
+    .sb-elevation-demo {
+      width: 100%;
+    }
+
+    .sb-demo-section {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 32px;
+      margin-bottom: 48px;
+    }
+
+    .sb-demo-item {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .sb-demo-info {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .sb-demo-info code {
+      font-family: monospace;
+      font-size: 14px;
+      padding: 4px 8px;
+      background: #F5F5F5;
+      border-radius: 4px;
+    }
+
+    .sb-shadow-layers {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+
+    .sb-shadow-layer small {
+      font-size: 12px;
+      color: #666;
+    }
+
+    .sb-demo-box {
+      width: 100%;
+      height: 120px;
+      background: white;
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 14px;
+      color: #666;
+    }
+
+    .sb-layer-demo {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      margin-bottom: 25px;
+    }
+
+    .sb-layer-examples {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 16px;
+    }
+
+    .sb-layer-item {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .sb-color-examples {
+      display: grid;
+      gap: 16px;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    }
+
+    .sb-code-block {
+      background: #F5F5F5;
+      padding: 16px;
+      border-radius: 4px;
+      margin-top: 16px;
+      overflow: auto;
+    }
+
+    h2 {
+      margin: 32px 0 16px;
+      padding-bottom: 8px;
+      border-bottom: 1px solid #E6E6E6;
+    }
+
+    h3 {
+      margin: 16px 0;
+      font-size: 16px;
+    }
+  `}
+</style>

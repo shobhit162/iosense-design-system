@@ -1,0 +1,75 @@
+@use "sass:map";
+
+// Elevation Values (Box Shadows)
+$elevation-shadows: (
+  'ultraLowRaised': (
+    shadow1: (x: 0, y: 2, blur: 1, spread: -1),
+    shadow2: (x: 0, y: 1, blur: 1, spread: 0),
+    shadow3: (x: 0, y: 1, blur: 3, spread: 0)
+  ),
+  'lowRaised': (
+    shadow1: (x: 0, y: 3, blur: 3, spread: -2),
+    shadow2: (x: 0, y: 3, blur: 4, spread: 0),
+    shadow3: (x: 0, y: 1, blur: 8, spread: 0)
+  ),
+  'midRaised': (
+    shadow1: (x: 0, y: 3, blur: 5, spread: -1),
+    shadow2: (x: 0, y: 6, blur: 10, spread: 0),
+    shadow3: (x: 0, y: 1, blur: 18, spread: 0)
+  ),
+  'highRaised': (
+    shadow1: (x: 0, y: 5, blur: 5, spread: -3),
+    shadow2: (x: 0, y: 8, blur: 10, spread: 1),
+    shadow3: (x: 0, y: 3, blur: 14, spread: 2)
+  ),
+  'ultraHighRaised': (
+    shadow1: (x: 0, y: 7, blur: 8, spread: -4),
+    shadow2: (x: 0, y: 12, blur: 17, spread: 2),
+    shadow3: (x: 0, y: 5, blur: 22, spread: 4)
+  )
+);
+
+// Function to generate box-shadow value
+@function get-shadow-value($shadow-config, $color: rgba(0, 0, 0, 0.1)) {
+  $x: map.get($shadow-config, 'x');
+  $y: map.get($shadow-config, 'y');
+  $blur: map.get($shadow-config, 'blur');
+  $spread: map.get($shadow-config, 'spread');
+  
+  @return #{$x}px #{$y}px #{$blur}px #{$spread}px #{$color};
+}
+
+// Generate Elevation Classes
+@each $elevation, $shadows in $elevation-shadows {
+  .global-el-#{$elevation} {
+    box-shadow: 
+      get-shadow-value(map.get($shadows, 'shadow1')),
+      get-shadow-value(map.get($shadows, 'shadow2')),
+      get-shadow-value(map.get($shadows, 'shadow3'));
+  }
+}
+
+// Optional: Generate individual shadow classes
+@each $elevation, $shadows in $elevation-shadows {
+  .global-el-#{$elevation}-1 {
+    box-shadow: get-shadow-value(map.get($shadows, 'shadow1'));
+  }
+  
+  .global-el-#{$elevation}-2 {
+    box-shadow: get-shadow-value(map.get($shadows, 'shadow2'));
+  }
+  
+  .global-el-#{$elevation}-3 {
+    box-shadow: get-shadow-value(map.get($shadows, 'shadow3'));
+  }
+}
+
+// Optional: Custom color shadows
+@mixin elevation($level, $color: rgba(0, 0, 0, 0.1)) {
+  $shadows: map.get($elevation-shadows, $level);
+  
+  box-shadow: 
+    get-shadow-value(map.get($shadows, 'shadow1'), $color),
+    get-shadow-value(map.get($shadows, 'shadow2'), $color),
+    get-shadow-value(map.get($shadows, 'shadow3'), $color);
+}

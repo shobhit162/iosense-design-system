@@ -1,0 +1,129 @@
+@use "sass:map";
+@use "sass:meta";
+
+// Spacing Values
+$spacing-values: (
+  '00': 0px,
+  '01': 2px,
+  '02': 4px,
+  '03': 8px,
+  '04': 12px,
+  '05': 16px,
+  '06': 20px,
+  '07': 24px,
+  '08': 32px,
+  '09': 40px,
+  '10': 48px,
+  '11': 56px
+);
+
+// Spacing Properties
+$spacing-properties: (
+  'm': margin,
+  'mt': margin-top,
+  'mr': margin-right,
+  'mb': margin-bottom,
+  'ml': margin-left,
+  'mx': (margin-left, margin-right),
+  'my': (margin-top, margin-bottom),
+  'p': padding,
+  'pt': padding-top,
+  'pr': padding-right,
+  'pb': padding-bottom,
+  'pl': padding-left,
+  'px': (padding-left, padding-right),
+  'py': (padding-top, padding-bottom)
+);
+
+// Generate Global Spacing Classes
+@each $size-key, $size-value in $spacing-values {
+  // Gap utilities
+  .global-gap-#{$size-key} {
+    gap: $size-value;
+  }
+  
+  // Row Gap utilities
+  .global-gap-y-#{$size-key} {
+    row-gap: $size-value;
+  }
+  
+  // Column Gap utilities
+  .global-gap-x-#{$size-key} {
+    column-gap: $size-value;
+  }
+
+  // Margin & Padding utilities
+  @each $prop-key, $prop-value in $spacing-properties {
+    .global-#{$prop-key}-#{$size-key} {
+      @if meta.type-of($prop-value) == 'list' {
+        @each $prop in $prop-value {
+          #{$prop}: $size-value;
+        }
+      } @else {
+        #{$prop-value}: $size-value;
+      }
+    }
+  }
+}
+
+// Margin Auto Classes
+.global-m-auto {
+  margin: auto;
+}
+
+.global-mt-auto {
+  margin-top: auto;
+}
+
+.global-mr-auto {
+  margin-right: auto;
+}
+
+.global-mb-auto {
+  margin-bottom: auto;
+}
+
+.global-ml-auto {
+  margin-left: auto;
+}
+
+.global-mx-auto {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.global-my-auto {
+  margin-top: auto;
+  margin-bottom: auto;
+}
+
+// Gutter utilities (for grid/flex containers)
+@each $size-key, $size-value in $spacing-values {
+  .global-gutter-#{$size-key} {
+    margin: calc(#{$size-value} * -1);
+    
+    > * {
+      padding: $size-value;
+    }
+  }
+  
+  .global-gutter-x-#{$size-key} {
+    margin-left: calc(#{$size-value} * -1);
+    margin-right: calc(#{$size-value} * -1);
+    
+    > * {
+      padding-left: $size-value;
+      padding-right: $size-value;
+    }
+  }
+  
+  .global-gutter-y-#{$size-key} {
+    margin-top: calc(#{$size-value} * -1);
+    margin-bottom: calc(#{$size-value} * -1);
+    
+    > * {
+      padding-top: $size-value;
+      padding-bottom: $size-value;
+    }
+  }
+}

@@ -1,0 +1,335 @@
+import { Meta } from "@storybook/blocks";
+
+<Meta title="Tokens/Border" />
+
+export const borders = {
+  borderWidth: {
+    'none': { name: 'global-bw-none', value: '0px' },
+    'thinner': { name: 'global-bw-thinner', value: '0.5px' },
+    'thin': { name: 'global-bw-thin', value: '1px' },
+    'thick': { name: 'global-bw-thick', value: '1.5px' },
+    'thicker': { name: 'global-bw-thicker', value: '2px' }
+  },
+  borderStyles: {
+    'solid': { name: 'global-bs-solid', value: 'solid' },
+    'dashed': { name: 'global-bs-dashed', value: 'dashed' },
+    'dotted': { name: 'global-bs-dotted', value: 'dotted' },
+    'double': { name: 'global-bs-double', value: 'double' },
+    'none': { name: 'global-bs-none', value: 'none' }
+  },
+  borderRadius: {
+    'none': { name: 'global-br-none', value: '0px' },
+    'xsmall': { name: 'global-br-xsmall', value: '1px' },
+    'small': { name: 'global-br-small', value: '2px' },
+    'medium': { name: 'global-br-medium', value: '4px' },
+    'large': { name: 'global-br-large', value: '8px' },
+    'xlarge': { name: 'global-br-xlarge', value: '12px' },
+    '2xlarge': { name: 'global-br-2xlarge', value: '16px' },
+    'max': { name: 'global-br-max', value: '1000px' }
+  }
+};
+
+<div className="sb-container">
+  <div className="sb-section-title">
+    # Border
+    These tokens should be used for consistent border styling across applications.
+  </div>
+
+  <div className="sb-section">
+    <div className="sb-border-demo">
+      <h2>Border Width</h2>
+      <div className="sb-demo-section">
+        {Object.entries(borders.borderWidth).map(([key, { name, value }]) => (
+          <div className="sb-demo-item" key={key}>
+            <div className="sb-demo-info">
+              <code>{name}</code>
+              <span>{value}</span>
+            </div>
+            <div 
+              className="sb-demo-box"
+              style={{ 
+                border: `${value} solid #666`
+              }}
+            />
+          </div>
+        ))}
+      </div>
+
+      <h3>Individual Border Sides</h3>
+      <div className="sb-demo-section">
+        {Object.entries(borders.borderWidth).map(([key, { name, value }]) => (
+          <div key={key} className="sb-demo-row">
+            <div className="sb-demo-info">
+              <code>global-bw-t-{key}</code>
+              <div 
+                className="sb-demo-box"
+                style={{ borderTop: `${value} solid #666` }}
+              />
+            </div>
+            <div className="sb-demo-info">
+              <code>global-bw-r-{key}</code>
+              <div 
+                className="sb-demo-box"
+                style={{ borderRight: `${value} solid #666` }}
+              />
+            </div>
+            <div className="sb-demo-info">
+              <code>global-bw-b-{key}</code>
+              <div 
+                className="sb-demo-box"
+                style={{ borderBottom: `${value} solid #666` }}
+              />
+            </div>
+            <div className="sb-demo-info">
+              <code>global-bw-l-{key}</code>
+              <div 
+                className="sb-demo-box"
+                style={{ borderLeft: `${value} solid #666` }}
+              />
+            </div>
+          </div>
+        ))}
+      </div>
+
+      <h2>Border Styles</h2>
+      <div className="sb-demo-section">
+        {Object.entries(borders.borderStyles).map(([key, { name, value }]) => (
+          <div className="sb-demo-item" key={key}>
+            <div className="sb-demo-info">
+              <code>{name}</code>
+              <span>{value}</span>
+            </div>
+            <div 
+              className="sb-demo-box"
+              style={{ 
+                border: `2px ${value} #666`
+              }}
+            />
+          </div>
+        ))}
+      </div>
+
+      <h2>Border Radius</h2>
+      <div className="sb-demo-section">
+        {Object.entries(borders.borderRadius).map(([key, { name, value }]) => (
+          <div className="sb-demo-item" key={key}>
+            <div className="sb-demo-info">
+              <code>{name}</code>
+              <span>{value}</span>
+            </div>
+            <div 
+              className="sb-demo-box"
+              style={{ 
+                border: '2px solid #666',
+                borderRadius: value
+              }}
+            />
+          </div>
+        ))}
+      </div>
+
+      <h3>Individual Corner Radius</h3>
+      <div className="sb-demo-section">
+        {Object.entries(borders.borderRadius).map(([key, { value }]) => (
+          <div key={key} className="sb-demo-row">
+            <div className="sb-demo-info">
+              <code>global-br-tl-{key}</code>
+              <div 
+                className="sb-demo-box"
+                style={{ 
+                  border: '2px solid #666',
+                  borderTopLeftRadius: value 
+                }}
+              />
+            </div>
+            <div className="sb-demo-info">
+              <code>global-br-tr-{key}</code>
+              <div 
+                className="sb-demo-box"
+                style={{ 
+                  border: '2px solid #666',
+                  borderTopRightRadius: value 
+                }}
+              />
+            </div>
+            <div className="sb-demo-info">
+              <code>global-br-bl-{key}</code>
+              <div 
+                className="sb-demo-box"
+                style={{ 
+                  border: '2px solid #666',
+                  borderBottomLeftRadius: value 
+                }}
+              />
+            </div>
+            <div className="sb-demo-info">
+              <code>global-br-br-{key}</code>
+              <div 
+                className="sb-demo-box"
+                style={{ 
+                  border: '2px solid #666',
+                  borderBottomRightRadius: value 
+                }}
+              />
+            </div>
+          </div>
+        ))}
+      </div>
+
+      <h3>Combined Corner Radius</h3>
+      <div className="sb-demo-section">
+        {Object.entries(borders.borderRadius).map(([key, { value }]) => (
+          <div key={key} className="sb-demo-row">
+            <div className="sb-demo-info">
+              <code>global-br-t-{key}</code>
+              <div 
+                className="sb-demo-box"
+                style={{ 
+                  border: '2px solid #666',
+                  borderTopLeftRadius: value,
+                  borderTopRightRadius: value 
+                }}
+              />
+            </div>
+            <div className="sb-demo-info">
+              <code>global-br-r-{key}</code>
+              <div 
+                className="sb-demo-box"
+                style={{ 
+                  border: '2px solid #666',
+                  borderTopRightRadius: value,
+                  borderBottomRightRadius: value 
+                }}
+              />
+            </div>
+            <div className="sb-demo-info">
+              <code>global-br-b-{key}</code>
+              <div 
+                className="sb-demo-box"
+                style={{ 
+                  border: '2px solid #666',
+                  borderBottomLeftRadius: value,
+                  borderBottomRightRadius: value 
+                }}
+              />
+            </div>
+            <div className="sb-demo-info">
+              <code>global-br-l-{key}</code>
+              <div 
+                className="sb-demo-box"
+                style={{ 
+                  border: '2px solid #666',
+                  borderTopLeftRadius: value,
+                  borderBottomLeftRadius: value 
+                }}
+              />
+            </div>
+          </div>
+        ))}
+      </div>
+
+      <h2>Usage Examples</h2>
+      <div className="sb-code-block">
+        ```html
+        <!-- Basic border -->
+        <div class="global-bw-thin global-bs-solid">
+          1px solid border
+        </div>
+
+        <!-- Rounded corners -->
+        <div class="global-bw-thin global-bs-solid global-br-medium">
+          1px solid border with 4px border radius
+        </div>
+
+        <!-- Individual sides -->
+        <div class="global-bw-b-thick">
+          1.5px bottom border only
+        </div>
+
+        <!-- Individual corners -->
+        <div class="global-br-tl-large global-br-br-large">
+          8px radius on top-left and bottom-right corners
+        </div>
+        ```
+      </div>
+    </div>
+  </div>
+</div>
+
+<style>
+  {`
+    .sb-container {
+      margin-bottom: 48px;
+    }
+
+    .sb-section-title {
+      margin-bottom: 32px;
+    }
+
+    .sb-border-demo {
+      width: 100%;
+    }
+
+    .sb-demo-section {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+      gap: 24px;
+      margin-bottom: 32px;
+    }
+
+    .sb-demo-row {
+      display: grid;
+      gap: 16px;
+      margin-bottom: 24px;
+    }
+
+    .sb-demo-item {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .sb-demo-info {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+
+    .sb-demo-info code {
+      font-family: monospace;
+      font-size: 14px;
+      padding: 4px 8px;
+      background: #F5F5F5;
+      border-radius: 4px;
+      margin-bottom: 5px;
+    }
+
+    .sb-demo-info span {
+      font-size: 14px;
+      color: #666;
+    }
+
+    .sb-demo-box {
+      width: 100%;
+      height: 100px;
+      background: #F5F5F5;
+    }
+
+    .sb-code-block {
+      background: #F5F5F5;
+      padding: 16px;
+      border-radius: 4px;
+      margin-top: 16px;
+    }
+
+    h2 {
+      margin: 32px 0 16px;
+      padding-bottom: 8px;
+      border-bottom: 1px solid #E6E6E6;
+    }
+
+    h3 {
+      margin: 24px 0 16px;
+    }
+  `}
+</style>

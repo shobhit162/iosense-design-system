@@ -438,152 +438,114 @@ $list-spacing-scale: (
 
 // Type Scale Tokens - Large Screen (Desktop)
 $type-scale-large: (
+  // Display Types
   'DisplayXLarge': (
     font-family: map.get($font-family, 'text'),
-    font-size: 72,
-    line-height: 78,
+    font-size: 'font-size-1100',        // 72px/40px
+    line-height: 'line-height-1100',     // 78px/48px
     font-weight: (400, 500, 600),
-    paragraph-spacing: 0
+    letter-spacing: 'letter-spacing-50',  // -1px for 400,500; normal for 600
+    paragraph-spacing: 'paragraph-spacing-00'
   ),
   'DisplayLarge': (
     font-family: map.get($font-family, 'text'),
-    font-size: 64,
-    line-height: 70,
+    font-size: 'font-size-1000',        // 64px/38px
+    line-height: 'line-height-1000',     // 70px/46px
     font-weight: (400, 500, 600),
-    paragraph-spacing: 0
+    letter-spacing: 'letter-spacing-50',
+    paragraph-spacing: 'paragraph-spacing-00'
   ),
   'DisplayMedium': (
     font-family: map.get($font-family, 'text'),
-    font-size: 56,
-    line-height: 64,
+    font-size: 'font-size-900',         // 56px/36px
+    line-height: 'line-height-900',      // 64px/42px
     font-weight: (400, 500, 600),
-    paragraph-spacing: 0
+    letter-spacing: 'letter-spacing-50',
+    paragraph-spacing: 'paragraph-spacing-00'
   ),
   'DisplaySmall': (
     font-family: map.get($font-family, 'text'),
-    font-size: 48,
-    line-height: 56,
+    font-size: 'font-size-800',         // 48px/34px
+    line-height: 'line-height-800',      // 56px/40px
     font-weight: (400, 500, 600),
-    paragraph-spacing: 0
+    letter-spacing: 'letter-spacing-50',
+    paragraph-spacing: 'paragraph-spacing-00'
   ),
+
+  // Heading Types
   'Heading2XLarge': (
     font-family: map.get($font-family, 'text'),
-    font-size: 40,
-    line-height: 46,
+    font-size: 'font-size-700',         // 40px/32px
+    line-height: 'line-height-700',      // 46px/38px
     font-weight: (400, 600),
-    paragraph-spacing: 0
+    letter-spacing: 'letter-spacing-100', // normal
+    paragraph-spacing: 'paragraph-spacing-00'
   ),
   'HeadingXLarge': (
     font-family: map.get($font-family, 'text'),
-    font-size: 32,
-    line-height: 38,
+    font-size: 'font-size-600',         // 32px/24px
+    line-height: 'line-height-600',      // 38px/32px
     font-weight: (400, 600),
-    paragraph-spacing: 0
+    letter-spacing: 'letter-spacing-100',
+    paragraph-spacing: 'paragraph-spacing-00'
   ),
   'HeadingLarge': (
     font-family: map.get($font-family, 'text'),
-    font-size: 24,
-    line-height: 32,
+    font-size: 'font-size-500',         // 24px/20px
+    line-height: 'line-height-500',      // 32px/26px
     font-weight: (400, 600),
-    paragraph-spacing: 0
+    letter-spacing: 'letter-spacing-100',
+    paragraph-spacing: 'paragraph-spacing-00'
   ),
   'HeadingMedium': (
     font-family: map.get($font-family, 'text'),
-    font-size: 20,
-    line-height: 26,
+    font-size: 'font-size-400',         // 20px/18px
+    line-height: 'line-height-400',      // 26px/24px
     font-weight: (400, 600),
-    paragraph-spacing: 0
+    letter-spacing: 'letter-spacing-100',
+    paragraph-spacing: 'paragraph-spacing-00'
   ),
   'HeadingSmall': (
     font-family: map.get($font-family, 'text'),
-    font-size: 18,
-    line-height: 24,
+    font-size: 'font-size-300',         // 18px/16px
+    line-height: 'line-height-300',      // 24px/22px
     font-weight: (400, 600),
-    paragraph-spacing: 0
+    letter-spacing: 'letter-spacing-100',
+    paragraph-spacing: 'paragraph-spacing-00'
   ),
-  'BodyLarge': (
-    font-family: map.get($font-family, 'text'),
-    font-size: 16,
-    line-height: 24,
-    font-weight: (400, 500, 600),
-    paragraph-spacing: 12
-  ),
-  'BodyMedium': (
-    font-family: map.get($font-family, 'text'),
-    font-size: 14,
-    line-height: 20,
-    font-weight: (400, 500, 600),
-    paragraph-spacing: 11
-  ),
-  'BodySmall': (
-    font-family: map.get($font-family, 'text'),
-    font-size: 12,
-    line-height: 18,
-    font-weight: (400, 500, 600),
-    paragraph-spacing: 10
-  ),
-  'BodyXSmall': (
-    font-family: map.get($font-family, 'text'),
-    font-size: 10,
-    line-height: 14,
-    font-weight: (400, 500, 600),
-    paragraph-spacing: 8
-  )
-);
 
-// Type Scale Tokens - Small Screen (Mobile)
-$type-scale-small: (
-  'DisplayXLarge': (
-    font-size: 40,
-    line-height: 48
-  ),
-  'DisplayLarge': (
-    font-size: 38,
-    line-height: 46
-  ),
-  'DisplayMedium': (
-    font-size: 36,
-    line-height: 42
-  ),
-  'DisplaySmall': (
-    font-size: 34,
-    line-height: 40
-  ),
-  'Heading2XLarge': (
-    font-size: 32,
-    line-height: 38
-  ),
-  'HeadingXLarge': ( 
-    font-size: 24,
-    line-height: 32
-  ),
-  'HeadingLarge': (
-    font-size: 20,
-    line-height: 26
-  ),
-  'HeadingMedium': (
-    font-size: 18,
-    line-height: 24
-  ),
-  'HeadingSmall': (
-    font-size: 16,
-    line-height: 22
-  ),
+  // Body Types
   'BodyLarge': (
-    font-size: 16,
-    line-height: 24
-    ),
+    font-family: map.get($font-family, 'text'),
+    font-size: 'font-size-200',         // 16px
+    line-height: 'line-height-200',      // 24px
+    font-weight: (400, 500, 600),
+    letter-spacing: 'letter-spacing-100',
+    paragraph-spacing: 'paragraph-spacing-400' // 12px
+  ),
   'BodyMedium': (
-    font-size: 14,
-    line-height: 20
+    font-family: map.get($font-family, 'text'),
+    font-size: 'font-size-100',         // 14px
+    line-height: 'line-height-100',      // 20px
+    font-weight: (400, 500, 600),
+    letter-spacing: 'letter-spacing-100',
+    paragraph-spacing: 'paragraph-spacing-300' // 11px
   ),
   'BodySmall': (
-    font-size: 12,
-    line-height: 18
+    font-family: map.get($font-family, 'text'),
+    font-size: 'font-size-50',          // 12px
+    line-height: 'line-height-75',       // 18px
+    font-weight: (400, 500, 600),
+    letter-spacing: 'letter-spacing-100',
+    paragraph-spacing: 'paragraph-spacing-200' // 10px
   ),
   'BodyXSmall': (
-    font-size: 10,
-    line-height: 14
+    font-family: map.get($font-family, 'text'),
+    font-size: 'font-size-25',          // 10px
+    line-height: 'line-height-25',       // 14px
+    font-weight: (400, 500, 600),
+    letter-spacing: 'letter-spacing-100',
+    paragraph-spacing: 'paragraph-spacing-100' // 8px
   )
 );
 
@@ -605,37 +567,23 @@ $type-scale-small: (
     .#{$type}#{get-weight-name($weight)} {
       // Base styles
       font-family: map.get($styles, 'font-family');
-      margin-bottom: pxToRem(map.get($styles, 'paragraph-spacing'));
-      font-weight: $weight;
       
-      // Mobile styles
-      @media screen and (max-width: $breakpoint-mobile) {
-        & {
-          font-size: pxToRem(map.get(map.get($type-scale-small, $type), 'font-size'));
-          line-height: pxToRem(map.get(map.get($type-scale-small, $type), 'line-height'));
-        }
-      }
-      
-      // Desktop styles
-      @media screen and (min-width: $breakpoint-mobile) {
-        & {
-          font-size: pxToRem(map.get($styles, 'font-size'));
-          line-height: pxToRem(map.get($styles, 'line-height'));
-        }
-      }
-      
-      // Letter spacing for Display classes
-      & {
-        @if $type == 'DisplayXLarge' or $type == 'DisplayLarge' 
-        or $type == 'DisplayMedium' or $type == 'DisplaySmall' {
-          @if $weight == 400 or $weight == 500 {
-            letter-spacing: -1px;
-          } @else if $weight == 600 {
-            letter-spacing: normal;
-          }
+      // Extend base utility classes
+      @extend .#{map.get($styles, 'font-size')};
+      @extend .#{map.get($styles, 'line-height')};
+      @extend .font-weight-#{$weight};
+      @extend .#{map.get($styles, 'paragraph-spacing')};
+
+      // Special handling for letter spacing in Display types
+      @if $type == 'DisplayXLarge' or $type == 'DisplayLarge' 
+      or $type == 'DisplayMedium' or $type == 'DisplaySmall' {
+        @if $weight == 400 or $weight == 500 {
+          @extend .letter-spacing-50;    // -1px
         } @else {
-          letter-spacing: normal;
+          @extend .letter-spacing-100;    // normal
         }
+      } @else {
+        @extend .#{map.get($styles, 'letter-spacing')};
       }
     }
   }
@@ -648,7 +596,7 @@ $type-scale-small: (
   $min-font-size,
   $max-font-size,
   $min-vw: 320,
-  $max-vw: 1600
+  $max-vw: 1200   // can be 1600 as well
 ) {
   font-size: clamp(
     pxToRem($min-font-size),

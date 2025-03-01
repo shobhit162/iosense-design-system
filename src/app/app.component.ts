@@ -5,7 +5,7 @@ import { TypographyDemoComponent } from './components/typography-demo/typography
 
 @Component({
   selector: 'app-root',
-  imports: [TypographyDemoComponent],
+  imports: [TypographyExamplesComponent, TypographyDemoComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })

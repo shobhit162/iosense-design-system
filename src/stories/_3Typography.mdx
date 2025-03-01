@@ -1,0 +1,1269 @@
+import { Meta } from "@storybook/blocks";
+
+<Meta title="Tokens/Typography" />
+
+export const typography = {
+  fontWeight: {
+    100: { name: "global-fw-100", value: 100, label: "Thin" },
+    200: { name: "global-fw-200", value: 200, label: "ExtraLight" },
+    300: { name: "global-fw-300", value: 300, label: "Light" },
+    400: { name: "global-fw-400", value: 400, label: "Regular" },
+    500: { name: "global-fw-500", value: 500, label: "Medium" },
+    600: { name: "global-fw-600", value: 600, label: "SemiBold" },
+    700: { name: "global-fw-700", value: 700, label: "Bold" },
+    800: { name: "global-fw-800", value: 800, label: "ExtraBold" },
+    900: { name: "global-fw-900", value: 900, label: "Black" },
+  },
+  fontWeightScale: {
+    "font-weight-400": {
+      name: "font-weight-400",
+      desktop: { value: 400, label: "Regular" },
+      mobile: { value: 400, label: "Regular" },
+    },
+    "font-weight-500": {
+      name: "font-weight-500",
+      desktop: { value: 500, label: "Medium" },
+      mobile: { value: 500, label: "Medium" },
+    },
+    "font-weight-600": {
+      name: "font-weight-600",
+      desktop: { value: 600, label: "SemiBold" },
+      mobile: { value: 600, label: "SemiBold" },
+    },
+    "font-weight-700": {
+      name: "font-weight-700",
+      desktop: { value: 700, label: "Bold" },
+      mobile: { value: 700, label: "Bold" },
+    },
+  },
+  fontSize: {
+    10: { name: "global-fz-10", value: "0.625rem", px: "10px" },
+    12: { name: "global-fz-12", value: "0.75rem", px: "12px" },
+    14: { name: "global-fz-14", value: "0.875rem", px: "14px" },
+    16: { name: "global-fz-16", value: "1rem", px: "16px" },
+    18: { name: "global-fz-18", value: "1.125rem", px: "18px" },
+    20: { name: "global-fz-20", value: "1.25rem", px: "20px" },
+    24: { name: "global-fz-24", value: "1.5rem", px: "24px" },
+    32: { name: "global-fz-32", value: "2rem", px: "32px" },
+    34: { name: "global-fz-34", value: "2.125rem", px: "34px" },
+    36: { name: "global-fz-36", value: "2.25rem", px: "36px" },
+    38: { name: "global-fz-38", value: "2.375rem", px: "38px" },
+    40: { name: "global-fz-40", value: "2.5rem", px: "40px" },
+    48: { name: "global-fz-48", value: "3rem", px: "48px" },
+    56: { name: "global-fz-56", value: "3.5rem", px: "56px" },
+    64: { name: "global-fz-64", value: "4rem", px: "64px" },
+    72: { name: "global-fz-72", value: "4.5rem", px: "72px" },
+  },
+  fontSizeScale: {
+    "font-size-25": {
+      name: "font-size-25",
+      desktop: { size: "10px", value: "0.625rem" },
+      mobile: { size: "10px", value: "0.625rem" },
+    },
+    "font-size-50": {
+      name: "font-size-50",
+      desktop: { size: "12px", value: "0.75rem" },
+      mobile: { size: "12px", value: "0.75rem" },
+    },
+    "font-size-100": {
+      name: "font-size-100",
+      desktop: { size: "14px", value: "0.875rem" },
+      mobile: { size: "14px", value: "0.875rem" },
+    },
+    "font-size-200": {
+      name: "font-size-200",
+      desktop: { size: "16px", value: "1rem" },
+      mobile: { size: "16px", value: "1rem" },
+    },
+    "font-size-300": {
+      name: "font-size-300",
+      desktop: { size: "18px", value: "1.125rem" },
+      mobile: { size: "16px", value: "1rem" },
+    },
+    "font-size-400": {
+      name: "font-size-400",
+      desktop: { size: "20px", value: "1.25rem" },
+      mobile: { size: "18px", value: "1.125rem" },
+    },
+    "font-size-500": {
+      name: "font-size-500",
+      desktop: { size: "24px", value: "1.5rem" },
+      mobile: { size: "20px", value: "1.25rem" },
+    },
+    "font-size-600": {
+      name: "font-size-600",
+      desktop: { size: "32px", value: "2rem" },
+      mobile: { size: "24px", value: "1.5rem" },
+    },
+    "font-size-700": {
+      name: "font-size-700",
+      desktop: { size: "40px", value: "2.5rem" },
+      mobile: { size: "32px", value: "2rem" },
+    },
+    "font-size-800": {
+      name: "font-size-800",
+      desktop: { size: "48px", value: "3rem" },
+      mobile: { size: "34px", value: "2.125rem" },
+    },
+    "font-size-900": {
+      name: "font-size-900",
+      desktop: { size: "56px", value: "3.5rem" },
+      mobile: { size: "36px", value: "2.25rem" },
+    },
+    "font-size-1000": {
+      name: "font-size-1000",
+      desktop: { size: "64px", value: "4rem" },
+      mobile: { size: "38px", value: "2.375rem" },
+    },
+    "font-size-1100": {
+      name: "font-size-1100",
+      desktop: { size: "72px", value: "4.5rem" },
+      mobile: { size: "40px", value: "2.5rem" },
+    },
+  },
+  lineHeight: {
+    0: { name: "global-lh-0", value: "0", px: "0px" },
+    14: { name: "global-lh-14", value: "0.875rem", px: "14px" },
+    16: { name: "global-lh-16", value: "1rem", px: "16px" },
+    18: { name: "global-lh-18", value: "1.125rem", px: "18px" },
+    20: { name: "global-lh-20", value: "1.25rem", px: "20px" },
+    22: { name: "global-lh-22", value: "1.375rem", px: "22px" },
+    24: { name: "global-lh-24", value: "1.5rem", px: "24px" },
+    26: { name: "global-lh-26", value: "1.625rem", px: "26px" },
+    32: { name: "global-lh-32", value: "2rem", px: "32px" },
+    38: { name: "global-lh-38", value: "2.375rem", px: "38px" },
+    42: { name: "global-lh-42", value: "2.625rem", px: "42px" },
+    46: { name: "global-lh-46", value: "2.875rem", px: "46px" },
+    48: { name: "global-lh-48", value: "3rem", px: "48px" },
+    56: { name: "global-lh-56", value: "3.5rem", px: "56px" },
+    64: { name: "global-lh-64", value: "4rem", px: "64px" },
+    70: { name: "global-lh-70", value: "4.375rem", px: "70px" },
+    78: { name: "global-lh-78", value: "4.875rem", px: "78px" },
+  },
+  lineHeightScale: {
+    "line-height-00": {
+      name: "line-height-00",
+      desktop: { size: "0px", value: "0" },
+      mobile: { size: "0px", value: "0" },
+    },
+    "line-height-25": {
+      name: "line-height-25",
+      desktop: { size: "14px", value: "0.875rem" },
+      mobile: { size: "14px", value: "0.875rem" },
+    },
+    "line-height-50": {
+      name: "line-height-50",
+      desktop: { size: "16px", value: "1rem" },
+      mobile: { size: "16px", value: "1rem" },
+    },
+    "line-height-75": {
+      name: "line-height-75",
+      desktop: { size: "18px", value: "1.125rem" },
+      mobile: { size: "18px", value: "1.125rem" },
+    },
+    "line-height-100": {
+      name: "line-height-100",
+      desktop: { size: "20px", value: "1.25rem" },
+      mobile: { size: "20px", value: "1.25rem" },
+    },
+    "line-height-200": {
+      name: "line-height-200",
+      desktop: { size: "24px", value: "1.5rem" },
+      mobile: { size: "24px", value: "1.5rem" },
+    },
+    "line-height-300": {
+      name: "line-height-300",
+      desktop: { size: "24px", value: "1.5rem" },
+      mobile: { size: "22px", value: "1.375rem" },
+    },
+    "line-height-400": {
+      name: "line-height-400",
+      desktop: { size: "26px", value: "1.625rem" },
+      mobile: { size: "24px", value: "1.5rem" },
+    },
+    "line-height-500": {
+      name: "line-height-500",
+      desktop: { size: "32px", value: "2rem" },
+      mobile: { size: "26px", value: "1.625rem" },
+    },
+    "line-height-600": {
+      name: "line-height-600",
+      desktop: { size: "38px", value: "2.375rem" },
+      mobile: { size: "32px", value: "2rem" },
+    },
+    "line-height-700": {
+      name: "line-height-700",
+      desktop: { size: "46px", value: "2.875rem" },
+      mobile: { size: "38px", value: "2.375rem" },
+    },
+    "line-height-800": {
+      name: "line-height-800",
+      desktop: { size: "56px", value: "3.5rem" },
+      mobile: { size: "40px", value: "2.5rem" },
+    },
+    "line-height-900": {
+      name: "line-height-900",
+      desktop: { size: "64px", value: "4rem" },
+      mobile: { size: "42px", value: "2.625rem" },
+    },
+    "line-height-1000": {
+      name: "line-height-1000",
+      desktop: { size: "70px", value: "4.375rem" },
+      mobile: { size: "46px", value: "2.875rem" },
+    },
+    "line-height-1100": {
+      name: "line-height-1100",
+      desktop: { size: "78px", value: "4.875rem" },
+      mobile: { size: "48px", value: "3rem" },
+    },
+  },
+  letterSpacing: {
+    compressed: { name: "global-ls-compressed", value: "-2px" },
+    condensed: { name: "global-ls-condensed", value: "-1px" },
+    normal: { name: "global-ls-normal", value: "normal" },
+    expanded: { name: "global-ls-expanded", value: "1px" },
+    extended: { name: "global-ls-extended", value: "2px" },
+  },
+  letterSpacingScale: {
+    "letter-spacing-50": {
+      name: "letter-spacing-50",
+      desktop: { value: "-1px", label: "condensed" },
+      mobile: { value: "-1px", label: "condensed" },
+    },
+    "letter-spacing-100": {
+      name: "letter-spacing-100",
+      desktop: { value: "normal", label: "normal" },
+      mobile: { value: "normal", label: "normal" },
+    },
+  },
+  paragraphSpacing: {
+    "00": { name: "global-ps-00", value: "0", px: "0px" },
+    "08": { name: "global-ps-08", value: "0.5rem", px: "8px" },
+    10: { name: "global-ps-10", value: "0.625rem", px: "10px" },
+    11: { name: "global-ps-11", value: "0.6875rem", px: "11px" },
+    12: { name: "global-ps-12", value: "0.75rem", px: "12px" },
+  },
+  paragraphSpacingScale: {
+    "paragraph-spacing-00": {
+      name: "paragraph-spacing-00",
+      desktop: { size: "0px", value: "0" },
+      mobile: { size: "0px", value: "0" },
+    },
+    "paragraph-spacing-100": {
+      name: "paragraph-spacing-100",
+      desktop: { size: "8px", value: "0.5rem" },
+      mobile: { size: "8px", value: "0.5rem" },
+    },
+    "paragraph-spacing-200": {
+      name: "paragraph-spacing-200",
+      desktop: { size: "10px", value: "0.625rem" },
+      mobile: { size: "10px", value: "0.625rem" },
+    },
+    "paragraph-spacing-300": {
+      name: "paragraph-spacing-300",
+      desktop: { size: "11px", value: "0.6875rem" },
+      mobile: { size: "11px", value: "0.6875rem" },
+    },
+    "paragraph-spacing-400": {
+      name: "paragraph-spacing-400",
+      desktop: { size: "12px", value: "0.75rem" },
+      mobile: { size: "12px", value: "0.75rem" },
+    },
+  },
+  listSpacing: {
+    "00": { name: "global-lis-00", value: "0", px: "0px" },
+    "04": { name: "global-lis-04", value: "0.25rem", px: "4px" },
+    "08": { name: "global-lis-08", value: "0.5rem", px: "8px" },
+    12: { name: "global-lis-12", value: "0.75rem", px: "12px" },
+    16: { name: "global-lis-16", value: "1rem", px: "16px" },
+    20: { name: "global-lis-20", value: "1.25rem", px: "20px" },
+    24: { name: "global-lis-24", value: "1.5rem", px: "24px" },
+  },
+  listSpacingScale: {
+    "list-spacing-00": {
+      name: "list-spacing-00",
+      desktop: { size: "0px", value: "0" },
+      mobile: { size: "0px", value: "0" },
+    },
+    "list-spacing-100": {
+      name: "list-spacing-100",
+      desktop: { size: "8px", value: "0.5rem" },
+      mobile: { size: "8px", value: "0.5rem" },
+    },
+  },
+  typeScale: {
+    display: {
+      DisplayXLargeRegular: {
+        fontSize: { class: 'font-size-1100', desktop: '72px', mobile: '40px' },
+        lineHeight: { class: 'line-height-1100', desktop: '78px', mobile: '48px' },
+        letterSpacing: { class: 'letter-spacing-50', value: '-1px' },
+        fontWeight: { class: 'font-weight-400', value: 400 },
+        paragraphSpacing: { class: 'paragraph-spacing-00', value: '0px' }
+      },
+      DisplayXLargeMedium: {
+        fontSize: { class: 'font-size-1100', desktop: '72px', mobile: '40px' },
+        lineHeight: { class: 'line-height-1100', desktop: '78px', mobile: '48px' },
+        letterSpacing: { class: 'letter-spacing-50', value: '-1px' },
+        fontWeight: { class: 'font-weight-500', value: 500 },
+        paragraphSpacing: { class: 'paragraph-spacing-00', value: '0px' }
+      },
+      DisplayXLargeSemibold: {
+        fontSize: { class: 'font-size-1100', desktop: '72px', mobile: '40px' },
+        lineHeight: { class: 'line-height-1100', desktop: '78px', mobile: '48px' },
+        letterSpacing: { class: 'letter-spacing-100', value: '0' },
+        fontWeight: { class: 'font-weight-600', value: 600 },
+        paragraphSpacing: { class: 'paragraph-spacing-00', value: '0px' }
+      },
+      DisplayLargeRegular: {
+        fontSize: { class: 'font-size-1000', desktop: '64px', mobile: '38px' },
+        lineHeight: { class: 'line-height-1000', desktop: '70px', mobile: '46px' },
+        letterSpacing: { class: 'letter-spacing-50', value: '-1px' },
+        fontWeight: { class: 'font-weight-400', value: 400 },
+        paragraphSpacing: { class: 'paragraph-spacing-00', value: '0px' }
+      },
+      DisplayLargeMedium: {
+        fontSize: { class: 'font-size-1000', desktop: '64px', mobile: '38px' },
+        lineHeight: { class: 'line-height-1000', desktop: '70px', mobile: '46px' },
+        letterSpacing: { class: 'letter-spacing-50', value: '-1px' },
+        fontWeight: { class: 'font-weight-500', value: 500 },
+        paragraphSpacing: { class: 'paragraph-spacing-00', value: '0px' }
+      },
+      DisplayLargeSemibold: {
+        fontSize: { class: 'font-size-1000', desktop: '64px', mobile: '38px' },
+        lineHeight: { class: 'line-height-1000', desktop: '70px', mobile: '46px' },
+        letterSpacing: { class: 'letter-spacing-100', value: '0' },
+        fontWeight: { class: 'font-weight-600', value: 600 },
+        paragraphSpacing: { class: 'paragraph-spacing-00', value: '0px' }
+      },
+      DisplayMediumRegular: {
+        fontSize: { class: 'font-size-900', desktop: '56px', mobile: '36px' },
+        lineHeight: { class: 'line-height-900', desktop: '64px', mobile: '42px' },
+        letterSpacing: { class: 'letter-spacing-50', value: '-1px' },
+        fontWeight: { class: 'font-weight-400', value: 400 },
+        paragraphSpacing: { class: 'paragraph-spacing-00', value: '0px' }
+      },
+      DisplayMediumMedium: {
+        fontSize: { class: 'font-size-900', desktop: '56px', mobile: '36px' },
+        lineHeight: { class: 'line-height-900', desktop: '64px', mobile: '42px' },
+        letterSpacing: { class: 'letter-spacing-50', value: '-1px' },
+        fontWeight: { class: 'font-weight-500', value: 500 },
+        paragraphSpacing: { class: 'paragraph-spacing-00', value: '0px' }
+      },
+      DisplayMediumSemibold: {
+        fontSize: { class: 'font-size-900', desktop: '56px', mobile: '36px' },
+        lineHeight: { class: 'line-height-900', desktop: '64px', mobile: '42px' },
+        letterSpacing: { class: 'letter-spacing-100', value: '0' },
+        fontWeight: { class: 'font-weight-600', value: 600 },
+        paragraphSpacing: { class: 'paragraph-spacing-00', value: '0px' }
+      },
+      DisplaySmallRegular: {
+        fontSize: { class: 'font-size-800', desktop: '48px', mobile: '34px' },
+        lineHeight: { class: 'line-height-800', desktop: '56px', mobile: '40px' },
+        letterSpacing: { class: 'letter-spacing-50', value: '-1px' },
+        fontWeight: { class: 'font-weight-400', value: 400 },
+        paragraphSpacing: { class: 'paragraph-spacing-00', value: '0px' }
+      },
+      DisplaySmallMedium: {
+        fontSize: { class: 'font-size-800', desktop: '48px', mobile: '34px' },
+        lineHeight: { class: 'line-height-800', desktop: '56px', mobile: '40px' },
+        letterSpacing: { class: 'letter-spacing-50', value: '-1px' },
+        fontWeight: { class: 'font-weight-500', value: 500 },
+        paragraphSpacing: { class: 'paragraph-spacing-00', value: '0px' }
+      },
+      DisplaySmallSemibold: {
+        fontSize: { class: 'font-size-800', desktop: '48px', mobile: '34px' },
+        lineHeight: { class: 'line-height-800', desktop: '56px', mobile: '40px' },
+        letterSpacing: { class: 'letter-spacing-100', value: '0' },
+        fontWeight: { class: 'font-weight-600', value: 600 },
+        paragraphSpacing: { class: 'paragraph-spacing-00', value: '0px' }
+      }
+    },
+    heading: {
+        Heading2XLargeRegular: {
+          fontSize: { class: 'font-size-700', desktop: '40px', mobile: '32px' },
+          lineHeight: { class: 'line-height-700', desktop: '46px', mobile: '38px' },
+          letterSpacing: { class: 'letter-spacing-100', value: '0' },
+          fontWeight: { class: 'font-weight-400', value: 400 },
+          paragraphSpacing: { class: 'paragraph-spacing-00', value: '0px' }
+        },
+        Heading2XLargeSemibold: {
+          fontSize: { class: 'font-size-700', desktop: '40px', mobile: '32px' },
+          lineHeight: { class: 'line-height-700', desktop: '46px', mobile: '38px' },
+          letterSpacing: { class: 'letter-spacing-100', value: '0' },
+          fontWeight: { class: 'font-weight-600', value: 600 },
+          paragraphSpacing: { class: 'paragraph-spacing-00', value: '0px' }
+        },
+        HeadingXLargeRegular: {
+          fontSize: { class: 'font-size-600', desktop: '32px', mobile: '24px' },
+          lineHeight: { class: 'line-height-600', desktop: '38px', mobile: '32px' },
+          letterSpacing: { class: 'letter-spacing-100', value: '0' },
+          fontWeight: { class: 'font-weight-400', value: 400 },
+          paragraphSpacing: { class: 'paragraph-spacing-00', value: '0px' }
+        },
+        HeadingXLargeSemibold: {
+          fontSize: { class: 'font-size-600', desktop: '32px', mobile: '24px' },
+          lineHeight: { class: 'line-height-600', desktop: '38px', mobile: '32px' },
+          letterSpacing: { class: 'letter-spacing-100', value: '0' },
+          fontWeight: { class: 'font-weight-600', value: 600 },
+          paragraphSpacing: { class: 'paragraph-spacing-00', value: '0px' }
+        },
+        HeadingLargeRegular: {
+          fontSize: { class: 'font-size-500', desktop: '24px', mobile: '20px' },
+          lineHeight: { class: 'line-height-500', desktop: '32px', mobile: '26px' },
+          letterSpacing: { class: 'letter-spacing-100', value: '0' },
+          fontWeight: { class: 'font-weight-400', value: 400 },
+          paragraphSpacing: { class: 'paragraph-spacing-00', value: '0px' }
+        },
+        HeadingLargeSemibold: {
+          fontSize: { class: 'font-size-500', desktop: '24px', mobile: '20px' },
+          lineHeight: { class: 'line-height-500', desktop: '32px', mobile: '26px' },
+          letterSpacing: { class: 'letter-spacing-100', value: '0' },
+          fontWeight: { class: 'font-weight-600', value: 600 },
+          paragraphSpacing: { class: 'paragraph-spacing-00', value: '0px' }
+        },
+        HeadingMediumRegular: {
+          fontSize: { class: 'font-size-400', desktop: '20px', mobile: '18px' },
+          lineHeight: { class: 'line-height-400', desktop: '26px', mobile: '24px' },
+          letterSpacing: { class: 'letter-spacing-100', value: '0' },
+          fontWeight: { class: 'font-weight-400', value: 400 },
+          paragraphSpacing: { class: 'paragraph-spacing-00', value: '0px' }
+        },
+        HeadingMediumSemibold: {
+          fontSize: { class: 'font-size-400', desktop: '20px', mobile: '18px' },
+          lineHeight: { class: 'line-height-400', desktop: '26px', mobile: '24px' },
+          letterSpacing: { class: 'letter-spacing-100', value: '0' },
+          fontWeight: { class: 'font-weight-600', value: 600 },
+          paragraphSpacing: { class: 'paragraph-spacing-00', value: '0px' }
+        },
+        HeadingSmallRegular: {
+          fontSize: { class: 'font-size-300', desktop: '18px', mobile: '16px' },
+          lineHeight: { class: 'line-height-300', desktop: '24px', mobile: '22px' },
+          letterSpacing: { class: 'letter-spacing-100', value: '0' },
+          fontWeight: { class: 'font-weight-400', value: 400 },
+          paragraphSpacing: { class: 'paragraph-spacing-00', value: '0px' }
+        },
+        HeadingSmallSemibold: {
+          fontSize: { class: 'font-size-300', desktop: '18px', mobile: '16px' },
+          lineHeight: { class: 'line-height-300', desktop: '24px', mobile: '22px' },
+          letterSpacing: { class: 'letter-spacing-100', value: '0' },
+          fontWeight: { class: 'font-weight-600', value: 600 },
+          paragraphSpacing: { class: 'paragraph-spacing-00', value: '0px' }
+        }
+    },
+    body: {
+        BodyLargeRegular: {
+          fontSize: { class: 'font-size-200', desktop: '16px', mobile: '16px' },
+          lineHeight: { class: 'line-height-200', desktop: '24px', mobile: '24px' },
+          letterSpacing: { class: 'letter-spacing-100', value: '0' },
+          fontWeight: { class: 'font-weight-400', value: 400 },
+          paragraphSpacing: { class: 'paragraph-spacing-400', value: '12px' }
+        },
+        BodyLargeMedium: {
+          fontSize: { class: 'font-size-200', desktop: '16px', mobile: '16px' },
+          lineHeight: { class: 'line-height-200', desktop: '24px', mobile: '24px' },
+          letterSpacing: { class: 'letter-spacing-100', value: '0' },
+          fontWeight: { class: 'font-weight-500', value: 500 },
+          paragraphSpacing: { class: 'paragraph-spacing-400', value: '12px' }
+        },
+        BodyLargeSemibold: {
+          fontSize: { class: 'font-size-200', desktop: '16px', mobile: '16px' },
+          lineHeight: { class: 'line-height-200', desktop: '24px', mobile: '24px' },
+          letterSpacing: { class: 'letter-spacing-100', value: '0' },
+          fontWeight: { class: 'font-weight-600', value: 600 },
+          paragraphSpacing: { class: 'paragraph-spacing-400', value: '12px' }
+        },
+        BodyMediumRegular: {
+          fontSize: { class: 'font-size-100', desktop: '14px', mobile: '14px' },
+          lineHeight: { class: 'line-height-100', desktop: '20px', mobile: '20px' },
+          letterSpacing: { class: 'letter-spacing-100', value: '0' },
+          fontWeight: { class: 'font-weight-400', value: 400 },
+          paragraphSpacing: { class: 'paragraph-spacing-300', value: '11px' }
+        },
+        BodyMediumMedium: {
+          fontSize: { class: 'font-size-100', desktop: '14px', mobile: '14px' },
+          lineHeight: { class: 'line-height-100', desktop: '20px', mobile: '20px' },
+          letterSpacing: { class: 'letter-spacing-100', value: '0' },
+          fontWeight: { class: 'font-weight-500', value: 500 },
+          paragraphSpacing: { class: 'paragraph-spacing-300', value: '11px' }
+        },
+        BodyMediumSemibold: {
+          fontSize: { class: 'font-size-100', desktop: '14px', mobile: '14px' },
+          lineHeight: { class: 'line-height-100', desktop: '20px', mobile: '20px' },
+          letterSpacing: { class: 'letter-spacing-100', value: '0' },
+          fontWeight: { class: 'font-weight-600', value: 600 },
+          paragraphSpacing: { class: 'paragraph-spacing-300', value: '11px' }
+        },
+        BodySmallRegular: {
+          fontSize: { class: 'font-size-50', desktop: '12px', mobile: '12px' },
+          lineHeight: { class: 'line-height-75', desktop: '18px', mobile: '18px' },
+          letterSpacing: { class: 'letter-spacing-100', value: '0' },
+          fontWeight: { class: 'font-weight-400', value: 400 },
+          paragraphSpacing: { class: 'paragraph-spacing-200', value: '10px' }
+        },
+        BodySmallMedium: {
+          fontSize: { class: 'font-size-50', desktop: '12px', mobile: '12px' },
+          lineHeight: { class: 'line-height-75', desktop: '18px', mobile: '18px' },
+          letterSpacing: { class: 'letter-spacing-100', value: '0' },
+          fontWeight: { class: 'font-weight-500', value: 500 },
+          paragraphSpacing: { class: 'paragraph-spacing-200', value: '10px' }
+        },
+        BodySmallSemibold: {
+          fontSize: { class: 'font-size-50', desktop: '12px', mobile: '12px' },
+          lineHeight: { class: 'line-height-75', desktop: '18px', mobile: '18px' },
+          letterSpacing: { class: 'letter-spacing-100', value: '0' },
+          fontWeight: { class: 'font-weight-600', value: 600 },
+          paragraphSpacing: { class: 'paragraph-spacing-200', value: '10px' }
+        },
+        BodyXSmallRegular: {
+          fontSize: { class: 'font-size-25', desktop: '10px', mobile: '10px' },
+          lineHeight: { class: 'line-height-25', desktop: '14px', mobile: '14px' },
+          letterSpacing: { class: 'letter-spacing-100', value: '0' },
+          fontWeight: { class: 'font-weight-400', value: 400 },
+          paragraphSpacing: { class: 'paragraph-spacing-100', value: '8px' }
+        },
+        BodyXSmallMedium: {
+          fontSize: { class: 'font-size-25', desktop: '10px', mobile: '10px' },
+          lineHeight: { class: 'line-height-25', desktop: '14px', mobile: '14px' },
+          letterSpacing: { class: 'letter-spacing-100', value: '0' },
+          fontWeight: { class: 'font-weight-500', value: 500 },
+          paragraphSpacing: { class: 'paragraph-spacing-100', value: '8px' }
+        },
+        BodyXSmallSemibold: {
+          fontSize: { class: 'font-size-25', desktop: '10px', mobile: '10px' },
+          lineHeight: { class: 'line-height-25', desktop: '14px', mobile: '14px' },
+          letterSpacing: { class: 'letter-spacing-100', value: '0' },
+          fontWeight: { class: 'font-weight-600', value: 600 },
+          paragraphSpacing: { class: 'paragraph-spacing-100', value: '8px' }
+        }
+    }
+  },
+};
+
+<div className="sb-container">
+  <div className="sb-section-title">
+    # Typography 
+    These tokens should be used for consistent text styling across applications.
+  </div>
+
+  <div className="sb-section">
+    <div className="sb-typography-demo">
+      <h2>Font Weight</h2>
+      <table className="sb-table">
+        <thead>
+          <tr>
+            <th>Token Name</th>
+            <th>Value</th>
+            <th>Example</th>
+          </tr>
+        </thead>
+        <tbody>
+          {Object.entries(typography.fontWeight).map(
+            ([key, { name, value, label }]) => (
+              <tr key={key}>
+                <td>{name}</td>
+                <td>{label}</td>
+                <td>
+                  <span style={{ fontWeight: value }}>Hello, Faclon!</span>
+                </td>
+              </tr>
+            ),
+          )}
+        </tbody>
+      </table>
+      <h2>Font Weight Scale Classes</h2>
+      <table className="sb-table">
+        <thead>
+          <tr>
+            <th>Token Name</th>
+            <th>Desktop Value</th>
+            <th>Mobile Value</th>
+          </tr>
+        </thead>
+        <tbody>
+          {Object.entries(typography.fontWeightScale).map(
+            ([key, { name, desktop, mobile }]) => (
+              <tr key={key}>
+                <td>{name}</td>
+                <td>
+                  {desktop.label} ({desktop.value})
+                </td>
+                <td>
+                  {mobile.label} ({mobile.value})
+                </td>
+              </tr>
+            ),
+          )}
+        </tbody>
+      </table>
+      <h2>Font Size</h2>
+      <div className="sb-font-size-demo">
+        {Object.entries(typography.fontSize).map(([key, { name, value }]) => (
+          <div className="sb-font-size-item" key={key}>
+            <code>{name}</code>
+            <span className={name} style={{ fontSize: value }}>
+              Hello, Faclon!
+            </span>
+          </div>
+        ))}
+      </div>
+      <h2>Font Size Scale Classes</h2>
+      <table className="sb-table">
+        <thead>
+          <tr>
+            <th>Token Name</th>
+            <th>Desktop Value</th>
+            <th>Mobile Value</th>
+          </tr>
+        </thead>
+        <tbody>
+          {Object.entries(typography.fontSizeScale).map(
+            ([key, { name, desktop, mobile }]) => (
+              <tr key={key}>
+                <td>{name}</td>
+                <td>
+                  {desktop.size} ({desktop.value})
+                </td>
+                <td>
+                  {mobile.size} ({mobile.value})
+                </td>
+              </tr>
+            ),
+          )}
+        </tbody>
+      </table>{" "}
+      <h2>Line Height</h2>
+      <table className="sb-table">
+        <thead>
+          <tr>
+            <th>Token Name</th>
+            <th>Value</th>
+            <th>Example</th>
+          </tr>
+        </thead>
+        <tbody>
+          {Object.entries(typography.lineHeight).map(
+            ([key, { name, value, px }]) => (
+              <tr key={key}>
+                <td>{name}</td>
+                <td>{px}</td>
+                <td>
+                  <p
+                    style={{
+                      lineHeight: value,
+                      border: "1px dashed #ccc",
+                      margin: 0,
+                    }}
+                  >
+                    Hello, Faclon!
+                    <br />
+                    This is an example of {px} line height.
+                  </p>
+                </td>
+              </tr>
+            ),
+          )}
+        </tbody>
+      </table>
+      <h2>Line Height Scale Classes</h2>
+      <table className="sb-table">
+        <thead>
+          <tr>
+            <th>Token Name</th>
+            <th>Desktop Value</th>
+            <th>Mobile Value</th>
+          </tr>
+        </thead>
+        <tbody>
+          {Object.entries(typography.lineHeightScale).map(
+            ([key, { name, desktop, mobile }]) => (
+              <tr key={key}>
+                <td>{name}</td>
+                <td>
+                  {desktop.size} ({desktop.value})
+                </td>
+                <td>
+                  {mobile.size} ({mobile.value})
+                </td>
+              </tr>
+            ),
+          )}
+        </tbody>
+      </table>{" "}
+      <h2>Letter Spacing</h2>
+      <table className="sb-table">
+        <thead>
+          <tr>
+            <th>Token Name</th>
+            <th>Value</th>
+            <th>Example</th>
+          </tr>
+        </thead>
+        <tbody>
+          {Object.entries(typography.letterSpacing).map(
+            ([key, { name, value }]) => (
+              <tr key={key}>
+                <td>{name}</td>
+                <td>{value}</td>
+                <td>
+                  <span style={{ letterSpacing: value }}>Hello, Faclon!</span>
+                </td>
+              </tr>
+            ),
+          )}
+        </tbody>
+      </table>
+      <h2>Letter Spacing Scale Classes</h2>
+      <table className="sb-table">
+        <thead>
+          <tr>
+            <th>Token Name</th>
+            <th>Desktop Value</th>
+            <th>Mobile Value</th>
+          </tr>
+        </thead>
+        <tbody>
+          {Object.entries(typography.letterSpacingScale).map(
+            ([key, { name, desktop, mobile }]) => (
+              <tr key={key}>
+                <td>{name}</td>
+                <td>
+                  {desktop.value} ({desktop.label})
+                </td>
+                <td>
+                  {mobile.value} ({mobile.label})
+                </td>
+              </tr>
+            ),
+          )}
+        </tbody>
+      </table>{" "}
+      <h2>Paragraph Spacing</h2>
+      <table className="sb-table">
+        <thead>
+          <tr>
+            <th>Token Name</th>
+            <th>Value</th>
+            <th>Example</th>
+          </tr>
+        </thead>
+        <tbody>
+          {Object.entries(typography.paragraphSpacing).map(
+            ([key, { name, value, px }]) => (
+              <tr key={key}>
+                <td>{name}</td>
+                <td>{px}</td>
+                <td>
+                  <div style={{ border: "1px dashed #ccc" }}>
+                    <p style={{ marginBottom: value, margin: 0 }}>
+                      First paragraph
+                    </p>
+                    <p style={{ margin: 0 }}>Second paragraph</p>
+                  </div>
+                </td>
+              </tr>
+            ),
+          )}
+        </tbody>
+      </table>
+      <h2>Paragraph Spacing Scale Classes</h2>
+      <table className="sb-table">
+        <thead>
+          <tr>
+            <th>Token Name</th>
+            <th>Desktop Value</th>
+            <th>Mobile Value</th>
+          </tr>
+        </thead>
+        <tbody>
+          {Object.entries(typography.paragraphSpacingScale).map(
+            ([key, { name, desktop, mobile }]) => (
+              <tr key={key}>
+                <td>{name}</td>
+                <td>
+                  {desktop.size} ({desktop.value})
+                </td>
+                <td>
+                  {mobile.size} ({mobile.value})
+                </td>
+              </tr>
+            ),
+          )}
+        </tbody>
+      </table>
+      <h2>List Spacing</h2>
+      <div className="sb-list-spacing-demo">
+        <h3>Traditional List</h3>
+        {Object.entries(typography.listSpacing).map(
+          ([key, { name, value, px }]) => (
+            <div key={key} className="sb-list-example">
+              <code>
+                {name} ({px})
+              </code>
+              <ul className={`list-traditional ${name}`}>
+                <li>First item</li>
+                <li>Second item</li>
+                <li>Third item</li>
+              </ul>
+            </div>
+          ),
+        )}
+
+        <h3>Flex List</h3>
+        {Object.entries(typography.listSpacing).map(
+          ([key, { name, value, px }]) => (
+            <div key={key} className="sb-list-example">
+              <code>
+                {name} ({px})
+              </code>
+              <ul className={`list-flex ${name}`} style={{ gap: value }}>
+                <li>First item</li>
+                <li>Second item</li>
+                <li>Third item</li>
+              </ul>
+            </div>
+          ),
+        )}
+
+        <h3>Grid List</h3>
+        {Object.entries(typography.listSpacing).map(
+          ([key, { name, value, px }]) => (
+            <div key={key} className="sb-list-example">
+              <code>
+                {name} ({px})
+              </code>
+              <ul
+                className={`list-grid ${name}`}
+                style={{
+                  display: "grid",
+                  gap: value,
+                  gridTemplateColumns: "repeat(3, 1fr)",
+                }}
+              >
+                <li>First item</li>
+                <li>Second item</li>
+                <li>Third item</li>
+              </ul>
+            </div>
+          ),
+        )}
+      </div>
+      <h2>List Spacing Scale Classes</h2>
+      <table className="sb-table">
+        <thead>
+          <tr>
+            <th>Token Name</th>
+            <th>Desktop Value</th>
+            <th>Mobile Value</th>
+          </tr>
+        </thead>
+        <tbody>
+          {Object.entries(typography.listSpacingScale).map(
+            ([key, { name, desktop, mobile }]) => (
+              <tr key={key}>
+                <td>{name}</td>
+                <td>
+                  {desktop.size} ({desktop.value})
+                </td>
+                <td>
+                  {mobile.size} ({mobile.value})
+                </td>
+              </tr>
+            ),
+          )}
+        </tbody>
+      </table>
+      <h2>Fluid Typography</h2>
+      <div className="fluid-typography-section">
+        <p>
+          The fluid typography mixin provides smooth font scaling based on viewport width, 
+          eliminating the need for multiple breakpoints. It uses CSS clamp() to create 
+          a fluid scaling between minimum and maximum font sizes.
+        </p>
+
+        <div className="mixin-documentation">
+          <h3>Mixin Signature</h3>
+          <div className="code-block">
+            ```scss
+            @mixin fluid-type(
+              $min-font-size,    // Minimum font size (for mobile)
+              $max-font-size,    // Maximum font size (for desktop)
+              $min-vw: 320,      // Minimum viewport width
+              $max-vw: 1200      // Maximum viewport width
+            )
+            ```
+          </div>
+        </div>
+
+        <div className="usage-examples">
+          <h3>Basic Usage</h3>
+          <div className="code-block">
+            ```scss
+            .my-heading {
+              @include fluid-type(16, 32);
+            }
+            ```
+            <div className="code-description">
+              This will create text that scales from 16px at 320px viewport to 32px at 1200px viewport. 
+              <p> <b>Note:</b> This class is not pre-defined. You have to declare it as per your requirements.</p>
+            </div>
+          </div>
+
+          <h3>Custom Viewport Range</h3>
+          <div className="code-block">
+            ```scss
+            .hero-title {
+              @include fluid-type(24, 64, 375, 1600);
+            }
+            ```
+            <div className="code-description">
+              Scales from 24px at 375px viewport to 64px at 1600px viewport.
+              <p> <b>Note:</b> This class is not pre-defined. You have to declare it as per your requirements.</p>
+            </div>
+          </div>
+        </div>
+
+        <div className="fluid-typography-tips">
+          <h3>Best Practices</h3>
+          <ul>
+            <li>Use for important headings and hero text that need smooth scaling</li>
+            <li>Consider readability limits when setting min/max sizes</li>
+            <li>Test across different devices to ensure proper scaling</li>
+            <li>Use appropriate viewport ranges for your design needs</li>
+          </ul>
+        </div>
+
+        <div className="common-use-cases">
+          <h3>Common Use Cases</h3>
+          <div className="code-block">
+            ```scss
+            // Hero Heading
+            .hero-heading {
+              @include fluid-type(32, 96);
+            }
+
+            // Section Title
+            .section-title {
+              @include fluid-type(24, 48);
+            }
+
+            // Large Paragraph
+            .lead-text {
+              @include fluid-type(16, 24);
+            }
+            ```
+            <div className="code-description">
+             <p> <b>Note:</b> These classes are not pre-defined. You have to declare them as per your requirements.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <h2>Type Scale Classes</h2>
+      <div className="sb-type-scale-demo">
+        <h3>Display Types</h3>
+        <div className="sb-type-scale-section">
+          {Object.entries(typography.typeScale.display).map(([className, styles]) => (
+            <div className="sb-type-scale-item" key={className}>
+              <div className="sb-type-scale-info">
+                <code>{className}</code>
+                <small>
+                  Font Size Class: {styles.fontSize.class}<br/>
+                  Line Height Class: {styles.lineHeight.class}<br/>
+                  Letter Spacing: {styles.letterSpacing.class} ({styles.letterSpacing.value})<br/>
+                  Font Weight: {styles.fontWeight.class} ({styles.fontWeight.value})<br/>
+                  Paragraph Spacing: {styles.paragraphSpacing.class} ({styles.paragraphSpacing.value})
+                </small>
+              </div>
+              <div className={className}>
+                <div style={{
+                  fontSize : styles.fontSize.desktop,
+                  lineHeight: styles.lineHeight.desktop,
+                  letterSpacing: styles.letterSpacing.value,
+                  fontWeight: styles.fontWeight.value,
+                  marginBottom: styles.paragraphSpacing.value
+                }}>
+                  Hello, Faclon! This is a display class example.
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+
+        <h3>Heading Types</h3>
+        <div className="sb-type-scale-section">
+          {Object.entries(typography.typeScale.heading).map(([className, styles]) => (
+            <div className="sb-type-scale-item" key={className}>
+              <div className="sb-type-scale-info">
+                <code>{className}</code>
+                <small>
+                  Font Size Class: {styles.fontSize.class}<br/>
+                  Line Height Class: {styles.lineHeight.class}<br/>
+                  Letter Spacing: {styles.letterSpacing.class} ({styles.letterSpacing.value})<br/>
+                  Font Weight: {styles.fontWeight.class} ({styles.fontWeight.value})<br/>
+                  Paragraph Spacing: {styles.paragraphSpacing.class} ({styles.paragraphSpacing.value})
+                </small>
+              </div>
+              <div className={className}>
+                <div style={{
+                  fontSize : styles.fontSize.desktop,
+                  lineHeight: styles.lineHeight.desktop,
+                  letterSpacing: styles.letterSpacing.value,
+                  fontWeight: styles.fontWeight.value,
+                  marginBottom: styles.paragraphSpacing.value
+                }}>
+                  Hello, Faclon! This is a heading classes example.
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+
+        <h3>Body Types</h3>
+        <div className="sb-type-scale-section">
+          {Object.entries(typography.typeScale.body).map(([className, styles]) => (
+            <div className="sb-type-scale-item" key={className}>
+              <div className="sb-type-scale-info">
+                <code>{className}</code>
+                <small>
+                  Font Size Class: {styles.fontSize.class}<br/>
+                  Line Height Class: {styles.lineHeight.class}<br/>
+                  Letter Spacing: {styles.letterSpacing.class} ({styles.letterSpacing.value})<br/>
+                  Font Weight: {styles.fontWeight.class} ({styles.fontWeight.value})<br/>
+                  Paragraph Spacing: {styles.paragraphSpacing.class} ({styles.paragraphSpacing.value})
+                </small>
+              </div>
+              <div className={className}>
+                <div style={{
+                  fontSize : styles.fontSize.desktop,
+                  lineHeight: styles.lineHeight.desktop,
+                  letterSpacing: styles.letterSpacing.value,
+                  fontWeight: styles.fontWeight.value,
+                  marginBottom: styles.paragraphSpacing.value
+                }}>
+                  Hello, Faclon! This is a body class example.
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<style>
+  {`
+    .sb-container {
+      margin-bottom: 48px;
+    }
+
+    .sb-section-title {
+      margin-bottom: 32px;
+    }
+
+    .sb-typography-demo {
+      width: 100%;
+    }
+
+    .sb-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-bottom: 32px;
+    }
+
+    .sb-table th,
+    .sb-table td {
+      padding: 12px;
+      border: 1px solid #E6E6E6;
+      text-align: left;
+    }
+
+    .sb-table th {
+      background-color: #F5F5F5;
+      font-weight: 600;
+    }
+
+    .sb-font-size-demo {
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+      margin-bottom: 32px;
+    }
+
+    .sb-font-size-item {
+      display: flex;
+      align-items: center;
+      gap: 24px;
+    }
+
+    .sb-font-size-item code {
+      min-width: 120px;
+      padding: 4px 8px;
+      background-color: #F5F5F5;
+      border-radius: 4px;
+      font-family: monospace;
+    }
+
+     .example-text {
+      font-size: 16px;
+      line-height: 24px;
+    }
+
+    h2 {
+      margin: 32px 0 16px;
+      padding-bottom: 8px;
+      border-bottom: 1px solid #E6E6E6;
+    }
+
+    .sb-mixins-demo pre {
+      background-color: #F5F5F5;
+      padding: 16px;
+      border-radius: 4px;
+      overflow: auto;
+    }
+     .sb-list-spacing-demo {
+      display: flex;
+      flex-direction: column;
+      gap: 32px;
+      margin-bottom: 32px;
+    }
+
+    .sb-list-example {
+      padding: 16px;
+      border: 1px solid #E6E6E6;
+      border-radius: 4px;
+      margin-bottom: 16px;
+    }
+
+    .sb-list-example code {
+      display: block;
+      margin-bottom: 8px;
+      padding: 4px 8px;
+      background-color: #F5F5F5;
+      border-radius: 4px;
+      font-family: monospace;
+    }
+
+    .list-traditional {
+      list-style-type: disc;
+      padding-left: 20px;
+    }
+
+    .list-flex {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .list-grid {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: grid;
+    }
+
+    .sb-list-example ul {
+      margin: 0;
+    }
+
+    .sb-list-example li {
+      background-color: #f5f5f5;
+      padding: 8px;
+      border-radius: 4px;
+    }
+
+    .sb-type-scale-demo {
+      margin-bottom: 48px;
+    }
+
+    .sb-type-scale-section {
+      margin-bottom: 32px;
+    }
+
+    .sb-type-scale-item {
+      padding: 24px;
+      border: 1px solid #E6E6E6;
+      border-radius: 4px;
+      margin-bottom: 16px;
+      background: white;
+    }
+
+    .sb-type-scale-info {
+      margin-bottom: 16px;
+      padding-bottom: 16px;
+      border-bottom: 1px solid #E6E6E6;
+    }
+
+    .sb-type-scale-info code {
+      display: block;
+      padding: 8px 12px;
+      background-color: #F5F5F5;
+      border-radius: 4px;
+      font-family: monospace;
+      margin-bottom: 8px;
+      font-size: 14px;
+    }
+
+    .sb-type-scale-info small {
+      display: block;
+      color: #666;
+      font-size: 14px;
+      line-height: 1.5;
+    }
+
+    .sb-type-scale-item:hover {
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+
+    h3 {
+      margin-top: 32px;
+      padding-bottom: 8px;
+      border-bottom: 2px solid #E6E6E6;
+    }
+
+        .fluid-typography-section {
+      margin-bottom: 48px;
+    }
+
+    .mixin-documentation {
+      margin: 32px 0;
+    }
+
+    .code-block {
+      background: #f8f9fa;
+      padding: 16px;
+      border-radius: 8px;
+      margin: 16px 0;
+      position: relative;
+    }
+
+    .code-description {
+      margin-top: 8px;
+      font-size: 14px;
+      color: #666;
+    }
+
+    .fluid-typography-tips ul {
+      list-style-type: none;
+      padding: 0;
+    }
+
+    .fluid-typography-tips li {
+      margin-bottom: 8px;
+      padding-left: 24px;
+      position: relative;
+    }
+
+    .fluid-typography-tips li:before {
+      content: "•";
+      position: absolute;
+      left: 8px;
+      color: #666;
+    }
+
+    .common-use-cases {
+      margin-top: 32px;
+    }
+  `}
+</style>

@@ -1,0 +1,112 @@
+// Border Width Values
+$border-widths: (
+  'none': 0px,
+  'thinner': 0.5px,
+  'thin': 1px,
+  'thick': 1.5px,
+  'thicker': 2px
+);
+
+// Global Border Width Classes
+@each $name, $value in $border-widths {
+  .global-bw-#{$name} {
+    border-width: $value;
+    border-style: solid;
+  }
+  
+  // Individual border sides
+  .global-bw-t-#{$name} {
+    border-top-width: $value;
+    border-top-style: solid;
+  }
+  
+  .global-bw-r-#{$name} {
+    border-right-width: $value;
+    border-right-style: solid;
+  }
+  
+  .global-bw-b-#{$name} {
+    border-bottom-width: $value;
+    border-bottom-style: solid;
+  }
+  
+  .global-bw-l-#{$name} {
+    border-left-width: $value;
+    border-left-style: solid;
+  }
+}
+
+// Border Style Classes
+$border-styles: (
+  solid,
+  dashed,
+  dotted,
+  double,
+  none
+);
+
+@each $style in $border-styles {
+  .global-bs-#{$style} {
+    border-style: $style;
+  }
+}
+
+// Border Radius Values
+$border-radius: (
+  'none': 0px,
+  'xsmall': 1px,
+  'small': 2px,
+  'medium': 4px,
+  'large': 8px,
+  'xlarge': 12px,
+  '2xlarge': 16px,
+  'max': 1000px
+);
+
+// Global Border Radius Classes
+@each $name, $value in $border-radius {
+  .global-br-#{$name} {
+    border-radius: $value;
+  }
+  
+  // Individual corner border radius
+  .global-br-tl-#{$name} {
+    border-top-left-radius: $value;
+  }
+  
+  .global-br-tr-#{$name} {
+    border-top-right-radius: $value;
+  }
+  
+  .global-br-bl-#{$name} {
+    border-bottom-left-radius: $value;
+  }
+  
+  .global-br-br-#{$name} {
+    border-bottom-right-radius: $value;
+  }
+  
+  // Top corners
+  .global-br-t-#{$name} {
+    border-top-left-radius: $value;
+    border-top-right-radius: $value;
+  }
+  
+  // Bottom corners
+  .global-br-b-#{$name} {
+    border-bottom-left-radius: $value;
+    border-bottom-right-radius: $value;
+  }
+  
+  // Left corners
+  .global-br-l-#{$name} {
+    border-top-left-radius: $value;
+    border-bottom-left-radius: $value;
+  }
+  
+  // Right corners
+  .global-br-r-#{$name} {
+    border-top-right-radius: $value;
+    border-bottom-right-radius: $value;
+  }
+}

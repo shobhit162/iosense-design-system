@@ -1,0 +1,324 @@
+import { Meta } from "@storybook/blocks";
+
+<Meta title="Tokens/Spacing" name="_6Spacing"/>
+
+export const spacing = {
+  values: [  
+    { key: '00', name: 'spacing-00', value: '0px' },
+    { key: '01', name: 'spacing-01', value: '2px' },
+    { key: '02', name: 'spacing-02', value: '4px' },
+    { key: '03', name: 'spacing-03', value: '8px' },
+    { key: '04', name: 'spacing-04', value: '12px' },
+    { key: '05', name: 'spacing-05', value: '16px' },
+    { key: '06', name: 'spacing-06', value: '20px' },
+    { key: '07', name: 'spacing-07', value: '24px' },
+    { key: '08', name: 'spacing-08', value: '32px' },
+    { key: '09', name: 'spacing-09', value: '40px' },
+    { key: '10', name: 'spacing-10', value: '48px' },
+    { key: '11', name: 'spacing-11', value: '56px' }
+  ]
+};
+
+<div className="sb-container">
+  <div className="sb-section-title">
+    # Spacing
+    These tokens provide consistent spacing values across the application through margin, padding, gap, and gutter utilities.
+  </div>
+
+  <div className="sb-section">
+    <h2>Spacing Tokens</h2>
+    <div className="sb-spacing-scale">
+        {spacing.values.map((item) => (
+        <div className="sb-scale-item" key={item.key}>
+            <div className="sb-scale-visual">
+            <div 
+                className="sb-scale-box"
+                style={{ 
+                width: item.value,
+                height: item.value,
+                backgroundColor: '#E5E7EB'
+                }}
+            />
+            </div>
+            <div className="sb-scale-info">
+            <code>{item.value}</code>
+            <span>{item.name}</span>
+            </div>
+        </div>
+        ))}
+    </div>
+    <p> Now let's see how we can use these spacing tokens in margin, padding, gap and gutter classes.</p>
+
+    <h2>Margin Utilities</h2>
+    <div className="sb-demo-section">
+      <div className="sb-utility-group">
+        <h3>All Sides</h3>
+        <div className="sb-demo-box">
+          <div className="sb-demo-content" style={{ margin: '16px', background: '#E5E7EB' }}>
+            <code>.global-m-05</code>
+          </div>
+        </div>
+      </div>
+
+      <div className="sb-utility-group">
+        <h3>Horizontal & Vertical</h3>
+        <div className="sb-demo-box">
+          <div className="sb-demo-content" style={{ margin: '16px 24px', background: '#E5E7EB' }}>
+            <code>.global-mx-07</code>
+          </div>
+          <div className="sb-demo-content" style={{ margin: '24px 16px', background: '#E5E7EB' }}>
+            <code>.global-my-07</code>
+          </div>
+        </div>
+      </div>
+
+      <div className="sb-utility-group">
+        <h3>Individual Sides</h3>
+        <div className="sb-demo-box">
+          <div className="sb-demo-content" style={{ marginTop: '16px', background: '#E5E7EB' }}>
+            <code>.global-mt-05</code>
+          </div>
+          <div className="sb-demo-content" style={{ marginRight: '16px', background: '#E5E7EB' }}>
+            <code>.global-mr-05</code>
+          </div>
+          <div className="sb-demo-content" style={{ marginBottom: '16px', background: '#E5E7EB' }}>
+            <code>.global-mb-05</code>
+          </div>
+          <div className="sb-demo-content" style={{ marginLeft: '16px', background: '#E5E7EB' }}>
+            <code>.global-ml-05</code>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <h2>Padding Utilities</h2>
+    <div className="sb-demo-section">
+      <div className="sb-utility-group">
+        <h3>All Sides</h3>
+        <div className="sb-demo-box">
+          <div className="sb-demo-content" style={{ padding: '16px', background: '#E5E7EB' }}>
+            <code>.global-p-05</code>
+          </div>
+        </div>
+      </div>
+
+      <div className="sb-utility-group">
+        <h3>Horizontal & Vertical</h3>
+        <div className="sb-demo-box">
+          <div className="sb-demo-content" style={{ padding: '16px 24px', background: '#E5E7EB' }}>
+            <code>.global-px-07</code>
+          </div>
+          <div className="sb-demo-content" style={{ padding: '24px 16px', background: '#E5E7EB' }}>
+            <code>.global-py-07</code>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <h2>Gap Utilities</h2>
+    <div className="sb-demo-section">
+      <div className="sb-utility-group">
+        <h3>Flex Gap</h3>
+        <div className="sb-demo-box">
+          <div style={{ 
+            display: 'flex', 
+            gap: '16px', 
+            flexWrap: 'wrap'
+          }}>
+            {Array(4).fill(null).map((_, i) => (
+              <div 
+                key={i}
+                style={{ 
+                  width: '100px', 
+                  height: '100px', 
+                  background: '#E5E7EB' 
+                }}
+              />
+            ))}
+          </div>
+          <code>.global-gap-05</code>
+        </div>
+      </div>
+
+      <div className="sb-utility-group">
+        <h3>Grid Gap</h3>
+        <div className="sb-demo-box">
+          <div style={{ 
+            display: 'grid', 
+            gridTemplateColumns: 'repeat(2, 1fr)',
+            gap: '16px'
+          }}>
+            {Array(4).fill(null).map((_, i) => (
+              <div 
+                key={i}
+                style={{ 
+                  height: '100px', 
+                  background: '#E5E7EB' 
+                }}
+              />
+            ))}
+          </div>
+          <code>.global-gap-05</code>
+        </div>
+      </div>
+    </div>
+
+    <h2>Gutter Utilities</h2>
+    <div className="sb-demo-section">
+      <div className="sb-utility-group">
+        <h3>Container Gutters</h3>
+        <div className="sb-demo-box">
+          <div style={{ margin: '-16px' }}>
+            <div style={{ 
+              display: 'grid', 
+              gridTemplateColumns: 'repeat(2, 1fr)'
+            }}>
+              {Array(4).fill(null).map((_, i) => (
+                <div key={i} style={{ padding: '16px' }}>
+                  <div style={{ 
+                    height: '100px', 
+                    background: '#E5E7EB' 
+                  }} />
+                </div>
+              ))}
+            </div>
+          </div>
+          <code>.global-gutter-05</code>
+        </div>
+      </div>
+    </div>
+
+    <h2>Usage Examples</h2>
+    <div className="sb-code-block">
+      ```html
+      <!-- Margin Examples -->
+      <div class="global-m-05">All sides margin 16px</div>
+      <div class="global-mx-05">Horizontal margin 16px</div>
+      <div class="global-mt-05">Top margin 16px</div>
+
+      <!-- Padding Examples -->
+      <div class="global-p-05">All sides padding 16px</div>
+      <div class="global-py-05">Vertical padding 16px</div>
+
+      <!-- Gap Examples -->
+      <div class="global-gap-05">
+        <div>Item 1</div>
+        <div>Item 2</div>
+      </div>
+
+      <!-- Gutter Examples -->
+      <div class="global-gutter-05">
+        <div>Child with padding</div>
+        <div>Child with padding</div>
+      </div>
+      ```
+    </div>
+  </div>
+</div>
+
+<style>
+  {`
+    .sb-container {
+      margin-bottom: 48px;
+    }
+
+    .sb-section-title {
+      margin-bottom: 32px;
+    }
+
+    .sb-spacing-scale {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      gap: 24px;
+      margin-bottom: 48px;
+    }
+
+    .sb-scale-item {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+
+    .sb-scale-visual {
+      width: 56px;
+      height: 56px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .sb-scale-box {
+      min-width: 2px;
+      min-height: 2px;
+    }
+
+    .sb-scale-info {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+
+    .sb-scale-info code {
+      font-family: monospace;
+      font-size: 14px;
+      color: #666;
+    }
+
+    .sb-scale-info span {
+      font-size: 12px;
+      color: #888;
+    }
+
+    .sb-demo-section {
+      display: grid;
+      gap: 32px;
+      margin-bottom: 48px;
+    }
+
+    .sb-utility-group {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .sb-demo-box {
+      padding: 24px;
+      background: #F9FAFB;
+      border-radius: 8px;
+      border: 1px solid #E5E7EB;
+    }
+
+    .sb-demo-content {
+      padding: 8px;
+      border-radius: 4px;
+    }
+
+    .sb-code-block {
+      background: #F9FAFB;
+      padding: 16px;
+      border-radius: 8px;
+      margin-top: 16px;
+      overflow: auto;
+    }
+
+    code {
+      font-family: monospace;
+      font-size: 14px;
+      padding: 2px 4px;
+      background: #F3F4F6;
+      border-radius: 4px;
+    }
+
+    h2 {
+      margin: 32px 0 16px;
+      padding-bottom: 8px;
+      border-bottom: 1px solid #E6E6E6;
+    }
+
+    h3 {
+      margin: 0;
+      font-size: 16px;
+      color: #374151;
+    }
+  `}
+</style>
