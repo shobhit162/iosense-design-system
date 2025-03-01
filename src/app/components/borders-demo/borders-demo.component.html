@@ -1,0 +1,28 @@
+<div class="demo-container">
+    <h2>Border Width</h2>
+    <div class="demo-section">
+      <div class="demo-item" *ngFor="let width of borderWidths">
+        <div class="example-box" [class]="'global-bw-' + width">
+          global-bw-{{width}}
+        </div>
+      </div>
+    </div>
+
+    <h2>Border Styles</h2>
+    <div class="demo-section">
+      <div class="demo-item" *ngFor="let style of borderStyles">
+        <div class="example-box global-bw-thin" [class]="'global-bs-' + style">
+          global-bs-{{style}}
+        </div>
+      </div>
+    </div>
+
+    <h2>Border Radius</h2>
+    <div class="demo-section">
+      <div class="demo-item" *ngFor="let radius of borderRadiuses">
+        <div class="example-box global-bw-thin" [class]="'global-br-' + radius">
+          global-br-{{radius}}
+        </div>
+      </div>
+    </div>
+  </div>

@@ -128,6 +128,83 @@
             "templateData": "<app-typography-examples></app-typography-examples>\n<!-- <app-typography-demo></app-typography-demo> -->"
         },
         {
+            "name": "BordersDemoComponent",
+            "id": "component-BordersDemoComponent-fb101a196694f04006204ccb39d48b7e315252374cd951c5883dcea569c8f42fe1b67b7c3bac923d3ee3564c2683085763dbc13355b77583232ef41e4205d4cf",
+            "file": "src/app/components/borders-demo/borders-demo.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "app-borders-demo",
+            "styleUrls": [],
+            "styles": [],
+            "templateUrl": [
+                "./borders-demo.component.html"
+            ],
+            "viewProviders": [],
+            "hostDirectives": [],
+            "inputsClass": [],
+            "outputsClass": [],
+            "propertiesClass": [
+                {
+                    "name": "borderRadiuses",
+                    "defaultValue": "['none', 'xsmall', 'small', 'medium', 'large', 'xlarge', '2xlarge', 'max']",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "[]",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 13
+                },
+                {
+                    "name": "borderStyles",
+                    "defaultValue": "['solid', 'dashed', 'dotted', 'double', 'none']",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "[]",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 12
+                },
+                {
+                    "name": "borderWidths",
+                    "defaultValue": "['none', 'thinner', 'thin', 'thick', 'thicker']",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "[]",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 11
+                }
+            ],
+            "methodsClass": [],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "standalone": false,
+            "imports": [
+                {
+                    "name": "CommonModule",
+                    "type": "module"
+                }
+            ],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { CommonModule } from '@angular/common';\nimport { Component } from '@angular/core';\n\n@Component({\n  selector: 'app-borders-demo',\n  imports: [CommonModule],\n  templateUrl: './borders-demo.component.html',\n  styleUrl: './borders-demo.component.scss'\n})\nexport class BordersDemoComponent {\n  borderWidths = ['none', 'thinner', 'thin', 'thick', 'thicker'];\n  borderStyles = ['solid', 'dashed', 'dotted', 'double', 'none'];\n  borderRadiuses = ['none', 'xsmall', 'small', 'medium', 'large', 'xlarge', '2xlarge', 'max'];\n}\n",
+            "styleUrl": "./borders-demo.component.scss",
+            "assetsDirs": [],
+            "styleUrlsData": "",
+            "stylesData": "",
+            "extends": [],
+            "templateData": "<div class=\"demo-container\">\n    <h2>Border Width</h2>\n    <div class=\"demo-section\">\n      <div class=\"demo-item\" *ngFor=\"let width of borderWidths\">\n        <div class=\"example-box\" [class]=\"'global-bw-' + width\">\n          global-bw-{{width}}\n        </div>\n      </div>\n    </div>\n\n    <h2>Border Styles</h2>\n    <div class=\"demo-section\">\n      <div class=\"demo-item\" *ngFor=\"let style of borderStyles\">\n        <div class=\"example-box global-bw-thin\" [class]=\"'global-bs-' + style\">\n          global-bs-{{style}}\n        </div>\n      </div>\n    </div>\n\n    <h2>Border Radius</h2>\n    <div class=\"demo-section\">\n      <div class=\"demo-item\" *ngFor=\"let radius of borderRadiuses\">\n        <div class=\"example-box global-bw-thin\" [class]=\"'global-br-' + radius\">\n          global-br-{{radius}}\n        </div>\n      </div>\n    </div>\n  </div>"
+        },
+        {
             "name": "ButtonComponent",
             "id": "component-ButtonComponent-d7bf0323e6da130e2609e2af0117b4a8d7cd874132206af50bf43dfc37044485fe50f2867ea76525730dd195b9b95a43802a12dadc6ad5cd7bf2faa07f19f0da",
             "file": "src/stories/button.component.ts",
@@ -260,6 +337,61 @@
                     }
                 }
             }
+        },
+        {
+            "name": "ElevationDemoComponent",
+            "id": "component-ElevationDemoComponent-bbc6bcf50d337f6e9eff1ba0185e50014b3ac08389f20f617ada74b3ccc3ece948454acd4e497f27bde0f92fac3b25481186c0dec81adc7a73804479307f5f58",
+            "file": "src/app/components/elevation-demo/elevation-demo.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "app-elevation-demo",
+            "styleUrls": [],
+            "styles": [],
+            "templateUrl": [
+                "./elevation-demo.component.html"
+            ],
+            "viewProviders": [],
+            "hostDirectives": [],
+            "inputsClass": [],
+            "outputsClass": [],
+            "propertiesClass": [
+                {
+                    "name": "elevationLevels",
+                    "defaultValue": "[\n    'ultraLowRaised',\n    'lowRaised',\n    'midRaised',\n    'highRaised',\n    'ultraHighRaised'\n  ]",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "[]",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 11
+                }
+            ],
+            "methodsClass": [],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "standalone": false,
+            "imports": [
+                {
+                    "name": "CommonModule",
+                    "type": "module"
+                }
+            ],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { CommonModule } from '@angular/common';\nimport { Component } from '@angular/core';\n\n@Component({\n  selector: 'app-elevation-demo',\n  imports: [CommonModule],\n  templateUrl: './elevation-demo.component.html',\n  styleUrl: './elevation-demo.component.scss'\n})\nexport class ElevationDemoComponent {\n  elevationLevels = [\n    'ultraLowRaised',\n    'lowRaised',\n    'midRaised',\n    'highRaised',\n    'ultraHighRaised'\n  ];\n}\n",
+            "styleUrl": "./elevation-demo.component.scss",
+            "assetsDirs": [],
+            "styleUrlsData": "",
+            "stylesData": "",
+            "extends": [],
+            "templateData": "<div class=\"demo-container\">\n    <h2>Elevation Levels</h2>\n    <div class=\"demo-section\">\n      <div class=\"demo-item\" *ngFor=\"let level of elevationLevels\">\n        <div class=\"example-box\" [class]=\"'global-el-' + level\">\n          global-el-{{level}}\n        </div>\n      </div>\n    </div>\n\n    <h2>Individual Shadow Layers</h2>\n    <div class=\"demo-section\">\n      <ng-container *ngFor=\"let level of elevationLevels\">\n        <div class=\"demo-item\" *ngFor=\"let layer of [1, 2, 3]\">\n          <div class=\"example-box\" [class]=\"'global-el-' + level + '-' + layer\">\n            {{level}}-layer-{{layer}}\n          </div>\n        </div>\n      </ng-container>\n    </div>\n  </div>"
         },
         {
             "name": "HeaderComponent",
@@ -440,6 +572,61 @@
             ],
             "stylesData": "",
             "extends": []
+        },
+        {
+            "name": "SpacingDemoComponent",
+            "id": "component-SpacingDemoComponent-6b2e5547da2bd0d81535a695040ba5121cda424b814a937e7327f53e5f410bfdda989b752048f9764426e833a92c06b50bbdcc19619a75ef76e5d3d5150d0446",
+            "file": "src/app/components/spacing-demo/spacing-demo.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "app-spacing-demo",
+            "styleUrls": [],
+            "styles": [],
+            "templateUrl": [
+                "./spacing-demo.component.html"
+            ],
+            "viewProviders": [],
+            "hostDirectives": [],
+            "inputsClass": [],
+            "outputsClass": [],
+            "propertiesClass": [
+                {
+                    "name": "spacingSizes",
+                    "defaultValue": "['00', '01', '02', '03', '04', '05', '06', '07', '08', '09', '10', '11']",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "[]",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 11
+                }
+            ],
+            "methodsClass": [],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "standalone": false,
+            "imports": [
+                {
+                    "name": "CommonModule",
+                    "type": "module"
+                }
+            ],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { CommonModule } from '@angular/common';\nimport { Component } from '@angular/core';\n\n@Component({\n  selector: 'app-spacing-demo',\n  imports: [CommonModule],\n  templateUrl: './spacing-demo.component.html',\n  styleUrl: './spacing-demo.component.scss'\n})\nexport class SpacingDemoComponent {\n  spacingSizes = ['00', '01', '02', '03', '04', '05', '06', '07', '08', '09', '10', '11'];\n}\n",
+            "styleUrl": "./spacing-demo.component.scss",
+            "assetsDirs": [],
+            "styleUrlsData": "",
+            "stylesData": "",
+            "extends": [],
+            "templateData": "<div class=\"demo-container\">\n    <h2>Margin Examples</h2>\n    <div class=\"demo-section\">\n      <div class=\"demo-item\" *ngFor=\"let size of spacingSizes\">\n        <div class=\"example-box\" [class]=\"'global-m-' + size\">\n          global-m-{{size}}\n        </div>\n      </div>\n    </div>\n\n    <h2>Padding Examples</h2>\n    <div class=\"demo-section\">\n      <div class=\"demo-item\" *ngFor=\"let size of spacingSizes\">\n        <div [class]=\"'example-box global-p-' + size\">\n          global-p-{{size}}\n        </div>\n      </div>\n    </div>\n\n    <h2>Gap Examples</h2>\n    <div class=\"demo-section\">\n      <div class=\"demo-item\" *ngFor=\"let size of spacingSizes\">\n        <div class=\"flex-container\" [class]=\"'global-gap-' + size\">\n          <div class=\"gap-item\"></div>\n          <div class=\"gap-item\"></div>\n          <div class=\"gap-item\"></div>\n        </div>\n      </div>\n    </div>\n\n    <h2>Gutter Examples</h2>\n    <div class=\"demo-section\">\n      <div class=\"demo-item\" *ngFor=\"let size of spacingSizes\">\n        <div [class]=\"'gutter-container global-gutter-' + size\">\n          <div class=\"gutter-item\"></div>\n          <div class=\"gutter-item\"></div>\n          <div class=\"gutter-item\"></div>\n          <div class=\"gutter-item\"></div>\n        </div>\n      </div>\n    </div>\n  </div>"
         },
         {
             "name": "TypographyDemoComponent",
@@ -687,7 +874,7 @@
     },
     "routes": [],
     "coverage": {
-        "count": 9,
+        "count": 6,
         "status": "low",
         "files": [
             {
@@ -707,6 +894,33 @@
                 "name": "appConfig",
                 "coveragePercent": 0,
                 "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/components/borders-demo/borders-demo.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "BordersDemoComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/4",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/components/elevation-demo/elevation-demo.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "ElevationDemoComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/2",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/components/spacing-demo/spacing-demo.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "SpacingDemoComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/2",
                 "status": "low"
             },
             {

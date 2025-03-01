@@ -1,0 +1,35 @@
+.demo-container {
+    padding: 24px;
+  }
+
+  .demo-section {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 24px;
+    margin-bottom: 48px;
+  }
+
+  .demo-item {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .example-box {
+    padding: 16px;
+    background: white;
+    border-color: #3b82f6;
+    min-height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-size: 14px;
+    color: #666;
+  }
+
+  h2 {
+    margin: 32px 0 16px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid #e5e7eb;
+  }

@@ -1,0 +1,21 @@
+<div class="demo-container">
+    <h2>Elevation Levels</h2>
+    <div class="demo-section">
+      <div class="demo-item" *ngFor="let level of elevationLevels">
+        <div class="example-box" [class]="'global-el-' + level">
+          global-el-{{level}}
+        </div>
+      </div>
+    </div>
+
+    <h2>Individual Shadow Layers</h2>
+    <div class="demo-section">
+      <ng-container *ngFor="let level of elevationLevels">
+        <div class="demo-item" *ngFor="let layer of [1, 2, 3]">
+          <div class="example-box" [class]="'global-el-' + level + '-' + layer">
+            {{level}}-layer-{{layer}}
+          </div>
+        </div>
+      </ng-container>
+    </div>
+  </div>

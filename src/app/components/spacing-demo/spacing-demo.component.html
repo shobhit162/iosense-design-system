@@ -1,0 +1,42 @@
+<div class="demo-container">
+    <h2>Margin Examples</h2>
+    <div class="demo-section">
+      <div class="demo-item" *ngFor="let size of spacingSizes">
+        <div class="example-box" [class]="'global-m-' + size">
+          global-m-{{size}}
+        </div>
+      </div>
+    </div>
+
+    <h2>Padding Examples</h2>
+    <div class="demo-section">
+      <div class="demo-item" *ngFor="let size of spacingSizes">
+        <div [class]="'example-box global-p-' + size">
+          global-p-{{size}}
+        </div>
+      </div>
+    </div>
+
+    <h2>Gap Examples</h2>
+    <div class="demo-section">
+      <div class="demo-item" *ngFor="let size of spacingSizes">
+        <div class="flex-container" [class]="'global-gap-' + size">
+          <div class="gap-item"></div>
+          <div class="gap-item"></div>
+          <div class="gap-item"></div>
+        </div>
+      </div>
+    </div>
+
+    <h2>Gutter Examples</h2>
+    <div class="demo-section">
+      <div class="demo-item" *ngFor="let size of spacingSizes">
+        <div [class]="'gutter-container global-gutter-' + size">
+          <div class="gutter-item"></div>
+          <div class="gutter-item"></div>
+          <div class="gutter-item"></div>
+          <div class="gutter-item"></div>
+        </div>
+      </div>
+    </div>
+  </div>
