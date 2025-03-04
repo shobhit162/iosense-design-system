@@ -88,12 +88,11 @@ $font-scale: (
 // Generate responsive font-size classes
 @each $class, $sizes in $font-scale {
   .#{$class} {
-    // Mobile first approach
-    font-size: pxToRem(map.get($sizes, mobile));
+    @extend .global-fz-#{map.get($sizes, desktop)};
 
-    // Desktop styles
-    @media screen and (min-width: $breakpoint-mobile) {
-      font-size: pxToRem(map.get($sizes, desktop));
+    // Mobile styles
+    @media screen and (max-width: $breakpoint-mobile) {
+      font-size: pxToRem(map.get($sizes, mobile));
     }
   }
 }
@@ -176,19 +175,14 @@ $line-height-scale: (
 // Generate responsive line-height classes
 @each $class, $sizes in $line-height-scale {
   .#{$class} {
-    // Mobile first approach
-    line-height: if(
-      map.get($sizes, mobile) == 0,
-      0,
-      pxToRem(map.get($sizes, mobile))
-    );
+    @extend .global-lh-#{map.get($sizes, desktop)};
 
-    // Desktop styles
-    @media screen and (min-width: $breakpoint-mobile) {
+    // Mobile styles
+    @media screen and (max-width: $breakpoint-mobile) {
       line-height: if(
-        map.get($sizes, desktop) == 0,
+        map.get($sizes, mobile) == 0,
         0,
-        pxToRem(map.get($sizes, desktop))
+        pxToRem(map.get($sizes, mobile))
       );
     }
   }
@@ -196,7 +190,7 @@ $line-height-scale: (
 
 // ================================================= Letter Spacing SCSS Start ===================================================
 
-// Letter Spacing Map
+// Letter Spacing Map 
 $letter-spacing: (
   'compressed': -2px,
   'condensed': -1px,
@@ -227,12 +221,11 @@ $letter-spacing-scale: (
 // Generate Letter Spacing Scale Classes
 @each $class, $scales in $letter-spacing-scale {
   .#{$class} {
-    // Mobile first approach
-    letter-spacing: map.get($letter-spacing, map.get($scales, mobile));
+    @extend .global-ls-#{map.get($scales, desktop)};
 
-    // Desktop styles
-    @media screen and (min-width: $breakpoint-mobile) {
-      letter-spacing: map.get($letter-spacing, map.get($scales, desktop));
+    // Mobile styles
+    @media screen and (max-width: $breakpoint-mobile) {
+      letter-spacing: map.get($letter-spacing, map.get($scales, mobile));
     }
   }
 }
@@ -295,12 +288,11 @@ $font-weight-scale: (
 // Generate Font Weight Scale Classes
 @each $class, $weights in $font-weight-scale {
   .#{$class} {
-    // Mobile first approach
-    font-weight: map.get($font-weight-values, map.get($weights, mobile));
+    @extend .global-fw-#{map.get($font-weight-values, map.get($weights, desktop))};
 
-    // Desktop styles
-    @media screen and (min-width: $breakpoint-mobile) {
-      font-weight: map.get($font-weight-values, map.get($weights, desktop));
+    // Mobile styles
+    @media screen and (max-width: $breakpoint-mobile) {
+      font-weight: map.get($font-weight-values, map.get($weights, mobile));
     }
   }
 }
@@ -350,12 +342,11 @@ $paragraph-spacing-scale: (
 // Generate Paragraph Spacing Scale Classes
 @each $class, $spacings in $paragraph-spacing-scale {
   .#{$class} {
-    // Mobile first approach
-    margin-bottom: pxToRem(map.get($paragraph-spacings, map.get($spacings, mobile)));
+    @extend .global-ps-#{map.get($spacings, desktop)};
 
-    // Desktop styles
-    @media screen and (min-width: $breakpoint-mobile) {
-      margin-bottom: pxToRem(map.get($paragraph-spacings, map.get($spacings, desktop)));
+    // Mobile styles
+    @media screen and (max-width: $breakpoint-mobile) {
+      margin-bottom: pxToRem(map.get($paragraph-spacings, map.get($spacings, mobile)));
     }
   }
 }
@@ -412,21 +403,16 @@ $list-spacing-scale: (
 // Generate List Spacing Scale Classes
 @each $class, $spacings in $list-spacing-scale {
   .#{$class} {
-    // Mobile first approach
-    gap: pxToRem(map.get($list-spacings, map.get($spacings, mobile)));
+    @extend .global-lis-#{map.get($spacings, desktop)};
 
-    // Desktop styles
-    @media screen and (min-width: $breakpoint-mobile) {
-      gap: pxToRem(map.get($list-spacings, map.get($spacings, desktop)));
-    }
-    
-    // For traditional lists
-    &.list-traditional {
-      > li + li {
-        margin-top: pxToRem(map.get($list-spacings, map.get($spacings, mobile)));
-        
-        @media screen and (min-width: $breakpoint-mobile) {
-          margin-top: pxToRem(map.get($list-spacings, map.get($spacings, desktop)));
+    // Mobile styles
+    @media screen and (max-width: $breakpoint-mobile) {
+      gap: pxToRem(map.get($list-spacings, map.get($spacings, mobile)));
+      
+      // For traditional lists
+      &.list-traditional {
+        > li + li {
+          margin-top: pxToRem(map.get($list-spacings, map.get($spacings, mobile)));
         }
       }
     }

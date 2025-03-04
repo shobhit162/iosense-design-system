@@ -1,2 +1,25 @@
-<app-typography-examples></app-typography-examples>
-<!-- <app-typography-demo></app-typography-demo> -->
+<div class="app-container">
+  <button class="sidebar-toggle" (click)="toggleSidebar()">
+    <span class="hamburger"></span>
+    <span class="hamburger"></span>
+    <span class="hamburger"></span>
+  </button>
+  
+  <nav class="sidebar" [class.open]="isSidebarOpen">
+    <ul>
+      <li><a routerLink="/typography" routerLinkActive="active" (click)="toggleSidebar()">Typography</a></li>
+      <li><a routerLink="/borders" routerLinkActive="active" (click)="toggleSidebar()">Borders</a></li>
+      <li><a routerLink="/elevation" routerLinkActive="active" (click)="toggleSidebar()">Elevation</a></li>
+      <li><a routerLink="/spacing" routerLinkActive="active" (click)="toggleSidebar()">Spacing</a></li>
+    </ul>
+  </nav>
+  
+  <div class="main-wrapper">
+    <header class="app-header">
+      <h1>Faclon Design System Testing</h1>
+    </header>
+    <main class="content">
+      <router-outlet></router-outlet>
+    </main>
+  </div>
+</div>

@@ -70,7 +70,7 @@
     "components": [
         {
             "name": "AppComponent",
-            "id": "component-AppComponent-2c914be3517ab4d0f141b7188b86b64465ce6ca62fa8990f70277abef0925bd9bd46b2df2b950ed595df5b9966fee2cece35e6f0f95b1830b17049e9a060d824",
+            "id": "component-AppComponent-33a538b6d2af1ad5608763b092ebc65214ff31719ee3ea741b0d54c8de2b4085e07e786c73d3ad91065753fc95ab0a7d55af76b382db0610239924ecf4d5f244",
             "file": "src/app/app.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -108,24 +108,19 @@
             "standalone": false,
             "imports": [
                 {
-                    "name": "TypographyExamplesComponent",
-                    "type": "component"
-                },
-                {
-                    "name": "TypographyDemoComponent",
-                    "type": "component"
+                    "name": "RouterOutlet"
                 }
             ],
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component } from '@angular/core';\nimport { RouterOutlet } from '@angular/router';\nimport { TypographyExamplesComponent } from './components/typography-examples/typography-examples.component';\nimport { TypographyDemoComponent } from './components/typography-demo/typography-demo.component';\n\n@Component({\n  selector: 'app-root',\n  imports: [TypographyExamplesComponent, TypographyDemoComponent],\n  templateUrl: './app.component.html',\n  styleUrl: './app.component.scss'\n})\nexport class AppComponent {\n  title = 'iosense-design-system';\n}\n",
+            "sourceCode": "import { Component } from '@angular/core';\nimport { RouterOutlet } from '@angular/router';\nimport { TypographyExamplesComponent } from './components/typography-examples/typography-examples.component';\nimport { TypographyDemoComponent } from './components/typography-demo/typography-demo.component';\n\n@Component({\n  selector: 'app-root',\n  imports: [RouterOutlet],\n  templateUrl: './app.component.html',\n  styleUrl: './app.component.scss'\n})\nexport class AppComponent {\n  title = 'iosense-design-system';\n}\n",
             "styleUrl": "./app.component.scss",
             "assetsDirs": [],
             "styleUrlsData": "",
             "stylesData": "",
             "extends": [],
-            "templateData": "<app-typography-examples></app-typography-examples>\n<!-- <app-typography-demo></app-typography-demo> -->"
+            "templateData": "<div class=\"app-container\">\n    <nav class=\"sidebar\">\n      <ul>\n        <li><a routerLink=\"/typography\" routerLinkActive=\"active\">Typography</a></li>\n        <li><a routerLink=\"/borders\" routerLinkActive=\"active\">Borders</a></li>\n        <li><a routerLink=\"/elevation\" routerLinkActive=\"active\">Elevation</a></li>\n        <li><a routerLink=\"/spacing\" routerLinkActive=\"active\">Spacing</a></li>\n      </ul>\n    </nav>\n    <main class=\"content\">\n      <router-outlet></router-outlet>\n    </main>\n  </div>"
         },
         {
             "name": "BordersDemoComponent",
