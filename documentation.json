@@ -2,6 +2,111 @@
     "pipes": [],
     "interfaces": [
         {
+            "name": "BorderExample",
+            "id": "interface-BorderExample-7b29e29b79f187da3c7890c4451d2a2df8e1aabb26ae91301a3b4d067d5548cf9dd40b9c317165a6f7297c592c8eb2cc758d1bd49d282817d3a805093efba37b",
+            "file": "src/app/components/borders-demo/borders-demo.component.ts",
+            "deprecated": false,
+            "deprecationMessage": "",
+            "type": "interface",
+            "sourceCode": "import { CommonModule } from '@angular/common';\nimport { Component } from '@angular/core';\nimport { FormsModule } from '@angular/forms';\n\ninterface BorderExample {\n  className: string;\n  text: string;\n}\n\n@Component({\n  selector: 'app-borders-demo',\n  standalone: true,\n  imports: [FormsModule, CommonModule],\n  templateUrl: './borders-demo.component.html',\n  styleUrl: './borders-demo.component.scss'\n})\nexport class BordersDemoComponent {\n  manualClass = '';\n  customText = '';\n  examples: BorderExample[] = [];\n  defaultText = 'Border Example';\n  \n  commonPresets = [\n    // Border Width Classes\n    'global-bw-none',\n    'global-bw-thinner',\n    'global-bw-thin',\n    'global-bw-thick',\n    'global-bw-thicker',\n    'global-bw-t-thin',\n    'global-bw-r-thin',\n    'global-bw-b-thin',\n    'global-bw-l-thin',\n    \n    // Border Style Classes\n    'global-bs-solid',\n    'global-bs-dashed',\n    'global-bs-dotted',\n    'global-bs-double',\n    'global-bs-none',\n    \n    // Border Radius Classes\n    'global-br-none',\n    'global-br-xsmall',\n    'global-br-small',\n    'global-br-medium',\n    'global-br-large',\n    'global-br-xlarge',\n    'global-br-2xlarge',\n    'global-br-max',\n    \n    // Individual Corner Border Radius\n    'global-br-tl-medium',\n    'global-br-tr-medium',\n    'global-br-bl-medium',\n    'global-br-br-medium',\n    \n    // Combined Corner Border Radius\n    'global-br-t-medium',\n    'global-br-b-medium',\n    'global-br-l-medium',\n    'global-br-r-medium'\n  ];\n\n  addClass() {\n    if (this.manualClass) {\n      this.examples.unshift({\n        className: this.manualClass,\n        text: this.customText\n      });\n      this.manualClass = '';\n      this.customText = '';\n    }\n  }\n\n  addPreset(preset: string) {\n    this.examples.unshift({\n      className: preset,\n      text: this.defaultText\n    });\n  }\n\n  removeExample(index: number) {\n    this.examples.splice(index, 1);\n  }\n}\n",
+            "properties": [
+                {
+                    "name": "className",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "string",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 6
+                },
+                {
+                    "name": "text",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "string",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 7
+                }
+            ],
+            "indexSignatures": [],
+            "kind": 171,
+            "methods": [],
+            "extends": []
+        },
+        {
+            "name": "ElevationExample",
+            "id": "interface-ElevationExample-c17702537fb171b06a64cf1d2208645099b72af05a52469e7a25c526e79bb16f32bd0851704926daa764b9a27c4f31e61b860a9b39c4744b1a6e68bf5abb8e9b",
+            "file": "src/app/components/elevation-demo/elevation-demo.component.ts",
+            "deprecated": false,
+            "deprecationMessage": "",
+            "type": "interface",
+            "sourceCode": "import { CommonModule } from '@angular/common';\nimport { Component } from '@angular/core';\nimport { FormsModule } from '@angular/forms';\n\ninterface ElevationExample {\n  className: string;\n  text: string;\n}\n\n@Component({\n  selector: 'app-elevation-demo',\n  standalone: true,\n  imports: [FormsModule, CommonModule],\n  templateUrl: './elevation-demo.component.html',\n  styleUrl: './elevation-demo.component.scss'\n})\nexport class ElevationDemoComponent {\n  manualClass = '';\n  customText = '';\n  examples: ElevationExample[] = [];\n  defaultText = 'Elevation Example';\n  \n  commonPresets = [\n    'global-el-ultraLowRaised',\n    'global-el-lowRaised',\n    'global-el-midRaised',\n    'global-el-highRaised',\n    'global-el-ultraHighRaised',\n    'global-el-ultraLowRaised-1',\n    'global-el-ultraLowRaised-2',\n    'global-el-ultraLowRaised-3',\n    'global-el-lowRaised-1',\n    'global-el-lowRaised-2',\n    'global-el-lowRaised-3'\n  ];\n\n  addClass() {\n    if (this.manualClass) {\n      this.examples.unshift({\n        className: this.manualClass,\n        text: this.customText\n      });\n      this.manualClass = '';\n      this.customText = '';\n    }\n  }\n\n  addPreset(preset: string) {\n    this.examples.unshift({\n      className: preset,\n      text: this.defaultText\n    });\n  }\n\n  removeExample(index: number) {\n    this.examples.splice(index, 1);\n  }\n}\n",
+            "properties": [
+                {
+                    "name": "className",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "string",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 6
+                },
+                {
+                    "name": "text",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "string",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 7
+                }
+            ],
+            "indexSignatures": [],
+            "kind": 171,
+            "methods": [],
+            "extends": []
+        },
+        {
+            "name": "SpacingExample",
+            "id": "interface-SpacingExample-c2e5d6932563520f1c931a229fae0863ed9b0b97d7b4704ef09866efb92fe132c83c04e61b9e71a16c0f3c6bf2df9035f4887d72dd36ba4e0a3dcf61be8b90f8",
+            "file": "src/app/components/spacing-demo/spacing-demo.component.ts",
+            "deprecated": false,
+            "deprecationMessage": "",
+            "type": "interface",
+            "sourceCode": "import { CommonModule } from '@angular/common';\nimport { Component } from '@angular/core';\nimport { FormsModule } from '@angular/forms';\n\ninterface SpacingExample {\n  className: string;\n  text: string;\n}\n\n@Component({\n  selector: 'app-spacing-demo',\n  standalone: true,\n  imports: [FormsModule, CommonModule],\n  templateUrl: './spacing-demo.component.html',\n  styleUrl: './spacing-demo.component.scss'\n})\nexport class SpacingDemoComponent {\n  manualClass = '';\n  customText = '';\n  examples: SpacingExample[] = [];\n  defaultText = 'Spacing Example';\n  \n  commonPresets = [\n    'global-m-00',\n    'global-m-01',\n    'global-m-02',\n    'global-m-03',\n    'global-m-04',\n    'global-m-05',\n    'global-m-06',\n    'global-m-07',\n    'global-m-08',\n    'global-m-09',\n    'global-m-10',\n    'global-m-11',\n    'global-p-00',\n    'global-p-01',\n    'global-p-02',\n    'global-p-03',\n    'global-p-04',\n    'global-p-05',\n    'global-p-06',\n    'global-p-07',\n    'global-p-08',\n    'global-p-09',\n    'global-p-10',\n    'global-p-11',\n    'global-gap-00',\n    'global-gap-01',\n    'global-gap-02',\n    'global-gap-03',\n    'global-gap-04',\n    'global-gap-05',\n    'global-gap-06',\n    'global-gap-07',\n    'global-gap-08',\n    'global-gap-09',\n    'global-gap-10',\n    'global-gap-11'\n  ];\n\n  addClass() {\n    if (this.manualClass) {\n      this.examples.unshift({\n        className: this.manualClass,\n        text: this.customText\n      });\n      this.manualClass = '';\n      this.customText = '';\n    }\n  }\n\n  addPreset(preset: string) {\n    this.examples.unshift({\n      className: preset,\n      text: this.defaultText\n    });\n  }\n\n  removeExample(index: number) {\n    this.examples.splice(index, 1);\n  }\n}\n",
+            "properties": [
+                {
+                    "name": "className",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "string",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 6
+                },
+                {
+                    "name": "text",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "string",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 7
+                }
+            ],
+            "indexSignatures": [],
+            "kind": 171,
+            "methods": [],
+            "extends": []
+        },
+        {
             "name": "TypographyExample",
             "id": "interface-TypographyExample-f61368c8e51d5d877965aa0e8cb702afd1fad6674024e1eb100883ef3734ab8f5a10f4af7576d3a66643d9285e1cc134c9466a621b7182cafe6ff064ac2967d7",
             "file": "src/app/components/typography-demo/typography-demo.component.ts",
@@ -70,7 +175,7 @@
     "components": [
         {
             "name": "AppComponent",
-            "id": "component-AppComponent-33a538b6d2af1ad5608763b092ebc65214ff31719ee3ea741b0d54c8de2b4085e07e786c73d3ad91065753fc95ab0a7d55af76b382db0610239924ecf4d5f244",
+            "id": "component-AppComponent-40412b7d06c4158e40d8ce15170fa1ed57c0965806115cc1a20db7137b41742f4416801561eb141a22bcf2cc3b58067253956991f09ccf4d64add67c2c31897f",
             "file": "src/app/app.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -89,6 +194,17 @@
             "outputsClass": [],
             "propertiesClass": [
                 {
+                    "name": "isSidebarOpen",
+                    "defaultValue": "false",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 15
+                },
+                {
                     "name": "title",
                     "defaultValue": "'iosense-design-system'",
                     "deprecated": false,
@@ -97,34 +213,51 @@
                     "indexKey": "",
                     "optional": false,
                     "description": "",
-                    "line": 13
+                    "line": 14
                 }
             ],
-            "methodsClass": [],
+            "methodsClass": [
+                {
+                    "name": "toggleSidebar",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 17,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                }
+            ],
             "deprecated": false,
             "deprecationMessage": "",
             "hostBindings": [],
             "hostListeners": [],
-            "standalone": false,
+            "standalone": true,
             "imports": [
                 {
                     "name": "RouterOutlet"
+                },
+                {
+                    "name": "RouterLink"
+                },
+                {
+                    "name": "RouterLinkActive"
                 }
             ],
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component } from '@angular/core';\nimport { RouterOutlet } from '@angular/router';\nimport { TypographyExamplesComponent } from './components/typography-examples/typography-examples.component';\nimport { TypographyDemoComponent } from './components/typography-demo/typography-demo.component';\n\n@Component({\n  selector: 'app-root',\n  imports: [RouterOutlet],\n  templateUrl: './app.component.html',\n  styleUrl: './app.component.scss'\n})\nexport class AppComponent {\n  title = 'iosense-design-system';\n}\n",
+            "sourceCode": "import { Component } from '@angular/core';\nimport { RouterOutlet, RouterLink, RouterLinkActive } from '@angular/router';\nimport { TypographyExamplesComponent } from './components/typography-examples/typography-examples.component';\nimport { TypographyDemoComponent } from './components/typography-demo/typography-demo.component';\n\n@Component({\n  selector: 'app-root',\n  standalone: true,\n  imports: [RouterOutlet, RouterLink, RouterLinkActive],\n  templateUrl: './app.component.html',\n  styleUrl: './app.component.scss'\n})\nexport class AppComponent {\n  title = 'iosense-design-system';\n  isSidebarOpen = false;\n\n  toggleSidebar() {\n    this.isSidebarOpen = !this.isSidebarOpen;\n  }\n}\n",
             "styleUrl": "./app.component.scss",
             "assetsDirs": [],
             "styleUrlsData": "",
             "stylesData": "",
             "extends": [],
-            "templateData": "<div class=\"app-container\">\n    <nav class=\"sidebar\">\n      <ul>\n        <li><a routerLink=\"/typography\" routerLinkActive=\"active\">Typography</a></li>\n        <li><a routerLink=\"/borders\" routerLinkActive=\"active\">Borders</a></li>\n        <li><a routerLink=\"/elevation\" routerLinkActive=\"active\">Elevation</a></li>\n        <li><a routerLink=\"/spacing\" routerLinkActive=\"active\">Spacing</a></li>\n      </ul>\n    </nav>\n    <main class=\"content\">\n      <router-outlet></router-outlet>\n    </main>\n  </div>"
+            "templateData": "<div class=\"app-container\">\n  <button class=\"sidebar-toggle\" (click)=\"toggleSidebar()\">\n    <span class=\"hamburger\"></span>\n    <span class=\"hamburger\"></span>\n    <span class=\"hamburger\"></span>\n  </button>\n  \n  <nav class=\"sidebar\" [class.open]=\"isSidebarOpen\">\n    <ul>\n      <li><a routerLink=\"/typography\" routerLinkActive=\"active\" (click)=\"toggleSidebar()\">Typography</a></li>\n      <li><a routerLink=\"/borders\" routerLinkActive=\"active\" (click)=\"toggleSidebar()\">Borders</a></li>\n      <li><a routerLink=\"/elevation\" routerLinkActive=\"active\" (click)=\"toggleSidebar()\">Elevation</a></li>\n      <li><a routerLink=\"/spacing\" routerLinkActive=\"active\" (click)=\"toggleSidebar()\">Spacing</a></li>\n    </ul>\n  </nav>\n  \n  <div class=\"main-wrapper\">\n    <header class=\"app-header\">\n      <h1>Faclon Design System Testing</h1>\n    </header>\n    <main class=\"content\">\n      <router-outlet></router-outlet>\n    </main>\n  </div>\n</div>"
         },
         {
             "name": "BordersDemoComponent",
-            "id": "component-BordersDemoComponent-fb101a196694f04006204ccb39d48b7e315252374cd951c5883dcea569c8f42fe1b67b7c3bac923d3ee3564c2683085763dbc13355b77583232ef41e4205d4cf",
+            "id": "component-BordersDemoComponent-7b29e29b79f187da3c7890c4451d2a2df8e1aabb26ae91301a3b4d067d5548cf9dd40b9c317165a6f7297c592c8eb2cc758d1bd49d282817d3a805093efba37b",
             "file": "src/app/components/borders-demo/borders-demo.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -143,46 +276,139 @@
             "outputsClass": [],
             "propertiesClass": [
                 {
-                    "name": "borderRadiuses",
-                    "defaultValue": "['none', 'xsmall', 'small', 'medium', 'large', 'xlarge', '2xlarge', 'max']",
+                    "name": "commonPresets",
+                    "defaultValue": "[\n    // Border Width Classes\n    'global-bw-none',\n    'global-bw-thinner',\n    'global-bw-thin',\n    'global-bw-thick',\n    'global-bw-thicker',\n    'global-bw-t-thin',\n    'global-bw-r-thin',\n    'global-bw-b-thin',\n    'global-bw-l-thin',\n    \n    // Border Style Classes\n    'global-bs-solid',\n    'global-bs-dashed',\n    'global-bs-dotted',\n    'global-bs-double',\n    'global-bs-none',\n    \n    // Border Radius Classes\n    'global-br-none',\n    'global-br-xsmall',\n    'global-br-small',\n    'global-br-medium',\n    'global-br-large',\n    'global-br-xlarge',\n    'global-br-2xlarge',\n    'global-br-max',\n    \n    // Individual Corner Border Radius\n    'global-br-tl-medium',\n    'global-br-tr-medium',\n    'global-br-bl-medium',\n    'global-br-br-medium',\n    \n    // Combined Corner Border Radius\n    'global-br-t-medium',\n    'global-br-b-medium',\n    'global-br-l-medium',\n    'global-br-r-medium'\n  ]",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "[]",
                     "indexKey": "",
                     "optional": false,
                     "description": "",
-                    "line": 13
+                    "line": 23
                 },
                 {
-                    "name": "borderStyles",
-                    "defaultValue": "['solid', 'dashed', 'dotted', 'double', 'none']",
+                    "name": "customText",
+                    "defaultValue": "''",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "type": "[]",
+                    "type": "string",
                     "indexKey": "",
                     "optional": false,
                     "description": "",
-                    "line": 12
+                    "line": 19
                 },
                 {
-                    "name": "borderWidths",
-                    "defaultValue": "['none', 'thinner', 'thin', 'thick', 'thicker']",
+                    "name": "defaultText",
+                    "defaultValue": "'Border Example'",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "type": "[]",
+                    "type": "string",
                     "indexKey": "",
                     "optional": false,
                     "description": "",
-                    "line": 11
+                    "line": 21
+                },
+                {
+                    "name": "examples",
+                    "defaultValue": "[]",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "BorderExample[]",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 20
+                },
+                {
+                    "name": "manualClass",
+                    "defaultValue": "''",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "string",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 18
                 }
             ],
-            "methodsClass": [],
+            "methodsClass": [
+                {
+                    "name": "addClass",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 65,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                },
+                {
+                    "name": "addPreset",
+                    "args": [
+                        {
+                            "name": "preset",
+                            "type": "string",
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 76,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "jsdoctags": [
+                        {
+                            "name": "preset",
+                            "type": "string",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "removeExample",
+                    "args": [
+                        {
+                            "name": "index",
+                            "type": "number",
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 83,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "jsdoctags": [
+                        {
+                            "name": "index",
+                            "type": "number",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
+                }
+            ],
             "deprecated": false,
             "deprecationMessage": "",
             "hostBindings": [],
             "hostListeners": [],
-            "standalone": false,
+            "standalone": true,
             "imports": [
+                {
+                    "name": "FormsModule",
+                    "type": "module"
+                },
                 {
                     "name": "CommonModule",
                     "type": "module"
@@ -191,13 +417,13 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { CommonModule } from '@angular/common';\nimport { Component } from '@angular/core';\n\n@Component({\n  selector: 'app-borders-demo',\n  imports: [CommonModule],\n  templateUrl: './borders-demo.component.html',\n  styleUrl: './borders-demo.component.scss'\n})\nexport class BordersDemoComponent {\n  borderWidths = ['none', 'thinner', 'thin', 'thick', 'thicker'];\n  borderStyles = ['solid', 'dashed', 'dotted', 'double', 'none'];\n  borderRadiuses = ['none', 'xsmall', 'small', 'medium', 'large', 'xlarge', '2xlarge', 'max'];\n}\n",
+            "sourceCode": "import { CommonModule } from '@angular/common';\nimport { Component } from '@angular/core';\nimport { FormsModule } from '@angular/forms';\n\ninterface BorderExample {\n  className: string;\n  text: string;\n}\n\n@Component({\n  selector: 'app-borders-demo',\n  standalone: true,\n  imports: [FormsModule, CommonModule],\n  templateUrl: './borders-demo.component.html',\n  styleUrl: './borders-demo.component.scss'\n})\nexport class BordersDemoComponent {\n  manualClass = '';\n  customText = '';\n  examples: BorderExample[] = [];\n  defaultText = 'Border Example';\n  \n  commonPresets = [\n    // Border Width Classes\n    'global-bw-none',\n    'global-bw-thinner',\n    'global-bw-thin',\n    'global-bw-thick',\n    'global-bw-thicker',\n    'global-bw-t-thin',\n    'global-bw-r-thin',\n    'global-bw-b-thin',\n    'global-bw-l-thin',\n    \n    // Border Style Classes\n    'global-bs-solid',\n    'global-bs-dashed',\n    'global-bs-dotted',\n    'global-bs-double',\n    'global-bs-none',\n    \n    // Border Radius Classes\n    'global-br-none',\n    'global-br-xsmall',\n    'global-br-small',\n    'global-br-medium',\n    'global-br-large',\n    'global-br-xlarge',\n    'global-br-2xlarge',\n    'global-br-max',\n    \n    // Individual Corner Border Radius\n    'global-br-tl-medium',\n    'global-br-tr-medium',\n    'global-br-bl-medium',\n    'global-br-br-medium',\n    \n    // Combined Corner Border Radius\n    'global-br-t-medium',\n    'global-br-b-medium',\n    'global-br-l-medium',\n    'global-br-r-medium'\n  ];\n\n  addClass() {\n    if (this.manualClass) {\n      this.examples.unshift({\n        className: this.manualClass,\n        text: this.customText\n      });\n      this.manualClass = '';\n      this.customText = '';\n    }\n  }\n\n  addPreset(preset: string) {\n    this.examples.unshift({\n      className: preset,\n      text: this.defaultText\n    });\n  }\n\n  removeExample(index: number) {\n    this.examples.splice(index, 1);\n  }\n}\n",
             "styleUrl": "./borders-demo.component.scss",
             "assetsDirs": [],
             "styleUrlsData": "",
             "stylesData": "",
             "extends": [],
-            "templateData": "<div class=\"demo-container\">\n    <h2>Border Width</h2>\n    <div class=\"demo-section\">\n      <div class=\"demo-item\" *ngFor=\"let width of borderWidths\">\n        <div class=\"example-box\" [class]=\"'global-bw-' + width\">\n          global-bw-{{width}}\n        </div>\n      </div>\n    </div>\n\n    <h2>Border Styles</h2>\n    <div class=\"demo-section\">\n      <div class=\"demo-item\" *ngFor=\"let style of borderStyles\">\n        <div class=\"example-box global-bw-thin\" [class]=\"'global-bs-' + style\">\n          global-bs-{{style}}\n        </div>\n      </div>\n    </div>\n\n    <h2>Border Radius</h2>\n    <div class=\"demo-section\">\n      <div class=\"demo-item\" *ngFor=\"let radius of borderRadiuses\">\n        <div class=\"example-box global-bw-thin\" [class]=\"'global-br-' + radius\">\n          global-br-{{radius}}\n        </div>\n      </div>\n    </div>\n  </div>"
+            "templateData": "<div class=\"borders-demo\">\n  <div class=\"input-section\">\n    <div class=\"manual-input\">\n      <h3>Test Border Classes</h3>\n      <div class=\"input-group\">\n        <input \n          type=\"text\" \n          [(ngModel)]=\"manualClass\" \n          placeholder=\"Enter class name (e.g., border-all)\"\n          (keyup.enter)=\"addClass()\"\n        >\n        <input \n          type=\"text\" \n          [(ngModel)]=\"customText\" \n          placeholder=\"Enter custom text (optional)\"\n          (keyup.enter)=\"addClass()\"\n        >\n        <button (click)=\"addClass()\">Add Example</button>\n      </div>\n    </div>\n\n    <div class=\"quick-access\">\n      <h4>Quick Access</h4>\n      <div class=\"button-group\">\n        <button *ngFor=\"let preset of commonPresets\" \n                (click)=\"addPreset(preset)\"\n                [title]=\"preset\">\n          {{preset}}\n        </button>\n      </div>\n    </div>\n  </div>\n  \n  <div class=\"examples-section\">\n    <h3>Live Examples</h3>\n    <div class=\"examples-list\">\n      <div *ngFor=\"let example of examples; let i = index\" class=\"example-item\">\n        <div class=\"example-header\">\n          <code>{{example.className}}</code>\n          <button class=\"remove-btn\" (click)=\"removeExample(i)\">×</button>\n        </div>\n        <div [class]=\"example.className\" class=\"border-example\">\n          {{example.text || defaultText}}\n        </div>\n      </div>\n    </div>\n  </div>\n</div>"
         },
         {
             "name": "ButtonComponent",
@@ -335,7 +561,7 @@
         },
         {
             "name": "ElevationDemoComponent",
-            "id": "component-ElevationDemoComponent-bbc6bcf50d337f6e9eff1ba0185e50014b3ac08389f20f617ada74b3ccc3ece948454acd4e497f27bde0f92fac3b25481186c0dec81adc7a73804479307f5f58",
+            "id": "component-ElevationDemoComponent-c17702537fb171b06a64cf1d2208645099b72af05a52469e7a25c526e79bb16f32bd0851704926daa764b9a27c4f31e61b860a9b39c4744b1a6e68bf5abb8e9b",
             "file": "src/app/components/elevation-demo/elevation-demo.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -354,24 +580,139 @@
             "outputsClass": [],
             "propertiesClass": [
                 {
-                    "name": "elevationLevels",
-                    "defaultValue": "[\n    'ultraLowRaised',\n    'lowRaised',\n    'midRaised',\n    'highRaised',\n    'ultraHighRaised'\n  ]",
+                    "name": "commonPresets",
+                    "defaultValue": "[\n    'global-el-ultraLowRaised',\n    'global-el-lowRaised',\n    'global-el-midRaised',\n    'global-el-highRaised',\n    'global-el-ultraHighRaised',\n    'global-el-ultraLowRaised-1',\n    'global-el-ultraLowRaised-2',\n    'global-el-ultraLowRaised-3',\n    'global-el-lowRaised-1',\n    'global-el-lowRaised-2',\n    'global-el-lowRaised-3'\n  ]",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "[]",
                     "indexKey": "",
                     "optional": false,
                     "description": "",
-                    "line": 11
+                    "line": 23
+                },
+                {
+                    "name": "customText",
+                    "defaultValue": "''",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "string",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 19
+                },
+                {
+                    "name": "defaultText",
+                    "defaultValue": "'Elevation Example'",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "string",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 21
+                },
+                {
+                    "name": "examples",
+                    "defaultValue": "[]",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "ElevationExample[]",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 20
+                },
+                {
+                    "name": "manualClass",
+                    "defaultValue": "''",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "string",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 18
                 }
             ],
-            "methodsClass": [],
+            "methodsClass": [
+                {
+                    "name": "addClass",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 37,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                },
+                {
+                    "name": "addPreset",
+                    "args": [
+                        {
+                            "name": "preset",
+                            "type": "string",
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 48,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "jsdoctags": [
+                        {
+                            "name": "preset",
+                            "type": "string",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "removeExample",
+                    "args": [
+                        {
+                            "name": "index",
+                            "type": "number",
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 55,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "jsdoctags": [
+                        {
+                            "name": "index",
+                            "type": "number",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
+                }
+            ],
             "deprecated": false,
             "deprecationMessage": "",
             "hostBindings": [],
             "hostListeners": [],
-            "standalone": false,
+            "standalone": true,
             "imports": [
+                {
+                    "name": "FormsModule",
+                    "type": "module"
+                },
                 {
                     "name": "CommonModule",
                     "type": "module"
@@ -380,13 +721,13 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { CommonModule } from '@angular/common';\nimport { Component } from '@angular/core';\n\n@Component({\n  selector: 'app-elevation-demo',\n  imports: [CommonModule],\n  templateUrl: './elevation-demo.component.html',\n  styleUrl: './elevation-demo.component.scss'\n})\nexport class ElevationDemoComponent {\n  elevationLevels = [\n    'ultraLowRaised',\n    'lowRaised',\n    'midRaised',\n    'highRaised',\n    'ultraHighRaised'\n  ];\n}\n",
+            "sourceCode": "import { CommonModule } from '@angular/common';\nimport { Component } from '@angular/core';\nimport { FormsModule } from '@angular/forms';\n\ninterface ElevationExample {\n  className: string;\n  text: string;\n}\n\n@Component({\n  selector: 'app-elevation-demo',\n  standalone: true,\n  imports: [FormsModule, CommonModule],\n  templateUrl: './elevation-demo.component.html',\n  styleUrl: './elevation-demo.component.scss'\n})\nexport class ElevationDemoComponent {\n  manualClass = '';\n  customText = '';\n  examples: ElevationExample[] = [];\n  defaultText = 'Elevation Example';\n  \n  commonPresets = [\n    'global-el-ultraLowRaised',\n    'global-el-lowRaised',\n    'global-el-midRaised',\n    'global-el-highRaised',\n    'global-el-ultraHighRaised',\n    'global-el-ultraLowRaised-1',\n    'global-el-ultraLowRaised-2',\n    'global-el-ultraLowRaised-3',\n    'global-el-lowRaised-1',\n    'global-el-lowRaised-2',\n    'global-el-lowRaised-3'\n  ];\n\n  addClass() {\n    if (this.manualClass) {\n      this.examples.unshift({\n        className: this.manualClass,\n        text: this.customText\n      });\n      this.manualClass = '';\n      this.customText = '';\n    }\n  }\n\n  addPreset(preset: string) {\n    this.examples.unshift({\n      className: preset,\n      text: this.defaultText\n    });\n  }\n\n  removeExample(index: number) {\n    this.examples.splice(index, 1);\n  }\n}\n",
             "styleUrl": "./elevation-demo.component.scss",
             "assetsDirs": [],
             "styleUrlsData": "",
             "stylesData": "",
             "extends": [],
-            "templateData": "<div class=\"demo-container\">\n    <h2>Elevation Levels</h2>\n    <div class=\"demo-section\">\n      <div class=\"demo-item\" *ngFor=\"let level of elevationLevels\">\n        <div class=\"example-box\" [class]=\"'global-el-' + level\">\n          global-el-{{level}}\n        </div>\n      </div>\n    </div>\n\n    <h2>Individual Shadow Layers</h2>\n    <div class=\"demo-section\">\n      <ng-container *ngFor=\"let level of elevationLevels\">\n        <div class=\"demo-item\" *ngFor=\"let layer of [1, 2, 3]\">\n          <div class=\"example-box\" [class]=\"'global-el-' + level + '-' + layer\">\n            {{level}}-layer-{{layer}}\n          </div>\n        </div>\n      </ng-container>\n    </div>\n  </div>"
+            "templateData": "<div class=\"elevation-demo\">\n  <div class=\"input-section\">\n    <div class=\"manual-input\">\n      <h3>Test Elevation Classes</h3>\n      <div class=\"input-group\">\n        <input \n          type=\"text\" \n          [(ngModel)]=\"manualClass\" \n          placeholder=\"Enter class name (e.g., elevation-1)\"\n          (keyup.enter)=\"addClass()\"\n        >\n        <input \n          type=\"text\" \n          [(ngModel)]=\"customText\" \n          placeholder=\"Enter custom text (optional)\"\n          (keyup.enter)=\"addClass()\"\n        >\n        <button (click)=\"addClass()\">Add Example</button>\n      </div>\n    </div>\n\n    <div class=\"quick-access\">\n      <h4>Quick Access</h4>\n      <div class=\"button-group\">\n        <button *ngFor=\"let preset of commonPresets\" \n                (click)=\"addPreset(preset)\"\n                [title]=\"preset\">\n          {{preset}}\n        </button>\n      </div>\n    </div>\n  </div>\n  \n  <div class=\"examples-section\">\n    <h3>Live Examples</h3>\n    <div class=\"examples-list\">\n      <div *ngFor=\"let example of examples; let i = index\" class=\"example-item\">\n        <div class=\"example-header\">\n          <code>{{example.className}}</code>\n          <button class=\"remove-btn\" (click)=\"removeExample(i)\">×</button>\n        </div>\n        <div [class]=\"example.className\" class=\"elevation-example\">\n          {{example.text || defaultText}}\n        </div>\n      </div>\n    </div>\n  </div>\n</div>"
         },
         {
             "name": "HeaderComponent",
@@ -570,7 +911,7 @@
         },
         {
             "name": "SpacingDemoComponent",
-            "id": "component-SpacingDemoComponent-6b2e5547da2bd0d81535a695040ba5121cda424b814a937e7327f53e5f410bfdda989b752048f9764426e833a92c06b50bbdcc19619a75ef76e5d3d5150d0446",
+            "id": "component-SpacingDemoComponent-c2e5d6932563520f1c931a229fae0863ed9b0b97d7b4704ef09866efb92fe132c83c04e61b9e71a16c0f3c6bf2df9035f4887d72dd36ba4e0a3dcf61be8b90f8",
             "file": "src/app/components/spacing-demo/spacing-demo.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -589,24 +930,139 @@
             "outputsClass": [],
             "propertiesClass": [
                 {
-                    "name": "spacingSizes",
-                    "defaultValue": "['00', '01', '02', '03', '04', '05', '06', '07', '08', '09', '10', '11']",
+                    "name": "commonPresets",
+                    "defaultValue": "[\n    'global-m-00',\n    'global-m-01',\n    'global-m-02',\n    'global-m-03',\n    'global-m-04',\n    'global-m-05',\n    'global-m-06',\n    'global-m-07',\n    'global-m-08',\n    'global-m-09',\n    'global-m-10',\n    'global-m-11',\n    'global-p-00',\n    'global-p-01',\n    'global-p-02',\n    'global-p-03',\n    'global-p-04',\n    'global-p-05',\n    'global-p-06',\n    'global-p-07',\n    'global-p-08',\n    'global-p-09',\n    'global-p-10',\n    'global-p-11',\n    'global-gap-00',\n    'global-gap-01',\n    'global-gap-02',\n    'global-gap-03',\n    'global-gap-04',\n    'global-gap-05',\n    'global-gap-06',\n    'global-gap-07',\n    'global-gap-08',\n    'global-gap-09',\n    'global-gap-10',\n    'global-gap-11'\n  ]",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "[]",
                     "indexKey": "",
                     "optional": false,
                     "description": "",
-                    "line": 11
+                    "line": 23
+                },
+                {
+                    "name": "customText",
+                    "defaultValue": "''",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "string",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 19
+                },
+                {
+                    "name": "defaultText",
+                    "defaultValue": "'Spacing Example'",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "string",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 21
+                },
+                {
+                    "name": "examples",
+                    "defaultValue": "[]",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "SpacingExample[]",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 20
+                },
+                {
+                    "name": "manualClass",
+                    "defaultValue": "''",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "string",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 18
                 }
             ],
-            "methodsClass": [],
+            "methodsClass": [
+                {
+                    "name": "addClass",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 62,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                },
+                {
+                    "name": "addPreset",
+                    "args": [
+                        {
+                            "name": "preset",
+                            "type": "string",
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 73,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "jsdoctags": [
+                        {
+                            "name": "preset",
+                            "type": "string",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "removeExample",
+                    "args": [
+                        {
+                            "name": "index",
+                            "type": "number",
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 80,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "jsdoctags": [
+                        {
+                            "name": "index",
+                            "type": "number",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
+                }
+            ],
             "deprecated": false,
             "deprecationMessage": "",
             "hostBindings": [],
             "hostListeners": [],
-            "standalone": false,
+            "standalone": true,
             "imports": [
+                {
+                    "name": "FormsModule",
+                    "type": "module"
+                },
                 {
                     "name": "CommonModule",
                     "type": "module"
@@ -615,13 +1071,13 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { CommonModule } from '@angular/common';\nimport { Component } from '@angular/core';\n\n@Component({\n  selector: 'app-spacing-demo',\n  imports: [CommonModule],\n  templateUrl: './spacing-demo.component.html',\n  styleUrl: './spacing-demo.component.scss'\n})\nexport class SpacingDemoComponent {\n  spacingSizes = ['00', '01', '02', '03', '04', '05', '06', '07', '08', '09', '10', '11'];\n}\n",
+            "sourceCode": "import { CommonModule } from '@angular/common';\nimport { Component } from '@angular/core';\nimport { FormsModule } from '@angular/forms';\n\ninterface SpacingExample {\n  className: string;\n  text: string;\n}\n\n@Component({\n  selector: 'app-spacing-demo',\n  standalone: true,\n  imports: [FormsModule, CommonModule],\n  templateUrl: './spacing-demo.component.html',\n  styleUrl: './spacing-demo.component.scss'\n})\nexport class SpacingDemoComponent {\n  manualClass = '';\n  customText = '';\n  examples: SpacingExample[] = [];\n  defaultText = 'Spacing Example';\n  \n  commonPresets = [\n    'global-m-00',\n    'global-m-01',\n    'global-m-02',\n    'global-m-03',\n    'global-m-04',\n    'global-m-05',\n    'global-m-06',\n    'global-m-07',\n    'global-m-08',\n    'global-m-09',\n    'global-m-10',\n    'global-m-11',\n    'global-p-00',\n    'global-p-01',\n    'global-p-02',\n    'global-p-03',\n    'global-p-04',\n    'global-p-05',\n    'global-p-06',\n    'global-p-07',\n    'global-p-08',\n    'global-p-09',\n    'global-p-10',\n    'global-p-11',\n    'global-gap-00',\n    'global-gap-01',\n    'global-gap-02',\n    'global-gap-03',\n    'global-gap-04',\n    'global-gap-05',\n    'global-gap-06',\n    'global-gap-07',\n    'global-gap-08',\n    'global-gap-09',\n    'global-gap-10',\n    'global-gap-11'\n  ];\n\n  addClass() {\n    if (this.manualClass) {\n      this.examples.unshift({\n        className: this.manualClass,\n        text: this.customText\n      });\n      this.manualClass = '';\n      this.customText = '';\n    }\n  }\n\n  addPreset(preset: string) {\n    this.examples.unshift({\n      className: preset,\n      text: this.defaultText\n    });\n  }\n\n  removeExample(index: number) {\n    this.examples.splice(index, 1);\n  }\n}\n",
             "styleUrl": "./spacing-demo.component.scss",
             "assetsDirs": [],
             "styleUrlsData": "",
             "stylesData": "",
             "extends": [],
-            "templateData": "<div class=\"demo-container\">\n    <h2>Margin Examples</h2>\n    <div class=\"demo-section\">\n      <div class=\"demo-item\" *ngFor=\"let size of spacingSizes\">\n        <div class=\"example-box\" [class]=\"'global-m-' + size\">\n          global-m-{{size}}\n        </div>\n      </div>\n    </div>\n\n    <h2>Padding Examples</h2>\n    <div class=\"demo-section\">\n      <div class=\"demo-item\" *ngFor=\"let size of spacingSizes\">\n        <div [class]=\"'example-box global-p-' + size\">\n          global-p-{{size}}\n        </div>\n      </div>\n    </div>\n\n    <h2>Gap Examples</h2>\n    <div class=\"demo-section\">\n      <div class=\"demo-item\" *ngFor=\"let size of spacingSizes\">\n        <div class=\"flex-container\" [class]=\"'global-gap-' + size\">\n          <div class=\"gap-item\"></div>\n          <div class=\"gap-item\"></div>\n          <div class=\"gap-item\"></div>\n        </div>\n      </div>\n    </div>\n\n    <h2>Gutter Examples</h2>\n    <div class=\"demo-section\">\n      <div class=\"demo-item\" *ngFor=\"let size of spacingSizes\">\n        <div [class]=\"'gutter-container global-gutter-' + size\">\n          <div class=\"gutter-item\"></div>\n          <div class=\"gutter-item\"></div>\n          <div class=\"gutter-item\"></div>\n          <div class=\"gutter-item\"></div>\n        </div>\n      </div>\n    </div>\n  </div>"
+            "templateData": "<div class=\"spacing-demo\">\n  <div class=\"input-section\">\n    <div class=\"manual-input\">\n      <h3>Test Spacing Classes</h3>\n      <div class=\"input-group\">\n        <input \n          type=\"text\" \n          [(ngModel)]=\"manualClass\" \n          placeholder=\"Enter class name (e.g., margin-1)\"\n          (keyup.enter)=\"addClass()\"\n        >\n        <input \n          type=\"text\" \n          [(ngModel)]=\"customText\" \n          placeholder=\"Enter custom text (optional)\"\n          (keyup.enter)=\"addClass()\"\n        >\n        <button (click)=\"addClass()\">Add Example</button>\n      </div>\n    </div>\n\n    <div class=\"quick-access\">\n      <h4>Quick Access</h4>\n      <div class=\"button-group\">\n        <button *ngFor=\"let preset of commonPresets\" \n                (click)=\"addPreset(preset)\"\n                [title]=\"preset\">\n          {{preset}}\n        </button>\n      </div>\n    </div>\n  </div>\n  \n  <div class=\"examples-section\">\n    <h3>Live Examples</h3>\n    <div class=\"examples-list\">\n      <div *ngFor=\"let example of examples; let i = index\" class=\"example-item\">\n        <div class=\"example-header\">\n          <code>{{example.className}}</code>\n          <button class=\"remove-btn\" (click)=\"removeExample(i)\">×</button>\n        </div>\n        <div [class]=\"example.className\" class=\"spacing-example\">\n          {{example.text || defaultText}}\n        </div>\n      </div>\n    </div>\n  </div>\n</div>"
         },
         {
             "name": "TypographyDemoComponent",
@@ -869,7 +1325,7 @@
     },
     "routes": [],
     "coverage": {
-        "count": 6,
+        "count": 5,
         "status": "low",
         "files": [
             {
@@ -878,7 +1334,7 @@
                 "linktype": "component",
                 "name": "AppComponent",
                 "coveragePercent": 0,
-                "coverageCount": "0/2",
+                "coverageCount": "0/4",
                 "status": "low"
             },
             {
@@ -897,7 +1353,16 @@
                 "linktype": "component",
                 "name": "BordersDemoComponent",
                 "coveragePercent": 0,
-                "coverageCount": "0/4",
+                "coverageCount": "0/9",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/components/borders-demo/borders-demo.component.ts",
+                "type": "interface",
+                "linktype": "interface",
+                "name": "BorderExample",
+                "coveragePercent": 0,
+                "coverageCount": "0/3",
                 "status": "low"
             },
             {
@@ -906,7 +1371,16 @@
                 "linktype": "component",
                 "name": "ElevationDemoComponent",
                 "coveragePercent": 0,
-                "coverageCount": "0/2",
+                "coverageCount": "0/9",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/components/elevation-demo/elevation-demo.component.ts",
+                "type": "interface",
+                "linktype": "interface",
+                "name": "ElevationExample",
+                "coveragePercent": 0,
+                "coverageCount": "0/3",
                 "status": "low"
             },
             {
@@ -915,7 +1389,16 @@
                 "linktype": "component",
                 "name": "SpacingDemoComponent",
                 "coveragePercent": 0,
-                "coverageCount": "0/2",
+                "coverageCount": "0/9",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/components/spacing-demo/spacing-demo.component.ts",
+                "type": "interface",
+                "linktype": "interface",
+                "name": "SpacingExample",
+                "coveragePercent": 0,
+                "coverageCount": "0/3",
                 "status": "low"
             },
             {
