@@ -85,30 +85,6 @@ export const elevation = {
         ))}
       </div>
 
-      <h2>Individual Shadow Layers</h2>
-      <div>
-        {Object.entries(elevation.shadows).map(([key, { name, layers }]) => (
-          <div key={key} className="sb-layer-demo">
-            <h3>{key}</h3>
-            <div className="sb-layer-examples">
-              {layers.map((layer, index) => (
-                <div key={index} className="sb-layer-item">
-                  <code>{name}-{index + 1}</code>
-                  <div 
-                    className="sb-demo-box"
-                    style={{ 
-                      boxShadow: `${layer.x}px ${layer.y}px ${layer.blur}px ${layer.spread}px rgba(0,0,0,0.1)`
-                    }}
-                  >
-                    Layer {index + 1}
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-        ))}
-      </div>
-
       <h2>Custom Color Shadows</h2>
       <div>
         <div className="sb-demo-item">
@@ -147,10 +123,6 @@ export const elevation = {
           High Raised Element
         </div>
 
-        <!-- Single shadow layer -->
-        <div class="global-el-midRaised-2">
-          Mid Raised - Layer 2 Only
-        </div>
         ```
 
         ```scss

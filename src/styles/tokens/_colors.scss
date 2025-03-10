@@ -1,0 +1,222 @@
+// Color Palettes
+
+// Red Colors
+$red-colors: (
+  '50': #FFE4DC,
+  '100': #FFC8BB,
+  '200': #FBAD9A,
+  '300': #F5917A,
+  '400': #ED745B,
+  '500': #E4553D,
+  '600': #D92D20,
+  '700': #B22A1C,
+  '800': #8D2619,
+  '900': #692015,
+  '1000': #471A11,
+  'a50': rgba(#D92D20, 0.09),  // 09% opacity
+  'a100': rgba(#D92D20, 0.18), // 18% opacity
+  'a150': rgba(#D92D20, 0.24), // 24% opacity
+  'a200': rgba(#D92D20, 0.32)  // 32% opacity
+);
+
+// Yellow Colors
+$yellow-colors: (
+  '50': #FFF3DF,
+  '100': #FFE6C0,
+  '200': #FFDAA1,
+  '300': #FFCE82,
+  '400': #FFC262,
+  '500': #FFB63F,
+  '600': #FFAB00,
+  '700': #D08B0F,
+  '800': #A36E14,
+  '900': #785215,
+  '1000': #503713,
+  'a50': rgba(#FFAB00, 0.09),
+  'a100': rgba(#FFAB00, 0.18),
+  'a150': rgba(#FFAB00, 0.24),
+  'a200': rgba(#FFAB00, 0.32)
+);
+
+// Aqua Green Colors
+$aqua-green-colors: (
+  '50': #E7F6F1,
+  '100': #C9EADF,
+  '200': #AEDFD0,
+  '300': #91D4C1,
+  '400': #73C9B1,
+  '500': #50BEA3,
+  '600': #1AB394,
+  '700': #1F937A,
+  '800': #207460,
+  '900': #1D5648,
+  '1000': #193A31,
+  'a50': rgba(#1AB394, 0.09),
+  'a100': rgba(#1AB394, 0.18),
+  'a150': rgba(#1AB394, 0.24),
+  'a200': rgba(#1AB394, 0.32)
+);
+
+// Green Colors
+$green-colors: (
+  '50': #EBFAF3,
+  '100': #DAF5E8,
+  '200': #B6ECD1,
+  '300': #91E38A,
+  '400': #48D08C,
+  '500': #00BE5F,
+  '600': #00A251,
+  '700': #008743,
+  '800': #006C36,
+  '900': #005128,
+  '1000': #00361B,
+  'a50': rgba(#00A251, 0.09),
+  'a100': rgba(#00A251, 0.18),
+  'a150': rgba(#00A251, 0.24),
+  'a200': rgba(#00A251, 0.32)
+);
+
+// Sky Blue Colors
+$sky-blue-colors: (
+  '50': #E7F6FE,
+  '100': #CFEDFC,
+  '200': #A8DFFA,
+  '300': #79CEF8,
+  '400': #57C1F6,
+  '500': #15B0F3,
+  '600': #1291D0,
+  '700': #0F78AD,
+  '800': #0C608A,
+  '900': #094868,
+  '1000': #063145,
+  'a50': rgba(#1291D0, 0.09),
+  'a100': rgba(#1291D0, 0.18),
+  'a150': rgba(#1291D0, 0.24),
+  'a200': rgba(#1291D0, 0.32)
+);
+
+// Blue Colors
+$blue-colors: (
+  '50': #F5F8FF,
+  '100': #D8E4FD,
+  '200': #B4CDFD,
+  '300': #75A3FF,
+  '400': #4D7FFF,
+  '500': #305EFF,
+  '600': #2950DA,
+  '700': #2243B6,
+  '800': #1B3591,
+  '900': #14286D,
+  '1000': #0D1A48,
+  'a50': rgba(#305EFF, 0.09),
+  'a100': rgba(#305EFF, 0.18),
+  'a150': rgba(#305EFF, 0.24),
+  'a200': rgba(#305EFF, 0.32)
+);
+
+// Pink Colors
+$pink-colors: (
+  '50': #FFE5EE,
+  '100': #FFCADD,
+  '200': #FFAFCC,
+  '300': #FF93BC,
+  '400': #FD74AC,
+  '500': #F9519C,
+  '600': #F3168D,
+  '700': #C71E73,
+  '800': #9C205B,
+  '900': #731E45,
+  '1000': #4D192F,
+  'a50': rgba(#F3168D, 0.09),
+  'a100': rgba(#F3168D, 0.18),
+  'a150': rgba(#F3168D, 0.24),
+  'a200': rgba(#F3168D, 0.32)
+);
+
+// Purple Colors
+$purple-colors: (
+  '50': #F7E2FE,
+  '100': #EDC6FE,
+  '200': #E3A9FC,
+  '300': #D78BFA,
+  '400': #CB6CF8,
+  '500': #BD4AF6,
+  '600': #AD16F3,
+  '700': #8F1BC6,
+  '800': #711C9B,
+  '900': #551B72,
+  '1000': #3A174C,
+  'a50': rgba(#8F1BC6, 0.09),
+  'a100': rgba(#8F1BC6, 0.18),
+  'a150': rgba(#8F1BC6, 0.24),
+  'a200': rgba(#8F1BC6, 0.32)
+);
+
+// Charcoal Blue Colors
+$charcoal-blue-colors: (
+  '50': #E3E5E7,
+  '100': #C7CBD0,
+  '200': #ACB2B9,
+  '300': #919AA3,
+  '400': #78828D,
+  '500': #5F6B78,
+  '600': #465564,
+  '700': #2F4050,
+  '800': #25313C,
+  '900': #1B232A,
+  '1000': #111519,
+  'a50': rgba(#1F5C7A, 0.09),
+  'a100': rgba(#1F5C7A, 0.18),
+  'a150': rgba(#1F5C7A, 0.24),
+  'a200': rgba(#1F5C7A, 0.32)
+);
+
+// Neutral Colors
+$neutral-colors: (
+  '10': #F4F5F6,
+  '20': #EEEEEE,
+  '30': #E2E2E2,
+  '40': #D3D3D3,
+  '50': #C6C6C6,
+  '100': #BCBCBC,
+  '200': #ABABAB,
+  '300': #909090,
+  '400': #777777,
+  '500': #646465,
+  '600': #464646,
+  '700': #2B2B2B,
+  '800': #252525,
+  '900': #1B1B1B,
+  '1000': #111111
+);
+
+// Other Colors
+$other-colors: (
+  'black': #000000,
+  'white': #FFFFFF
+);
+
+// Generate color classes
+@mixin generate-color-classes($color-map, $prefix) {
+  @each $color, $value in $color-map {
+    .#{$prefix}-#{$color} {
+      color: $value;
+    }
+    .#{$prefix}-bg-#{$color} {
+      background-color: $value;
+    }
+  }
+}
+
+// Generate classes for each color palette
+@include generate-color-classes($red-colors, 'global-red');
+@include generate-color-classes($yellow-colors, 'global-yellow');
+@include generate-color-classes($aqua-green-colors, 'global-aqua-green');
+@include generate-color-classes($green-colors, 'global-green');
+@include generate-color-classes($sky-blue-colors, 'global-sky-blue');
+@include generate-color-classes($blue-colors, 'global-blue');
+@include generate-color-classes($pink-colors, 'global-pink');
+@include generate-color-classes($purple-colors, 'global-purple');
+@include generate-color-classes($charcoal-blue-colors, 'global-charcoal-blue');
+@include generate-color-classes($neutral-colors, 'global-neutral');
+@include generate-color-classes($other-colors, 'global');

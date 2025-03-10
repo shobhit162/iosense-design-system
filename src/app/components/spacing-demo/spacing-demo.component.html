@@ -3,45 +3,48 @@
     <div class="manual-input">
       <h3>Test Spacing Classes</h3>
       <div class="input-group">
-        <input 
-          type="text" 
-          [(ngModel)]="manualClass" 
-          placeholder="Enter class name (e.g., margin-1)"
-          (keyup.enter)="addClass()"
-        >
-        <input 
-          type="text" 
-          [(ngModel)]="customText" 
+        <select [(ngModel)]="selectedCategory" (ngModelChange)="onCategoryChange()">
+          <option value="">Select Category</option>
+          <option *ngFor="let category of classCategories" [value]="category.name">
+            {{ category.name }}
+          </option>
+        </select>
+        <select [(ngModel)]="selectedClass" [disabled]="!selectedCategory">
+          <option value="">Select Class</option>
+          <option *ngFor="let classItem of getSelectedCategoryClasses()" [value]="classItem">
+            {{ classItem }}
+          </option>
+        </select>
+        <input
+          type="text"
+          [(ngModel)]="customText"
           placeholder="Enter custom text (optional)"
-          (keyup.enter)="addClass()"
-        >
-        <button (click)="addClass()">Add Example</button>
+        />
+        <button (click)="onClassSelect()" [disabled]="!selectedClass">Add Class</button>
       </div>
-    </div>
-
-    <div class="quick-access">
-      <h4>Quick Access</h4>
-      <div class="button-group">
-        <button *ngFor="let preset of commonPresets" 
-                (click)="addPreset(preset)"
-                [title]="preset">
-          {{preset}}
-        </button>
+      <div class="manual-class-input">
+        <div class="input-group">
+          <input
+            type="text"
+            [(ngModel)]="manualClass"
+            placeholder="Or enter class name manually"
+            (keyup.enter)="addClass()"
+          />
+          <button (click)="addClass()" [disabled]="!manualClass">Add Class</button>
+        </div>
       </div>
     </div>
   </div>
   
-  <div class="examples-section">
-    <h3>Live Examples</h3>
+  <div class="examples-section" *ngIf="examples.length > 0">
+    <h3>Examples</h3>
     <div class="examples-list">
-      <div *ngFor="let example of examples; let i = index" class="example-item">
+      <div class="example-item" *ngFor="let example of examples; let i = index">
         <div class="example-header">
-          <code>{{example.className}}</code>
+          <code>{{ example.className }}</code>
           <button class="remove-btn" (click)="removeExample(i)">×</button>
         </div>
-        <div [class]="example.className" class="spacing-example">
-          {{example.text || defaultText}}
-        </div>
+        <div class="spacing-example" [class]="example.className">{{ example.text }}</div>
       </div>
     </div>
   </div>

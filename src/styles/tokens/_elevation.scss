@@ -49,21 +49,6 @@ $elevation-shadows: (
   }
 }
 
-// Optional: Generate individual shadow classes
-@each $elevation, $shadows in $elevation-shadows {
-  .global-el-#{$elevation}-1 {
-    box-shadow: get-shadow-value(map.get($shadows, 'shadow1'));
-  }
-  
-  .global-el-#{$elevation}-2 {
-    box-shadow: get-shadow-value(map.get($shadows, 'shadow2'));
-  }
-  
-  .global-el-#{$elevation}-3 {
-    box-shadow: get-shadow-value(map.get($shadows, 'shadow3'));
-  }
-}
-
 // Optional: Custom color shadows
 @mixin elevation($level, $color: rgba(0, 0, 0, 0.1)) {
   $shadows: map.get($elevation-shadows, $level);

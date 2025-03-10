@@ -7,6 +7,11 @@ interface ElevationExample {
   text: string;
 }
 
+interface ClassCategory {
+  name: string;
+  classes: string[];
+}
+
 @Component({
   selector: 'app-elevation-demo',
   standalone: true,
@@ -19,37 +24,51 @@ export class ElevationDemoComponent {
   customText = '';
   examples: ElevationExample[] = [];
   defaultText = 'Elevation Example';
+  selectedCategory = '';
+  selectedClass = '';
   
-  commonPresets = [
-    'global-el-ultraLowRaised',
-    'global-el-lowRaised',
-    'global-el-midRaised',
-    'global-el-highRaised',
-    'global-el-ultraHighRaised',
-    'global-el-ultraLowRaised-1',
-    'global-el-ultraLowRaised-2',
-    'global-el-ultraLowRaised-3',
-    'global-el-lowRaised-1',
-    'global-el-lowRaised-2',
-    'global-el-lowRaised-3'
+  classCategories: ClassCategory[] = [
+    {
+      name: 'Shadows (Global)',
+      classes: [
+        'global-el-ultraLowRaised',
+        'global-el-lowRaised',
+        'global-el-midRaised',
+        'global-el-highRaised',
+        'global-el-ultraHighRaised'
+      ]
+    },
   ];
+
+  getSelectedCategoryClasses(): string[] {
+    const category = this.classCategories.find(c => c.name === this.selectedCategory);
+    return category ? category.classes : [];
+  }
+
+  onCategoryChange() {
+    this.selectedClass = '';
+  }
+
+  onClassSelect() {
+    if (this.selectedClass) {
+      this.examples.unshift({
+        className: this.selectedClass,
+        text: this.customText || this.defaultText
+      });
+      this.selectedClass = '';
+      this.customText = '';
+    }
+  }
 
   addClass() {
     if (this.manualClass) {
       this.examples.unshift({
         className: this.manualClass,
-        text: this.customText
+        text: this.customText || this.defaultText
       });
       this.manualClass = '';
       this.customText = '';
     }
-  }
-
-  addPreset(preset: string) {
-    this.examples.unshift({
-      className: preset,
-      text: this.defaultText
-    });
   }
 
   removeExample(index: number) {

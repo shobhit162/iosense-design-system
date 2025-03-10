@@ -1,0 +1,457 @@
+import { Meta } from "@storybook/blocks";
+
+<Meta title="Tokens/Typography/Type Classes" />
+
+export const typography = {
+  typeScale: {
+    display: {
+      DisplayXLargeRegular: {
+        fontSize: { class: 'font-size-1100', desktop: '72px', mobile: '40px' },
+        lineHeight: { class: 'line-height-1100', desktop: '78px', mobile: '48px' },
+        letterSpacing: { class: 'letter-spacing-50', value: '-1px' },
+        fontWeight: { class: 'font-weight-400', value: 400 },
+        paragraphSpacing: { class: 'paragraph-spacing-00', value: '0px' }
+      },
+      DisplayXLargeMedium: {
+        fontSize: { class: 'font-size-1100', desktop: '72px', mobile: '40px' },
+        lineHeight: { class: 'line-height-1100', desktop: '78px', mobile: '48px' },
+        letterSpacing: { class: 'letter-spacing-50', value: '-1px' },
+        fontWeight: { class: 'font-weight-500', value: 500 },
+        paragraphSpacing: { class: 'paragraph-spacing-00', value: '0px' }
+      },
+      DisplayXLargeSemibold: {
+        fontSize: { class: 'font-size-1100', desktop: '72px', mobile: '40px' },
+        lineHeight: { class: 'line-height-1100', desktop: '78px', mobile: '48px' },
+        letterSpacing: { class: 'letter-spacing-100', value: '0' },
+        fontWeight: { class: 'font-weight-600', value: 600 },
+        paragraphSpacing: { class: 'paragraph-spacing-00', value: '0px' }
+      },
+      DisplayLargeRegular: {
+        fontSize: { class: 'font-size-1000', desktop: '64px', mobile: '38px' },
+        lineHeight: { class: 'line-height-1000', desktop: '70px', mobile: '46px' },
+        letterSpacing: { class: 'letter-spacing-50', value: '-1px' },
+        fontWeight: { class: 'font-weight-400', value: 400 },
+        paragraphSpacing: { class: 'paragraph-spacing-00', value: '0px' }
+      },
+      DisplayLargeMedium: {
+        fontSize: { class: 'font-size-1000', desktop: '64px', mobile: '38px' },
+        lineHeight: { class: 'line-height-1000', desktop: '70px', mobile: '46px' },
+        letterSpacing: { class: 'letter-spacing-50', value: '-1px' },
+        fontWeight: { class: 'font-weight-500', value: 500 },
+        paragraphSpacing: { class: 'paragraph-spacing-00', value: '0px' }
+      },
+      DisplayLargeSemibold: {
+        fontSize: { class: 'font-size-1000', desktop: '64px', mobile: '38px' },
+        lineHeight: { class: 'line-height-1000', desktop: '70px', mobile: '46px' },
+        letterSpacing: { class: 'letter-spacing-100', value: '0' },
+        fontWeight: { class: 'font-weight-600', value: 600 },
+        paragraphSpacing: { class: 'paragraph-spacing-00', value: '0px' }
+      },
+      DisplayMediumRegular: {
+        fontSize: { class: 'font-size-900', desktop: '56px', mobile: '36px' },
+        lineHeight: { class: 'line-height-900', desktop: '64px', mobile: '42px' },
+        letterSpacing: { class: 'letter-spacing-50', value: '-1px' },
+        fontWeight: { class: 'font-weight-400', value: 400 },
+        paragraphSpacing: { class: 'paragraph-spacing-00', value: '0px' }
+      },
+      DisplayMediumMedium: {
+        fontSize: { class: 'font-size-900', desktop: '56px', mobile: '36px' },
+        lineHeight: { class: 'line-height-900', desktop: '64px', mobile: '42px' },
+        letterSpacing: { class: 'letter-spacing-50', value: '-1px' },
+        fontWeight: { class: 'font-weight-500', value: 500 },
+        paragraphSpacing: { class: 'paragraph-spacing-00', value: '0px' }
+      },
+      DisplayMediumSemibold: {
+        fontSize: { class: 'font-size-900', desktop: '56px', mobile: '36px' },
+        lineHeight: { class: 'line-height-900', desktop: '64px', mobile: '42px' },
+        letterSpacing: { class: 'letter-spacing-100', value: '0' },
+        fontWeight: { class: 'font-weight-600', value: 600 },
+        paragraphSpacing: { class: 'paragraph-spacing-00', value: '0px' }
+      },
+      DisplaySmallRegular: {
+        fontSize: { class: 'font-size-800', desktop: '48px', mobile: '34px' },
+        lineHeight: { class: 'line-height-800', desktop: '56px', mobile: '40px' },
+        letterSpacing: { class: 'letter-spacing-50', value: '-1px' },
+        fontWeight: { class: 'font-weight-400', value: 400 },
+        paragraphSpacing: { class: 'paragraph-spacing-00', value: '0px' }
+      },
+      DisplaySmallMedium: {
+        fontSize: { class: 'font-size-800', desktop: '48px', mobile: '34px' },
+        lineHeight: { class: 'line-height-800', desktop: '56px', mobile: '40px' },
+        letterSpacing: { class: 'letter-spacing-50', value: '-1px' },
+        fontWeight: { class: 'font-weight-500', value: 500 },
+        paragraphSpacing: { class: 'paragraph-spacing-00', value: '0px' }
+      },
+      DisplaySmallSemibold: {
+        fontSize: { class: 'font-size-800', desktop: '48px', mobile: '34px' },
+        lineHeight: { class: 'line-height-800', desktop: '56px', mobile: '40px' },
+        letterSpacing: { class: 'letter-spacing-100', value: '0' },
+        fontWeight: { class: 'font-weight-600', value: 600 },
+        paragraphSpacing: { class: 'paragraph-spacing-00', value: '0px' }
+      }
+    },
+    heading: {
+        Heading2XLargeRegular: {
+          fontSize: { class: 'font-size-700', desktop: '40px', mobile: '32px' },
+          lineHeight: { class: 'line-height-700', desktop: '46px', mobile: '38px' },
+          letterSpacing: { class: 'letter-spacing-100', value: '0' },
+          fontWeight: { class: 'font-weight-400', value: 400 },
+          paragraphSpacing: { class: 'paragraph-spacing-00', value: '0px' }
+        },
+        Heading2XLargeSemibold: {
+          fontSize: { class: 'font-size-700', desktop: '40px', mobile: '32px' },
+          lineHeight: { class: 'line-height-700', desktop: '46px', mobile: '38px' },
+          letterSpacing: { class: 'letter-spacing-100', value: '0' },
+          fontWeight: { class: 'font-weight-600', value: 600 },
+          paragraphSpacing: { class: 'paragraph-spacing-00', value: '0px' }
+        },
+        HeadingXLargeRegular: {
+          fontSize: { class: 'font-size-600', desktop: '32px', mobile: '24px' },
+          lineHeight: { class: 'line-height-600', desktop: '38px', mobile: '32px' },
+          letterSpacing: { class: 'letter-spacing-100', value: '0' },
+          fontWeight: { class: 'font-weight-400', value: 400 },
+          paragraphSpacing: { class: 'paragraph-spacing-00', value: '0px' }
+        },
+        HeadingXLargeSemibold: {
+          fontSize: { class: 'font-size-600', desktop: '32px', mobile: '24px' },
+          lineHeight: { class: 'line-height-600', desktop: '38px', mobile: '32px' },
+          letterSpacing: { class: 'letter-spacing-100', value: '0' },
+          fontWeight: { class: 'font-weight-600', value: 600 },
+          paragraphSpacing: { class: 'paragraph-spacing-00', value: '0px' }
+        },
+        HeadingLargeRegular: {
+          fontSize: { class: 'font-size-500', desktop: '24px', mobile: '20px' },
+          lineHeight: { class: 'line-height-500', desktop: '32px', mobile: '26px' },
+          letterSpacing: { class: 'letter-spacing-100', value: '0' },
+          fontWeight: { class: 'font-weight-400', value: 400 },
+          paragraphSpacing: { class: 'paragraph-spacing-00', value: '0px' }
+        },
+        HeadingLargeSemibold: {
+          fontSize: { class: 'font-size-500', desktop: '24px', mobile: '20px' },
+          lineHeight: { class: 'line-height-500', desktop: '32px', mobile: '26px' },
+          letterSpacing: { class: 'letter-spacing-100', value: '0' },
+          fontWeight: { class: 'font-weight-600', value: 600 },
+          paragraphSpacing: { class: 'paragraph-spacing-00', value: '0px' }
+        },
+        HeadingMediumRegular: {
+          fontSize: { class: 'font-size-400', desktop: '20px', mobile: '18px' },
+          lineHeight: { class: 'line-height-400', desktop: '26px', mobile: '24px' },
+          letterSpacing: { class: 'letter-spacing-100', value: '0' },
+          fontWeight: { class: 'font-weight-400', value: 400 },
+          paragraphSpacing: { class: 'paragraph-spacing-00', value: '0px' }
+        },
+        HeadingMediumSemibold: {
+          fontSize: { class: 'font-size-400', desktop: '20px', mobile: '18px' },
+          lineHeight: { class: 'line-height-400', desktop: '26px', mobile: '24px' },
+          letterSpacing: { class: 'letter-spacing-100', value: '0' },
+          fontWeight: { class: 'font-weight-600', value: 600 },
+          paragraphSpacing: { class: 'paragraph-spacing-00', value: '0px' }
+        },
+        HeadingSmallRegular: {
+          fontSize: { class: 'font-size-300', desktop: '18px', mobile: '16px' },
+          lineHeight: { class: 'line-height-300', desktop: '24px', mobile: '22px' },
+          letterSpacing: { class: 'letter-spacing-100', value: '0' },
+          fontWeight: { class: 'font-weight-400', value: 400 },
+          paragraphSpacing: { class: 'paragraph-spacing-00', value: '0px' }
+        },
+        HeadingSmallSemibold: {
+          fontSize: { class: 'font-size-300', desktop: '18px', mobile: '16px' },
+          lineHeight: { class: 'line-height-300', desktop: '24px', mobile: '22px' },
+          letterSpacing: { class: 'letter-spacing-100', value: '0' },
+          fontWeight: { class: 'font-weight-600', value: 600 },
+          paragraphSpacing: { class: 'paragraph-spacing-00', value: '0px' }
+        }
+    },
+    body: {
+        BodyLargeRegular: {
+          fontSize: { class: 'font-size-200', desktop: '16px', mobile: '16px' },
+          lineHeight: { class: 'line-height-200', desktop: '24px', mobile: '24px' },
+          letterSpacing: { class: 'letter-spacing-100', value: '0' },
+          fontWeight: { class: 'font-weight-400', value: 400 },
+          paragraphSpacing: { class: 'paragraph-spacing-400', value: '12px' }
+        },
+        BodyLargeMedium: {
+          fontSize: { class: 'font-size-200', desktop: '16px', mobile: '16px' },
+          lineHeight: { class: 'line-height-200', desktop: '24px', mobile: '24px' },
+          letterSpacing: { class: 'letter-spacing-100', value: '0' },
+          fontWeight: { class: 'font-weight-500', value: 500 },
+          paragraphSpacing: { class: 'paragraph-spacing-400', value: '12px' }
+        },
+        BodyLargeSemibold: {
+          fontSize: { class: 'font-size-200', desktop: '16px', mobile: '16px' },
+          lineHeight: { class: 'line-height-200', desktop: '24px', mobile: '24px' },
+          letterSpacing: { class: 'letter-spacing-100', value: '0' },
+          fontWeight: { class: 'font-weight-600', value: 600 },
+          paragraphSpacing: { class: 'paragraph-spacing-400', value: '12px' }
+        },
+        BodyMediumRegular: {
+          fontSize: { class: 'font-size-100', desktop: '14px', mobile: '14px' },
+          lineHeight: { class: 'line-height-100', desktop: '20px', mobile: '20px' },
+          letterSpacing: { class: 'letter-spacing-100', value: '0' },
+          fontWeight: { class: 'font-weight-400', value: 400 },
+          paragraphSpacing: { class: 'paragraph-spacing-300', value: '11px' }
+        },
+        BodyMediumMedium: {
+          fontSize: { class: 'font-size-100', desktop: '14px', mobile: '14px' },
+          lineHeight: { class: 'line-height-100', desktop: '20px', mobile: '20px' },
+          letterSpacing: { class: 'letter-spacing-100', value: '0' },
+          fontWeight: { class: 'font-weight-500', value: 500 },
+          paragraphSpacing: { class: 'paragraph-spacing-300', value: '11px' }
+        },
+        BodyMediumSemibold: {
+          fontSize: { class: 'font-size-100', desktop: '14px', mobile: '14px' },
+          lineHeight: { class: 'line-height-100', desktop: '20px', mobile: '20px' },
+          letterSpacing: { class: 'letter-spacing-100', value: '0' },
+          fontWeight: { class: 'font-weight-600', value: 600 },
+          paragraphSpacing: { class: 'paragraph-spacing-300', value: '11px' }
+        },
+        BodySmallRegular: {
+          fontSize: { class: 'font-size-50', desktop: '12px', mobile: '12px' },
+          lineHeight: { class: 'line-height-75', desktop: '18px', mobile: '18px' },
+          letterSpacing: { class: 'letter-spacing-100', value: '0' },
+          fontWeight: { class: 'font-weight-400', value: 400 },
+          paragraphSpacing: { class: 'paragraph-spacing-200', value: '10px' }
+        },
+        BodySmallMedium: {
+          fontSize: { class: 'font-size-50', desktop: '12px', mobile: '12px' },
+          lineHeight: { class: 'line-height-75', desktop: '18px', mobile: '18px' },
+          letterSpacing: { class: 'letter-spacing-100', value: '0' },
+          fontWeight: { class: 'font-weight-500', value: 500 },
+          paragraphSpacing: { class: 'paragraph-spacing-200', value: '10px' }
+        },
+        BodySmallSemibold: {
+          fontSize: { class: 'font-size-50', desktop: '12px', mobile: '12px' },
+          lineHeight: { class: 'line-height-75', desktop: '18px', mobile: '18px' },
+          letterSpacing: { class: 'letter-spacing-100', value: '0' },
+          fontWeight: { class: 'font-weight-600', value: 600 },
+          paragraphSpacing: { class: 'paragraph-spacing-200', value: '10px' }
+        },
+        BodyXSmallRegular: {
+          fontSize: { class: 'font-size-25', desktop: '10px', mobile: '10px' },
+          lineHeight: { class: 'line-height-25', desktop: '14px', mobile: '14px' },
+          letterSpacing: { class: 'letter-spacing-100', value: '0' },
+          fontWeight: { class: 'font-weight-400', value: 400 },
+          paragraphSpacing: { class: 'paragraph-spacing-100', value: '8px' }
+        },
+        BodyXSmallMedium: {
+          fontSize: { class: 'font-size-25', desktop: '10px', mobile: '10px' },
+          lineHeight: { class: 'line-height-25', desktop: '14px', mobile: '14px' },
+          letterSpacing: { class: 'letter-spacing-100', value: '0' },
+          fontWeight: { class: 'font-weight-500', value: 500 },
+          paragraphSpacing: { class: 'paragraph-spacing-100', value: '8px' }
+        },
+        BodyXSmallSemibold: {
+          fontSize: { class: 'font-size-25', desktop: '10px', mobile: '10px' },
+          lineHeight: { class: 'line-height-25', desktop: '14px', mobile: '14px' },
+          letterSpacing: { class: 'letter-spacing-100', value: '0' },
+          fontWeight: { class: 'font-weight-600', value: 600 },
+          paragraphSpacing: { class: 'paragraph-spacing-100', value: '8px' }
+        }
+    }
+  },
+};
+
+<div className="sb-container">
+  <div className="sb-section-title">
+    # Typography 
+  </div>
+
+  <div className="sb-section">
+    <div className="sb-typography-demo">
+      <h2>Type Scale Classes</h2>
+      <div className="sb-type-scale-demo">
+        <h3>Display Types</h3>
+        <div className="sb-type-scale-section">
+          {Object.entries(typography.typeScale.display).map(([className, styles]) => (
+            <div className="sb-type-scale-item" key={className}>
+              <div className="sb-type-scale-info">
+                <code>{className}</code>
+                <small>
+                  Font Size Class: {styles.fontSize.class}<br/>
+                  Line Height Class: {styles.lineHeight.class}<br/>
+                  Letter Spacing: {styles.letterSpacing.class} ({styles.letterSpacing.value})<br/>
+                  Font Weight: {styles.fontWeight.class} ({styles.fontWeight.value})<br/>
+                  Paragraph Spacing: {styles.paragraphSpacing.class} ({styles.paragraphSpacing.value})
+                </small>
+              </div>
+              <div className={className}>
+                <div style={{
+                  fontSize : styles.fontSize.desktop,
+                  lineHeight: styles.lineHeight.desktop,
+                  letterSpacing: styles.letterSpacing.value,
+                  fontWeight: styles.fontWeight.value,
+                  marginBottom: styles.paragraphSpacing.value
+                }}>
+                  Hello, Faclon! This is a display class example.
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+
+        <h3>Heading Types</h3>
+        <div className="sb-type-scale-section">
+          {Object.entries(typography.typeScale.heading).map(([className, styles]) => (
+            <div className="sb-type-scale-item" key={className}>
+              <div className="sb-type-scale-info">
+                <code>{className}</code>
+                <small>
+                  Font Size Class: {styles.fontSize.class}<br/>
+                  Line Height Class: {styles.lineHeight.class}<br/>
+                  Letter Spacing: {styles.letterSpacing.class} ({styles.letterSpacing.value})<br/>
+                  Font Weight: {styles.fontWeight.class} ({styles.fontWeight.value})<br/>
+                  Paragraph Spacing: {styles.paragraphSpacing.class} ({styles.paragraphSpacing.value})
+                </small>
+              </div>
+              <div className={className}>
+                <div style={{
+                  fontSize : styles.fontSize.desktop,
+                  lineHeight: styles.lineHeight.desktop,
+                  letterSpacing: styles.letterSpacing.value,
+                  fontWeight: styles.fontWeight.value,
+                  marginBottom: styles.paragraphSpacing.value
+                }}>
+                  Hello, Faclon! This is a heading classes example.
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+
+        <h3>Body Types</h3>
+        <div className="sb-type-scale-section">
+          {Object.entries(typography.typeScale.body).map(([className, styles]) => (
+            <div className="sb-type-scale-item" key={className}>
+              <div className="sb-type-scale-info">
+                <code>{className}</code>
+                <small>
+                  Font Size Class: {styles.fontSize.class}<br/>
+                  Line Height Class: {styles.lineHeight.class}<br/>
+                  Letter Spacing: {styles.letterSpacing.class} ({styles.letterSpacing.value})<br/>
+                  Font Weight: {styles.fontWeight.class} ({styles.fontWeight.value})<br/>
+                  Paragraph Spacing: {styles.paragraphSpacing.class} ({styles.paragraphSpacing.value})
+                </small>
+              </div>
+              <div className={className}>
+                <div style={{
+                  fontSize : styles.fontSize.desktop,
+                  lineHeight: styles.lineHeight.desktop,
+                  letterSpacing: styles.letterSpacing.value,
+                  fontWeight: styles.fontWeight.value,
+                  marginBottom: styles.paragraphSpacing.value
+                }}>
+                  Hello, Faclon! This is a body class example.
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<style>
+  {`
+    .sb-container {
+      margin-bottom: 48px;
+    }
+
+    .sb-section-title {
+      margin-bottom: 32px;
+    }
+
+    .sb-typography-demo {
+      width: 100%;
+    }
+
+    .sb-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-bottom: 32px;
+    }
+
+    .sb-table th,
+    .sb-table td {
+      padding: 12px;
+      border: 1px solid #E6E6E6;
+      text-align: left;
+    }
+
+    .sb-table th {
+      background-color: #F5F5F5;
+      font-weight: 600;
+    }
+
+    h2 {
+      margin: 32px 0 16px;
+      padding-bottom: 8px;
+      border-bottom: 1px solid #E6E6E6;
+    }
+
+    .sb-type-scale-demo {
+      margin-bottom: 48px;
+    }
+
+    .sb-type-scale-section {
+      margin-bottom: 32px;
+    }
+
+    .sb-type-scale-item {
+      padding: 24px;
+      border: 1px solid #E6E6E6;
+      border-radius: 4px;
+      margin-bottom: 16px;
+      background: white;
+    }
+
+    .sb-type-scale-info {
+      margin-bottom: 16px;
+      padding-bottom: 16px;
+      border-bottom: 1px solid #E6E6E6;
+    }
+
+    .sb-type-scale-info code {
+      display: block;
+      padding: 8px 12px;
+      background-color: #F5F5F5;
+      border-radius: 4px;
+      font-family: monospace;
+      margin-bottom: 8px;
+      font-size: 14px;
+    }
+
+    .sb-type-scale-info small {
+      display: block;
+      color: #666;
+      font-size: 14px;
+      line-height: 1.5;
+    }
+
+    .sb-type-scale-item:hover {
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+
+    h3 {
+      margin-top: 32px;
+      padding-bottom: 8px;
+      border-bottom: 2px solid #E6E6E6;
+    }
+
+        .fluid-typography-section {
+      margin-bottom: 48px;
+    }
+
+    .mixin-documentation {
+      margin: 32px 0;
+    }
+
+    .code-block {
+      background: #f8f9fa;
+      padding: 16px;
+      border-radius: 8px;
+      margin: 16px 0;
+      position: relative;
+    }
+  `}
+</style>
