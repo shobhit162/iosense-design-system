@@ -1,3 +1,5 @@
+@use "sass:map";
+
 // Color Palettes
 
 // Red Colors
@@ -257,25 +259,29 @@ $other-colors: (
 }
 
 // On Surface Classes
-.on-surface-variant {
-  @extend .global-neutral-bg-500;
+.on-surface-lowest {
+  @extend .global-neutral-300;
+}
+
+.on-surface-low {
+  @extend .global-neutral-500;
 }
 
 .on-surface {
-  @extend .global-neutral-bg-700;
+  @extend .global-neutral-700;
 }
 
 // Outline Classes
 .outline-bright {
-  @extend .global-neutral-bg-30;
+  border-color: map.get($neutral-colors, '30');
 }
 
 .outline {
-  @extend .global-neutral-bg-100;
+  border-color: map.get($neutral-colors, '100');
 }
 
 .outline-dim {
-  @extend .global-neutral-bg-300;
+  border-color: map.get($neutral-colors, '300');
 }
 
 // Primary Classes
@@ -284,7 +290,7 @@ $other-colors: (
 }
 
 .on-primary {
-  @extend .global-bg-white;
+  @extend .global-white;
 }
 
 .primary-container {
@@ -292,7 +298,7 @@ $other-colors: (
 }
 
 .on-primary-container {
-  @extend .global-charcoal-blue-bg-700;
+  @extend .global-charcoal-blue-700;
 }
 
 // Secondary Classes
@@ -301,7 +307,7 @@ $other-colors: (
 }
 
 .on-secondary {
-  @extend .global-bg-white;
+  @extend .global-white;
 }
 
 .secondary-container {
@@ -309,7 +315,7 @@ $other-colors: (
 }
 
 .on-container {
-  @extend .global-aqua-green-bg-600;
+  @extend .global-aqua-green-600;
 }
 
 // Error Classes
@@ -318,7 +324,7 @@ $other-colors: (
 }
 
 .on-error {
-  @extend .global-bg-white;
+  @extend .global-white;
 }
 
 .error-container {
@@ -326,7 +332,7 @@ $other-colors: (
 }
 
 .on-error-container {
-  @extend .global-red-bg-600;
+  @extend .global-red-600;
 }
 
 // Warning Classes
@@ -335,7 +341,7 @@ $other-colors: (
 }
 
 .on-warning {
-  @extend .global-bg-white;
+  @extend .global-white;
 }
 
 .warning-container {
@@ -343,7 +349,7 @@ $other-colors: (
 }
 
 .on-warning-container {
-  @extend .global-yellow-bg-600;
+  @extend .global-yellow-600;
 }
 
 // Success Classes
@@ -352,7 +358,7 @@ $other-colors: (
 }
 
 .on-success {
-  @extend .global-bg-white;
+  @extend .global-white;
 }
 
 .success-container {
@@ -360,7 +366,7 @@ $other-colors: (
 }
 
 .on-success-container {
-  @extend .global-green-bg-600;
+  @extend .global-green-600;
 }
 
 // Extend Classes
@@ -369,7 +375,7 @@ $other-colors: (
 }
 
 .on-extend-1 {
-  @extend .global-bg-white;
+  @extend .global-white;
 }
 
 .extend-1-container {
@@ -377,7 +383,7 @@ $other-colors: (
 }
 
 .on-extend-1-container {
-  @extend .global-pink-bg-600;
+  @extend .global-pink-600;
 }
 
 .extend-2 {
@@ -385,7 +391,7 @@ $other-colors: (
 }
 
 .on-extend-2 {
-  @extend .global-bg-white;
+  @extend .global-white;
 }
 
 .extend-2-container {
@@ -393,7 +399,7 @@ $other-colors: (
 }
 
 .on-extend-2-container {
-  @extend .global-purple-bg-700;
+  @extend .global-purple-700;
 }
 
 .extend-3 {
@@ -401,7 +407,7 @@ $other-colors: (
 }
 
 .on-extend-3 {
-  @extend .global-bg-white;
+  @extend .global-white;
 }
 
 .extend-3-container {
@@ -409,5 +415,5 @@ $other-colors: (
 }
 
 .on-extend-3-container {
-  @extend .global-sky-blue-bg-600;
+  @extend .global-sky-blue-600;
 }

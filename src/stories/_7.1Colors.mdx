@@ -1,6 +1,6 @@
 import { Meta } from "@storybook/blocks";
 
-<Meta title="Tokens/Colors/Theme" />
+<Meta title="Tokens/Colors/Base Classes - Background" />
 
 {/* Helper function to convert hex to rgb */}
 export const hexToRgb = (hex) => {
@@ -27,77 +27,184 @@ export const convertHexRgba = (value) => {
 };
 
 export const colors = {
-  surface: {
-    bright: { name: 'surface-bright', value: '#FFFFFF' },
-    main: { name: 'surface', value: '#EEEEEE' },
-    dim: { name: 'surface-dim', value: '#D3D3D3' },
-    containerLowest: { name: 'surface-container-lowest', value: '#FFFFFF' },
-    containerLow: { name: 'surface-container-low', value: '#F4F5F6' },
-    container: { name: 'surface-container', value: '#E2E2E2' },
-    containerHigh: { name: 'surface-container-high', value: '#D3D3D3' },
-    containerHighest: { name: 'surface-container-highest', value: '#BCBCBC' }
-  },
-  onSurface: {
-    main: { name: 'on-surface', value: '#2B2B2B' },
-    variant: { name: 'on-surface-variant', value: '#646465' }
-  },
-  outline: {
-    bright: { name: 'outline-bright', value: '#E2E2E2' },
-    main: { name: 'outline', value: '#BCBCBC' },
-    dim: { name: 'outline-dim', value: '#909090' }
-  },
-  primary: {
-    main: { name: 'primary', value: '#2F4050' },
-    onMain: { name: 'on-primary', value: '#FFFFFF' },
-    container: { name: 'primary-container', value: '#E3E5E7' },
-    onContainer: { name: 'on-primary-container', value: '#2F4050' }
-  },
-  secondary: {
-    main: { name: 'secondary', value: '#1AB394' },
-    onMain: { name: 'on-secondary', value: '#FFFFFF' },
-    container: { name: 'secondary-container', value: '#E7F6F1' },
-    onContainer: { name: 'on-container', value: '#1AB394' }
-  },
-  status: {
-    error: {
-      main: { name: 'error', value: '#D92D20' },
-      onMain: { name: 'on-error', value: '#FFFFFF' },
-      container: { name: 'error-container', value: '#FFE4DC' },
-      onContainer: { name: 'on-error-container', value: '#D92D20' }
+  base: {
+    red: {
+      50: { name: 'global-red-bg-50', value: '#FFE4DC' },
+      100: { name: 'global-red-bg-100', value: '#FFC8BB' },
+      200: { name: 'global-red-bg-200', value: '#FBAD9A' },
+      300: { name: 'global-red-bg-300', value: '#F5917A' },
+      400: { name: 'global-red-bg-400', value: '#ED745B' },
+      500: { name: 'global-red-bg-500', value: '#E4553D' },
+      600: { name: 'global-red-bg-600', value: '#D92D20' },
+      700: { name: 'global-red-bg-700', value: '#B22A1C' },
+      800: { name: 'global-red-bg-800', value: '#8D2619' },
+      900: { name: 'global-red-bg-900', value: '#692015' },
+      1000: { name: 'global-red-bg-1000', value: '#471A11' },
+      a50: { name: 'global-red-bg-a50', value: 'rgba(#D92D20, 0.09)' },
+      a100: { name: 'global-red-bg-a100', value: 'rgba(#D92D20, 0.18)' },
+      a150: { name: 'global-red-bg-a150', value: 'rgba(#D92D20, 0.24)' },
+      a200: { name: 'global-red-bg-a200', value: 'rgba(#D92D20, 0.32)' }
     },
-    warning: {
-      main: { name: 'warning', value: '#FFAB00' },
-      onMain: { name: 'on-warning', value: '#FFFFFF' },
-      container: { name: 'warning-container', value: '#FFF3DF' },
-      onContainer: { name: 'on-warning-container', value: '#FFAB00' }
+    yellow: {
+      50: { name: 'global-yellow-bg-50', value: '#FFF3DF' },
+      100: { name: 'global-yellow-bg-100', value: '#FFE6C0' },
+      200: { name: 'global-yellow-bg-200', value: '#FFDAA1' },
+      300: { name: 'global-yellow-bg-300', value: '#FFCE82' },
+      400: { name: 'global-yellow-bg-400', value: '#FFC262' },
+      500: { name: 'global-yellow-bg-500', value: '#FFB63F' },
+      600: { name: 'global-yellow-bg-600', value: '#FFAB00' },
+      700: { name: 'global-yellow-bg-700', value: '#D08B0F' },
+      800: { name: 'global-yellow-bg-800', value: '#A36E14' },
+      900: { name: 'global-yellow-bg-900', value: '#785215' },
+      1000: { name: 'global-yellow-bg-1000', value: '#503713' },
+      a50: { name: 'global-yellow-bg-a50', value: 'rgba(#FFAB00, 0.09)' },
+      a100: { name: 'global-yellow-bg-a100', value: 'rgba(#FFAB00, 0.18)' },
+      a150: { name: 'global-yellow-bg-a150', value: 'rgba(#FFAB00, 0.24)' },
+      a200: { name: 'global-yellow-bg-a200', value: 'rgba(#FFAB00, 0.32)' }
     },
-    success: {
-      main: { name: 'success', value: '#00A251' },
-      onMain: { name: 'on-success', value: '#FFFFFF' },
-      container: { name: 'success-container', value: '#EBFAF3' },
-      onContainer: { name: 'on-success-container', value: '#00A251' }
-    }
+    aquaGreen: {
+      50: { name: 'global-aqua-green-bg-50', value: '#E7F6F1' },
+      100: { name: 'global-aqua-green-bg-100', value: '#C9EADF' },
+      200: { name: 'global-aqua-green-bg-200', value: '#AEDFD0' },
+      300: { name: 'global-aqua-green-bg-300', value: '#91D4C1' },
+      400: { name: 'global-aqua-green-bg-400', value: '#73C9B1' },
+      500: { name: 'global-aqua-green-bg-500', value: '#50BEA3' },
+      600: { name: 'global-aqua-green-bg-600', value: '#1AB394' },
+      700: { name: 'global-aqua-green-bg-700', value: '#1F937A' },
+      800: { name: 'global-aqua-green-bg-800', value: '#207460' },
+      900: { name: 'global-aqua-green-bg-900', value: '#1D5648' },
+      1000: { name: 'global-aqua-green-bg-1000', value: '#193A31' },
+      a50: { name: 'global-aqua-green-bg-a50', value: 'rgba(#1AB394, 0.09)' },
+      a100: { name: 'global-aqua-green-bg-a100', value: 'rgba(#1AB394, 0.18)' },
+      a150: { name: 'global-aqua-green-bg-a150', value: 'rgba(#1AB394, 0.24)' },
+      a200: { name: 'global-aqua-green-bg-a200', value: 'rgba(#1AB394, 0.32)' }
+    },
+    green: {
+      50: { name: 'global-green-bg-50', value: '#EBFAF3' },
+      100: { name: 'global-green-bg-100', value: '#DAF5E8' },
+      200: { name: 'global-green-bg-200', value: '#B6ECD1' },
+      300: { name: 'global-green-bg-300', value: '#91E38A' },
+      400: { name: 'global-green-bg-400', value: '#48D08C' },
+      500: { name: 'global-green-bg-500', value: '#00BE5F' },
+      600: { name: 'global-green-bg-600', value: '#00A251' },
+      700: { name: 'global-green-bg-700', value: '#008743' },
+      800: { name: 'global-green-bg-800', value: '#006C36' },
+      900: { name: 'global-green-bg-900', value: '#005128' },
+      1000: { name: 'global-green-bg-1000', value: '#00361B' },
+      a50: { name: 'global-green-bg-a50', value: 'rgba(#00A251, 0.09)' },
+      a100: { name: 'global-green-bg-a100', value: 'rgba(#00A251, 0.18)' },
+      a150: { name: 'global-green-bg-a150', value: 'rgba(#00A251, 0.24)' },
+      a200: { name: 'global-green-bg-a200', value: 'rgba(#00A251, 0.32)' }
+    },
+    skyBlue: {
+      50: { name: 'global-sky-blue-bg-50', value: '#E7F6FE' },
+      100: { name: 'global-sky-blue-bg-100', value: '#CFEDFC' },
+      200: { name: 'global-sky-blue-bg-200', value: '#A8DFFA' },
+      300: { name: 'global-sky-blue-bg-300', value: '#79CEF8' },
+      400: { name: 'global-sky-blue-bg-400', value: '#57C1F6' },
+      500: { name: 'global-sky-blue-bg-500', value: '#15B0F3' },
+      600: { name: 'global-sky-blue-bg-600', value: '#1291D0' },
+      700: { name: 'global-sky-blue-bg-700', value: '#0F78AD' },
+      800: { name: 'global-sky-blue-bg-800', value: '#0C608A' },
+      900: { name: 'global-sky-blue-bg-900', value: '#094868' },
+      1000: { name: 'global-sky-blue-bg-1000', value: '#063145' },
+      a50: { name: 'global-sky-blue-bg-a50', value: 'rgba(#1291D0, 0.09)' },
+      a100: { name: 'global-sky-blue-bg-a100', value: 'rgba(#1291D0, 0.18)' },
+      a150: { name: 'global-sky-blue-bg-a150', value: 'rgba(#1291D0, 0.24)' },
+      a200: { name: 'global-sky-blue-bg-a200', value: 'rgba(#1291D0, 0.32)' }
+    },
+    blue: {
+      50: { name: 'global-blue-bg-50', value: '#F5F8FF' },
+      100: { name: 'global-blue-bg-100', value: '#D8E4FD' },
+      200: { name: 'global-blue-bg-200', value: '#B4CDFD' },
+      300: { name: 'global-blue-bg-300', value: '#75A3FF' },
+      400: { name: 'global-blue-bg-400', value: '#4D7FFF' },
+      500: { name: 'global-blue-bg-500', value: '#305EFF' },
+      600: { name: 'global-blue-bg-600', value: '#2950DA' },
+      700: { name: 'global-blue-bg-700', value: '#2243B6' },
+      800: { name: 'global-blue-bg-800', value: '#1B3591' },
+      900: { name: 'global-blue-bg-900', value: '#14286D' },
+      1000: { name: 'global-blue-bg-1000', value: '#0D1A48' },
+      a50: { name: 'global-blue-bg-a50', value: 'rgba(#305EFF, 0.09)' },
+      a100: { name: 'global-blue-bg-a100', value: 'rgba(#305EFF, 0.18)' },
+      a150: { name: 'global-blue-bg-a150', value: 'rgba(#305EFF, 0.24)' },
+      a200: { name: 'global-blue-bg-a200', value: 'rgba(#305EFF, 0.32)' }
+    },
+    pink: {
+      50: { name: 'global-pink-bg-50', value: '#FFE5EE' },
+      100: { name: 'global-pink-bg-100', value: '#FFCADD' },
+      200: { name: 'global-pink-bg-200', value: '#FFAFCC' },
+      300: { name: 'global-pink-bg-300', value: '#FF93BC' },
+      400: { name: 'global-pink-bg-400', value: '#FD74AC' },
+      500: { name: 'global-pink-bg-500', value: '#F9519C' },
+      600: { name: 'global-pink-bg-600', value: '#F3168D' },
+      700: { name: 'global-pink-bg-700', value: '#C71E73' },
+      800: { name: 'global-pink-bg-800', value: '#9C205B' },
+      900: { name: 'global-pink-bg-900', value: '#731E45' },
+      1000: { name: 'global-pink-bg-1000', value: '#4D192F' },
+      a50: { name: 'global-pink-bg-a50', value: 'rgba(#F3168D, 0.09)' },
+      a100: { name: 'global-pink-bg-a100', value: 'rgba(#F3168D, 0.18)' },
+      a150: { name: 'global-pink-bg-a150', value: 'rgba(#F3168D, 0.24)' },
+      a200: { name: 'global-pink-bg-a200', value: 'rgba(#F3168D, 0.32)' }
+    },
+    purple: {
+      50: { name: 'global-purple-bg-50', value: '#F7E2FE' },
+      100: { name: 'global-purple-bg-100', value: '#EDC6FE' },
+      200: { name: 'global-purple-bg-200', value: '#E3A9FC' },
+      300: { name: 'global-purple-bg-300', value: '#D78BFA' },
+      400: { name: 'global-purple-bg-400', value: '#CB6CF8' },
+      500: { name: 'global-purple-bg-500', value: '#BD4AF6' },
+      600: { name: 'global-purple-bg-600', value: '#AD16F3' },
+      700: { name: 'global-purple-bg-700', value: '#8F1BC6' },
+      800: { name: 'global-purple-bg-800', value: '#711C9B' },
+      900: { name: 'global-purple-bg-900', value: '#551B72' },
+      1000: { name: 'global-purple-bg-1000', value: '#3A174C' },
+      a50: { name: 'global-purple-bg-a50', value: 'rgba(#8F1BC6, 0.09)' },
+      a100: { name: 'global-purple-bg-a100', value: 'rgba(#8F1BC6, 0.18)' },
+      a150: { name: 'global-purple-bg-a150', value: 'rgba(#8F1BC6, 0.24)' },
+      a200: { name: 'global-purple-bg-a200', value: 'rgba(#8F1BC6, 0.32)' }
+    },
+    charcoalBlue: {
+      50: { name: 'global-charcoal-blue-bg-50', value: '#E3E5E7' },
+      100: { name: 'global-charcoal-blue-bg-100', value: '#C7CBD0' },
+      200: { name: 'global-charcoal-blue-bg-200', value: '#ACB2B9' },
+      300: { name: 'global-charcoal-blue-bg-300', value: '#919AA3' },
+      400: { name: 'global-charcoal-blue-bg-400', value: '#78828D' },
+      500: { name: 'global-charcoal-blue-bg-500', value: '#5F6B78' },
+      600: { name: 'global-charcoal-blue-bg-600', value: '#465564' },
+      700: { name: 'global-charcoal-blue-bg-700', value: '#2F4050' },
+      800: { name: 'global-charcoal-blue-bg-800', value: '#25313C' },
+      900: { name: 'global-charcoal-blue-bg-900', value: '#1B232A' },
+      1000: { name: 'global-charcoal-blue-bg-1000', value: '#111519' },
+      a50: { name: 'global-charcoal-blue-bg-a50', value: 'rgba(#1F5C7A, 0.09)' },
+      a100: { name: 'global-charcoal-blue-bg-a100', value: 'rgba(#1F5C7A, 0.18)' },
+      a150: { name: 'global-charcoal-blue-bg-a150', value: 'rgba(#1F5C7A, 0.24)' },
+      a200: { name: 'global-charcoal-blue-bg-a200', value: 'rgba(#1F5C7A, 0.32)' }
+    },
+    neutral: {
+      10: { name: 'global-neutral-bg-10', value: '#F4F5F6' },
+      20: { name: 'global-neutral-bg-20', value: '#EEEEEE' },
+      30: { name: 'global-neutral-bg-30', value: '#E2E2E2' },
+      40: { name: 'global-neutral-bg-40', value: '#D3D3D3' },
+      50: { name: 'global-neutral-bg-50', value: '#C6C6C6' },
+      100: { name: 'global-neutral-bg-100', value: '#BCBCBC' },
+      200: { name: 'global-neutral-bg-200', value: '#ABABAB' },
+      300: { name: 'global-neutral-bg-300', value: '#909090' },
+      400: { name: 'global-neutral-bg-400', value: '#777777' },
+      500: { name: 'global-neutral-bg-500', value: '#646465' },
+      600: { name: 'global-neutral-bg-600', value: '#464646' },
+      700: { name: 'global-neutral-bg-700', value: '#2B2B2B' },
+      800: { name: 'global-neutral-bg-800', value: '#252525' },
+      900: { name: 'global-neutral-bg-900', value: '#1B1B1B' },
+      1000: { name: 'global-neutral-bg-1000', value: '#111111' }
+    },
+    black: {
+      main: { name: 'global-bg-black', value: '#000000' }
+    },
+    white: {
+      main: { name: 'global-bg-white', value: '#FFFFFF' }
+    },
   },
-  extended: {
-    extend1: {
-      main: { name: 'extend-1', value: '#F3168D' },
-      onMain: { name: 'on-extend-1', value: '#FFFFFF' },
-      container: { name: 'extend-1-container', value: '#FFE5EE' },
-      onContainer: { name: 'on-extend-1-container', value: '#F3168D' }
-    },
-    extend2: {
-      main: { name: 'extend-2', value: '#8F1BC6' },
-      onMain: { name: 'on-extend-2', value: '#FFFFFF' },
-      container: { name: 'extend-2-container', value: '#F7E2FE' },
-      onContainer: { name: 'on-extend-2-container', value: '#8F1BC6' }
-    },
-    extend3: {
-      main: { name: 'extend-3', value: '#1291D0' },
-      onMain: { name: 'on-extend-3', value: '#FFFFFF' },
-      container: { name: 'extend-3-container', value: '#E7F6FE' },
-      onContainer: { name: 'on-extend-3-container', value: '#1291D0' }
-    }
-  }
 };
 
 <div className="sb-container">
@@ -109,93 +216,13 @@ export const colors = {
 
   <div className="sb-section">
     <div className="sb-colors-demo">
-
-      <h2>Surface Colors</h2>
-      <div className="color-grid">
-        {Object.entries(colors.surface).map(([key, { name, value }]) => (
-          <div key={key} className="color-item">
-            <div className="color-preview" style={{ backgroundColor: convertHexRgba(value) }}></div>
-            <div className="color-info">
-              <code>{name}</code>
-              <span>{value}</span>
-            </div>
-          </div>
-        ))}
-      </div>
-
-      <h2>On Surface & Outline Colors</h2>
-      <div className="color-grid">
-        {Object.entries(colors.onSurface).map(([key, { name, value }]) => (
-          <div key={key} className="color-item">
-            <div className="color-preview" style={{ backgroundColor: convertHexRgba(value) }}></div>
-            <div className="color-info">
-              <code>{name}</code>
-              <span>{value}</span>
-            </div>
-          </div>
-        ))}
-        {Object.entries(colors.outline).map(([key, { name, value }]) => (
-          <div key={key} className="color-item">
-            <div className="color-preview" style={{ backgroundColor: convertHexRgba(value) }}></div>
-            <div className="color-info">
-              <code>{name}</code>
-              <span>{value}</span>
-            </div>
-          </div>
-        ))}
-      </div>
-
-      <h2>Primary Colors</h2>
-      <div className="color-grid">
-        {Object.entries(colors.primary).map(([key, { name, value }]) => (
-          <div key={key} className="color-item">
-            <div className="color-preview" style={{ backgroundColor: convertHexRgba(value) }}></div>
-            <div className="color-info">
-              <code>{name}</code>
-              <span>{value}</span>
-            </div>
-          </div>
-        ))}
-      </div>
-
-      <h2>Secondary Colors</h2>
-      <div className="color-grid">
-        {Object.entries(colors.secondary).map(([key, { name, value }]) => (
-          <div key={key} className="color-item">
-            <div className="color-preview" style={{ backgroundColor: convertHexRgba(value) }}></div>
-            <div className="color-info">
-              <code>{name}</code>
-              <span>{value}</span>
-            </div>
-          </div>
-        ))}
-      </div>
-
-      <h2>Status Colors</h2>
-      {Object.entries(colors.status).map(([statusType, statusColors]) => (
-        <div key={statusType} className="color-section">
-          <h3>{statusType.charAt(0).toUpperCase() + statusType.slice(1)}</h3>
+      <h2>Base Colors</h2>
+      {Object.entries(colors.base).map(([colorName, shades]) => (
+        <div key={colorName} className="color-section">
+          <h3>{colorName.replace(/([A-Z])/g, ' $1').trim()}</h3>
           <div className="color-grid">
-            {Object.entries(statusColors).map(([key, { name, value }]) => (
-              <div key={key} className="color-item">
-                <div className="color-preview" style={{ backgroundColor: convertHexRgba(value) }}></div>
-                <div className="color-info">
-                  <code>{name}</code>
-                  <span>{value}</span>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      ))}
-
-      <h2>Extended Colors</h2>
-      {Object.entries(colors.extended).map(([extendType, extendColors]) => (
-        <div key={extendType} className="color-section">
-          <h3>{extendType.replace(/([A-Z])/g, ' $1').trim()}</h3>
-          <div className="color-grid">
-            {Object.entries(extendColors).map(([key, { name, value }]) => (
-              <div key={key} className="color-item">
+            {Object.entries(shades).map(([shade, { name, value }]) => (
+              <div key={shade} className="color-item">
                 <div className="color-preview" style={{ backgroundColor: convertHexRgba(value) }}></div>
                 <div className="color-info">
                   <code>{name}</code>

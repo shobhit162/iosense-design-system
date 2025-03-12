@@ -1,6 +1,6 @@
 import { Meta } from "@storybook/blocks";
 
-<Meta title="Tokens/Colors/Base Tokens" />
+<Meta title="Tokens/Colors/Base Classes" />
 
 {/* Helper function to convert hex to rgb */}
 export const hexToRgb = (hex) => {
@@ -223,7 +223,9 @@ export const colors = {
           <div className="color-grid">
             {Object.entries(shades).map(([shade, { name, value }]) => (
               <div key={shade} className="color-item">
-                <div className="color-preview" style={{ backgroundColor: convertHexRgba(value) }}></div>
+                <div className="color-preview">
+                <p style={{color: convertHexRgba(value)}}>Color Example</p>
+                </div>
                 <div className="color-info">
                   <code>{name}</code>
                   <span>{value}</span>
@@ -282,6 +284,9 @@ export const colors = {
     .color-preview {
       height: 100px;
       border-bottom: 1px solid #E6E6E6;
+      display: flex;
+      justify-content: center;
+      align-items: center;
     }
 
     .color-info {

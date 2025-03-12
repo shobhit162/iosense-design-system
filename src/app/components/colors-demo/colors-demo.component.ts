@@ -240,7 +240,7 @@ export class ColorsDemoComponent {
       name: 'On Surface & Outline Colors',
       type: 'text',
       classes: [
-        'on-surface-variant', 'on-surface',
+        'on-surface-lowest', 'on-surface-low', 'on-surface',
         'outline-bright', 'outline', 'outline-dim'
       ]
     },

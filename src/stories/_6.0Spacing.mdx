@@ -1,0 +1,128 @@
+import { Meta } from "@storybook/blocks";
+
+<Meta title="Tokens/Spacing/Base Classes" name="_6Spacing"/>
+
+export const spacing = {
+  values: [  
+    { key: '00', name: 'spacing-00', value: '0px' },
+    { key: '01', name: 'spacing-01', value: '2px' },
+    { key: '02', name: 'spacing-02', value: '4px' },
+    { key: '03', name: 'spacing-03', value: '8px' },
+    { key: '04', name: 'spacing-04', value: '12px' },
+    { key: '05', name: 'spacing-05', value: '16px' },
+    { key: '06', name: 'spacing-06', value: '20px' },
+    { key: '07', name: 'spacing-07', value: '24px' },
+    { key: '08', name: 'spacing-08', value: '32px' },
+    { key: '09', name: 'spacing-09', value: '40px' },
+    { key: '10', name: 'spacing-10', value: '48px' },
+    { key: '11', name: 'spacing-11', value: '56px' }
+  ]
+};
+
+<div className="sb-container">
+  <div className="sb-section-title">
+    # Spacing
+    These tokens provide consistent spacing values across the application through margin, padding, gap, and gutter utilities.
+  </div>
+
+  <div className="sb-section">
+    <h2>Spacing Tokens</h2>
+    <div className="sb-spacing-scale">
+        {spacing.values.map((item) => (
+        <div className="sb-scale-item" key={item.key}>
+            <div className="sb-scale-visual">
+            <div 
+                className="sb-scale-box"
+                style={{ 
+                width: item.value,
+                height: item.value,
+                backgroundColor: '#E5E7EB'
+                }}
+            />
+            </div>
+            <div className="sb-scale-info">
+            <code>{item.value}</code>
+            <span>{item.name}</span>
+            </div>
+        </div>
+        ))}
+    </div>
+    <p> Now let's see how we can use these spacing tokens in margin, padding, gap and gutter classes in the next section.</p>
+
+  </div>
+</div>
+
+<style>
+  {`
+    .sb-container {
+      margin-bottom: 48px;
+    }
+
+    .sb-section-title {
+      margin-bottom: 32px;
+    }
+
+    .sb-spacing-scale {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      gap: 24px;
+      margin-bottom: 48px;
+    }
+
+    .sb-scale-item {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+
+    .sb-scale-visual {
+      width: 56px;
+      height: 56px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .sb-scale-box {
+      min-width: 2px;
+      min-height: 2px;
+    }
+
+    .sb-scale-info {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+
+    .sb-scale-info code {
+      font-family: monospace;
+      font-size: 14px;
+      color: #666;
+    }
+
+    .sb-scale-info span {
+      font-size: 12px;
+      color: #888;
+    }
+
+    code {
+      font-family: monospace;
+      font-size: 14px;
+      padding: 2px 4px;
+      background: #F3F4F6;
+      border-radius: 4px;
+    }
+
+    h2 {
+      margin: 32px 0 16px;
+      padding-bottom: 8px;
+      border-bottom: 1px solid #E6E6E6;
+    }
+
+    h3 {
+      margin: 0;
+      font-size: 16px;
+      color: #374151;
+    }
+  `}
+</style>
