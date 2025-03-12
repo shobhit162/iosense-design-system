@@ -1,0 +1,282 @@
+import { Meta } from "@storybook/blocks";
+
+<Meta title="Tokens/Colors/Theme" />
+
+{/* Helper function to convert hex to rgb */}
+export const hexToRgb = (hex) => {
+  const result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex);
+  return result ? {
+    r: parseInt(result[1], 16),
+    g: parseInt(result[2], 16),
+    b: parseInt(result[3], 16)
+  } : null;
+};
+
+{/* Helper function to convert hex-based rgba to valid CSS rgba */}
+export const convertHexRgba = (value) => {
+  if (value.includes('rgba(#')) {
+    const matches = value.match(/rgba\(#([A-Fa-f0-9]{6}),\s*([\d.]+)\)/);
+    if (matches) {
+      const hex = matches[1];
+      const alpha = matches[2];
+      const rgb = hexToRgb(`#${hex}`);
+      return rgb ? `rgba(${rgb.r}, ${rgb.g}, ${rgb.b}, ${alpha})` : value;
+    }
+  }
+  return value;
+};
+
+export const colors = {
+  surface: {
+    bright: { name: 'surface-bright', value: '#FFFFFF' },
+    main: { name: 'surface', value: '#EEEEEE' },
+    dim: { name: 'surface-dim', value: '#D3D3D3' },
+    containerLowest: { name: 'surface-container-lowest', value: '#FFFFFF' },
+    containerLow: { name: 'surface-container-low', value: '#F4F5F6' },
+    container: { name: 'surface-container', value: '#E2E2E2' },
+    containerHigh: { name: 'surface-container-high', value: '#D3D3D3' },
+    containerHighest: { name: 'surface-container-highest', value: '#BCBCBC' }
+  },
+  onSurface: {
+    main: { name: 'on-surface', value: '#2B2B2B' },
+    variant: { name: 'on-surface-variant', value: '#646465' }
+  },
+  outline: {
+    bright: { name: 'outline-bright', value: '#E2E2E2' },
+    main: { name: 'outline', value: '#BCBCBC' },
+    dim: { name: 'outline-dim', value: '#909090' }
+  },
+  primary: {
+    main: { name: 'primary', value: '#2F4050' },
+    onMain: { name: 'on-primary', value: '#FFFFFF' },
+    container: { name: 'primary-container', value: '#E3E5E7' },
+    onContainer: { name: 'on-primary-container', value: '#2F4050' }
+  },
+  secondary: {
+    main: { name: 'secondary', value: '#1AB394' },
+    onMain: { name: 'on-secondary', value: '#FFFFFF' },
+    container: { name: 'secondary-container', value: '#E7F6F1' },
+    onContainer: { name: 'on-container', value: '#1AB394' }
+  },
+  status: {
+    error: {
+      main: { name: 'error', value: '#D92D20' },
+      onMain: { name: 'on-error', value: '#FFFFFF' },
+      container: { name: 'error-container', value: '#FFE4DC' },
+      onContainer: { name: 'on-error-container', value: '#D92D20' }
+    },
+    warning: {
+      main: { name: 'warning', value: '#FFAB00' },
+      onMain: { name: 'on-warning', value: '#FFFFFF' },
+      container: { name: 'warning-container', value: '#FFF3DF' },
+      onContainer: { name: 'on-warning-container', value: '#FFAB00' }
+    },
+    success: {
+      main: { name: 'success', value: '#00A251' },
+      onMain: { name: 'on-success', value: '#FFFFFF' },
+      container: { name: 'success-container', value: '#EBFAF3' },
+      onContainer: { name: 'on-success-container', value: '#00A251' }
+    }
+  },
+  extended: {
+    extend1: {
+      main: { name: 'extend-1', value: '#F3168D' },
+      onMain: { name: 'on-extend-1', value: '#FFFFFF' },
+      container: { name: 'extend-1-container', value: '#FFE5EE' },
+      onContainer: { name: 'on-extend-1-container', value: '#F3168D' }
+    },
+    extend2: {
+      main: { name: 'extend-2', value: '#8F1BC6' },
+      onMain: { name: 'on-extend-2', value: '#FFFFFF' },
+      container: { name: 'extend-2-container', value: '#F7E2FE' },
+      onContainer: { name: 'on-extend-2-container', value: '#8F1BC6' }
+    },
+    extend3: {
+      main: { name: 'extend-3', value: '#1291D0' },
+      onMain: { name: 'on-extend-3', value: '#FFFFFF' },
+      container: { name: 'extend-3-container', value: '#E7F6FE' },
+      onContainer: { name: 'on-extend-3-container', value: '#1291D0' }
+    }
+  }
+};
+
+<div className="sb-container">
+  <div className="sb-section-title">
+    # Colors
+    These tokens should be used for consistent color styling across applications.
+    <p><b>Note:</b> Colors are organized into base colors, surface colors, and semantic colors for different purposes.</p>
+  </div>
+
+  <div className="sb-section">
+    <div className="sb-colors-demo">
+
+      <h2>Surface Colors</h2>
+      <div className="color-grid">
+        {Object.entries(colors.surface).map(([key, { name, value }]) => (
+          <div key={key} className="color-item">
+            <div className="color-preview" style={{ backgroundColor: convertHexRgba(value) }}></div>
+            <div className="color-info">
+              <code>{name}</code>
+              <span>{value}</span>
+            </div>
+          </div>
+        ))}
+      </div>
+
+      <h2>On Surface & Outline Colors</h2>
+      <div className="color-grid">
+        {Object.entries(colors.onSurface).map(([key, { name, value }]) => (
+          <div key={key} className="color-item">
+            <div className="color-preview" style={{ backgroundColor: convertHexRgba(value) }}></div>
+            <div className="color-info">
+              <code>{name}</code>
+              <span>{value}</span>
+            </div>
+          </div>
+        ))}
+        {Object.entries(colors.outline).map(([key, { name, value }]) => (
+          <div key={key} className="color-item">
+            <div className="color-preview" style={{ backgroundColor: convertHexRgba(value) }}></div>
+            <div className="color-info">
+              <code>{name}</code>
+              <span>{value}</span>
+            </div>
+          </div>
+        ))}
+      </div>
+
+      <h2>Primary Colors</h2>
+      <div className="color-grid">
+        {Object.entries(colors.primary).map(([key, { name, value }]) => (
+          <div key={key} className="color-item">
+            <div className="color-preview" style={{ backgroundColor: convertHexRgba(value) }}></div>
+            <div className="color-info">
+              <code>{name}</code>
+              <span>{value}</span>
+            </div>
+          </div>
+        ))}
+      </div>
+
+      <h2>Secondary Colors</h2>
+      <div className="color-grid">
+        {Object.entries(colors.secondary).map(([key, { name, value }]) => (
+          <div key={key} className="color-item">
+            <div className="color-preview" style={{ backgroundColor: convertHexRgba(value) }}></div>
+            <div className="color-info">
+              <code>{name}</code>
+              <span>{value}</span>
+            </div>
+          </div>
+        ))}
+      </div>
+
+      <h2>Status Colors</h2>
+      {Object.entries(colors.status).map(([statusType, statusColors]) => (
+        <div key={statusType} className="color-section">
+          <h3>{statusType.charAt(0).toUpperCase() + statusType.slice(1)}</h3>
+          <div className="color-grid">
+            {Object.entries(statusColors).map(([key, { name, value }]) => (
+              <div key={key} className="color-item">
+                <div className="color-preview" style={{ backgroundColor: convertHexRgba(value) }}></div>
+                <div className="color-info">
+                  <code>{name}</code>
+                  <span>{value}</span>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      ))}
+
+      <h2>Extended Colors</h2>
+      {Object.entries(colors.extended).map(([extendType, extendColors]) => (
+        <div key={extendType} className="color-section">
+          <h3>{extendType.replace(/([A-Z])/g, ' $1').trim()}</h3>
+          <div className="color-grid">
+            {Object.entries(extendColors).map(([key, { name, value }]) => (
+              <div key={key} className="color-item">
+                <div className="color-preview" style={{ backgroundColor: convertHexRgba(value) }}></div>
+                <div className="color-info">
+                  <code>{name}</code>
+                  <span>{value}</span>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</div>
+
+<style>
+  {`
+    .sb-container {
+      margin-bottom: 48px;
+    }
+
+    .sb-section-title {
+      margin-bottom: 32px;
+    }
+
+    .sb-colors-demo {
+      width: 100%;
+    }
+
+    h2 {
+      margin: 32px 0 16px;
+      padding-bottom: 8px;
+      border-bottom: 1px solid #E6E6E6;
+    }
+
+    h3 {
+      margin-top: 24px;
+      margin-bottom: 16px;
+    }
+
+    .color-section {
+      margin-bottom: 32px;
+    }
+
+    .color-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      gap: 16px;
+      margin-bottom: 24px;
+    }
+
+    .color-item {
+      border: 1px solid #E6E6E6;
+      border-radius: 4px;
+      overflow: hidden;
+    }
+
+    .color-preview {
+      height: 100px;
+      border-bottom: 1px solid #E6E6E6;
+    }
+
+    .color-info {
+      padding: 12px;
+      background: #FFFFFF;
+    }
+
+    .color-info code {
+      display: block;
+      margin-bottom: 4px;
+      font-family: monospace;
+      font-size: 12px;
+      color: #666;
+    }
+
+    .color-info span {
+      font-size: 14px;
+      color: #333;
+    }
+
+    .color-item:hover {
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+  `}
+</style> 

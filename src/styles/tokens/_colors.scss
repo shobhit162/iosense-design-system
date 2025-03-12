@@ -220,3 +220,194 @@ $other-colors: (
 @include generate-color-classes($charcoal-blue-colors, 'global-charcoal-blue');
 @include generate-color-classes($neutral-colors, 'global-neutral');
 @include generate-color-classes($other-colors, 'global');
+
+
+// Surface Classes
+.surface-bright {
+  @extend .global-bg-white;
+}
+
+.surface {
+  @extend .global-neutral-bg-20;
+}
+
+.surface-dim {
+  @extend .global-neutral-bg-40;
+}
+
+// Surface Container Classes
+.surface-container-lowest {
+  @extend .global-bg-white;
+}
+
+.surface-container-low {
+  @extend .global-neutral-bg-10;
+}
+
+.surface-container {
+  @extend .global-neutral-bg-30;
+}
+
+.surface-container-high {
+  @extend .global-neutral-bg-40;
+}
+
+.surface-container-highest {
+  @extend .global-neutral-bg-100;
+}
+
+// On Surface Classes
+.on-surface-variant {
+  @extend .global-neutral-bg-500;
+}
+
+.on-surface {
+  @extend .global-neutral-bg-700;
+}
+
+// Outline Classes
+.outline-bright {
+  @extend .global-neutral-bg-30;
+}
+
+.outline {
+  @extend .global-neutral-bg-100;
+}
+
+.outline-dim {
+  @extend .global-neutral-bg-300;
+}
+
+// Primary Classes
+.primary {
+  @extend .global-charcoal-blue-bg-700;
+}
+
+.on-primary {
+  @extend .global-bg-white;
+}
+
+.primary-container {
+  @extend .global-charcoal-blue-bg-50;
+}
+
+.on-primary-container {
+  @extend .global-charcoal-blue-bg-700;
+}
+
+// Secondary Classes
+.secondary {
+  @extend .global-aqua-green-bg-600;
+}
+
+.on-secondary {
+  @extend .global-bg-white;
+}
+
+.secondary-container {
+  @extend .global-aqua-green-bg-50;
+}
+
+.on-container {
+  @extend .global-aqua-green-bg-600;
+}
+
+// Error Classes
+.error {
+  @extend .global-red-bg-600;
+}
+
+.on-error {
+  @extend .global-bg-white;
+}
+
+.error-container {
+  @extend .global-red-bg-50;
+}
+
+.on-error-container {
+  @extend .global-red-bg-600;
+}
+
+// Warning Classes
+.warning {
+  @extend .global-yellow-bg-600;
+}
+
+.on-warning {
+  @extend .global-bg-white;
+}
+
+.warning-container {
+  @extend .global-yellow-bg-50;
+}
+
+.on-warning-container {
+  @extend .global-yellow-bg-600;
+}
+
+// Success Classes
+.success {
+  @extend .global-green-bg-600;
+}
+
+.on-success {
+  @extend .global-bg-white;
+}
+
+.success-container {
+  @extend .global-green-bg-50;
+}
+
+.on-success-container {
+  @extend .global-green-bg-600;
+}
+
+// Extend Classes
+.extend-1 {
+  @extend .global-pink-bg-600;
+}
+
+.on-extend-1 {
+  @extend .global-bg-white;
+}
+
+.extend-1-container {
+  @extend .global-pink-bg-50;
+}
+
+.on-extend-1-container {
+  @extend .global-pink-bg-600;
+}
+
+.extend-2 {
+  @extend .global-purple-bg-700;
+}
+
+.on-extend-2 {
+  @extend .global-bg-white;
+}
+
+.extend-2-container {
+  @extend .global-purple-bg-50;
+}
+
+.on-extend-2-container {
+  @extend .global-purple-bg-700;
+}
+
+.extend-3 {
+  @extend .global-sky-blue-bg-600;
+}
+
+.on-extend-3 {
+  @extend .global-bg-white;
+}
+
+.extend-3-container {
+  @extend .global-sky-blue-bg-50;
+}
+
+.on-extend-3-container {
+  @extend .global-sky-blue-bg-600;
+}

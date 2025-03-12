@@ -186,6 +186,96 @@
             "duplicateName": "ClassCategory-3"
         },
         {
+            "name": "ColorCategory",
+            "id": "interface-ColorCategory-2fc71c0f358326480fb0609c5e8c1b26a4743c6418ec7b21524c351a7f4d8b47f04a2907698f50fcc19a7d205108c1c199cfb9f0ec68697f3b3f0a7cae35d5de",
+            "file": "src/app/components/colors-demo/colors-demo.component.ts",
+            "deprecated": false,
+            "deprecationMessage": "",
+            "type": "interface",
+            "sourceCode": "import { Component } from '@angular/core';\nimport { CommonModule } from '@angular/common';\nimport { FormsModule } from '@angular/forms';\n\ninterface ColorExample {\n  className: string;\n  text: string;\n  type: 'text' | 'background';\n}\n\ninterface ColorCategory {\n  name: string;\n  classes: string[];\n  type: 'text' | 'background';\n}\n\n@Component({\n  selector: 'app-colors-demo',\n  standalone: true,\n  imports: [CommonModule, FormsModule],\n  templateUrl: './colors-demo.component.html',\n  styleUrl: './colors-demo.component.scss'\n})\nexport class ColorsDemoComponent {\n  manualClass = '';\n  customText = '';\n  examples: ColorExample[] = [];\n  defaultText = 'Sample Text';\n\n  selectedCategory = '';\n  selectedClass = '';\n\n  classCategories: ColorCategory[] = [\n    {\n      name: 'Red Colors',\n      type: 'text',\n      classes: [\n        'global-red-50', 'global-red-100', 'global-red-200', 'global-red-300',\n        'global-red-400', 'global-red-500', 'global-red-600', 'global-red-700',\n        'global-red-800', 'global-red-900', 'global-red-1000',\n        'global-red-a50', 'global-red-a100', 'global-red-a150', 'global-red-a200'\n      ]\n    },\n    {\n      name: 'Red Backgrounds',\n      type: 'background',\n      classes: [\n        'global-red-bg-50', 'global-red-bg-100', 'global-red-bg-200', 'global-red-bg-300',\n        'global-red-bg-400', 'global-red-bg-500', 'global-red-bg-600', 'global-red-bg-700',\n        'global-red-bg-800', 'global-red-bg-900', 'global-red-bg-1000'\n      ]\n    },\n    {\n      name: 'Yellow Colors',\n      type: 'text',\n      classes: [\n        'global-yellow-50', 'global-yellow-100', 'global-yellow-200', 'global-yellow-300',\n        'global-yellow-400', 'global-yellow-500', 'global-yellow-600', 'global-yellow-700',\n        'global-yellow-800', 'global-yellow-900', 'global-yellow-1000',\n        'global-yellow-a50', 'global-yellow-a100', 'global-yellow-a150', 'global-yellow-a200'\n      ]\n    },\n    {\n      name: 'Yellow Backgrounds',\n      type: 'background',\n      classes: [\n        'global-yellow-bg-50', 'global-yellow-bg-100', 'global-yellow-bg-200', 'global-yellow-bg-300',\n        'global-yellow-bg-400', 'global-yellow-bg-500', 'global-yellow-bg-600', 'global-yellow-bg-700',\n        'global-yellow-bg-800', 'global-yellow-bg-900', 'global-yellow-bg-1000'\n      ]\n    },\n    {\n      name: 'Aqua Green Colors',\n      type: 'text',\n      classes: [\n        'global-aqua-green-50', 'global-aqua-green-100', 'global-aqua-green-200', 'global-aqua-green-300',\n        'global-aqua-green-400', 'global-aqua-green-500', 'global-aqua-green-600', 'global-aqua-green-700',\n        'global-aqua-green-800', 'global-aqua-green-900', 'global-aqua-green-1000',\n        'global-aqua-green-a50', 'global-aqua-green-a100', 'global-aqua-green-a150', 'global-aqua-green-a200'\n      ]\n    },\n    {\n      name: 'Aqua Green Backgrounds',\n      type: 'background',\n      classes: [\n        'global-aqua-green-bg-50', 'global-aqua-green-bg-100', 'global-aqua-green-bg-200',\n        'global-aqua-green-bg-300', 'global-aqua-green-bg-400', 'global-aqua-green-bg-500',\n        'global-aqua-green-bg-600', 'global-aqua-green-bg-700', 'global-aqua-green-bg-800',\n        'global-aqua-green-bg-900', 'global-aqua-green-bg-1000'\n      ]\n    },\n    {\n      name: 'Green Colors',\n      type: 'text',\n      classes: [\n        'global-green-50', 'global-green-100', 'global-green-200', 'global-green-300',\n        'global-green-400', 'global-green-500', 'global-green-600', 'global-green-700',\n        'global-green-800', 'global-green-900', 'global-green-1000',\n        'global-green-a50', 'global-green-a100', 'global-green-a150', 'global-green-a200'\n      ]\n    },\n    {\n      name: 'Green Backgrounds',\n      type: 'background',\n      classes: [\n        'global-green-bg-50', 'global-green-bg-100', 'global-green-bg-200', 'global-green-bg-300',\n        'global-green-bg-400', 'global-green-bg-500', 'global-green-bg-600', 'global-green-bg-700',\n        'global-green-bg-800', 'global-green-bg-900', 'global-green-bg-1000'\n      ]\n    },\n    {\n      name: 'Sky Blue Colors',\n      type: 'text',\n      classes: [\n        'global-sky-blue-50', 'global-sky-blue-100', 'global-sky-blue-200', 'global-sky-blue-300',\n        'global-sky-blue-400', 'global-sky-blue-500', 'global-sky-blue-600', 'global-sky-blue-700',\n        'global-sky-blue-800', 'global-sky-blue-900', 'global-sky-blue-1000',\n        'global-sky-blue-a50', 'global-sky-blue-a100', 'global-sky-blue-a150', 'global-sky-blue-a200'\n      ]\n    },\n    {\n      name: 'Sky Blue Backgrounds',\n      type: 'background',\n      classes: [\n        'global-sky-blue-bg-50', 'global-sky-blue-bg-100', 'global-sky-blue-bg-200',\n        'global-sky-blue-bg-300', 'global-sky-blue-bg-400', 'global-sky-blue-bg-500',\n        'global-sky-blue-bg-600', 'global-sky-blue-bg-700', 'global-sky-blue-bg-800',\n        'global-sky-blue-bg-900', 'global-sky-blue-bg-1000'\n      ]\n    },\n    {\n      name: 'Blue Colors',\n      type: 'text',\n      classes: [\n        'global-blue-50', 'global-blue-100', 'global-blue-200', 'global-blue-300',\n        'global-blue-400', 'global-blue-500', 'global-blue-600', 'global-blue-700',\n        'global-blue-800', 'global-blue-900', 'global-blue-1000',\n        'global-blue-a50', 'global-blue-a100', 'global-blue-a150', 'global-blue-a200'\n      ]\n    },\n    {\n      name: 'Blue Backgrounds',\n      type: 'background',\n      classes: [\n        'global-blue-bg-50', 'global-blue-bg-100', 'global-blue-bg-200', 'global-blue-bg-300',\n        'global-blue-bg-400', 'global-blue-bg-500', 'global-blue-bg-600', 'global-blue-bg-700',\n        'global-blue-bg-800', 'global-blue-bg-900', 'global-blue-bg-1000'\n      ]\n    },\n    {\n      name: 'Pink Colors',\n      type: 'text',\n      classes: [\n        'global-pink-50', 'global-pink-100', 'global-pink-200', 'global-pink-300',\n        'global-pink-400', 'global-pink-500', 'global-pink-600', 'global-pink-700',\n        'global-pink-800', 'global-pink-900', 'global-pink-1000',\n        'global-pink-a50', 'global-pink-a100', 'global-pink-a150', 'global-pink-a200'\n      ]\n    },\n    {\n      name: 'Pink Backgrounds',\n      type: 'background',\n      classes: [\n        'global-pink-bg-50', 'global-pink-bg-100', 'global-pink-bg-200', 'global-pink-bg-300',\n        'global-pink-bg-400', 'global-pink-bg-500', 'global-pink-bg-600', 'global-pink-bg-700',\n        'global-pink-bg-800', 'global-pink-bg-900', 'global-pink-bg-1000'\n      ]\n    },\n    {\n      name: 'Purple Colors',\n      type: 'text',\n      classes: [\n        'global-purple-50', 'global-purple-100', 'global-purple-200', 'global-purple-300',\n        'global-purple-400', 'global-purple-500', 'global-purple-600', 'global-purple-700',\n        'global-purple-800', 'global-purple-900', 'global-purple-1000',\n        'global-purple-a50', 'global-purple-a100', 'global-purple-a150', 'global-purple-a200'\n      ]\n    },\n    {\n      name: 'Purple Backgrounds',\n      type: 'background',\n      classes: [\n        'global-purple-bg-50', 'global-purple-bg-100', 'global-purple-bg-200', 'global-purple-bg-300',\n        'global-purple-bg-400', 'global-purple-bg-500', 'global-purple-bg-600', 'global-purple-bg-700',\n        'global-purple-bg-800', 'global-purple-bg-900', 'global-purple-bg-1000'\n      ]\n    },\n    {\n      name: 'Charcoal Blue Colors',\n      type: 'text',\n      classes: [\n        'global-charcoal-blue-50', 'global-charcoal-blue-100', 'global-charcoal-blue-200',\n        'global-charcoal-blue-300', 'global-charcoal-blue-400', 'global-charcoal-blue-500',\n        'global-charcoal-blue-600', 'global-charcoal-blue-700', 'global-charcoal-blue-800',\n        'global-charcoal-blue-900', 'global-charcoal-blue-1000',\n        'global-charcoal-blue-a50', 'global-charcoal-blue-a100', 'global-charcoal-blue-a150',\n        'global-charcoal-blue-a200'\n      ]\n    },\n    {\n      name: 'Charcoal Blue Backgrounds',\n      type: 'background',\n      classes: [\n        'global-charcoal-blue-bg-50', 'global-charcoal-blue-bg-100', 'global-charcoal-blue-bg-200',\n        'global-charcoal-blue-bg-300', 'global-charcoal-blue-bg-400', 'global-charcoal-blue-bg-500',\n        'global-charcoal-blue-bg-600', 'global-charcoal-blue-bg-700', 'global-charcoal-blue-bg-800',\n        'global-charcoal-blue-bg-900', 'global-charcoal-blue-bg-1000'\n      ]\n    },\n    {\n      name: 'Neutral Colors',\n      type: 'text',\n      classes: [\n        'global-neutral-10', 'global-neutral-20', 'global-neutral-30', 'global-neutral-40',\n        'global-neutral-50', 'global-neutral-100', 'global-neutral-200', 'global-neutral-300',\n        'global-neutral-400', 'global-neutral-500', 'global-neutral-600', 'global-neutral-700',\n        'global-neutral-800', 'global-neutral-900', 'global-neutral-1000'\n      ]\n    },\n    {\n      name: 'Neutral Backgrounds',\n      type: 'background',\n      classes: [\n        'global-neutral-bg-10', 'global-neutral-bg-20', 'global-neutral-bg-30', 'global-neutral-bg-40',\n        'global-neutral-bg-50', 'global-neutral-bg-100', 'global-neutral-bg-200', 'global-neutral-bg-300',\n        'global-neutral-bg-400', 'global-neutral-bg-500', 'global-neutral-bg-600', 'global-neutral-bg-700',\n        'global-neutral-bg-800', 'global-neutral-bg-900', 'global-neutral-bg-1000'\n      ]\n    },\n    {\n      name: 'Surface Colors',\n      type: 'background',\n      classes: [\n        'surface-bright', 'surface', 'surface-dim',\n        'surface-container-lowest', 'surface-container-low', 'surface-container',\n        'surface-container-high', 'surface-container-highest'\n      ]\n    },\n    {\n      name: 'On Surface & Outline Colors',\n      type: 'text',\n      classes: [\n        'on-surface-variant', 'on-surface',\n        'outline-bright', 'outline', 'outline-dim'\n      ]\n    },\n    {\n      name: 'Primary Colors',\n      type: 'background',\n      classes: [\n        'primary', 'on-primary', 'primary-container', 'on-primary-container'\n      ]\n    },\n    {\n      name: 'Secondary Colors',\n      type: 'background',\n      classes: [\n        'secondary', 'on-secondary', 'secondary-container', 'on-container'\n      ]\n    },\n    {\n      name: 'Status Colors',\n      type: 'background',\n      classes: [\n        'error', 'on-error', 'error-container', 'on-error-container',\n        'warning', 'on-warning', 'warning-container', 'on-warning-container',\n        'success', 'on-success', 'success-container', 'on-success-container'\n      ]\n    },\n    {\n      name: 'Extended Colors',\n      type: 'background',\n      classes: [\n        'extend-1', 'on-extend-1', 'extend-1-container', 'on-extend-1-container',\n        'extend-2', 'on-extend-2', 'extend-2-container', 'on-extend-2-container',\n        'extend-3', 'on-extend-3', 'extend-3-container', 'on-extend-3-container'\n      ]\n    }\n  ];\n\n  getSelectedCategoryClasses(): string[] {\n    const category = this.classCategories.find(cat => cat.name === this.selectedCategory);\n    return category ? category.classes : [];\n  }\n\n  onCategoryChange() {\n    this.selectedClass = '';\n  }\n\n  onClassSelect() {\n    if (this.selectedClass) {\n      const category = this.classCategories.find(cat => cat.classes.includes(this.selectedClass));\n      this.examples.unshift({\n        className: this.selectedClass,\n        text: this.customText || this.defaultText,\n        type: category?.type || 'text'\n      });\n      this.selectedClass = '';\n      this.customText = '';\n    }\n  }\n\n  addClass() {\n    if (this.manualClass) {\n      const category = this.classCategories.find(cat => cat.classes.includes(this.manualClass));\n      this.examples.unshift({\n        className: this.manualClass,\n        text: this.customText || this.defaultText,\n        type: category?.type || 'text'\n      });\n      this.manualClass = '';\n      this.customText = '';\n    }\n  }\n\n  removeExample(index: number) {\n    this.examples.splice(index, 1);\n  }\n}\n",
+            "properties": [
+                {
+                    "name": "classes",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "string[]",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 13
+                },
+                {
+                    "name": "name",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "string",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 12
+                },
+                {
+                    "name": "type",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "\"text\" | \"background\"",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 14
+                }
+            ],
+            "indexSignatures": [],
+            "kind": 171,
+            "methods": [],
+            "extends": []
+        },
+        {
+            "name": "ColorExample",
+            "id": "interface-ColorExample-2fc71c0f358326480fb0609c5e8c1b26a4743c6418ec7b21524c351a7f4d8b47f04a2907698f50fcc19a7d205108c1c199cfb9f0ec68697f3b3f0a7cae35d5de",
+            "file": "src/app/components/colors-demo/colors-demo.component.ts",
+            "deprecated": false,
+            "deprecationMessage": "",
+            "type": "interface",
+            "sourceCode": "import { Component } from '@angular/core';\nimport { CommonModule } from '@angular/common';\nimport { FormsModule } from '@angular/forms';\n\ninterface ColorExample {\n  className: string;\n  text: string;\n  type: 'text' | 'background';\n}\n\ninterface ColorCategory {\n  name: string;\n  classes: string[];\n  type: 'text' | 'background';\n}\n\n@Component({\n  selector: 'app-colors-demo',\n  standalone: true,\n  imports: [CommonModule, FormsModule],\n  templateUrl: './colors-demo.component.html',\n  styleUrl: './colors-demo.component.scss'\n})\nexport class ColorsDemoComponent {\n  manualClass = '';\n  customText = '';\n  examples: ColorExample[] = [];\n  defaultText = 'Sample Text';\n\n  selectedCategory = '';\n  selectedClass = '';\n\n  classCategories: ColorCategory[] = [\n    {\n      name: 'Red Colors',\n      type: 'text',\n      classes: [\n        'global-red-50', 'global-red-100', 'global-red-200', 'global-red-300',\n        'global-red-400', 'global-red-500', 'global-red-600', 'global-red-700',\n        'global-red-800', 'global-red-900', 'global-red-1000',\n        'global-red-a50', 'global-red-a100', 'global-red-a150', 'global-red-a200'\n      ]\n    },\n    {\n      name: 'Red Backgrounds',\n      type: 'background',\n      classes: [\n        'global-red-bg-50', 'global-red-bg-100', 'global-red-bg-200', 'global-red-bg-300',\n        'global-red-bg-400', 'global-red-bg-500', 'global-red-bg-600', 'global-red-bg-700',\n        'global-red-bg-800', 'global-red-bg-900', 'global-red-bg-1000'\n      ]\n    },\n    {\n      name: 'Yellow Colors',\n      type: 'text',\n      classes: [\n        'global-yellow-50', 'global-yellow-100', 'global-yellow-200', 'global-yellow-300',\n        'global-yellow-400', 'global-yellow-500', 'global-yellow-600', 'global-yellow-700',\n        'global-yellow-800', 'global-yellow-900', 'global-yellow-1000',\n        'global-yellow-a50', 'global-yellow-a100', 'global-yellow-a150', 'global-yellow-a200'\n      ]\n    },\n    {\n      name: 'Yellow Backgrounds',\n      type: 'background',\n      classes: [\n        'global-yellow-bg-50', 'global-yellow-bg-100', 'global-yellow-bg-200', 'global-yellow-bg-300',\n        'global-yellow-bg-400', 'global-yellow-bg-500', 'global-yellow-bg-600', 'global-yellow-bg-700',\n        'global-yellow-bg-800', 'global-yellow-bg-900', 'global-yellow-bg-1000'\n      ]\n    },\n    {\n      name: 'Aqua Green Colors',\n      type: 'text',\n      classes: [\n        'global-aqua-green-50', 'global-aqua-green-100', 'global-aqua-green-200', 'global-aqua-green-300',\n        'global-aqua-green-400', 'global-aqua-green-500', 'global-aqua-green-600', 'global-aqua-green-700',\n        'global-aqua-green-800', 'global-aqua-green-900', 'global-aqua-green-1000',\n        'global-aqua-green-a50', 'global-aqua-green-a100', 'global-aqua-green-a150', 'global-aqua-green-a200'\n      ]\n    },\n    {\n      name: 'Aqua Green Backgrounds',\n      type: 'background',\n      classes: [\n        'global-aqua-green-bg-50', 'global-aqua-green-bg-100', 'global-aqua-green-bg-200',\n        'global-aqua-green-bg-300', 'global-aqua-green-bg-400', 'global-aqua-green-bg-500',\n        'global-aqua-green-bg-600', 'global-aqua-green-bg-700', 'global-aqua-green-bg-800',\n        'global-aqua-green-bg-900', 'global-aqua-green-bg-1000'\n      ]\n    },\n    {\n      name: 'Green Colors',\n      type: 'text',\n      classes: [\n        'global-green-50', 'global-green-100', 'global-green-200', 'global-green-300',\n        'global-green-400', 'global-green-500', 'global-green-600', 'global-green-700',\n        'global-green-800', 'global-green-900', 'global-green-1000',\n        'global-green-a50', 'global-green-a100', 'global-green-a150', 'global-green-a200'\n      ]\n    },\n    {\n      name: 'Green Backgrounds',\n      type: 'background',\n      classes: [\n        'global-green-bg-50', 'global-green-bg-100', 'global-green-bg-200', 'global-green-bg-300',\n        'global-green-bg-400', 'global-green-bg-500', 'global-green-bg-600', 'global-green-bg-700',\n        'global-green-bg-800', 'global-green-bg-900', 'global-green-bg-1000'\n      ]\n    },\n    {\n      name: 'Sky Blue Colors',\n      type: 'text',\n      classes: [\n        'global-sky-blue-50', 'global-sky-blue-100', 'global-sky-blue-200', 'global-sky-blue-300',\n        'global-sky-blue-400', 'global-sky-blue-500', 'global-sky-blue-600', 'global-sky-blue-700',\n        'global-sky-blue-800', 'global-sky-blue-900', 'global-sky-blue-1000',\n        'global-sky-blue-a50', 'global-sky-blue-a100', 'global-sky-blue-a150', 'global-sky-blue-a200'\n      ]\n    },\n    {\n      name: 'Sky Blue Backgrounds',\n      type: 'background',\n      classes: [\n        'global-sky-blue-bg-50', 'global-sky-blue-bg-100', 'global-sky-blue-bg-200',\n        'global-sky-blue-bg-300', 'global-sky-blue-bg-400', 'global-sky-blue-bg-500',\n        'global-sky-blue-bg-600', 'global-sky-blue-bg-700', 'global-sky-blue-bg-800',\n        'global-sky-blue-bg-900', 'global-sky-blue-bg-1000'\n      ]\n    },\n    {\n      name: 'Blue Colors',\n      type: 'text',\n      classes: [\n        'global-blue-50', 'global-blue-100', 'global-blue-200', 'global-blue-300',\n        'global-blue-400', 'global-blue-500', 'global-blue-600', 'global-blue-700',\n        'global-blue-800', 'global-blue-900', 'global-blue-1000',\n        'global-blue-a50', 'global-blue-a100', 'global-blue-a150', 'global-blue-a200'\n      ]\n    },\n    {\n      name: 'Blue Backgrounds',\n      type: 'background',\n      classes: [\n        'global-blue-bg-50', 'global-blue-bg-100', 'global-blue-bg-200', 'global-blue-bg-300',\n        'global-blue-bg-400', 'global-blue-bg-500', 'global-blue-bg-600', 'global-blue-bg-700',\n        'global-blue-bg-800', 'global-blue-bg-900', 'global-blue-bg-1000'\n      ]\n    },\n    {\n      name: 'Pink Colors',\n      type: 'text',\n      classes: [\n        'global-pink-50', 'global-pink-100', 'global-pink-200', 'global-pink-300',\n        'global-pink-400', 'global-pink-500', 'global-pink-600', 'global-pink-700',\n        'global-pink-800', 'global-pink-900', 'global-pink-1000',\n        'global-pink-a50', 'global-pink-a100', 'global-pink-a150', 'global-pink-a200'\n      ]\n    },\n    {\n      name: 'Pink Backgrounds',\n      type: 'background',\n      classes: [\n        'global-pink-bg-50', 'global-pink-bg-100', 'global-pink-bg-200', 'global-pink-bg-300',\n        'global-pink-bg-400', 'global-pink-bg-500', 'global-pink-bg-600', 'global-pink-bg-700',\n        'global-pink-bg-800', 'global-pink-bg-900', 'global-pink-bg-1000'\n      ]\n    },\n    {\n      name: 'Purple Colors',\n      type: 'text',\n      classes: [\n        'global-purple-50', 'global-purple-100', 'global-purple-200', 'global-purple-300',\n        'global-purple-400', 'global-purple-500', 'global-purple-600', 'global-purple-700',\n        'global-purple-800', 'global-purple-900', 'global-purple-1000',\n        'global-purple-a50', 'global-purple-a100', 'global-purple-a150', 'global-purple-a200'\n      ]\n    },\n    {\n      name: 'Purple Backgrounds',\n      type: 'background',\n      classes: [\n        'global-purple-bg-50', 'global-purple-bg-100', 'global-purple-bg-200', 'global-purple-bg-300',\n        'global-purple-bg-400', 'global-purple-bg-500', 'global-purple-bg-600', 'global-purple-bg-700',\n        'global-purple-bg-800', 'global-purple-bg-900', 'global-purple-bg-1000'\n      ]\n    },\n    {\n      name: 'Charcoal Blue Colors',\n      type: 'text',\n      classes: [\n        'global-charcoal-blue-50', 'global-charcoal-blue-100', 'global-charcoal-blue-200',\n        'global-charcoal-blue-300', 'global-charcoal-blue-400', 'global-charcoal-blue-500',\n        'global-charcoal-blue-600', 'global-charcoal-blue-700', 'global-charcoal-blue-800',\n        'global-charcoal-blue-900', 'global-charcoal-blue-1000',\n        'global-charcoal-blue-a50', 'global-charcoal-blue-a100', 'global-charcoal-blue-a150',\n        'global-charcoal-blue-a200'\n      ]\n    },\n    {\n      name: 'Charcoal Blue Backgrounds',\n      type: 'background',\n      classes: [\n        'global-charcoal-blue-bg-50', 'global-charcoal-blue-bg-100', 'global-charcoal-blue-bg-200',\n        'global-charcoal-blue-bg-300', 'global-charcoal-blue-bg-400', 'global-charcoal-blue-bg-500',\n        'global-charcoal-blue-bg-600', 'global-charcoal-blue-bg-700', 'global-charcoal-blue-bg-800',\n        'global-charcoal-blue-bg-900', 'global-charcoal-blue-bg-1000'\n      ]\n    },\n    {\n      name: 'Neutral Colors',\n      type: 'text',\n      classes: [\n        'global-neutral-10', 'global-neutral-20', 'global-neutral-30', 'global-neutral-40',\n        'global-neutral-50', 'global-neutral-100', 'global-neutral-200', 'global-neutral-300',\n        'global-neutral-400', 'global-neutral-500', 'global-neutral-600', 'global-neutral-700',\n        'global-neutral-800', 'global-neutral-900', 'global-neutral-1000'\n      ]\n    },\n    {\n      name: 'Neutral Backgrounds',\n      type: 'background',\n      classes: [\n        'global-neutral-bg-10', 'global-neutral-bg-20', 'global-neutral-bg-30', 'global-neutral-bg-40',\n        'global-neutral-bg-50', 'global-neutral-bg-100', 'global-neutral-bg-200', 'global-neutral-bg-300',\n        'global-neutral-bg-400', 'global-neutral-bg-500', 'global-neutral-bg-600', 'global-neutral-bg-700',\n        'global-neutral-bg-800', 'global-neutral-bg-900', 'global-neutral-bg-1000'\n      ]\n    },\n    {\n      name: 'Surface Colors',\n      type: 'background',\n      classes: [\n        'surface-bright', 'surface', 'surface-dim',\n        'surface-container-lowest', 'surface-container-low', 'surface-container',\n        'surface-container-high', 'surface-container-highest'\n      ]\n    },\n    {\n      name: 'On Surface & Outline Colors',\n      type: 'text',\n      classes: [\n        'on-surface-variant', 'on-surface',\n        'outline-bright', 'outline', 'outline-dim'\n      ]\n    },\n    {\n      name: 'Primary Colors',\n      type: 'background',\n      classes: [\n        'primary', 'on-primary', 'primary-container', 'on-primary-container'\n      ]\n    },\n    {\n      name: 'Secondary Colors',\n      type: 'background',\n      classes: [\n        'secondary', 'on-secondary', 'secondary-container', 'on-container'\n      ]\n    },\n    {\n      name: 'Status Colors',\n      type: 'background',\n      classes: [\n        'error', 'on-error', 'error-container', 'on-error-container',\n        'warning', 'on-warning', 'warning-container', 'on-warning-container',\n        'success', 'on-success', 'success-container', 'on-success-container'\n      ]\n    },\n    {\n      name: 'Extended Colors',\n      type: 'background',\n      classes: [\n        'extend-1', 'on-extend-1', 'extend-1-container', 'on-extend-1-container',\n        'extend-2', 'on-extend-2', 'extend-2-container', 'on-extend-2-container',\n        'extend-3', 'on-extend-3', 'extend-3-container', 'on-extend-3-container'\n      ]\n    }\n  ];\n\n  getSelectedCategoryClasses(): string[] {\n    const category = this.classCategories.find(cat => cat.name === this.selectedCategory);\n    return category ? category.classes : [];\n  }\n\n  onCategoryChange() {\n    this.selectedClass = '';\n  }\n\n  onClassSelect() {\n    if (this.selectedClass) {\n      const category = this.classCategories.find(cat => cat.classes.includes(this.selectedClass));\n      this.examples.unshift({\n        className: this.selectedClass,\n        text: this.customText || this.defaultText,\n        type: category?.type || 'text'\n      });\n      this.selectedClass = '';\n      this.customText = '';\n    }\n  }\n\n  addClass() {\n    if (this.manualClass) {\n      const category = this.classCategories.find(cat => cat.classes.includes(this.manualClass));\n      this.examples.unshift({\n        className: this.manualClass,\n        text: this.customText || this.defaultText,\n        type: category?.type || 'text'\n      });\n      this.manualClass = '';\n      this.customText = '';\n    }\n  }\n\n  removeExample(index: number) {\n    this.examples.splice(index, 1);\n  }\n}\n",
+            "properties": [
+                {
+                    "name": "className",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "string",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 6
+                },
+                {
+                    "name": "text",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "string",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 7
+                },
+                {
+                    "name": "type",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "\"text\" | \"background\"",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 8
+                }
+            ],
+            "indexSignatures": [],
+            "kind": 171,
+            "methods": [],
+            "extends": []
+        },
+        {
             "name": "ElevationExample",
             "id": "interface-ElevationExample-80e975c59b8339cc609e30d703d83cf0787f87df351c65901e4848bb59ac4f18f56e0347f91b21174c75be534e32cfd3b03b367d776689c9af90051c4f699e4e",
             "file": "src/app/components/elevation-demo/elevation-demo.component.ts",
@@ -402,7 +492,7 @@
             "styleUrlsData": "",
             "stylesData": "",
             "extends": [],
-            "templateData": "<div class=\"app-container\">\n  <button class=\"sidebar-toggle\" (click)=\"toggleSidebar()\">\n    <span class=\"hamburger\"></span>\n    <span class=\"hamburger\"></span>\n    <span class=\"hamburger\"></span>\n  </button>\n  \n  <nav class=\"sidebar\" [class.open]=\"isSidebarOpen\">\n    <ul>\n      <li><a routerLink=\"/typography\" routerLinkActive=\"active\" (click)=\"toggleSidebar()\">Typography</a></li>\n      <li><a routerLink=\"/borders\" routerLinkActive=\"active\" (click)=\"toggleSidebar()\">Borders</a></li>\n      <li><a routerLink=\"/elevation\" routerLinkActive=\"active\" (click)=\"toggleSidebar()\">Elevation</a></li>\n      <li><a routerLink=\"/spacing\" routerLinkActive=\"active\" (click)=\"toggleSidebar()\">Spacing</a></li>\n    </ul>\n  </nav>\n  \n  <div class=\"main-wrapper\">\n    <header class=\"app-header\">\n      <h1>Faclon Design System Testing</h1>\n    </header>\n    <main class=\"content\">\n      <router-outlet></router-outlet>\n    </main>\n  </div>\n</div>"
+            "templateData": "<div class=\"app-container\">\n  <button class=\"sidebar-toggle\" (click)=\"toggleSidebar()\">\n    <span class=\"hamburger\"></span>\n    <span class=\"hamburger\"></span>\n    <span class=\"hamburger\"></span>\n  </button>\n  \n  <nav class=\"sidebar\" [class.open]=\"isSidebarOpen\">\n    <ul>\n      <li><a routerLink=\"/typography\" routerLinkActive=\"active\" (click)=\"toggleSidebar()\">Typography</a></li>\n      <li><a routerLink=\"/borders\" routerLinkActive=\"active\" (click)=\"toggleSidebar()\">Borders</a></li>\n      <li><a routerLink=\"/elevation\" routerLinkActive=\"active\" (click)=\"toggleSidebar()\">Elevation</a></li>\n      <li><a routerLink=\"/spacing\" routerLinkActive=\"active\" (click)=\"toggleSidebar()\">Spacing</a></li>\n      <li><a routerLink=\"/colors\" routerLinkActive=\"active\" (click)=\"toggleSidebar()\">Colors</a></li>\n    </ul>\n  </nav>\n  \n  <div class=\"main-wrapper\">\n    <header class=\"app-header\">\n      <h1>Faclon Design System Testing</h1>\n    </header>\n    <main class=\"content\">\n      <router-outlet></router-outlet>\n    </main>\n  </div>\n</div>"
         },
         {
             "name": "BordersDemoComponent",
@@ -731,6 +821,200 @@
                     }
                 }
             }
+        },
+        {
+            "name": "ColorsDemoComponent",
+            "id": "component-ColorsDemoComponent-2fc71c0f358326480fb0609c5e8c1b26a4743c6418ec7b21524c351a7f4d8b47f04a2907698f50fcc19a7d205108c1c199cfb9f0ec68697f3b3f0a7cae35d5de",
+            "file": "src/app/components/colors-demo/colors-demo.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "app-colors-demo",
+            "styleUrls": [],
+            "styles": [],
+            "templateUrl": [
+                "./colors-demo.component.html"
+            ],
+            "viewProviders": [],
+            "hostDirectives": [],
+            "inputsClass": [],
+            "outputsClass": [],
+            "propertiesClass": [
+                {
+                    "name": "classCategories",
+                    "defaultValue": "[\n    {\n      name: 'Red Colors',\n      type: 'text',\n      classes: [\n        'global-red-50', 'global-red-100', 'global-red-200', 'global-red-300',\n        'global-red-400', 'global-red-500', 'global-red-600', 'global-red-700',\n        'global-red-800', 'global-red-900', 'global-red-1000',\n        'global-red-a50', 'global-red-a100', 'global-red-a150', 'global-red-a200'\n      ]\n    },\n    {\n      name: 'Red Backgrounds',\n      type: 'background',\n      classes: [\n        'global-red-bg-50', 'global-red-bg-100', 'global-red-bg-200', 'global-red-bg-300',\n        'global-red-bg-400', 'global-red-bg-500', 'global-red-bg-600', 'global-red-bg-700',\n        'global-red-bg-800', 'global-red-bg-900', 'global-red-bg-1000'\n      ]\n    },\n    {\n      name: 'Yellow Colors',\n      type: 'text',\n      classes: [\n        'global-yellow-50', 'global-yellow-100', 'global-yellow-200', 'global-yellow-300',\n        'global-yellow-400', 'global-yellow-500', 'global-yellow-600', 'global-yellow-700',\n        'global-yellow-800', 'global-yellow-900', 'global-yellow-1000',\n        'global-yellow-a50', 'global-yellow-a100', 'global-yellow-a150', 'global-yellow-a200'\n      ]\n    },\n    {\n      name: 'Yellow Backgrounds',\n      type: 'background',\n      classes: [\n        'global-yellow-bg-50', 'global-yellow-bg-100', 'global-yellow-bg-200', 'global-yellow-bg-300',\n        'global-yellow-bg-400', 'global-yellow-bg-500', 'global-yellow-bg-600', 'global-yellow-bg-700',\n        'global-yellow-bg-800', 'global-yellow-bg-900', 'global-yellow-bg-1000'\n      ]\n    },\n    {\n      name: 'Aqua Green Colors',\n      type: 'text',\n      classes: [\n        'global-aqua-green-50', 'global-aqua-green-100', 'global-aqua-green-200', 'global-aqua-green-300',\n        'global-aqua-green-400', 'global-aqua-green-500', 'global-aqua-green-600', 'global-aqua-green-700',\n        'global-aqua-green-800', 'global-aqua-green-900', 'global-aqua-green-1000',\n        'global-aqua-green-a50', 'global-aqua-green-a100', 'global-aqua-green-a150', 'global-aqua-green-a200'\n      ]\n    },\n    {\n      name: 'Aqua Green Backgrounds',\n      type: 'background',\n      classes: [\n        'global-aqua-green-bg-50', 'global-aqua-green-bg-100', 'global-aqua-green-bg-200',\n        'global-aqua-green-bg-300', 'global-aqua-green-bg-400', 'global-aqua-green-bg-500',\n        'global-aqua-green-bg-600', 'global-aqua-green-bg-700', 'global-aqua-green-bg-800',\n        'global-aqua-green-bg-900', 'global-aqua-green-bg-1000'\n      ]\n    },\n    {\n      name: 'Green Colors',\n      type: 'text',\n      classes: [\n        'global-green-50', 'global-green-100', 'global-green-200', 'global-green-300',\n        'global-green-400', 'global-green-500', 'global-green-600', 'global-green-700',\n        'global-green-800', 'global-green-900', 'global-green-1000',\n        'global-green-a50', 'global-green-a100', 'global-green-a150', 'global-green-a200'\n      ]\n    },\n    {\n      name: 'Green Backgrounds',\n      type: 'background',\n      classes: [\n        'global-green-bg-50', 'global-green-bg-100', 'global-green-bg-200', 'global-green-bg-300',\n        'global-green-bg-400', 'global-green-bg-500', 'global-green-bg-600', 'global-green-bg-700',\n        'global-green-bg-800', 'global-green-bg-900', 'global-green-bg-1000'\n      ]\n    },\n    {\n      name: 'Sky Blue Colors',\n      type: 'text',\n      classes: [\n        'global-sky-blue-50', 'global-sky-blue-100', 'global-sky-blue-200', 'global-sky-blue-300',\n        'global-sky-blue-400', 'global-sky-blue-500', 'global-sky-blue-600', 'global-sky-blue-700',\n        'global-sky-blue-800', 'global-sky-blue-900', 'global-sky-blue-1000',\n        'global-sky-blue-a50', 'global-sky-blue-a100', 'global-sky-blue-a150', 'global-sky-blue-a200'\n      ]\n    },\n    {\n      name: 'Sky Blue Backgrounds',\n      type: 'background',\n      classes: [\n        'global-sky-blue-bg-50', 'global-sky-blue-bg-100', 'global-sky-blue-bg-200',\n        'global-sky-blue-bg-300', 'global-sky-blue-bg-400', 'global-sky-blue-bg-500',\n        'global-sky-blue-bg-600', 'global-sky-blue-bg-700', 'global-sky-blue-bg-800',\n        'global-sky-blue-bg-900', 'global-sky-blue-bg-1000'\n      ]\n    },\n    {\n      name: 'Blue Colors',\n      type: 'text',\n      classes: [\n        'global-blue-50', 'global-blue-100', 'global-blue-200', 'global-blue-300',\n        'global-blue-400', 'global-blue-500', 'global-blue-600', 'global-blue-700',\n        'global-blue-800', 'global-blue-900', 'global-blue-1000',\n        'global-blue-a50', 'global-blue-a100', 'global-blue-a150', 'global-blue-a200'\n      ]\n    },\n    {\n      name: 'Blue Backgrounds',\n      type: 'background',\n      classes: [\n        'global-blue-bg-50', 'global-blue-bg-100', 'global-blue-bg-200', 'global-blue-bg-300',\n        'global-blue-bg-400', 'global-blue-bg-500', 'global-blue-bg-600', 'global-blue-bg-700',\n        'global-blue-bg-800', 'global-blue-bg-900', 'global-blue-bg-1000'\n      ]\n    },\n    {\n      name: 'Pink Colors',\n      type: 'text',\n      classes: [\n        'global-pink-50', 'global-pink-100', 'global-pink-200', 'global-pink-300',\n        'global-pink-400', 'global-pink-500', 'global-pink-600', 'global-pink-700',\n        'global-pink-800', 'global-pink-900', 'global-pink-1000',\n        'global-pink-a50', 'global-pink-a100', 'global-pink-a150', 'global-pink-a200'\n      ]\n    },\n    {\n      name: 'Pink Backgrounds',\n      type: 'background',\n      classes: [\n        'global-pink-bg-50', 'global-pink-bg-100', 'global-pink-bg-200', 'global-pink-bg-300',\n        'global-pink-bg-400', 'global-pink-bg-500', 'global-pink-bg-600', 'global-pink-bg-700',\n        'global-pink-bg-800', 'global-pink-bg-900', 'global-pink-bg-1000'\n      ]\n    },\n    {\n      name: 'Purple Colors',\n      type: 'text',\n      classes: [\n        'global-purple-50', 'global-purple-100', 'global-purple-200', 'global-purple-300',\n        'global-purple-400', 'global-purple-500', 'global-purple-600', 'global-purple-700',\n        'global-purple-800', 'global-purple-900', 'global-purple-1000',\n        'global-purple-a50', 'global-purple-a100', 'global-purple-a150', 'global-purple-a200'\n      ]\n    },\n    {\n      name: 'Purple Backgrounds',\n      type: 'background',\n      classes: [\n        'global-purple-bg-50', 'global-purple-bg-100', 'global-purple-bg-200', 'global-purple-bg-300',\n        'global-purple-bg-400', 'global-purple-bg-500', 'global-purple-bg-600', 'global-purple-bg-700',\n        'global-purple-bg-800', 'global-purple-bg-900', 'global-purple-bg-1000'\n      ]\n    },\n    {\n      name: 'Charcoal Blue Colors',\n      type: 'text',\n      classes: [\n        'global-charcoal-blue-50', 'global-charcoal-blue-100', 'global-charcoal-blue-200',\n        'global-charcoal-blue-300', 'global-charcoal-blue-400', 'global-charcoal-blue-500',\n        'global-charcoal-blue-600', 'global-charcoal-blue-700', 'global-charcoal-blue-800',\n        'global-charcoal-blue-900', 'global-charcoal-blue-1000',\n        'global-charcoal-blue-a50', 'global-charcoal-blue-a100', 'global-charcoal-blue-a150',\n        'global-charcoal-blue-a200'\n      ]\n    },\n    {\n      name: 'Charcoal Blue Backgrounds',\n      type: 'background',\n      classes: [\n        'global-charcoal-blue-bg-50', 'global-charcoal-blue-bg-100', 'global-charcoal-blue-bg-200',\n        'global-charcoal-blue-bg-300', 'global-charcoal-blue-bg-400', 'global-charcoal-blue-bg-500',\n        'global-charcoal-blue-bg-600', 'global-charcoal-blue-bg-700', 'global-charcoal-blue-bg-800',\n        'global-charcoal-blue-bg-900', 'global-charcoal-blue-bg-1000'\n      ]\n    },\n    {\n      name: 'Neutral Colors',\n      type: 'text',\n      classes: [\n        'global-neutral-10', 'global-neutral-20', 'global-neutral-30', 'global-neutral-40',\n        'global-neutral-50', 'global-neutral-100', 'global-neutral-200', 'global-neutral-300',\n        'global-neutral-400', 'global-neutral-500', 'global-neutral-600', 'global-neutral-700',\n        'global-neutral-800', 'global-neutral-900', 'global-neutral-1000'\n      ]\n    },\n    {\n      name: 'Neutral Backgrounds',\n      type: 'background',\n      classes: [\n        'global-neutral-bg-10', 'global-neutral-bg-20', 'global-neutral-bg-30', 'global-neutral-bg-40',\n        'global-neutral-bg-50', 'global-neutral-bg-100', 'global-neutral-bg-200', 'global-neutral-bg-300',\n        'global-neutral-bg-400', 'global-neutral-bg-500', 'global-neutral-bg-600', 'global-neutral-bg-700',\n        'global-neutral-bg-800', 'global-neutral-bg-900', 'global-neutral-bg-1000'\n      ]\n    },\n    {\n      name: 'Surface Colors',\n      type: 'background',\n      classes: [\n        'surface-bright', 'surface', 'surface-dim',\n        'surface-container-lowest', 'surface-container-low', 'surface-container',\n        'surface-container-high', 'surface-container-highest'\n      ]\n    },\n    {\n      name: 'On Surface & Outline Colors',\n      type: 'text',\n      classes: [\n        'on-surface-variant', 'on-surface',\n        'outline-bright', 'outline', 'outline-dim'\n      ]\n    },\n    {\n      name: 'Primary Colors',\n      type: 'background',\n      classes: [\n        'primary', 'on-primary', 'primary-container', 'on-primary-container'\n      ]\n    },\n    {\n      name: 'Secondary Colors',\n      type: 'background',\n      classes: [\n        'secondary', 'on-secondary', 'secondary-container', 'on-container'\n      ]\n    },\n    {\n      name: 'Status Colors',\n      type: 'background',\n      classes: [\n        'error', 'on-error', 'error-container', 'on-error-container',\n        'warning', 'on-warning', 'warning-container', 'on-warning-container',\n        'success', 'on-success', 'success-container', 'on-success-container'\n      ]\n    },\n    {\n      name: 'Extended Colors',\n      type: 'background',\n      classes: [\n        'extend-1', 'on-extend-1', 'extend-1-container', 'on-extend-1-container',\n        'extend-2', 'on-extend-2', 'extend-2-container', 'on-extend-2-container',\n        'extend-3', 'on-extend-3', 'extend-3-container', 'on-extend-3-container'\n      ]\n    }\n  ]",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "ColorCategory[]",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 33
+                },
+                {
+                    "name": "customText",
+                    "defaultValue": "''",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "string",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 26
+                },
+                {
+                    "name": "defaultText",
+                    "defaultValue": "'Sample Text'",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "string",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 28
+                },
+                {
+                    "name": "examples",
+                    "defaultValue": "[]",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "ColorExample[]",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 27
+                },
+                {
+                    "name": "manualClass",
+                    "defaultValue": "''",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "string",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 25
+                },
+                {
+                    "name": "selectedCategory",
+                    "defaultValue": "''",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "string",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 30
+                },
+                {
+                    "name": "selectedClass",
+                    "defaultValue": "''",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "string",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 31
+                }
+            ],
+            "methodsClass": [
+                {
+                    "name": "addClass",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 303,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                },
+                {
+                    "name": "getSelectedCategoryClasses",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "string[]",
+                    "typeParameters": [],
+                    "line": 281,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                },
+                {
+                    "name": "onCategoryChange",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 286,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                },
+                {
+                    "name": "onClassSelect",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 290,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                },
+                {
+                    "name": "removeExample",
+                    "args": [
+                        {
+                            "name": "index",
+                            "type": "number",
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 316,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "jsdoctags": [
+                        {
+                            "name": "index",
+                            "type": "number",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
+                }
+            ],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "standalone": true,
+            "imports": [
+                {
+                    "name": "CommonModule",
+                    "type": "module"
+                },
+                {
+                    "name": "FormsModule",
+                    "type": "module"
+                }
+            ],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component } from '@angular/core';\nimport { CommonModule } from '@angular/common';\nimport { FormsModule } from '@angular/forms';\n\ninterface ColorExample {\n  className: string;\n  text: string;\n  type: 'text' | 'background';\n}\n\ninterface ColorCategory {\n  name: string;\n  classes: string[];\n  type: 'text' | 'background';\n}\n\n@Component({\n  selector: 'app-colors-demo',\n  standalone: true,\n  imports: [CommonModule, FormsModule],\n  templateUrl: './colors-demo.component.html',\n  styleUrl: './colors-demo.component.scss'\n})\nexport class ColorsDemoComponent {\n  manualClass = '';\n  customText = '';\n  examples: ColorExample[] = [];\n  defaultText = 'Sample Text';\n\n  selectedCategory = '';\n  selectedClass = '';\n\n  classCategories: ColorCategory[] = [\n    {\n      name: 'Red Colors',\n      type: 'text',\n      classes: [\n        'global-red-50', 'global-red-100', 'global-red-200', 'global-red-300',\n        'global-red-400', 'global-red-500', 'global-red-600', 'global-red-700',\n        'global-red-800', 'global-red-900', 'global-red-1000',\n        'global-red-a50', 'global-red-a100', 'global-red-a150', 'global-red-a200'\n      ]\n    },\n    {\n      name: 'Red Backgrounds',\n      type: 'background',\n      classes: [\n        'global-red-bg-50', 'global-red-bg-100', 'global-red-bg-200', 'global-red-bg-300',\n        'global-red-bg-400', 'global-red-bg-500', 'global-red-bg-600', 'global-red-bg-700',\n        'global-red-bg-800', 'global-red-bg-900', 'global-red-bg-1000'\n      ]\n    },\n    {\n      name: 'Yellow Colors',\n      type: 'text',\n      classes: [\n        'global-yellow-50', 'global-yellow-100', 'global-yellow-200', 'global-yellow-300',\n        'global-yellow-400', 'global-yellow-500', 'global-yellow-600', 'global-yellow-700',\n        'global-yellow-800', 'global-yellow-900', 'global-yellow-1000',\n        'global-yellow-a50', 'global-yellow-a100', 'global-yellow-a150', 'global-yellow-a200'\n      ]\n    },\n    {\n      name: 'Yellow Backgrounds',\n      type: 'background',\n      classes: [\n        'global-yellow-bg-50', 'global-yellow-bg-100', 'global-yellow-bg-200', 'global-yellow-bg-300',\n        'global-yellow-bg-400', 'global-yellow-bg-500', 'global-yellow-bg-600', 'global-yellow-bg-700',\n        'global-yellow-bg-800', 'global-yellow-bg-900', 'global-yellow-bg-1000'\n      ]\n    },\n    {\n      name: 'Aqua Green Colors',\n      type: 'text',\n      classes: [\n        'global-aqua-green-50', 'global-aqua-green-100', 'global-aqua-green-200', 'global-aqua-green-300',\n        'global-aqua-green-400', 'global-aqua-green-500', 'global-aqua-green-600', 'global-aqua-green-700',\n        'global-aqua-green-800', 'global-aqua-green-900', 'global-aqua-green-1000',\n        'global-aqua-green-a50', 'global-aqua-green-a100', 'global-aqua-green-a150', 'global-aqua-green-a200'\n      ]\n    },\n    {\n      name: 'Aqua Green Backgrounds',\n      type: 'background',\n      classes: [\n        'global-aqua-green-bg-50', 'global-aqua-green-bg-100', 'global-aqua-green-bg-200',\n        'global-aqua-green-bg-300', 'global-aqua-green-bg-400', 'global-aqua-green-bg-500',\n        'global-aqua-green-bg-600', 'global-aqua-green-bg-700', 'global-aqua-green-bg-800',\n        'global-aqua-green-bg-900', 'global-aqua-green-bg-1000'\n      ]\n    },\n    {\n      name: 'Green Colors',\n      type: 'text',\n      classes: [\n        'global-green-50', 'global-green-100', 'global-green-200', 'global-green-300',\n        'global-green-400', 'global-green-500', 'global-green-600', 'global-green-700',\n        'global-green-800', 'global-green-900', 'global-green-1000',\n        'global-green-a50', 'global-green-a100', 'global-green-a150', 'global-green-a200'\n      ]\n    },\n    {\n      name: 'Green Backgrounds',\n      type: 'background',\n      classes: [\n        'global-green-bg-50', 'global-green-bg-100', 'global-green-bg-200', 'global-green-bg-300',\n        'global-green-bg-400', 'global-green-bg-500', 'global-green-bg-600', 'global-green-bg-700',\n        'global-green-bg-800', 'global-green-bg-900', 'global-green-bg-1000'\n      ]\n    },\n    {\n      name: 'Sky Blue Colors',\n      type: 'text',\n      classes: [\n        'global-sky-blue-50', 'global-sky-blue-100', 'global-sky-blue-200', 'global-sky-blue-300',\n        'global-sky-blue-400', 'global-sky-blue-500', 'global-sky-blue-600', 'global-sky-blue-700',\n        'global-sky-blue-800', 'global-sky-blue-900', 'global-sky-blue-1000',\n        'global-sky-blue-a50', 'global-sky-blue-a100', 'global-sky-blue-a150', 'global-sky-blue-a200'\n      ]\n    },\n    {\n      name: 'Sky Blue Backgrounds',\n      type: 'background',\n      classes: [\n        'global-sky-blue-bg-50', 'global-sky-blue-bg-100', 'global-sky-blue-bg-200',\n        'global-sky-blue-bg-300', 'global-sky-blue-bg-400', 'global-sky-blue-bg-500',\n        'global-sky-blue-bg-600', 'global-sky-blue-bg-700', 'global-sky-blue-bg-800',\n        'global-sky-blue-bg-900', 'global-sky-blue-bg-1000'\n      ]\n    },\n    {\n      name: 'Blue Colors',\n      type: 'text',\n      classes: [\n        'global-blue-50', 'global-blue-100', 'global-blue-200', 'global-blue-300',\n        'global-blue-400', 'global-blue-500', 'global-blue-600', 'global-blue-700',\n        'global-blue-800', 'global-blue-900', 'global-blue-1000',\n        'global-blue-a50', 'global-blue-a100', 'global-blue-a150', 'global-blue-a200'\n      ]\n    },\n    {\n      name: 'Blue Backgrounds',\n      type: 'background',\n      classes: [\n        'global-blue-bg-50', 'global-blue-bg-100', 'global-blue-bg-200', 'global-blue-bg-300',\n        'global-blue-bg-400', 'global-blue-bg-500', 'global-blue-bg-600', 'global-blue-bg-700',\n        'global-blue-bg-800', 'global-blue-bg-900', 'global-blue-bg-1000'\n      ]\n    },\n    {\n      name: 'Pink Colors',\n      type: 'text',\n      classes: [\n        'global-pink-50', 'global-pink-100', 'global-pink-200', 'global-pink-300',\n        'global-pink-400', 'global-pink-500', 'global-pink-600', 'global-pink-700',\n        'global-pink-800', 'global-pink-900', 'global-pink-1000',\n        'global-pink-a50', 'global-pink-a100', 'global-pink-a150', 'global-pink-a200'\n      ]\n    },\n    {\n      name: 'Pink Backgrounds',\n      type: 'background',\n      classes: [\n        'global-pink-bg-50', 'global-pink-bg-100', 'global-pink-bg-200', 'global-pink-bg-300',\n        'global-pink-bg-400', 'global-pink-bg-500', 'global-pink-bg-600', 'global-pink-bg-700',\n        'global-pink-bg-800', 'global-pink-bg-900', 'global-pink-bg-1000'\n      ]\n    },\n    {\n      name: 'Purple Colors',\n      type: 'text',\n      classes: [\n        'global-purple-50', 'global-purple-100', 'global-purple-200', 'global-purple-300',\n        'global-purple-400', 'global-purple-500', 'global-purple-600', 'global-purple-700',\n        'global-purple-800', 'global-purple-900', 'global-purple-1000',\n        'global-purple-a50', 'global-purple-a100', 'global-purple-a150', 'global-purple-a200'\n      ]\n    },\n    {\n      name: 'Purple Backgrounds',\n      type: 'background',\n      classes: [\n        'global-purple-bg-50', 'global-purple-bg-100', 'global-purple-bg-200', 'global-purple-bg-300',\n        'global-purple-bg-400', 'global-purple-bg-500', 'global-purple-bg-600', 'global-purple-bg-700',\n        'global-purple-bg-800', 'global-purple-bg-900', 'global-purple-bg-1000'\n      ]\n    },\n    {\n      name: 'Charcoal Blue Colors',\n      type: 'text',\n      classes: [\n        'global-charcoal-blue-50', 'global-charcoal-blue-100', 'global-charcoal-blue-200',\n        'global-charcoal-blue-300', 'global-charcoal-blue-400', 'global-charcoal-blue-500',\n        'global-charcoal-blue-600', 'global-charcoal-blue-700', 'global-charcoal-blue-800',\n        'global-charcoal-blue-900', 'global-charcoal-blue-1000',\n        'global-charcoal-blue-a50', 'global-charcoal-blue-a100', 'global-charcoal-blue-a150',\n        'global-charcoal-blue-a200'\n      ]\n    },\n    {\n      name: 'Charcoal Blue Backgrounds',\n      type: 'background',\n      classes: [\n        'global-charcoal-blue-bg-50', 'global-charcoal-blue-bg-100', 'global-charcoal-blue-bg-200',\n        'global-charcoal-blue-bg-300', 'global-charcoal-blue-bg-400', 'global-charcoal-blue-bg-500',\n        'global-charcoal-blue-bg-600', 'global-charcoal-blue-bg-700', 'global-charcoal-blue-bg-800',\n        'global-charcoal-blue-bg-900', 'global-charcoal-blue-bg-1000'\n      ]\n    },\n    {\n      name: 'Neutral Colors',\n      type: 'text',\n      classes: [\n        'global-neutral-10', 'global-neutral-20', 'global-neutral-30', 'global-neutral-40',\n        'global-neutral-50', 'global-neutral-100', 'global-neutral-200', 'global-neutral-300',\n        'global-neutral-400', 'global-neutral-500', 'global-neutral-600', 'global-neutral-700',\n        'global-neutral-800', 'global-neutral-900', 'global-neutral-1000'\n      ]\n    },\n    {\n      name: 'Neutral Backgrounds',\n      type: 'background',\n      classes: [\n        'global-neutral-bg-10', 'global-neutral-bg-20', 'global-neutral-bg-30', 'global-neutral-bg-40',\n        'global-neutral-bg-50', 'global-neutral-bg-100', 'global-neutral-bg-200', 'global-neutral-bg-300',\n        'global-neutral-bg-400', 'global-neutral-bg-500', 'global-neutral-bg-600', 'global-neutral-bg-700',\n        'global-neutral-bg-800', 'global-neutral-bg-900', 'global-neutral-bg-1000'\n      ]\n    },\n    {\n      name: 'Surface Colors',\n      type: 'background',\n      classes: [\n        'surface-bright', 'surface', 'surface-dim',\n        'surface-container-lowest', 'surface-container-low', 'surface-container',\n        'surface-container-high', 'surface-container-highest'\n      ]\n    },\n    {\n      name: 'On Surface & Outline Colors',\n      type: 'text',\n      classes: [\n        'on-surface-variant', 'on-surface',\n        'outline-bright', 'outline', 'outline-dim'\n      ]\n    },\n    {\n      name: 'Primary Colors',\n      type: 'background',\n      classes: [\n        'primary', 'on-primary', 'primary-container', 'on-primary-container'\n      ]\n    },\n    {\n      name: 'Secondary Colors',\n      type: 'background',\n      classes: [\n        'secondary', 'on-secondary', 'secondary-container', 'on-container'\n      ]\n    },\n    {\n      name: 'Status Colors',\n      type: 'background',\n      classes: [\n        'error', 'on-error', 'error-container', 'on-error-container',\n        'warning', 'on-warning', 'warning-container', 'on-warning-container',\n        'success', 'on-success', 'success-container', 'on-success-container'\n      ]\n    },\n    {\n      name: 'Extended Colors',\n      type: 'background',\n      classes: [\n        'extend-1', 'on-extend-1', 'extend-1-container', 'on-extend-1-container',\n        'extend-2', 'on-extend-2', 'extend-2-container', 'on-extend-2-container',\n        'extend-3', 'on-extend-3', 'extend-3-container', 'on-extend-3-container'\n      ]\n    }\n  ];\n\n  getSelectedCategoryClasses(): string[] {\n    const category = this.classCategories.find(cat => cat.name === this.selectedCategory);\n    return category ? category.classes : [];\n  }\n\n  onCategoryChange() {\n    this.selectedClass = '';\n  }\n\n  onClassSelect() {\n    if (this.selectedClass) {\n      const category = this.classCategories.find(cat => cat.classes.includes(this.selectedClass));\n      this.examples.unshift({\n        className: this.selectedClass,\n        text: this.customText || this.defaultText,\n        type: category?.type || 'text'\n      });\n      this.selectedClass = '';\n      this.customText = '';\n    }\n  }\n\n  addClass() {\n    if (this.manualClass) {\n      const category = this.classCategories.find(cat => cat.classes.includes(this.manualClass));\n      this.examples.unshift({\n        className: this.manualClass,\n        text: this.customText || this.defaultText,\n        type: category?.type || 'text'\n      });\n      this.manualClass = '';\n      this.customText = '';\n    }\n  }\n\n  removeExample(index: number) {\n    this.examples.splice(index, 1);\n  }\n}\n",
+            "styleUrl": "./colors-demo.component.scss",
+            "assetsDirs": [],
+            "styleUrlsData": "",
+            "stylesData": "",
+            "extends": [],
+            "templateData": "<div class=\"colors-demo\">\n  <!-- Input Section -->\n  <div class=\"input-section\">\n    <h3>Test Color Classes</h3>\n    \n    <div class=\"input-group\">\n      <select [(ngModel)]=\"selectedCategory\" (ngModelChange)=\"onCategoryChange()\">\n        <option value=\"\">Select Category</option>\n        <option *ngFor=\"let category of classCategories\" [value]=\"category.name\">\n          {{ category.name }}\n        </option>\n      </select>\n      \n      <select [(ngModel)]=\"selectedClass\" [disabled]=\"!selectedCategory\">\n        <option value=\"\">Select Class</option>\n        <option *ngFor=\"let classItem of getSelectedCategoryClasses()\" [value]=\"classItem\">\n          {{ classItem }}\n        </option>\n      </select>\n      \n      <input\n        type=\"text\"\n        [(ngModel)]=\"customText\"\n        placeholder=\"Enter custom text (optional)\"\n      />\n      \n      <button (click)=\"onClassSelect()\" [disabled]=\"!selectedClass\">Add Class</button>\n    </div>\n\n    <div class=\"manual-class-input\">\n      <div class=\"input-group\">\n        <input\n          type=\"text\"\n          [(ngModel)]=\"manualClass\"\n          placeholder=\"Or enter class name manually\"\n          (keyup.enter)=\"addClass()\"\n        />\n        <input\n          type=\"text\"\n          [(ngModel)]=\"customText\"\n          placeholder=\"Enter custom text (optional)\"\n          (keyup.enter)=\"addClass()\"\n        />\n        <button (click)=\"addClass()\" [disabled]=\"!manualClass\">Add Class</button>\n      </div>\n    </div>\n  </div>\n\n  <!-- Examples Section -->\n  <div class=\"examples-section\" *ngIf=\"examples.length > 0\">\n    <h3>Examples</h3>\n    <div class=\"examples-list\">\n      <div class=\"example-item\" *ngFor=\"let example of examples; let i = index\">\n        <div class=\"example-header\">\n          <code>{{ example.className }}</code>\n          <button class=\"remove-btn\" (click)=\"removeExample(i)\">×</button>\n        </div>\n        <div [class]=\"example.className\" [ngClass]=\"{'example-text': example.type === 'text', 'example-background': example.type === 'background'}\">\n          {{ example.text }}\n        </div>\n      </div>\n    </div>\n  </div>\n</div>\n"
         },
         {
             "name": "ElevationDemoComponent",
@@ -1570,7 +1854,7 @@
     },
     "routes": [],
     "coverage": {
-        "count": 4,
+        "count": 3,
         "status": "low",
         "files": [
             {
@@ -1617,6 +1901,33 @@
                 "name": "ClassCategory",
                 "coveragePercent": 0,
                 "coverageCount": "0/3",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/components/colors-demo/colors-demo.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "ColorsDemoComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/13",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/components/colors-demo/colors-demo.component.ts",
+                "type": "interface",
+                "linktype": "interface",
+                "name": "ColorCategory",
+                "coveragePercent": 0,
+                "coverageCount": "0/4",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/components/colors-demo/colors-demo.component.ts",
+                "type": "interface",
+                "linktype": "interface",
+                "name": "ColorExample",
+                "coveragePercent": 0,
+                "coverageCount": "0/4",
                 "status": "low"
             },
             {

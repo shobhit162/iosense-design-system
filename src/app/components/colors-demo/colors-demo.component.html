@@ -1,0 +1,64 @@
+<div class="colors-demo">
+  <!-- Input Section -->
+  <div class="input-section">
+    <h3>Test Color Classes</h3>
+    
+    <div class="input-group">
+      <select [(ngModel)]="selectedCategory" (ngModelChange)="onCategoryChange()">
+        <option value="">Select Category</option>
+        <option *ngFor="let category of classCategories" [value]="category.name">
+          {{ category.name }}
+        </option>
+      </select>
+      
+      <select [(ngModel)]="selectedClass" [disabled]="!selectedCategory">
+        <option value="">Select Class</option>
+        <option *ngFor="let classItem of getSelectedCategoryClasses()" [value]="classItem">
+          {{ classItem }}
+        </option>
+      </select>
+      
+      <input
+        type="text"
+        [(ngModel)]="customText"
+        placeholder="Enter custom text (optional)"
+      />
+      
+      <button (click)="onClassSelect()" [disabled]="!selectedClass">Add Class</button>
+    </div>
+
+    <div class="manual-class-input">
+      <div class="input-group">
+        <input
+          type="text"
+          [(ngModel)]="manualClass"
+          placeholder="Or enter class name manually"
+          (keyup.enter)="addClass()"
+        />
+        <input
+          type="text"
+          [(ngModel)]="customText"
+          placeholder="Enter custom text (optional)"
+          (keyup.enter)="addClass()"
+        />
+        <button (click)="addClass()" [disabled]="!manualClass">Add Class</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Examples Section -->
+  <div class="examples-section" *ngIf="examples.length > 0">
+    <h3>Examples</h3>
+    <div class="examples-list">
+      <div class="example-item" *ngFor="let example of examples; let i = index">
+        <div class="example-header">
+          <code>{{ example.className }}</code>
+          <button class="remove-btn" (click)="removeExample(i)">×</button>
+        </div>
+        <div [class]="example.className" [ngClass]="{'example-text': example.type === 'text', 'example-background': example.type === 'background'}">
+          {{ example.text }}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

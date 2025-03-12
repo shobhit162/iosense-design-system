@@ -21,6 +21,11 @@ export const routes: Routes = [
     loadComponent: () => import('./components/spacing-demo/spacing-demo.component')
       .then(m => m.SpacingDemoComponent) 
   },
+  {
+    path: 'colors',
+    loadComponent: () => import('./components/colors-demo/colors-demo.component')
+    .then(m => m.ColorsDemoComponent)
+  },
   { 
     path: '', 
     redirectTo: 'typography', 

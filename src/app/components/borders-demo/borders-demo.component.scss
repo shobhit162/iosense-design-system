@@ -33,6 +33,13 @@ button {
   cursor: pointer;
 }
 
+select {
+  padding: 8px 12px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  flex: 1;
+}
+
 button:hover {
   background: #0056b3;
 }
