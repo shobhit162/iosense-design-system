@@ -198,222 +198,322 @@ $other-colors: (
   'white': #FFFFFF
 );
 
-// Generate color classes
-@mixin generate-color-classes($color-map, $prefix) {
+// Generate CSS Variables for each color palette
+@mixin generate-color-variables($color-map, $prefix) {
   @each $color, $value in $color-map {
-    .#{$prefix}-#{$color} {
-      color: $value;
-    }
-    .#{$prefix}-bg-#{$color} {
-      background-color: $value;
-    }
+    --#{$prefix}-#{$color}: #{$value};
   }
 }
 
-// Generate classes for each color palette
-@include generate-color-classes($red-colors, 'global-red');
-@include generate-color-classes($yellow-colors, 'global-yellow');
-@include generate-color-classes($aqua-green-colors, 'global-aqua-green');
-@include generate-color-classes($green-colors, 'global-green');
-@include generate-color-classes($sky-blue-colors, 'global-sky-blue');
-@include generate-color-classes($blue-colors, 'global-blue');
-@include generate-color-classes($pink-colors, 'global-pink');
-@include generate-color-classes($purple-colors, 'global-purple');
-@include generate-color-classes($charcoal-blue-colors, 'global-charcoal-blue');
-@include generate-color-classes($neutral-colors, 'global-neutral');
-@include generate-color-classes($other-colors, 'global');
+:root {
+  // Generate variables for each color palette with global prefix
+  @include generate-color-variables($red-colors, 'global-red');
+  @include generate-color-variables($yellow-colors, 'global-yellow');
+  @include generate-color-variables($aqua-green-colors, 'global-aqua-green');
+  @include generate-color-variables($green-colors, 'global-green');
+  @include generate-color-variables($sky-blue-colors, 'global-sky-blue');
+  @include generate-color-variables($blue-colors, 'global-blue');
+  @include generate-color-variables($pink-colors, 'global-pink');
+  @include generate-color-variables($purple-colors, 'global-purple');
+  @include generate-color-variables($charcoal-blue-colors, 'global-charcoal-blue');
+  @include generate-color-variables($neutral-colors, 'global-neutral');
+  @include generate-color-variables($other-colors, 'global');
 
+  // Surface Variables
+  --surface-surface-bright: var(--global-white);
+  --surface-surface: var(--global-neutral-20);
+  --surface-surface-dim: var(--global-neutral-40);
+
+  // Surface Container Variables
+  --surface-container-surface-container-lowest: var(--global-white);
+  --surface-container-surface-container-low: var(--global-neutral-10);
+  --surface-container-surface-container: var(--global-neutral-30);
+  --surface-container-surface-container-high: var(--global-neutral-40);
+  --surface-container-surface-container-highest: var(--global-neutral-100);
+
+  // On Surface Variables
+  --on-surface-on-surface-lowest: var(--global-neutral-300);
+  --on-surface-on-surface-low: var(--global-neutral-500);
+  --on-surface-on-surface: var(--global-neutral-700);
+
+  // Outline Variables
+  --outline-outline-bright: var(--global-neutral-30);
+  --outline-outline: var(--global-neutral-100);
+  --outline-outline-dim: var(--global-neutral-300);
+
+  // Primary Variables
+  --primary-primary: var(--global-charcoal-blue-700);
+  --primary-on-primary: var(--global-white);
+  --primary-primary-container: var(--global-charcoal-blue-50);
+  --primary-on-primary-container: var(--global-charcoal-blue-700);
+
+  // Secondary Variables
+  --secondary-secondary: var(--global-aqua-green-600);
+  --secondary-on-secondary: var(--global-white);
+  --secondary-secondary-container: var(--global-aqua-green-50);
+  --secondary-on-secondary-container: var(--global-aqua-green-600);
+
+  // Error Variables
+  --error-error: var(--global-red-600);
+  --error-on-error: var(--global-white);
+  --error-error-container: var(--global-red-50);
+  --error-on-error-container: var(--global-red-600);
+
+  // Warning Variables
+  --warning-warning: var(--global-yellow-600);
+  --warning-on-warning: var(--global-white);
+  --warning-warning-container: var(--global-yellow-50);
+  --warning-on-warning-container: var(--global-yellow-600);
+
+  // Success Variables
+  --success-success: var(--global-green-600);
+  --success-on-success: var(--global-white);
+  --success-success-container: var(--global-green-50);
+  --success-on-success-container: var(--global-green-600);
+
+  // Extend 1 Variables
+  --extend-1-extend-1: var(--global-pink-600);
+  --extend-1-on-extend-1: var(--global-white);
+  --extend-1-extend-1-container: var(--global-pink-50);
+  --extend-1-on-extend-1-container: var(--global-pink-600);
+
+  // Extend 2 Variables
+  --extend-2-extend-2: var(--global-purple-700);
+  --extend-2-on-extend-2: var(--global-white);
+  --extend-2-extend-2-container: var(--global-purple-50);
+  --extend-2-on-extend-2-container: var(--global-purple-700);
+
+  // Extend 3 Variables
+  --extend-3-extend-3: var(--global-sky-blue-600);
+  --extend-3-on-extend-3: var(--global-white);
+  --extend-3-extend-3-container: var(--global-sky-blue-50);
+  --extend-3-on-extend-3-container: var(--global-sky-blue-600);
+}
 
 // Surface Classes
 .surface-bright {
-  @extend .global-bg-white;
+  background-color: var(--surface-surface-bright);
 }
 
 .surface {
-  @extend .global-neutral-bg-20;
+  background-color: var(--surface-surface);
 }
 
 .surface-dim {
-  @extend .global-neutral-bg-40;
+  background-color: var(--surface-surface-dim);
 }
 
 // Surface Container Classes
 .surface-container-lowest {
-  @extend .global-bg-white;
+  background-color: var(--surface-container-surface-container-lowest);
 }
 
 .surface-container-low {
-  @extend .global-neutral-bg-10;
+  background-color: var(--surface-container-surface-container-low);
 }
 
 .surface-container {
-  @extend .global-neutral-bg-30;
+  background-color: var(--surface-container-surface-container);
 }
 
 .surface-container-high {
-  @extend .global-neutral-bg-40;
+  background-color: var(--surface-container-surface-container-high);
 }
 
 .surface-container-highest {
-  @extend .global-neutral-bg-100;
+  background-color: var(--surface-container-surface-container-highest);
 }
 
 // On Surface Classes
 .on-surface-lowest {
-  @extend .global-neutral-300;
+  color: var(--on-surface-on-surface-lowest);
 }
 
 .on-surface-low {
-  @extend .global-neutral-500;
+  color: var(--on-surface-on-surface-low);
 }
 
 .on-surface {
-  @extend .global-neutral-700;
+  color: var(--on-surface-on-surface);
 }
 
 // Outline Classes
 .outline-bright {
-  border-color: map.get($neutral-colors, '30');
+  border: 1px solid var(--outline-outline-bright);
 }
 
 .outline {
-  border-color: map.get($neutral-colors, '100');
+  border: 1px solid var(--outline-outline);
 }
 
 .outline-dim {
-  border-color: map.get($neutral-colors, '300');
+  border: 1px solid var(--outline-outline-dim);
 }
 
 // Primary Classes
 .primary {
-  @extend .global-charcoal-blue-bg-700;
+  color: var(--primary-on-primary);
+  background-color: var(--primary-primary);
 }
 
 .on-primary {
-  @extend .global-white;
+  color: var(--primary-primary);
+  background-color: var(--primary-on-primary);
 }
 
 .primary-container {
-  @extend .global-charcoal-blue-bg-50;
+  color: var(--primary-on-primary-container);
+  background-color: var(--primary-primary-container);
 }
 
 .on-primary-container {
-  @extend .global-charcoal-blue-700;
+  color: var(--primary-primary-container);
+  background-color: var(--primary-on-primary-container);
 }
 
 // Secondary Classes
 .secondary {
-  @extend .global-aqua-green-bg-600;
+  color: var(--secondary-on-secondary);
+  background-color: var(--secondary-secondary);
 }
 
 .on-secondary {
-  @extend .global-white;
+  color: var(--secondary-secondary);
+  background-color: var(--secondary-on-secondary);
 }
 
 .secondary-container {
-  @extend .global-aqua-green-bg-50;
+  color: var(--secondary-on-secondary-container);
+  background-color: var(--secondary-secondary-container);
 }
 
-.on-container {
-  @extend .global-aqua-green-600;
+.on-secondary-container {
+  color: var(--secondary-secondary-container);
+  background-color: var(--secondary-on-secondary-container);
 }
 
 // Error Classes
 .error {
-  @extend .global-red-bg-600;
+  color: var(--error-on-error);
+  background-color: var(--error-error);
 }
 
 .on-error {
-  @extend .global-white;
+  color: var(--error-error);
+  background-color: var(--error-on-error);
 }
 
 .error-container {
-  @extend .global-red-bg-50;
+  color: var(--error-on-error-container);
+  background-color: var(--error-error-container);
 }
 
 .on-error-container {
-  @extend .global-red-600;
+  color: var(--error-error-container);
+  background-color: var(--error-on-error-container);
 }
 
 // Warning Classes
 .warning {
-  @extend .global-yellow-bg-600;
+  color: var(--warning-on-warning);
+  background-color: var(--warning-warning);
 }
 
 .on-warning {
-  @extend .global-white;
+  color: var(--warning-warning);
+  background-color: var(--warning-on-warning);
 }
 
 .warning-container {
-  @extend .global-yellow-bg-50;
+  color: var(--warning-on-warning-container);
+  background-color: var(--warning-warning-container);
 }
 
 .on-warning-container {
-  @extend .global-yellow-600;
+  color: var(--warning-warning-container);
+  background-color: var(--warning-on-warning-container);
 }
 
 // Success Classes
 .success {
-  @extend .global-green-bg-600;
+  color: var(--success-on-success);
+  background-color: var(--success-success);
 }
 
 .on-success {
-  @extend .global-white;
+  color: var(--success-success);
+  background-color: var(--success-on-success);
 }
 
 .success-container {
-  @extend .global-green-bg-50;
+  color: var(--success-on-success-container);
+  background-color: var(--success-success-container);
 }
 
 .on-success-container {
-  @extend .global-green-600;
+  color: var(--success-success-container);
+  background-color: var(--success-on-success-container);
 }
 
-// Extend Classes
+// Extend 1 Classes
 .extend-1 {
-  @extend .global-pink-bg-600;
+  color: var(--extend-1-on-extend-1);
+  background-color: var(--extend-1-extend-1);
 }
 
 .on-extend-1 {
-  @extend .global-white;
+  color: var(--extend-1-extend-1);
+  background-color: var(--extend-1-on-extend-1);
 }
 
 .extend-1-container {
-  @extend .global-pink-bg-50;
+  color: var(--extend-1-on-extend-1-container);
+  background-color: var(--extend-1-extend-1-container);
 }
 
 .on-extend-1-container {
-  @extend .global-pink-600;
+  color: var(--extend-1-extend-1-container);
+  background-color: var(--extend-1-on-extend-1-container);
 }
 
+// Extend 2 Classes
 .extend-2 {
-  @extend .global-purple-bg-700;
+  color: var(--extend-2-on-extend-2);
+  background-color: var(--extend-2-extend-2);
 }
 
 .on-extend-2 {
-  @extend .global-white;
+  color: var(--extend-2-extend-2);
+  background-color: var(--extend-2-on-extend-2);
 }
 
 .extend-2-container {
-  @extend .global-purple-bg-50;
+  color: var(--extend-2-on-extend-2-container);
+  background-color: var(--extend-2-extend-2-container);
 }
 
 .on-extend-2-container {
-  @extend .global-purple-700;
+  color: var(--extend-2-extend-2-container);
+  background-color: var(--extend-2-on-extend-2-container);
 }
 
+// Extend 3 Classes
 .extend-3 {
-  @extend .global-sky-blue-bg-600;
+  color: var(--extend-3-on-extend-3);
+  background-color: var(--extend-3-extend-3);
 }
 
 .on-extend-3 {
-  @extend .global-white;
+  color: var(--extend-3-extend-3);
+  background-color: var(--extend-3-on-extend-3);
 }
 
 .extend-3-container {
-  @extend .global-sky-blue-bg-50;
+  color: var(--extend-3-on-extend-3-container);
+  background-color: var(--extend-3-extend-3-container);
 }
 
 .on-extend-3-container {
-  @extend .global-sky-blue-600;
+  color: var(--extend-3-extend-3-container);
+  background-color: var(--extend-3-on-extend-3-container);
 }
