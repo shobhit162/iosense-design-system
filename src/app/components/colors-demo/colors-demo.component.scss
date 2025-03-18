@@ -116,4 +116,24 @@
     font-size: 18px;
     font-weight: 500;
   }
+
+  .application-type {
+    font-size: 0.8em;
+    color: #666;
+    margin-left: 10px;
+  }
+  
+  .example-content {
+    padding: 16px;
+    min-height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .example-border {
+    border-width: 2px;
+    border-style: solid;
+    background-color: white;
+  }
 }

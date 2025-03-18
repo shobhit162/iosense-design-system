@@ -3,35 +3,35 @@
   font-family: "Noto Sans", sans-serif;
 }
 
-.global-fz-10, .font-size-25, .BodyXSmallSemibold, .BodyXSmallMedium, .BodyXSmallRegular {
+.global-fz-10 {
   font-size: 0.625rem;
 }
 
-.global-fz-12, .font-size-50, .BodySmallSemibold, .BodySmallMedium, .BodySmallRegular {
+.global-fz-12 {
   font-size: 0.75rem;
 }
 
-.global-fz-14, .font-size-100, .BodyMediumSemibold, .BodyMediumMedium, .BodyMediumRegular {
+.global-fz-14 {
   font-size: 0.875rem;
 }
 
-.global-fz-16, .font-size-200, .BodyLargeSemibold, .BodyLargeMedium, .BodyLargeRegular {
+.global-fz-16 {
   font-size: 1rem;
 }
 
-.global-fz-18, .font-size-300, .HeadingSmallSemibold, .HeadingSmallRegular {
+.global-fz-18 {
   font-size: 1.125rem;
 }
 
-.global-fz-20, .font-size-400, .HeadingMediumSemibold, .HeadingMediumRegular {
+.global-fz-20 {
   font-size: 1.25rem;
 }
 
-.global-fz-24, .font-size-500, .HeadingLargeSemibold, .HeadingLargeRegular {
+.global-fz-24 {
   font-size: 1.5rem;
 }
 
-.global-fz-32, .font-size-600, .HeadingXLargeSemibold, .HeadingXLargeRegular {
+.global-fz-32 {
   font-size: 2rem;
 }
 
@@ -47,121 +47,160 @@
   font-size: 2.375rem;
 }
 
-.global-fz-40, .font-size-700, .Heading2XLargeSemibold, .Heading2XLargeRegular {
+.global-fz-40 {
   font-size: 2.5rem;
 }
 
-.global-fz-48, .font-size-800, .DisplaySmallSemibold, .DisplaySmallMedium, .DisplaySmallRegular {
+.global-fz-48 {
   font-size: 3rem;
 }
 
-.global-fz-56, .font-size-900, .DisplayMediumSemibold, .DisplayMediumMedium, .DisplayMediumRegular {
+.global-fz-56 {
   font-size: 3.5rem;
 }
 
-.global-fz-64, .font-size-1000, .DisplayLargeSemibold, .DisplayLargeMedium, .DisplayLargeRegular {
+.global-fz-64 {
   font-size: 4rem;
 }
 
-.global-fz-72, .font-size-1100, .DisplayXLargeSemibold, .DisplayXLargeMedium, .DisplayXLargeRegular {
+.global-fz-72 {
   font-size: 4.5rem;
 }
 
+.font-size-25, .BodyXSmallSemibold, .BodyXSmallMedium, .BodyXSmallRegular {
+  font-size: 0.625rem;
+}
 @media screen and (max-width: 768px) {
   .font-size-25, .BodyXSmallSemibold, .BodyXSmallMedium, .BodyXSmallRegular {
     font-size: 0.625rem;
   }
 }
 
+.font-size-50, .BodySmallSemibold, .BodySmallMedium, .BodySmallRegular {
+  font-size: 0.75rem;
+}
 @media screen and (max-width: 768px) {
   .font-size-50, .BodySmallSemibold, .BodySmallMedium, .BodySmallRegular {
     font-size: 0.75rem;
   }
 }
 
+.font-size-100, .BodyMediumSemibold, .BodyMediumMedium, .BodyMediumRegular {
+  font-size: 0.875rem;
+}
 @media screen and (max-width: 768px) {
   .font-size-100, .BodyMediumSemibold, .BodyMediumMedium, .BodyMediumRegular {
     font-size: 0.875rem;
   }
 }
 
+.font-size-200, .BodyLargeSemibold, .BodyLargeMedium, .BodyLargeRegular {
+  font-size: 1rem;
+}
 @media screen and (max-width: 768px) {
   .font-size-200, .BodyLargeSemibold, .BodyLargeMedium, .BodyLargeRegular {
     font-size: 1rem;
   }
 }
 
+.font-size-300, .HeadingSmallSemibold, .HeadingSmallRegular {
+  font-size: 1.125rem;
+}
 @media screen and (max-width: 768px) {
   .font-size-300, .HeadingSmallSemibold, .HeadingSmallRegular {
     font-size: 1rem;
   }
 }
 
+.font-size-400, .HeadingMediumSemibold, .HeadingMediumRegular {
+  font-size: 1.25rem;
+}
 @media screen and (max-width: 768px) {
   .font-size-400, .HeadingMediumSemibold, .HeadingMediumRegular {
     font-size: 1.125rem;
   }
 }
 
+.font-size-500, .HeadingLargeSemibold, .HeadingLargeRegular {
+  font-size: 1.5rem;
+}
 @media screen and (max-width: 768px) {
   .font-size-500, .HeadingLargeSemibold, .HeadingLargeRegular {
     font-size: 1.25rem;
   }
 }
 
+.font-size-600, .HeadingXLargeSemibold, .HeadingXLargeRegular {
+  font-size: 2rem;
+}
 @media screen and (max-width: 768px) {
   .font-size-600, .HeadingXLargeSemibold, .HeadingXLargeRegular {
     font-size: 1.5rem;
   }
 }
 
+.font-size-700, .Heading2XLargeSemibold, .Heading2XLargeRegular {
+  font-size: 2.5rem;
+}
 @media screen and (max-width: 768px) {
   .font-size-700, .Heading2XLargeSemibold, .Heading2XLargeRegular {
     font-size: 2rem;
   }
 }
 
+.font-size-800, .DisplaySmallSemibold, .DisplaySmallMedium, .DisplaySmallRegular {
+  font-size: 3rem;
+}
 @media screen and (max-width: 768px) {
   .font-size-800, .DisplaySmallSemibold, .DisplaySmallMedium, .DisplaySmallRegular {
     font-size: 2.125rem;
   }
 }
 
+.font-size-900, .DisplayMediumSemibold, .DisplayMediumMedium, .DisplayMediumRegular {
+  font-size: 3.5rem;
+}
 @media screen and (max-width: 768px) {
   .font-size-900, .DisplayMediumSemibold, .DisplayMediumMedium, .DisplayMediumRegular {
     font-size: 2.25rem;
   }
 }
 
+.font-size-1000, .DisplayLargeSemibold, .DisplayLargeMedium, .DisplayLargeRegular {
+  font-size: 4rem;
+}
 @media screen and (max-width: 768px) {
   .font-size-1000, .DisplayLargeSemibold, .DisplayLargeMedium, .DisplayLargeRegular {
     font-size: 2.375rem;
   }
 }
 
+.font-size-1100, .DisplayXLargeSemibold, .DisplayXLargeMedium, .DisplayXLargeRegular {
+  font-size: 4.5rem;
+}
 @media screen and (max-width: 768px) {
   .font-size-1100, .DisplayXLargeSemibold, .DisplayXLargeMedium, .DisplayXLargeRegular {
     font-size: 2.5rem;
   }
 }
 
-.global-lh-0, .line-height-00 {
+.global-lh-00 {
   line-height: 0;
 }
 
-.global-lh-14, .line-height-25, .BodyXSmallSemibold, .BodyXSmallMedium, .BodyXSmallRegular {
+.global-lh-14 {
   line-height: 0.875rem;
 }
 
-.global-lh-16, .line-height-50 {
+.global-lh-16 {
   line-height: 1rem;
 }
 
-.global-lh-18, .line-height-75, .BodySmallSemibold, .BodySmallMedium, .BodySmallRegular {
+.global-lh-18 {
   line-height: 1.125rem;
 }
 
-.global-lh-20, .line-height-100, .BodyMediumSemibold, .BodyMediumMedium, .BodyMediumRegular {
+.global-lh-20 {
   line-height: 1.25rem;
 }
 
@@ -169,19 +208,19 @@
   line-height: 1.375rem;
 }
 
-.global-lh-24, .line-height-300, .HeadingSmallSemibold, .HeadingSmallRegular, .line-height-200, .BodyLargeSemibold, .BodyLargeMedium, .BodyLargeRegular {
+.global-lh-24 {
   line-height: 1.5rem;
 }
 
-.global-lh-26, .line-height-400, .HeadingMediumSemibold, .HeadingMediumRegular {
+.global-lh-26 {
   line-height: 1.625rem;
 }
 
-.global-lh-32, .line-height-500, .HeadingLargeSemibold, .HeadingLargeRegular {
+.global-lh-32 {
   line-height: 2rem;
 }
 
-.global-lh-38, .line-height-600, .HeadingXLargeSemibold, .HeadingXLargeRegular {
+.global-lh-38 {
   line-height: 2.375rem;
 }
 
@@ -189,7 +228,7 @@
   line-height: 2.625rem;
 }
 
-.global-lh-46, .line-height-700, .Heading2XLargeSemibold, .Heading2XLargeRegular {
+.global-lh-46 {
   line-height: 2.875rem;
 }
 
@@ -197,106 +236,151 @@
   line-height: 3rem;
 }
 
-.global-lh-56, .line-height-800, .DisplaySmallSemibold, .DisplaySmallMedium, .DisplaySmallRegular {
+.global-lh-56 {
   line-height: 3.5rem;
 }
 
-.global-lh-64, .line-height-900, .DisplayMediumSemibold, .DisplayMediumMedium, .DisplayMediumRegular {
+.global-lh-64 {
   line-height: 4rem;
 }
 
-.global-lh-70, .line-height-1000, .DisplayLargeSemibold, .DisplayLargeMedium, .DisplayLargeRegular {
+.global-lh-70 {
   line-height: 4.375rem;
 }
 
-.global-lh-78, .line-height-1100, .DisplayXLargeSemibold, .DisplayXLargeMedium, .DisplayXLargeRegular {
+.global-lh-78 {
   line-height: 4.875rem;
 }
 
+.line-height-00 {
+  line-height: 0;
+}
 @media screen and (max-width: 768px) {
   .line-height-00 {
     line-height: 0;
   }
 }
 
+.line-height-25, .BodyXSmallSemibold, .BodyXSmallMedium, .BodyXSmallRegular {
+  line-height: 0.875rem;
+}
 @media screen and (max-width: 768px) {
   .line-height-25, .BodyXSmallSemibold, .BodyXSmallMedium, .BodyXSmallRegular {
     line-height: 0.875rem;
   }
 }
 
+.line-height-50 {
+  line-height: 1rem;
+}
 @media screen and (max-width: 768px) {
   .line-height-50 {
     line-height: 1rem;
   }
 }
 
+.line-height-75, .BodySmallSemibold, .BodySmallMedium, .BodySmallRegular {
+  line-height: 1.125rem;
+}
 @media screen and (max-width: 768px) {
   .line-height-75, .BodySmallSemibold, .BodySmallMedium, .BodySmallRegular {
     line-height: 1.125rem;
   }
 }
 
+.line-height-100, .BodyMediumSemibold, .BodyMediumMedium, .BodyMediumRegular {
+  line-height: 1.25rem;
+}
 @media screen and (max-width: 768px) {
   .line-height-100, .BodyMediumSemibold, .BodyMediumMedium, .BodyMediumRegular {
     line-height: 1.25rem;
   }
 }
 
+.line-height-200, .BodyLargeSemibold, .BodyLargeMedium, .BodyLargeRegular {
+  line-height: 1.5rem;
+}
 @media screen and (max-width: 768px) {
   .line-height-200, .BodyLargeSemibold, .BodyLargeMedium, .BodyLargeRegular {
     line-height: 1.5rem;
   }
 }
 
+.line-height-300, .HeadingSmallSemibold, .HeadingSmallRegular {
+  line-height: 1.5rem;
+}
 @media screen and (max-width: 768px) {
   .line-height-300, .HeadingSmallSemibold, .HeadingSmallRegular {
     line-height: 1.375rem;
   }
 }
 
+.line-height-400, .HeadingMediumSemibold, .HeadingMediumRegular {
+  line-height: 1.625rem;
+}
 @media screen and (max-width: 768px) {
   .line-height-400, .HeadingMediumSemibold, .HeadingMediumRegular {
     line-height: 1.5rem;
   }
 }
 
+.line-height-500, .HeadingLargeSemibold, .HeadingLargeRegular {
+  line-height: 2rem;
+}
 @media screen and (max-width: 768px) {
   .line-height-500, .HeadingLargeSemibold, .HeadingLargeRegular {
     line-height: 1.625rem;
   }
 }
 
+.line-height-600, .HeadingXLargeSemibold, .HeadingXLargeRegular {
+  line-height: 2.375rem;
+}
 @media screen and (max-width: 768px) {
   .line-height-600, .HeadingXLargeSemibold, .HeadingXLargeRegular {
     line-height: 2rem;
   }
 }
 
+.line-height-700, .Heading2XLargeSemibold, .Heading2XLargeRegular {
+  line-height: 2.875rem;
+}
 @media screen and (max-width: 768px) {
   .line-height-700, .Heading2XLargeSemibold, .Heading2XLargeRegular {
     line-height: 2.375rem;
   }
 }
 
+.line-height-800, .DisplaySmallSemibold, .DisplaySmallMedium, .DisplaySmallRegular {
+  line-height: 3.5rem;
+}
 @media screen and (max-width: 768px) {
   .line-height-800, .DisplaySmallSemibold, .DisplaySmallMedium, .DisplaySmallRegular {
     line-height: 2.625rem;
   }
 }
 
+.line-height-900, .DisplayMediumSemibold, .DisplayMediumMedium, .DisplayMediumRegular {
+  line-height: 4rem;
+}
 @media screen and (max-width: 768px) {
   .line-height-900, .DisplayMediumSemibold, .DisplayMediumMedium, .DisplayMediumRegular {
     line-height: 2.625rem;
   }
 }
 
+.line-height-1000, .DisplayLargeSemibold, .DisplayLargeMedium, .DisplayLargeRegular {
+  line-height: 4.375rem;
+}
 @media screen and (max-width: 768px) {
   .line-height-1000, .DisplayLargeSemibold, .DisplayLargeMedium, .DisplayLargeRegular {
     line-height: 2.875rem;
   }
 }
 
+.line-height-1100, .DisplayXLargeSemibold, .DisplayXLargeMedium, .DisplayXLargeRegular {
+  line-height: 4.875rem;
+}
 @media screen and (max-width: 768px) {
   .line-height-1100, .DisplayXLargeSemibold, .DisplayXLargeMedium, .DisplayXLargeRegular {
     line-height: 3rem;
@@ -307,11 +391,11 @@
   letter-spacing: -2px;
 }
 
-.global-ls-condensed, .letter-spacing-50, .DisplaySmallMedium, .DisplaySmallRegular, .DisplayMediumMedium, .DisplayMediumRegular, .DisplayLargeMedium, .DisplayLargeRegular, .DisplayXLargeMedium, .DisplayXLargeRegular {
+.global-ls-condensed {
   letter-spacing: -1px;
 }
 
-.global-ls-normal, .letter-spacing-100, .BodyXSmallSemibold, .BodyXSmallMedium, .BodyXSmallRegular, .BodySmallSemibold, .BodySmallMedium, .BodySmallRegular, .BodyMediumSemibold, .BodyMediumMedium, .BodyMediumRegular, .BodyLargeSemibold, .BodyLargeMedium, .BodyLargeRegular, .HeadingSmallSemibold, .HeadingSmallRegular, .HeadingMediumSemibold, .HeadingMediumRegular, .HeadingLargeSemibold, .HeadingLargeRegular, .HeadingXLargeSemibold, .HeadingXLargeRegular, .Heading2XLargeSemibold, .Heading2XLargeRegular, .DisplaySmallSemibold, .DisplayMediumSemibold, .DisplayLargeSemibold, .DisplayXLargeSemibold {
+.global-ls-normal {
   letter-spacing: normal;
 }
 
@@ -323,12 +407,18 @@
   letter-spacing: 2px;
 }
 
+.letter-spacing-50, .DisplaySmallMedium, .DisplaySmallRegular, .DisplayMediumMedium, .DisplayMediumRegular, .DisplayLargeMedium, .DisplayLargeRegular, .DisplayXLargeMedium, .DisplayXLargeRegular {
+  letter-spacing: -1px;
+}
 @media screen and (max-width: 768px) {
   .letter-spacing-50, .DisplaySmallMedium, .DisplaySmallRegular, .DisplayMediumMedium, .DisplayMediumRegular, .DisplayLargeMedium, .DisplayLargeRegular, .DisplayXLargeMedium, .DisplayXLargeRegular {
     letter-spacing: -1px;
   }
 }
 
+.letter-spacing-100, .BodyXSmallSemibold, .BodyXSmallMedium, .BodyXSmallRegular, .BodySmallSemibold, .BodySmallMedium, .BodySmallRegular, .BodyMediumSemibold, .BodyMediumMedium, .BodyMediumRegular, .BodyLargeSemibold, .BodyLargeMedium, .BodyLargeRegular, .HeadingSmallSemibold, .HeadingSmallRegular, .HeadingMediumSemibold, .HeadingMediumRegular, .HeadingLargeSemibold, .HeadingLargeRegular, .HeadingXLargeSemibold, .HeadingXLargeRegular, .Heading2XLargeSemibold, .Heading2XLargeRegular, .DisplaySmallSemibold, .DisplayMediumSemibold, .DisplayLargeSemibold, .DisplayXLargeSemibold {
+  letter-spacing: normal;
+}
 @media screen and (max-width: 768px) {
   .letter-spacing-100, .BodyXSmallSemibold, .BodyXSmallMedium, .BodyXSmallRegular, .BodySmallSemibold, .BodySmallMedium, .BodySmallRegular, .BodyMediumSemibold, .BodyMediumMedium, .BodyMediumRegular, .BodyLargeSemibold, .BodyLargeMedium, .BodyLargeRegular, .HeadingSmallSemibold, .HeadingSmallRegular, .HeadingMediumSemibold, .HeadingMediumRegular, .HeadingLargeSemibold, .HeadingLargeRegular, .HeadingXLargeSemibold, .HeadingXLargeRegular, .Heading2XLargeSemibold, .Heading2XLargeRegular, .DisplaySmallSemibold, .DisplayMediumSemibold, .DisplayLargeSemibold, .DisplayXLargeSemibold {
     letter-spacing: normal;
@@ -347,19 +437,19 @@
   font-weight: 300;
 }
 
-.global-fw-400, .font-weight-400, .BodyXSmallRegular, .BodySmallRegular, .BodyMediumRegular, .BodyLargeRegular, .HeadingSmallRegular, .HeadingMediumRegular, .HeadingLargeRegular, .HeadingXLargeRegular, .Heading2XLargeRegular, .DisplaySmallRegular, .DisplayMediumRegular, .DisplayLargeRegular, .DisplayXLargeRegular {
+.global-fw-400 {
   font-weight: 400;
 }
 
-.global-fw-500, .font-weight-500, .BodyXSmallMedium, .BodySmallMedium, .BodyMediumMedium, .BodyLargeMedium, .DisplaySmallMedium, .DisplayMediumMedium, .DisplayLargeMedium, .DisplayXLargeMedium {
+.global-fw-500 {
   font-weight: 500;
 }
 
-.global-fw-600, .font-weight-600, .BodyXSmallSemibold, .BodySmallSemibold, .BodyMediumSemibold, .BodyLargeSemibold, .HeadingSmallSemibold, .HeadingMediumSemibold, .HeadingLargeSemibold, .HeadingXLargeSemibold, .Heading2XLargeSemibold, .DisplaySmallSemibold, .DisplayMediumSemibold, .DisplayLargeSemibold, .DisplayXLargeSemibold {
+.global-fw-600 {
   font-weight: 600;
 }
 
-.global-fw-700, .font-weight-700 {
+.global-fw-700 {
   font-weight: 700;
 }
 
@@ -371,91 +461,118 @@
   font-weight: 900;
 }
 
+.font-weight-400, .BodyXSmallRegular, .BodySmallRegular, .BodyMediumRegular, .BodyLargeRegular, .HeadingSmallRegular, .HeadingMediumRegular, .HeadingLargeRegular, .HeadingXLargeRegular, .Heading2XLargeRegular, .DisplaySmallRegular, .DisplayMediumRegular, .DisplayLargeRegular, .DisplayXLargeRegular {
+  font-weight: 400;
+}
 @media screen and (max-width: 768px) {
   .font-weight-400, .BodyXSmallRegular, .BodySmallRegular, .BodyMediumRegular, .BodyLargeRegular, .HeadingSmallRegular, .HeadingMediumRegular, .HeadingLargeRegular, .HeadingXLargeRegular, .Heading2XLargeRegular, .DisplaySmallRegular, .DisplayMediumRegular, .DisplayLargeRegular, .DisplayXLargeRegular {
     font-weight: 400;
   }
 }
 
+.font-weight-500, .BodyXSmallMedium, .BodySmallMedium, .BodyMediumMedium, .BodyLargeMedium, .DisplaySmallMedium, .DisplayMediumMedium, .DisplayLargeMedium, .DisplayXLargeMedium {
+  font-weight: 500;
+}
 @media screen and (max-width: 768px) {
   .font-weight-500, .BodyXSmallMedium, .BodySmallMedium, .BodyMediumMedium, .BodyLargeMedium, .DisplaySmallMedium, .DisplayMediumMedium, .DisplayLargeMedium, .DisplayXLargeMedium {
     font-weight: 500;
   }
 }
 
+.font-weight-600, .BodyXSmallSemibold, .BodySmallSemibold, .BodyMediumSemibold, .BodyLargeSemibold, .HeadingSmallSemibold, .HeadingMediumSemibold, .HeadingLargeSemibold, .HeadingXLargeSemibold, .Heading2XLargeSemibold, .DisplaySmallSemibold, .DisplayMediumSemibold, .DisplayLargeSemibold, .DisplayXLargeSemibold {
+  font-weight: 600;
+}
 @media screen and (max-width: 768px) {
   .font-weight-600, .BodyXSmallSemibold, .BodySmallSemibold, .BodyMediumSemibold, .BodyLargeSemibold, .HeadingSmallSemibold, .HeadingMediumSemibold, .HeadingLargeSemibold, .HeadingXLargeSemibold, .Heading2XLargeSemibold, .DisplaySmallSemibold, .DisplayMediumSemibold, .DisplayLargeSemibold, .DisplayXLargeSemibold {
     font-weight: 600;
   }
 }
 
+.font-weight-700 {
+  font-weight: 700;
+}
 @media screen and (max-width: 768px) {
   .font-weight-700 {
     font-weight: 700;
   }
 }
 
-.global-ps-00, .paragraph-spacing-00, .HeadingSmallSemibold, .HeadingSmallRegular, .HeadingMediumSemibold, .HeadingMediumRegular, .HeadingLargeSemibold, .HeadingLargeRegular, .HeadingXLargeSemibold, .HeadingXLargeRegular, .Heading2XLargeSemibold, .Heading2XLargeRegular, .DisplaySmallSemibold, .DisplaySmallMedium, .DisplaySmallRegular, .DisplayMediumSemibold, .DisplayMediumMedium, .DisplayMediumRegular, .DisplayLargeSemibold, .DisplayLargeMedium, .DisplayLargeRegular, .DisplayXLargeSemibold, .DisplayXLargeMedium, .DisplayXLargeRegular {
+.global-ps-00 {
   margin-bottom: 0rem;
 }
 
-.global-ps-08, .paragraph-spacing-100, .BodyXSmallSemibold, .BodyXSmallMedium, .BodyXSmallRegular {
+.global-ps-08 {
   margin-bottom: 0.5rem;
 }
 
-.global-ps-10, .paragraph-spacing-200, .BodySmallSemibold, .BodySmallMedium, .BodySmallRegular {
+.global-ps-10 {
   margin-bottom: 0.625rem;
 }
 
-.global-ps-11, .paragraph-spacing-300, .BodyMediumSemibold, .BodyMediumMedium, .BodyMediumRegular {
+.global-ps-11 {
   margin-bottom: 0.6875rem;
 }
 
-.global-ps-12, .paragraph-spacing-400, .BodyLargeSemibold, .BodyLargeMedium, .BodyLargeRegular {
+.global-ps-12 {
   margin-bottom: 0.75rem;
 }
 
+.paragraph-spacing-00, .HeadingSmallSemibold, .HeadingSmallRegular, .HeadingMediumSemibold, .HeadingMediumRegular, .HeadingLargeSemibold, .HeadingLargeRegular, .HeadingXLargeSemibold, .HeadingXLargeRegular, .Heading2XLargeSemibold, .Heading2XLargeRegular, .DisplaySmallSemibold, .DisplaySmallMedium, .DisplaySmallRegular, .DisplayMediumSemibold, .DisplayMediumMedium, .DisplayMediumRegular, .DisplayLargeSemibold, .DisplayLargeMedium, .DisplayLargeRegular, .DisplayXLargeSemibold, .DisplayXLargeMedium, .DisplayXLargeRegular {
+  margin-bottom: 0rem;
+}
 @media screen and (max-width: 768px) {
   .paragraph-spacing-00, .HeadingSmallSemibold, .HeadingSmallRegular, .HeadingMediumSemibold, .HeadingMediumRegular, .HeadingLargeSemibold, .HeadingLargeRegular, .HeadingXLargeSemibold, .HeadingXLargeRegular, .Heading2XLargeSemibold, .Heading2XLargeRegular, .DisplaySmallSemibold, .DisplaySmallMedium, .DisplaySmallRegular, .DisplayMediumSemibold, .DisplayMediumMedium, .DisplayMediumRegular, .DisplayLargeSemibold, .DisplayLargeMedium, .DisplayLargeRegular, .DisplayXLargeSemibold, .DisplayXLargeMedium, .DisplayXLargeRegular {
     margin-bottom: 0rem;
   }
 }
 
+.paragraph-spacing-100, .BodyXSmallSemibold, .BodyXSmallMedium, .BodyXSmallRegular {
+  margin-bottom: 0.5rem;
+}
 @media screen and (max-width: 768px) {
   .paragraph-spacing-100, .BodyXSmallSemibold, .BodyXSmallMedium, .BodyXSmallRegular {
     margin-bottom: 0.5rem;
   }
 }
 
+.paragraph-spacing-200, .BodySmallSemibold, .BodySmallMedium, .BodySmallRegular {
+  margin-bottom: 0.625rem;
+}
 @media screen and (max-width: 768px) {
   .paragraph-spacing-200, .BodySmallSemibold, .BodySmallMedium, .BodySmallRegular {
     margin-bottom: 0.625rem;
   }
 }
 
+.paragraph-spacing-300, .BodyMediumSemibold, .BodyMediumMedium, .BodyMediumRegular {
+  margin-bottom: 0.6875rem;
+}
 @media screen and (max-width: 768px) {
   .paragraph-spacing-300, .BodyMediumSemibold, .BodyMediumMedium, .BodyMediumRegular {
     margin-bottom: 0.6875rem;
   }
 }
 
+.paragraph-spacing-400, .BodyLargeSemibold, .BodyLargeMedium, .BodyLargeRegular {
+  margin-bottom: 0.75rem;
+}
 @media screen and (max-width: 768px) {
   .paragraph-spacing-400, .BodyLargeSemibold, .BodyLargeMedium, .BodyLargeRegular {
     margin-bottom: 0.75rem;
   }
 }
 
-.global-lis-00, .list-spacing-00 {
+.global-lis-00 {
   gap: 0rem;
 }
-.global-lis-00.list-traditional > li + li, .list-traditional.list-spacing-00 > li + li {
+.global-lis-00.list-traditional > li + li {
   margin-top: 0rem;
 }
-.global-lis-00.list-flex, .list-flex.list-spacing-00 {
+.global-lis-00.list-flex {
   display: flex;
   flex-direction: column;
 }
-.global-lis-00.list-grid, .list-grid.list-spacing-00 {
+.global-lis-00.list-grid {
   display: grid;
 }
 
@@ -473,17 +590,17 @@
   display: grid;
 }
 
-.global-lis-08, .list-spacing-100 {
+.global-lis-08 {
   gap: 0.5rem;
 }
-.global-lis-08.list-traditional > li + li, .list-traditional.list-spacing-100 > li + li {
+.global-lis-08.list-traditional > li + li {
   margin-top: 0.5rem;
 }
-.global-lis-08.list-flex, .list-flex.list-spacing-100 {
+.global-lis-08.list-flex {
   display: flex;
   flex-direction: column;
 }
-.global-lis-08.list-grid, .list-grid.list-spacing-100 {
+.global-lis-08.list-grid {
   display: grid;
 }
 
@@ -543,6 +660,12 @@
   display: grid;
 }
 
+.list-spacing-00 {
+  gap: 0rem;
+}
+.list-spacing-00.list-traditional > li + li {
+  margin-top: 0rem;
+}
 @media screen and (max-width: 768px) {
   .list-spacing-00 {
     gap: 0rem;
@@ -552,6 +675,12 @@
   }
 }
 
+.list-spacing-100 {
+  gap: 0.5rem;
+}
+.list-spacing-100.list-traditional > li + li {
+  margin-top: 0.5rem;
+}
 @media screen and (max-width: 768px) {
   .list-spacing-100 {
     gap: 0.5rem;
@@ -2533,266 +2662,50 @@
   --global-neutral-1000: #111111;
   --global-black: #000000;
   --global-white: #FFFFFF;
-  --surface-surface-bright: var(--global-white);
-  --surface-surface: var(--global-neutral-20);
-  --surface-surface-dim: var(--global-neutral-40);
-  --surface-container-surface-container-lowest: var(--global-white);
-  --surface-container-surface-container-low: var(--global-neutral-10);
-  --surface-container-surface-container: var(--global-neutral-30);
-  --surface-container-surface-container-high: var(--global-neutral-40);
-  --surface-container-surface-container-highest: var(--global-neutral-100);
-  --on-surface-on-surface-lowest: var(--global-neutral-300);
-  --on-surface-on-surface-low: var(--global-neutral-500);
-  --on-surface-on-surface: var(--global-neutral-700);
-  --outline-outline-bright: var(--global-neutral-30);
-  --outline-outline: var(--global-neutral-100);
-  --outline-outline-dim: var(--global-neutral-300);
-  --primary-primary: var(--global-charcoal-blue-700);
-  --primary-on-primary: var(--global-white);
-  --primary-primary-container: var(--global-charcoal-blue-50);
-  --primary-on-primary-container: var(--global-charcoal-blue-700);
-  --secondary-secondary: var(--global-aqua-green-600);
-  --secondary-on-secondary: var(--global-white);
-  --secondary-secondary-container: var(--global-aqua-green-50);
-  --secondary-on-secondary-container: var(--global-aqua-green-600);
-  --error-error: var(--global-red-600);
-  --error-on-error: var(--global-white);
-  --error-error-container: var(--global-red-50);
-  --error-on-error-container: var(--global-red-600);
-  --warning-warning: var(--global-yellow-600);
-  --warning-on-warning: var(--global-white);
-  --warning-warning-container: var(--global-yellow-50);
-  --warning-on-warning-container: var(--global-yellow-600);
-  --success-success: var(--global-green-600);
-  --success-on-success: var(--global-white);
-  --success-success-container: var(--global-green-50);
-  --success-on-success-container: var(--global-green-600);
-  --extend-1-extend-1: var(--global-pink-600);
-  --extend-1-on-extend-1: var(--global-white);
-  --extend-1-extend-1-container: var(--global-pink-50);
-  --extend-1-on-extend-1-container: var(--global-pink-600);
-  --extend-2-extend-2: var(--global-purple-700);
-  --extend-2-on-extend-2: var(--global-white);
-  --extend-2-extend-2-container: var(--global-purple-50);
-  --extend-2-on-extend-2-container: var(--global-purple-700);
-  --extend-3-extend-3: var(--global-sky-blue-600);
-  --extend-3-on-extend-3: var(--global-white);
-  --extend-3-extend-3-container: var(--global-sky-blue-50);
-  --extend-3-on-extend-3-container: var(--global-sky-blue-600);
-}
-
-.surface-bright {
-  background-color: var(--surface-surface-bright);
-}
-
-.surface {
-  background-color: var(--surface-surface);
-}
-
-.surface-dim {
-  background-color: var(--surface-surface-dim);
-}
-
-.surface-container-lowest {
-  background-color: var(--surface-container-surface-container-lowest);
-}
-
-.surface-container-low {
-  background-color: var(--surface-container-surface-container-low);
-}
-
-.surface-container {
-  background-color: var(--surface-container-surface-container);
-}
-
-.surface-container-high {
-  background-color: var(--surface-container-surface-container-high);
-}
-
-.surface-container-highest {
-  background-color: var(--surface-container-surface-container-highest);
-}
-
-.on-surface-lowest {
-  color: var(--on-surface-on-surface-lowest);
-}
-
-.on-surface-low {
-  color: var(--on-surface-on-surface-low);
-}
-
-.on-surface {
-  color: var(--on-surface-on-surface);
-}
-
-.outline-bright {
-  border: 1px solid var(--outline-outline-bright);
-}
-
-.outline {
-  border: 1px solid var(--outline-outline);
-}
-
-.outline-dim {
-  border: 1px solid var(--outline-outline-dim);
-}
-
-.primary {
-  color: var(--primary-on-primary);
-  background-color: var(--primary-primary);
-}
-
-.on-primary {
-  color: var(--primary-primary);
-  background-color: var(--primary-on-primary);
-}
-
-.primary-container {
-  color: var(--primary-on-primary-container);
-  background-color: var(--primary-primary-container);
-}
-
-.on-primary-container {
-  color: var(--primary-primary-container);
-  background-color: var(--primary-on-primary-container);
-}
-
-.secondary {
-  color: var(--secondary-on-secondary);
-  background-color: var(--secondary-secondary);
-}
-
-.on-secondary {
-  color: var(--secondary-secondary);
-  background-color: var(--secondary-on-secondary);
-}
-
-.secondary-container {
-  color: var(--secondary-on-secondary-container);
-  background-color: var(--secondary-secondary-container);
-}
-
-.on-secondary-container {
-  color: var(--secondary-secondary-container);
-  background-color: var(--secondary-on-secondary-container);
-}
-
-.error {
-  color: var(--error-on-error);
-  background-color: var(--error-error);
-}
-
-.on-error {
-  color: var(--error-error);
-  background-color: var(--error-on-error);
-}
-
-.error-container {
-  color: var(--error-on-error-container);
-  background-color: var(--error-error-container);
-}
-
-.on-error-container {
-  color: var(--error-error-container);
-  background-color: var(--error-on-error-container);
-}
-
-.warning {
-  color: var(--warning-on-warning);
-  background-color: var(--warning-warning);
-}
-
-.on-warning {
-  color: var(--warning-warning);
-  background-color: var(--warning-on-warning);
-}
-
-.warning-container {
-  color: var(--warning-on-warning-container);
-  background-color: var(--warning-warning-container);
-}
-
-.on-warning-container {
-  color: var(--warning-warning-container);
-  background-color: var(--warning-on-warning-container);
-}
-
-.success {
-  color: var(--success-on-success);
-  background-color: var(--success-success);
-}
-
-.on-success {
-  color: var(--success-success);
-  background-color: var(--success-on-success);
-}
-
-.success-container {
-  color: var(--success-on-success-container);
-  background-color: var(--success-success-container);
-}
-
-.on-success-container {
-  color: var(--success-success-container);
-  background-color: var(--success-on-success-container);
-}
-
-.extend-1 {
-  color: var(--extend-1-on-extend-1);
-  background-color: var(--extend-1-extend-1);
-}
-
-.on-extend-1 {
-  color: var(--extend-1-extend-1);
-  background-color: var(--extend-1-on-extend-1);
-}
-
-.extend-1-container {
-  color: var(--extend-1-on-extend-1-container);
-  background-color: var(--extend-1-extend-1-container);
-}
-
-.on-extend-1-container {
-  color: var(--extend-1-extend-1-container);
-  background-color: var(--extend-1-on-extend-1-container);
-}
-
-.extend-2 {
-  color: var(--extend-2-on-extend-2);
-  background-color: var(--extend-2-extend-2);
-}
-
-.on-extend-2 {
-  color: var(--extend-2-extend-2);
-  background-color: var(--extend-2-on-extend-2);
-}
-
-.extend-2-container {
-  color: var(--extend-2-on-extend-2-container);
-  background-color: var(--extend-2-extend-2-container);
-}
-
-.on-extend-2-container {
-  color: var(--extend-2-extend-2-container);
-  background-color: var(--extend-2-on-extend-2-container);
-}
-
-.extend-3 {
-  color: var(--extend-3-on-extend-3);
-  background-color: var(--extend-3-extend-3);
-}
-
-.on-extend-3 {
-  color: var(--extend-3-extend-3);
-  background-color: var(--extend-3-on-extend-3);
-}
-
-.extend-3-container {
-  color: var(--extend-3-on-extend-3-container);
-  background-color: var(--extend-3-extend-3-container);
-}
-
-.on-extend-3-container {
-  color: var(--extend-3-extend-3-container);
-  background-color: var(--extend-3-on-extend-3-container);
+  --surface-bright: var(--global-white);
+  --surface: var(--global-neutral-20);
+  --surface-dim: var(--global-neutral-40);
+  --surface-container-lowest: var(--global-white);
+  --surface-container-low: var(--global-neutral-10);
+  --surface-container: var(--global-neutral-30);
+  --surface-container-high: var(--global-neutral-40);
+  --surface-container-highest: var(--global-neutral-100);
+  --on-surface-lowest: var(--global-neutral-300);
+  --on-surface-low: var(--global-neutral-500);
+  --on-surface: var(--global-neutral-700);
+  --outline-bright: var(--global-neutral-30);
+  --outline: var(--global-neutral-100);
+  --outline-dim: var(--global-neutral-300);
+  --primary: var(--global-charcoal-blue-700);
+  --on-primary: var(--global-white);
+  --primary-container: var(--global-charcoal-blue-50);
+  --on-primary-container: var(--global-charcoal-blue-700);
+  --secondary: var(--global-aqua-green-600);
+  --on-secondary: var(--global-white);
+  --secondary-container: var(--global-aqua-green-50);
+  --on-secondary-container: var(--global-aqua-green-600);
+  --error: var(--global-red-600);
+  --on-error: var(--global-white);
+  --error-container: var(--global-red-50);
+  --on-error-container: var(--global-red-600);
+  --warning: var(--global-yellow-600);
+  --on-warning: var(--global-white);
+  --warning-container: var(--global-yellow-50);
+  --on-warning-container: var(--global-yellow-600);
+  --success: var(--global-green-600);
+  --on-success: var(--global-white);
+  --success-container: var(--global-green-50);
+  --on-success-container: var(--global-green-600);
+  --extend-1: var(--global-pink-600);
+  --on-extend-1: var(--global-white);
+  --extend-1-container: var(--global-pink-50);
+  --on-extend-1-container: var(--global-pink-600);
+  --extend-2: var(--global-purple-700);
+  --on-extend-2: var(--global-white);
+  --extend-2-container: var(--global-purple-50);
+  --on-extend-2-container: var(--global-purple-700);
+  --extend-3: var(--global-sky-blue-600);
+  --on-extend-3: var(--global-white);
+  --extend-3-container: var(--global-sky-blue-50);
+  --on-extend-3-container: var(--global-sky-blue-600);
 }

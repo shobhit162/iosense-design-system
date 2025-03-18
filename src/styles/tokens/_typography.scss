@@ -19,76 +19,99 @@ $font-family: (
 
 // ============================================ Font Size SCSS Start ============================================================
 
+// Global Font Sizes
+$global-font-size: (
+  'global-fz-10': 10,
+  'global-fz-12': 12,
+  'global-fz-14': 14,
+  'global-fz-16': 16,
+  'global-fz-18': 18,
+  'global-fz-20': 20,
+  'global-fz-24': 24,
+  'global-fz-32': 32,
+  'global-fz-34': 34,
+  'global-fz-36': 36,
+  'global-fz-38': 38,
+  'global-fz-40': 40,
+  'global-fz-48': 48,
+  'global-fz-56': 56,
+  'global-fz-64': 64,
+  'global-fz-72': 72
+);
+
 // Global Font Size Classes
 // These are base utility classes for direct font-size application
-@each $size in (10, 12, 14, 16, 18, 20, 24, 32, 34, 36, 38, 40, 48, 56, 64, 72)
-{
-  .global-fz-#{$size} {
-    font-size: pxToRem($size);
+@each $size-key, $size-value in $global-font-size {
+  .#{$size-key} {
+    font-size: pxToRem($size-value);
   }
+}
+
+@function get-font-size($size) {
+  @return map.get($global-font-size, $size);
 }
 
 // Font Size Scale Classes
 // These are semantic classes that map to different sizes on desktop and mobile
 $font-scale: (
   "font-size-25": (
-    desktop: 10,
-    mobile: 10,
+    desktop: get-font-size(global-fz-10),
+    mobile: get-font-size(global-fz-10)
   ),
   "font-size-50": (
-    desktop: 12,
-    mobile: 12,
+    desktop: get-font-size(global-fz-12),
+    mobile: get-font-size(global-fz-12)
   ),
   "font-size-100": (
-    desktop: 14,
-    mobile: 14,
+    desktop: get-font-size(global-fz-14),
+    mobile: get-font-size(global-fz-14)
   ),
   "font-size-200": (
-    desktop: 16,
-    mobile: 16,
+    desktop: get-font-size(global-fz-16),
+    mobile: get-font-size(global-fz-16)
   ),
   "font-size-300": (
-    desktop: 18,
-    mobile: 16,
+    desktop: get-font-size(global-fz-18),
+    mobile: get-font-size(global-fz-16)
   ),
   "font-size-400": (
-    desktop: 20,
-    mobile: 18,
+    desktop: get-font-size(global-fz-20),
+    mobile: get-font-size(global-fz-18)
   ),
   "font-size-500": (
-    desktop: 24,
-    mobile: 20,
+    desktop: get-font-size(global-fz-24),
+    mobile: get-font-size(global-fz-20)
   ),
   "font-size-600": (
-    desktop: 32,
-    mobile: 24,
+    desktop: get-font-size(global-fz-32),
+    mobile: get-font-size(global-fz-24)
   ),
   "font-size-700": (
-    desktop: 40,
-    mobile: 32,
+    desktop: get-font-size(global-fz-40),
+    mobile: get-font-size(global-fz-32)
   ),
   "font-size-800": (
-    desktop: 48,
-    mobile: 34,
+    desktop: get-font-size(global-fz-48),
+    mobile: get-font-size(global-fz-34)
   ),
   "font-size-900": (
-    desktop: 56,
-    mobile: 36,
+    desktop: get-font-size(global-fz-56),
+    mobile: get-font-size(global-fz-36)
   ),
   "font-size-1000": (
-    desktop: 64,
-    mobile: 38,
+    desktop: get-font-size(global-fz-64),
+    mobile: get-font-size(global-fz-38)
   ),
   "font-size-1100": (
-    desktop: 72,
-    mobile: 40,
-  ),
+    desktop: get-font-size(global-fz-72),
+    mobile: get-font-size(global-fz-40)
+  )
 );
 
 // Generate responsive font-size classes
 @each $class, $sizes in $font-scale {
   .#{$class} {
-    @extend .global-fz-#{map.get($sizes, desktop)};
+    font-size: pxToRem(map.get($sizes, desktop));
 
     // Mobile styles
     @media screen and (max-width: $breakpoint-mobile) {
@@ -99,83 +122,110 @@ $font-scale: (
 
 // ===================================================== Line Height SCSS Start ==========================================================
 
+// Global Line Heights
+$global-line-height: (
+  'global-lh-00': 0,
+  'global-lh-14': 14,
+  'global-lh-16': 16,
+  'global-lh-18': 18,
+  'global-lh-20': 20,
+  'global-lh-22': 22,
+  'global-lh-24': 24,
+  'global-lh-26': 26,
+  'global-lh-32': 32,
+  'global-lh-38': 38,
+  'global-lh-42': 42,
+  'global-lh-46': 46,
+  'global-lh-48': 48,
+  'global-lh-56': 56,
+  'global-lh-64': 64,
+  'global-lh-70': 70,
+  'global-lh-78': 78
+);
+
 // Global Line Height Classes
-@each $size
-  in (0, 14, 16, 18, 20, 22, 24, 26, 32, 38, 42, 46, 48, 56, 64, 70, 78)
-{
-  .global-lh-#{$size} {
-    line-height: if($size == 0, 0, pxToRem($size));
+@each $size-key, $size-value in $global-line-height {
+  .#{$size-key} {
+    line-height: if($size-value == 0, 0, pxToRem($size-value));
   }
 }
 
-// Line Height Scale Classes
+@function get-line-height($size) {
+  @return map.get($global-line-height, $size);
+}
+
+// Line Height Scale
 $line-height-scale: (
   'line-height-00': (
-    desktop: 0,
-    mobile: 0
+    desktop: get-line-height(global-lh-00),
+    mobile: get-line-height(global-lh-00)
   ),
   'line-height-25': (
-    desktop: 14,
-    mobile: 14
+    desktop: get-line-height(global-lh-14),
+    mobile: get-line-height(global-lh-14)
   ),
   'line-height-50': (
-    desktop: 16,
-    mobile: 16
+    desktop: get-line-height(global-lh-16),
+    mobile: get-line-height(global-lh-16)
   ),
   'line-height-75': (
-    desktop: 18,
-    mobile: 18
+    desktop: get-line-height(global-lh-18),
+    mobile: get-line-height(global-lh-18)
   ),
   'line-height-100': (
-    desktop: 20,
-    mobile: 20
+    desktop: get-line-height(global-lh-20),
+    mobile: get-line-height(global-lh-20)
   ),
   'line-height-200': (
-    desktop: 24,
-    mobile: 24
+    desktop: get-line-height(global-lh-24),
+    mobile: get-line-height(global-lh-24)
   ),
   'line-height-300': (
-    desktop: 24,
-    mobile: 22
+    desktop: get-line-height(global-lh-24),
+    mobile: get-line-height(global-lh-22)
   ),
   'line-height-400': (
-    desktop: 26,
-    mobile: 24
+    desktop: get-line-height(global-lh-26),
+    mobile: get-line-height(global-lh-24)
   ),
   'line-height-500': (
-    desktop: 32,
-    mobile: 26
+    desktop: get-line-height(global-lh-32),
+    mobile: get-line-height(global-lh-26)
   ),
   'line-height-600': (
-    desktop: 38,
-    mobile: 32
+    desktop: get-line-height(global-lh-38),
+    mobile: get-line-height(global-lh-32)
   ),
   'line-height-700': (
-    desktop: 46,
-    mobile: 38
+    desktop: get-line-height(global-lh-46),
+    mobile: get-line-height(global-lh-38)
   ),
   'line-height-800': (
-    desktop: 56,
-    mobile: 42
+    desktop: get-line-height(global-lh-56),
+    mobile: get-line-height(global-lh-42)
   ),
   'line-height-900': (
-    desktop: 64,
-    mobile: 42
+    desktop: get-line-height(global-lh-64),
+    mobile: get-line-height(global-lh-42)
   ),
   'line-height-1000': (
-    desktop: 70,
-    mobile: 46
+    desktop: get-line-height(global-lh-70),
+    mobile: get-line-height(global-lh-46)
   ),
   'line-height-1100': (
-    desktop: 78,
-    mobile: 48
+    desktop: get-line-height(global-lh-78),
+    mobile: get-line-height(global-lh-48)
   )
 );
 
 // Generate responsive line-height classes
 @each $class, $sizes in $line-height-scale {
   .#{$class} {
-    @extend .global-lh-#{map.get($sizes, desktop)};
+    line-height: if(
+        map.get($sizes, desktop) == 0,
+        0,
+        pxToRem(map.get($sizes, desktop))
+      );
 
     // Mobile styles
     @media screen and (max-width: $breakpoint-mobile) {
@@ -190,189 +240,188 @@ $line-height-scale: (
 
 // ================================================= Letter Spacing SCSS Start ===================================================
 
-// Letter Spacing Map 
-$letter-spacing: (
-  'compressed': -2px,
-  'condensed': -1px,
-  'normal': normal,
-  'expanded': 1px,
-  'extended': 2px
+// Global Letter Spacing
+$global-letter-spacing: (
+  'global-ls-compressed': -2px,
+  'global-ls-condensed': -1px,
+  'global-ls-normal': normal,
+  'global-ls-expanded': 1px,
+  'global-ls-extended': 2px
 );
 
 // Global Letter Spacing Classes
-@each $name, $value in $letter-spacing {
-  .global-ls-#{$name} {
+@each $name, $value in $global-letter-spacing {
+  .#{$name} {
     letter-spacing: $value;
   }
 }
 
-// Letter Spacing Scale Map
+@function get-letter-spacing($type) {
+  @return map.get($global-letter-spacing, $type);
+}
+
+// Letter Spacing Scale
 $letter-spacing-scale: (
   'letter-spacing-50': (
-    desktop: 'condensed',
-    mobile: 'condensed'
+    desktop: get-letter-spacing(global-ls-condensed),
+    mobile: get-letter-spacing(global-ls-condensed)
   ),
   'letter-spacing-100': (
-    desktop: 'normal',
-    mobile: 'normal'
+    desktop: get-letter-spacing(global-ls-normal),
+    mobile: get-letter-spacing(global-ls-normal)
   )
 );
 
 // Generate Letter Spacing Scale Classes
 @each $class, $scales in $letter-spacing-scale {
   .#{$class} {
-    @extend .global-ls-#{map.get($scales, desktop)};
+    letter-spacing: map.get($scales, desktop);
 
     // Mobile styles
     @media screen and (max-width: $breakpoint-mobile) {
-      letter-spacing: map.get($letter-spacing, map.get($scales, mobile));
+      letter-spacing: map.get($scales, mobile);
     }
   }
 }
 
 // ====================================================== Font Weight SCSS Start =========================================================
 
-// Font Weight Map
-$font-weights: (
-  '100': 'Thin',
-  '200': 'ExtraLight',
-  '300': 'Light',
-  '400': 'Regular',
-  '500': 'Medium',
-  '600': 'SemiBold',
-  '700': 'Bold',
-  '800': 'ExtraBold',
-  '900': 'Black'
-);
-
-// Font Weight Values Map (converting names to actual weight numbers)
-$font-weight-values: (
-  'Thin': 100,
-  'ExtraLight': 200,
-  'Light': 300,
-  'Regular': 400,
-  'Medium': 500,
-  'SemiBold': 600,
-  'Bold': 700,
-  'ExtraBold': 800,
-  'Black': 900
+// Global Font Weights
+$global-font-weight: (
+  'global-fw-100': ('name': 'Thin', 'value': 100),
+  'global-fw-200': ('name': 'ExtraLight', 'value': 200),
+  'global-fw-300': ('name': 'Light', 'value': 300),
+  'global-fw-400': ('name': 'Regular', 'value': 400),
+  'global-fw-500': ('name': 'Medium', 'value': 500),
+  'global-fw-600': ('name': 'SemiBold', 'value': 600),
+  'global-fw-700': ('name': 'Bold', 'value': 700),
+  'global-fw-800': ('name': 'ExtraBold', 'value': 800),
+  'global-fw-900': ('name': 'Black', 'value': 900)
 );
 
 // Global Font Weight Classes
-@each $number, $weight in $font-weights {
-  .global-fw-#{$number} {
-    font-weight: map.get($font-weight-values, $weight);
+@each $weight-key, $weight-data in $global-font-weight {
+  .#{$weight-key} {
+    font-weight: map.get($weight-data, 'value');
   }
 }
 
-// Font Weight Scale Map
+@function get-font-weight($weight) {
+  @return map.get(map.get($global-font-weight, $weight), 'value');
+}
+
+// Font Weight Scale
 $font-weight-scale: (
   'font-weight-400': (
-    desktop: 'Regular',
-    mobile: 'Regular'
+    desktop: get-font-weight(global-fw-400),
+    mobile: get-font-weight(global-fw-400)
   ),
   'font-weight-500': (
-    desktop: 'Medium',
-    mobile: 'Medium'
+    desktop: get-font-weight(global-fw-500),
+    mobile: get-font-weight(global-fw-500)
   ),
   'font-weight-600': (
-    desktop: 'SemiBold',
-    mobile: 'SemiBold'
+    desktop: get-font-weight(global-fw-600),
+    mobile: get-font-weight(global-fw-600)
   ),
   'font-weight-700': (
-    desktop: 'Bold',
-    mobile: 'Bold'
+    desktop: get-font-weight(global-fw-700),
+    mobile: get-font-weight(global-fw-700)
   )
 );
 
 // Generate Font Weight Scale Classes
 @each $class, $weights in $font-weight-scale {
   .#{$class} {
-    @extend .global-fw-#{map.get($font-weight-values, map.get($weights, desktop))};
+    font-weight: map.get($weights, desktop);
 
     // Mobile styles
     @media screen and (max-width: $breakpoint-mobile) {
-      font-weight: map.get($font-weight-values, map.get($weights, mobile));
+      font-weight: map.get($weights, mobile);
     }
   }
 }
 
 // ====================================================== Paragraph Spacing SCSS Start ======================================================
 
-// Paragraph Spacing Values
-$paragraph-spacings: (
-  '00': 0,
-  '08': 8,
-  '10': 10,
-  '11': 11,
-  '12': 12,
+// Global Paragraph Spacing
+$global-paragraph-spacing: (
+  'global-ps-00': 0,
+  'global-ps-08': 8,
+  'global-ps-10': 10,
+  'global-ps-11': 11,
+  'global-ps-12': 12
 );
 
 // Global Paragraph Spacing Classes
-@each $size, $value in $paragraph-spacings {
-  .global-ps-#{$size} {
-    margin-bottom: pxToRem($value);
+@each $size-key, $size-value in $global-paragraph-spacing {
+  .#{$size-key} {
+    margin-bottom: pxToRem($size-value);
   }
 }
 
-// Paragraph Spacing Scale Map
+@function get-paragraph-spacing($size) {
+  @return map.get($global-paragraph-spacing, $size);
+}
+
+// Paragraph Spacing Scale
 $paragraph-spacing-scale: (
   'paragraph-spacing-00': (
-    desktop: '00',
-    mobile: '00'
+    desktop: get-paragraph-spacing(global-ps-00),
+    mobile: get-paragraph-spacing(global-ps-00)
   ),
   'paragraph-spacing-100': (
-    desktop: '08',
-    mobile: '08'
+    desktop: get-paragraph-spacing(global-ps-08),
+    mobile: get-paragraph-spacing(global-ps-08)
   ),
   'paragraph-spacing-200': (
-    desktop: '10',
-    mobile: '10'
+    desktop: get-paragraph-spacing(global-ps-10),
+    mobile: get-paragraph-spacing(global-ps-10)
   ),
   'paragraph-spacing-300': (
-    desktop: '11',
-    mobile: '11'
+    desktop: get-paragraph-spacing(global-ps-11),
+    mobile: get-paragraph-spacing(global-ps-11)
   ),
   'paragraph-spacing-400': (
-    desktop: '12',
-    mobile: '12'
+    desktop: get-paragraph-spacing(global-ps-12),
+    mobile: get-paragraph-spacing(global-ps-12)
   )
 );
 
 // Generate Paragraph Spacing Scale Classes
 @each $class, $spacings in $paragraph-spacing-scale {
   .#{$class} {
-    @extend .global-ps-#{map.get($spacings, desktop)};
+    margin-bottom: pxToRem(map.get($spacings, desktop));
 
     // Mobile styles
     @media screen and (max-width: $breakpoint-mobile) {
-      margin-bottom: pxToRem(map.get($paragraph-spacings, map.get($spacings, mobile)));
+      margin-bottom: pxToRem(map.get($spacings, mobile));
     }
   }
 }
 
 // ====================================================== List Spacing SCSS Start ================================================
 
-// List Spacing Values
-$list-spacings: (
-  '00': 0,
-  '04': 4,
-  '08': 8,
-  '12': 12,
-  '16': 16,
-  '20': 20,
-  '24': 24
+// Global List Spacing
+$global-list-spacing: (
+  'global-lis-00': 0,
+  'global-lis-04': 4,
+  'global-lis-08': 8,
+  'global-lis-12': 12,
+  'global-lis-16': 16,
+  'global-lis-20': 20,
+  'global-lis-24': 24
 );
 
 // Global List Spacing Classes
-@each $size, $value in $list-spacings {
-  .global-lis-#{$size} {
-    gap: pxToRem($value);
+@each $size-key, $size-value in $global-list-spacing {
+  .#{$size-key} {
+    gap: pxToRem($size-value);
     
     // For traditional lists (ul, ol)
     &.list-traditional {
       > li + li {
-        margin-top: pxToRem($value);
+        margin-top: pxToRem($size-value);
       }
     }
     
@@ -388,31 +437,42 @@ $list-spacings: (
   }
 }
 
-// List Spacing Scale Map
+@function get-list-spacing($size) {
+  @return map.get($global-list-spacing, $size);
+}
+
+// List Spacing Scale
 $list-spacing-scale: (
   'list-spacing-00': (
-    desktop: '00',
-    mobile: '00'
+    desktop: get-list-spacing(global-lis-00),
+    mobile: get-list-spacing(global-lis-00)
   ),
   'list-spacing-100': (
-    desktop: '08',
-    mobile: '08'
+    desktop: get-list-spacing(global-lis-08),
+    mobile: get-list-spacing(global-lis-08)
   )
 );
 
 // Generate List Spacing Scale Classes
 @each $class, $spacings in $list-spacing-scale {
   .#{$class} {
-    @extend .global-lis-#{map.get($spacings, desktop)};
+    gap: pxToRem(map.get($spacings, desktop));
+      
+    // For traditional lists
+    &.list-traditional {
+      > li + li {
+        margin-top: pxToRem(map.get($spacings, desktop));
+      }
+    }
 
     // Mobile styles
     @media screen and (max-width: $breakpoint-mobile) {
-      gap: pxToRem(map.get($list-spacings, map.get($spacings, mobile)));
+      gap: pxToRem(map.get($spacings, mobile));
       
       // For traditional lists
       &.list-traditional {
         > li + li {
-          margin-top: pxToRem(map.get($list-spacings, map.get($spacings, mobile)));
+          margin-top: pxToRem(map.get($spacings, mobile));
         }
       }
     }

@@ -17,6 +17,12 @@
           {{ classItem }}
         </option>
       </select>
+
+      <select [(ngModel)]="selectedApplicationType">
+        <option *ngFor="let type of applicationTypes" [value]="type.value">
+          {{ type.label }}
+        </option>
+      </select>
       
       <input
         type="text"
@@ -55,7 +61,15 @@
           <code>{{ example.className }}</code>
           <button class="remove-btn" (click)="removeExample(i)">×</button>
         </div>
-        <div [class]="example.className" [ngClass]="{'example-text': example.type === 'text', 'example-background': example.type === 'background'}">
+        <div 
+          [ngStyle]="getExampleStyle(example)"
+          class="example-content"
+          [ngClass]="{
+            'example-text': example.applicationType === 'color',
+            'example-background': example.applicationType === 'background',
+            'example-border': example.applicationType === 'border'
+          }"
+        >
           {{ example.text }}
         </div>
       </div>

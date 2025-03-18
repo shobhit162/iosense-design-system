@@ -47,7 +47,7 @@ export class TypographyDemoComponent {
     {
       name: 'Line Height (Global)',
       classes: [
-        'global-lh-0', 'global-lh-14', 'global-lh-16', 'global-lh-18', 'global-lh-20',
+        'global-lh-00', 'global-lh-14', 'global-lh-16', 'global-lh-18', 'global-lh-20',
         'global-lh-22', 'global-lh-24', 'global-lh-26', 'global-lh-32', 'global-lh-38',
         'global-lh-42', 'global-lh-46', 'global-lh-48', 'global-lh-56', 'global-lh-64',
         'global-lh-70', 'global-lh-78'
@@ -116,6 +116,34 @@ export class TypographyDemoComponent {
       name: 'List Spacing (Scale)',
       classes: [
         'list-spacing-00', 'list-spacing-100'
+      ]
+    },
+    {
+      name: 'Type Scale (Display)',
+      classes: [
+        'DisplayXLargeRegular', 'DisplayXLargeMedium', 'DisplayXLargeSemibold',
+        'DisplayLargeRegular', 'DisplayLargeMedium', 'DisplayLargeSemibold',
+        'DisplayMediumRegular', 'DisplayMediumMedium', 'DisplayMediumSemibold',
+        'DisplaySmallRegular', 'DisplaySmallMedium', 'DisplaySmallSemibold'
+      ]
+    },
+    {
+      name: 'Type Scale (Heading)',
+      classes: [
+        'Heading2XLargeRegular', 'Heading2XLargeSemibold',
+        'HeadingXLargeRegular', 'HeadingXLargeSemibold',
+        'HeadingLargeRegular', 'HeadingLargeSemibold',
+        'HeadingMediumRegular', 'HeadingMediumSemibold',
+        'HeadingSmallRegular', 'HeadingSmallSemibold'
+      ]
+    },
+    {
+      name: 'Type Scale (Body)',
+      classes: [
+        'BodyLargeRegular', 'BodyLargeMedium', 'BodyLargeSemibold',
+        'BodyMediumRegular', 'BodyMediumMedium', 'BodyMediumSemibold',
+        'BodySmallRegular', 'BodySmallMedium', 'BodySmallSemibold',
+        'BodyXSmallRegular', 'BodyXSmallMedium', 'BodyXSmallSemibold'
       ]
     }
   ];

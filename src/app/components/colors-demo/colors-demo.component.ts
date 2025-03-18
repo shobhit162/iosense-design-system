@@ -5,13 +5,12 @@ import { FormsModule } from '@angular/forms';
 interface ColorExample {
   className: string;
   text: string;
-  type: 'text' | 'background';
+  applicationType: 'background' | 'color' | 'border';
 }
 
 interface ColorCategory {
   name: string;
   classes: string[];
-  type: 'text' | 'background';
 }
 
 @Component({
@@ -29,85 +28,81 @@ export class ColorsDemoComponent {
 
   selectedCategory = '';
   selectedClass = '';
+  selectedApplicationType: 'background' | 'color' | 'border' = 'background';
+
+  applicationTypes = [
+    { value: 'background', label: 'Background Color' },
+    { value: 'color', label: 'Text Color' },
+    { value: 'border', label: 'Border Color' }
+  ];
 
   classCategories: ColorCategory[] = [
     {
       name: 'Surface Colors',
-      type: 'background',
       classes: [
-        'surface-bright', 'surface', 'surface-dim',
-        'surface-container-lowest', 'surface-container-low', 'surface-container',
-        'surface-container-high', 'surface-container-highest'
+        '--surface-bright', '--surface', '--surface-dim',
+        '--surface-container-lowest', '--surface-container-low', '--surface-container',
+        '--surface-container-high', '--surface-container-highest'
       ]
     },
     {
       name: 'On Surface Colors',
-      type: 'text',
       classes: [
-        'on-surface-lowest', 'on-surface-low', 'on-surface'
+        '--on-surface-lowest', '--on-surface-low', '--on-surface'
       ]
     },
     {
       name: 'Outline Colors',
-      type: 'text',
       classes: [
-        'outline-bright', 'outline', 'outline-dim'
+        '--outline-bright', '--outline', '--outline-dim'
       ]
     },
     {
       name: 'Primary Colors',
-      type: 'background',
       classes: [
-        'primary', 'on-primary', 'primary-container', 'on-primary-container'
+        '--primary', '--on-primary', '--primary-container', '--on-primary-container'
       ]
     },
     {
       name: 'Secondary Colors',
-      type: 'background',
       classes: [
-        'secondary', 'on-secondary', 'secondary-container', 'on-secondary-container'
+        '--secondary', '--on-secondary', '--secondary-container', '--on-secondary-container'
       ]
     },
     {
       name: 'Error Colors',
-      type: 'background',
       classes: [
-        'error', 'on-error', 'error-container', 'on-error-container'
+        '--error', '--on-error', '--error-container', '--on-error-container'
       ]
     },
     {
       name: 'Warning Colors',
-      type: 'background',
       classes: [
-        'warning', 'on-warning', 'warning-container', 'on-warning-container'
+        '--warning', '--on-warning', '--warning-container', '--on-warning-container'
       ]
     },
     {
       name: 'Success Colors',
-      type: 'background',
       classes: [
-        'success', 'on-success', 'success-container', 'on-success-container'
+        '--success', '--on-success', '--success-container', '--on-success-container'
       ]
     },
     {
       name: 'Extend 1 Colors',
-      type: 'background',
       classes: [
-        'extend-1', 'on-extend-1', 'extend-1-container', 'on-extend-1-container'
+        '--extend-1', '--on-extend-1', '--extend-1-container', '--on-extend-1-container'
       ]
     },
     {
       name: 'Extend 2 Colors',
-      type: 'background',
       classes: [
-        'extend-2', 'on-extend-2', 'extend-2-container', 'on-extend-2-container'
+        '--extend-2', '--on-extend-2', '--extend-2-container', '--on-extend-2-container'
       ]
     },
     {
       name: 'Extend 3 Colors',
-      type: 'background',
       classes: [
-        'extend-3', 'on-extend-3', 'extend-3-container', 'on-extend-3-container'
+        '--extend-3', '--on-extend-3', '--extend-3-container', '--on-extend-3-container'
       ]
     }
   ];
@@ -127,7 +122,7 @@ export class ColorsDemoComponent {
       this.examples.unshift({
         className: this.selectedClass,
         text: this.customText || this.defaultText,
-        type: category?.type || 'text'
+        applicationType: this.selectedApplicationType
       });
       this.selectedClass = '';
       this.customText = '';
@@ -140,7 +135,7 @@ export class ColorsDemoComponent {
       this.examples.unshift({
         className: this.manualClass,
         text: this.customText || this.defaultText,
-        type: category?.type || 'text'
+        applicationType: this.selectedApplicationType
       });
       this.manualClass = '';
       this.customText = '';
@@ -149,5 +144,23 @@ export class ColorsDemoComponent {
 
   removeExample(index: number) {
     this.examples.splice(index, 1);
+  }
+
+  getExampleStyle(example: ColorExample): { [key: string]: string } {
+    const styles: { [key: string]: string } = {};
+    
+    switch (example.applicationType) {
+      case 'background':
+        styles['background-color'] = `var(${example.className})`;
+        break;
+      case 'color':
+        styles['color'] = `var(${example.className})`;
+        break;
+      case 'border':
+        styles['border'] = `2px solid var(${example.className})`;
+        break;
+    }
+
+    return styles;
   }
 }

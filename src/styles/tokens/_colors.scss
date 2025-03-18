@@ -220,300 +220,72 @@ $other-colors: (
   @include generate-color-variables($other-colors, 'global');
 
   // Surface Variables
-  --surface-surface-bright: var(--global-white);
-  --surface-surface: var(--global-neutral-20);
-  --surface-surface-dim: var(--global-neutral-40);
+  --surface-bright: var(--global-white);
+  --surface: var(--global-neutral-20);
+  --surface-dim: var(--global-neutral-40);
 
   // Surface Container Variables
-  --surface-container-surface-container-lowest: var(--global-white);
-  --surface-container-surface-container-low: var(--global-neutral-10);
-  --surface-container-surface-container: var(--global-neutral-30);
-  --surface-container-surface-container-high: var(--global-neutral-40);
-  --surface-container-surface-container-highest: var(--global-neutral-100);
+  --surface-container-lowest: var(--global-white);
+  --surface-container-low: var(--global-neutral-10);
+  --surface-container: var(--global-neutral-30);
+  --surface-container-high: var(--global-neutral-40);
+  --surface-container-highest: var(--global-neutral-100);
 
   // On Surface Variables
-  --on-surface-on-surface-lowest: var(--global-neutral-300);
-  --on-surface-on-surface-low: var(--global-neutral-500);
-  --on-surface-on-surface: var(--global-neutral-700);
+  --on-surface-lowest: var(--global-neutral-300);
+  --on-surface-low: var(--global-neutral-500);
+  --on-surface: var(--global-neutral-700);
 
   // Outline Variables
-  --outline-outline-bright: var(--global-neutral-30);
-  --outline-outline: var(--global-neutral-100);
-  --outline-outline-dim: var(--global-neutral-300);
+  --outline-bright: var(--global-neutral-30);
+  --outline: var(--global-neutral-100);
+  --outline-dim: var(--global-neutral-300);
 
   // Primary Variables
-  --primary-primary: var(--global-charcoal-blue-700);
-  --primary-on-primary: var(--global-white);
-  --primary-primary-container: var(--global-charcoal-blue-50);
-  --primary-on-primary-container: var(--global-charcoal-blue-700);
+  --primary: var(--global-charcoal-blue-700);
+  --on-primary: var(--global-white);
+  --primary-container: var(--global-charcoal-blue-50);
+  --on-primary-container: var(--global-charcoal-blue-700);
 
   // Secondary Variables
-  --secondary-secondary: var(--global-aqua-green-600);
-  --secondary-on-secondary: var(--global-white);
-  --secondary-secondary-container: var(--global-aqua-green-50);
-  --secondary-on-secondary-container: var(--global-aqua-green-600);
+  --secondary: var(--global-aqua-green-600);
+  --on-secondary: var(--global-white);
+  --secondary-container: var(--global-aqua-green-50);
+  --on-secondary-container: var(--global-aqua-green-600);
 
   // Error Variables
-  --error-error: var(--global-red-600);
-  --error-on-error: var(--global-white);
-  --error-error-container: var(--global-red-50);
-  --error-on-error-container: var(--global-red-600);
+  --error: var(--global-red-600);
+  --on-error: var(--global-white);
+  --error-container: var(--global-red-50);
+  --on-error-container: var(--global-red-600);
 
   // Warning Variables
-  --warning-warning: var(--global-yellow-600);
-  --warning-on-warning: var(--global-white);
-  --warning-warning-container: var(--global-yellow-50);
-  --warning-on-warning-container: var(--global-yellow-600);
+  --warning: var(--global-yellow-600);
+  --on-warning: var(--global-white);
+  --warning-container: var(--global-yellow-50);
+  --on-warning-container: var(--global-yellow-600);
 
   // Success Variables
-  --success-success: var(--global-green-600);
-  --success-on-success: var(--global-white);
-  --success-success-container: var(--global-green-50);
-  --success-on-success-container: var(--global-green-600);
+  --success: var(--global-green-600);
+  --on-success: var(--global-white);
+  --success-container: var(--global-green-50);
+  --on-success-container: var(--global-green-600);
 
   // Extend 1 Variables
-  --extend-1-extend-1: var(--global-pink-600);
-  --extend-1-on-extend-1: var(--global-white);
-  --extend-1-extend-1-container: var(--global-pink-50);
-  --extend-1-on-extend-1-container: var(--global-pink-600);
+  --extend-1: var(--global-pink-600);
+  --on-extend-1: var(--global-white);
+  --extend-1-container: var(--global-pink-50);
+  --on-extend-1-container: var(--global-pink-600);
 
   // Extend 2 Variables
-  --extend-2-extend-2: var(--global-purple-700);
-  --extend-2-on-extend-2: var(--global-white);
-  --extend-2-extend-2-container: var(--global-purple-50);
-  --extend-2-on-extend-2-container: var(--global-purple-700);
+  --extend-2: var(--global-purple-700);
+  --on-extend-2: var(--global-white);
+  --extend-2-container: var(--global-purple-50);
+  --on-extend-2-container: var(--global-purple-700);
 
   // Extend 3 Variables
-  --extend-3-extend-3: var(--global-sky-blue-600);
-  --extend-3-on-extend-3: var(--global-white);
-  --extend-3-extend-3-container: var(--global-sky-blue-50);
-  --extend-3-on-extend-3-container: var(--global-sky-blue-600);
-}
-
-// Surface Classes
-.surface-bright {
-  background-color: var(--surface-surface-bright);
-}
-
-.surface {
-  background-color: var(--surface-surface);
-}
-
-.surface-dim {
-  background-color: var(--surface-surface-dim);
-}
-
-// Surface Container Classes
-.surface-container-lowest {
-  background-color: var(--surface-container-surface-container-lowest);
-}
-
-.surface-container-low {
-  background-color: var(--surface-container-surface-container-low);
-}
-
-.surface-container {
-  background-color: var(--surface-container-surface-container);
-}
-
-.surface-container-high {
-  background-color: var(--surface-container-surface-container-high);
-}
-
-.surface-container-highest {
-  background-color: var(--surface-container-surface-container-highest);
-}
-
-// On Surface Classes
-.on-surface-lowest {
-  color: var(--on-surface-on-surface-lowest);
-}
-
-.on-surface-low {
-  color: var(--on-surface-on-surface-low);
-}
-
-.on-surface {
-  color: var(--on-surface-on-surface);
-}
-
-// Outline Classes
-.outline-bright {
-  border: 1px solid var(--outline-outline-bright);
-}
-
-.outline {
-  border: 1px solid var(--outline-outline);
-}
-
-.outline-dim {
-  border: 1px solid var(--outline-outline-dim);
-}
-
-// Primary Classes
-.primary {
-  color: var(--primary-on-primary);
-  background-color: var(--primary-primary);
-}
-
-.on-primary {
-  color: var(--primary-primary);
-  background-color: var(--primary-on-primary);
-}
-
-.primary-container {
-  color: var(--primary-on-primary-container);
-  background-color: var(--primary-primary-container);
-}
-
-.on-primary-container {
-  color: var(--primary-primary-container);
-  background-color: var(--primary-on-primary-container);
-}
-
-// Secondary Classes
-.secondary {
-  color: var(--secondary-on-secondary);
-  background-color: var(--secondary-secondary);
-}
-
-.on-secondary {
-  color: var(--secondary-secondary);
-  background-color: var(--secondary-on-secondary);
-}
-
-.secondary-container {
-  color: var(--secondary-on-secondary-container);
-  background-color: var(--secondary-secondary-container);
-}
-
-.on-secondary-container {
-  color: var(--secondary-secondary-container);
-  background-color: var(--secondary-on-secondary-container);
-}
-
-// Error Classes
-.error {
-  color: var(--error-on-error);
-  background-color: var(--error-error);
-}
-
-.on-error {
-  color: var(--error-error);
-  background-color: var(--error-on-error);
-}
-
-.error-container {
-  color: var(--error-on-error-container);
-  background-color: var(--error-error-container);
-}
-
-.on-error-container {
-  color: var(--error-error-container);
-  background-color: var(--error-on-error-container);
-}
-
-// Warning Classes
-.warning {
-  color: var(--warning-on-warning);
-  background-color: var(--warning-warning);
-}
-
-.on-warning {
-  color: var(--warning-warning);
-  background-color: var(--warning-on-warning);
-}
-
-.warning-container {
-  color: var(--warning-on-warning-container);
-  background-color: var(--warning-warning-container);
-}
-
-.on-warning-container {
-  color: var(--warning-warning-container);
-  background-color: var(--warning-on-warning-container);
-}
-
-// Success Classes
-.success {
-  color: var(--success-on-success);
-  background-color: var(--success-success);
-}
-
-.on-success {
-  color: var(--success-success);
-  background-color: var(--success-on-success);
-}
-
-.success-container {
-  color: var(--success-on-success-container);
-  background-color: var(--success-success-container);
-}
-
-.on-success-container {
-  color: var(--success-success-container);
-  background-color: var(--success-on-success-container);
-}
-
-// Extend 1 Classes
-.extend-1 {
-  color: var(--extend-1-on-extend-1);
-  background-color: var(--extend-1-extend-1);
-}
-
-.on-extend-1 {
-  color: var(--extend-1-extend-1);
-  background-color: var(--extend-1-on-extend-1);
-}
-
-.extend-1-container {
-  color: var(--extend-1-on-extend-1-container);
-  background-color: var(--extend-1-extend-1-container);
-}
-
-.on-extend-1-container {
-  color: var(--extend-1-extend-1-container);
-  background-color: var(--extend-1-on-extend-1-container);
-}
-
-// Extend 2 Classes
-.extend-2 {
-  color: var(--extend-2-on-extend-2);
-  background-color: var(--extend-2-extend-2);
-}
-
-.on-extend-2 {
-  color: var(--extend-2-extend-2);
-  background-color: var(--extend-2-on-extend-2);
-}
-
-.extend-2-container {
-  color: var(--extend-2-on-extend-2-container);
-  background-color: var(--extend-2-extend-2-container);
-}
-
-.on-extend-2-container {
-  color: var(--extend-2-extend-2-container);
-  background-color: var(--extend-2-on-extend-2-container);
-}
-
-// Extend 3 Classes
-.extend-3 {
-  color: var(--extend-3-on-extend-3);
-  background-color: var(--extend-3-extend-3);
-}
-
-.on-extend-3 {
-  color: var(--extend-3-extend-3);
-  background-color: var(--extend-3-on-extend-3);
-}
-
-.extend-3-container {
-  color: var(--extend-3-on-extend-3-container);
-  background-color: var(--extend-3-extend-3-container);
-}
-
-.on-extend-3-container {
-  color: var(--extend-3-extend-3-container);
-  background-color: var(--extend-3-on-extend-3-container);
+  --extend-3: var(--global-sky-blue-600);
+  --on-extend-3: var(--global-white);
+  --extend-3-container: var(--global-sky-blue-50);
+  --on-extend-3-container: var(--global-sky-blue-600);
 }
