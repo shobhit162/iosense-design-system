@@ -32,12 +32,14 @@ export const spacing = {
     <h3>All Sides Margin</h3>
     <div className="sb-demo-box">
       {spacing.values.map((item) => (
+        <div className="margin-demo">
         <div key={item.key} className="sb-demo-content" style={{ 
           margin: item.value, 
           background: '#E5E7EB',
         }}>
           <code>.global-m-{item.key}</code>
           <p>Margin: {item.name} ({item.value})</p>
+        </div>
         </div>
       ))}
     </div>
@@ -47,6 +49,7 @@ export const spacing = {
     <h3>Horizontal Margin (mx)</h3>
     <div className="sb-demo-box">
       {spacing.values.map((item) => (
+        <div className="margin-demo">
         <div key={item.key} className="sb-demo-content" style={{ 
           marginLeft: item.value, 
           marginRight: item.value,
@@ -54,6 +57,7 @@ export const spacing = {
         }}>
           <code>.global-mx-{item.key}</code>
           <p>Horizontal Margin: {item.name} ({item.value})</p>
+        </div>
         </div>
       ))}
     </div>
@@ -63,6 +67,7 @@ export const spacing = {
     <h3>Vertical Margin (my)</h3>
     <div className="sb-demo-box">
       {spacing.values.map((item) => (
+        <div className="margin-demo">
         <div key={item.key} className="sb-demo-content" style={{ 
           marginTop: item.value, 
           marginBottom: item.value,
@@ -70,6 +75,7 @@ export const spacing = {
         }}>
           <code>.global-my-{item.key}</code>
           <p>Vertical Margin: {item.name} ({item.value})</p>
+        </div>
         </div>
       ))}
     </div>
@@ -80,22 +86,30 @@ export const spacing = {
     <div className="sb-demo-box">
       {spacing.values.map((item) => (
         <div key={item.key} className="sb-demo-content">
+        <div className="margin-demo">
           <div style={{ marginTop: item.value, background: '#E5E7EB'}}>
             <code>.global-mt-{item.key}</code>
             <p>Top Margin: {item.name} ({item.value})</p>
           </div>
+        </div>
+        <div className="margin-demo">
           <div style={{ marginRight: item.value, background: '#E5E7EB'}}>
             <code>.global-mr-{item.key}</code>
             <p>Right Margin: {item.name} ({item.value})</p>
           </div>
+        </div>
+        <div className="margin-demo">
           <div style={{ marginBottom: item.value, background: '#E5E7EB'}}>
             <code>.global-mb-{item.key}</code>
             <p>Bottom Margin: {item.name} ({item.value})</p>
           </div>
+        </div>
+        <div className="margin-demo">
           <div style={{ marginLeft: item.value, background: '#E5E7EB'}}>
             <code>.global-ml-{item.key}</code>
             <p>Left Margin: {item.name} ({item.value})</p>
           </div>
+        </div>
         </div>
       ))}
     </div>
@@ -221,5 +235,11 @@ export const spacing = {
       font-size: 16px;
       color: #374151;
     }
+
+     .margin-demo {
+      display: grid;
+      background-color: rgb(255 196 147);
+      margin-bottom: 12px;
+      }
   `}
 </style>

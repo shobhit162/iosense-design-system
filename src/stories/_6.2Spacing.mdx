@@ -34,11 +34,13 @@ export const spacing = {
       {spacing.values.map((item) => (
         <div key={item.key} className="sb-demo-content" style={{ 
           padding: item.value, 
-          background: '#E5E7EB',
+          background: 'rgb(162 206 130)',
           marginBottom: '10px'
         }}>
+        <div className="padding-demo">
           <code>.global-p-{item.key}</code>
           <p>Padding: {item.name} ({item.value})</p>
+        </div>
         </div>
       ))}
     </div>
@@ -51,11 +53,13 @@ export const spacing = {
         <div key={item.key} className="sb-demo-content" style={{ 
           paddingLeft: item.value, 
           paddingRight: item.value,
-          background: '#E5E7EB',
+          background: 'rgb(162 206 130)',
           marginBottom: '10px'
         }}>
+        <div className="padding-demo">
           <code>.global-px-{item.key}</code>
           <p>Horizontal Padding: {item.name} ({item.value})</p>
+        </div>
         </div>
       ))}
     </div>
@@ -68,11 +72,13 @@ export const spacing = {
         <div key={item.key} className="sb-demo-content" style={{ 
           paddingTop: item.value, 
           paddingBottom: item.value,
-          background: '#E5E7EB',
+          background: 'rgb(162 206 130)',
           marginBottom: '10px'
         }}>
+        <div className="padding-demo">
           <code>.global-py-{item.key}</code>
           <p>Vertical Padding: {item.name} ({item.value})</p>
+        </div>
         </div>
       ))}
     </div>
@@ -83,21 +89,29 @@ export const spacing = {
     <div className="sb-demo-box">
       {spacing.values.map((item) => (
         <div key={item.key} className="sb-demo-content">
-          <div style={{ paddingTop: item.value, background: '#E5E7EB', marginBottom: '10px' }}>
+          <div style={{ paddingTop: item.value, background: 'rgb(162 206 130)', marginBottom: '10px' }}>
+          <div className="padding-demo">
             <code>.global-pt-{item.key}</code>
             <p>Top Padding: {item.name} ({item.value})</p>
           </div>
-          <div style={{ paddingRight: item.value, background: '#E5E7EB', marginBottom: '10px' }}>
+          </div>
+          <div style={{ paddingRight: item.value, background: 'rgb(162 206 130)', marginBottom: '10px' }}>
+          <div className="padding-demo">
             <code>.global-pr-{item.key}</code>
             <p>Right Padding: {item.name} ({item.value})</p>
           </div>
-          <div style={{ paddingBottom: item.value, background: '#E5E7EB', marginBottom: '10px' }}>
+          </div>
+          <div style={{ paddingBottom: item.value, background: 'rgb(162 206 130)', marginBottom: '10px' }}>
+          <div className="padding-demo">
             <code>.global-pb-{item.key}</code>
             <p>Bottom Padding: {item.name} ({item.value})</p>
           </div>
-          <div style={{ paddingLeft: item.value, background: '#E5E7EB', marginBottom: '10px' }}>
+          </div>
+          <div style={{ paddingLeft: item.value, background: 'rgb(162 206 130)', marginBottom: '10px' }}>
+          <div className="padding-demo">
             <code>.global-pl-{item.key}</code>
             <p>Left Padding: {item.name} ({item.value})</p>
+          </div>
           </div>
         </div>
       ))}
@@ -189,7 +203,6 @@ export const spacing = {
     }
 
     .sb-demo-content {
-      padding: 8px;
       border-radius: 4px;
     }
 
@@ -219,6 +232,11 @@ export const spacing = {
       margin: 0;
       font-size: 16px;
       color: #374151;
+    }
+
+    .padding-demo {
+      display: grid;
+      background-color: rgb(229, 231, 235);
     }
   `}
 </style>
