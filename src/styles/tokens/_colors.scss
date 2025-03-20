@@ -205,6 +205,20 @@ $other-colors: (
   }
 }
 
+@mixin generate-color-classes($color-map, $prefix) {
+  @each $color, $value in $color-map {
+    .#{$prefix}-#{$color} {
+      color: var(--#{$prefix}-#{$color});
+    }
+    .#{$prefix}-bg-#{$color} {
+      background-color: var(--#{$prefix}-#{$color});
+    }
+    .#{$prefix}-border-#{$color} {
+      border-color: var(--#{$prefix}-#{$color});
+    }
+  }
+}
+
 :root {
   // Generate variables for each color palette with global prefix
   @include generate-color-variables($red-colors, 'global-red');
@@ -218,6 +232,19 @@ $other-colors: (
   @include generate-color-variables($charcoal-blue-colors, 'global-charcoal-blue');
   @include generate-color-variables($neutral-colors, 'global-neutral');
   @include generate-color-variables($other-colors, 'global');
+
+  // Generate classes for each color palette
+  @include generate-color-classes($red-colors, 'global-red');
+  @include generate-color-classes($yellow-colors, 'global-yellow');
+  @include generate-color-classes($aqua-green-colors, 'global-aqua-green');
+  @include generate-color-classes($green-colors, 'global-green');
+  @include generate-color-classes($sky-blue-colors, 'global-sky-blue');
+  @include generate-color-classes($blue-colors, 'global-blue');
+  @include generate-color-classes($pink-colors, 'global-pink');
+  @include generate-color-classes($purple-colors, 'global-purple');
+  @include generate-color-classes($charcoal-blue-colors, 'global-charcoal-blue');
+  @include generate-color-classes($neutral-colors, 'global-neutral');
+  @include generate-color-classes($other-colors, 'global');
 
   // Surface Variables
   --surface-bright: var(--global-white);
@@ -288,4 +315,205 @@ $other-colors: (
   --on-extend-3: var(--global-white);
   --extend-3-container: var(--global-sky-blue-50);
   --on-extend-3-container: var(--global-sky-blue-600);
+
+  @mixin generate-theme-color-classes {
+    // Surface Colors
+    .surface-bright { color: var(--surface-bright); }
+    .surface-bright-bg { background-color: var(--surface-bright); }
+    .surface-bright-border { border-color: var(--surface-bright); }
+  
+    .surface { color: var(--surface); }
+    .surface-bg { background-color: var(--surface); }
+    .surface-border { border-color: var(--surface); }
+  
+    .surface-dim { color: var(--surface-dim); }
+    .surface-dim-bg { background-color: var(--surface-dim); }
+    .surface-dim-border { border-color: var(--surface-dim); }
+  
+    // Surface Container Colors
+    .surface-container-lowest { color: var(--surface-container-lowest); }
+    .surface-container-lowest-bg { background-color: var(--surface-container-lowest); }
+    .surface-container-lowest-border { border-color: var(--surface-container-lowest); }
+  
+    .surface-container-low { color: var(--surface-container-low); }
+    .surface-container-low-bg { background-color: var(--surface-container-low); }
+    .surface-container-low-border { border-color: var(--surface-container-low); }
+  
+    .surface-container { color: var(--surface-container); }
+    .surface-container-bg { background-color: var(--surface-container); }
+    .surface-container-border { border-color: var(--surface-container); }
+  
+    .surface-container-high { color: var(--surface-container-high); }
+    .surface-container-high-bg { background-color: var(--surface-container-high); }
+    .surface-container-high-border { border-color: var(--surface-container-high); }
+  
+    .surface-container-highest { color: var(--surface-container-highest); }
+    .surface-container-highest-bg { background-color: var(--surface-container-highest); }
+    .surface-container-highest-border { border-color: var(--surface-container-highest); }
+  
+    // On Surface Colors
+    .on-surface-lowest { color: var(--on-surface-lowest); }
+    .on-surface-lowest-bg { background-color: var(--on-surface-lowest); }
+    .on-surface-lowest-border { border-color: var(--on-surface-lowest); }
+  
+    .on-surface-low { color: var(--on-surface-low); }
+    .on-surface-low-bg { background-color: var(--on-surface-low); }
+    .on-surface-low-border { border-color: var(--on-surface-low); }
+  
+    .on-surface { color: var(--on-surface); }
+    .on-surface-bg { background-color: var(--on-surface); }
+    .on-surface-border { border-color: var(--on-surface); }
+  
+    // Outline Colors
+    .outline-bright { color: var(--outline-bright); }
+    .outline-bright-bg { background-color: var(--outline-bright); }
+    .outline-bright-border { border-color: var(--outline-bright); }
+  
+    .outline { color: var(--outline); }
+    .outline-bg { background-color: var(--outline); }
+    .outline-border { border-color: var(--outline); }
+  
+    .outline-dim { color: var(--outline-dim); }
+    .outline-dim-bg { background-color: var(--outline-dim); }
+    .outline-dim-border { border-color: var(--outline-dim); }
+  
+    // Primary Colors
+    .primary { color: var(--primary); }
+    .primary-bg { background-color: var(--primary); }
+    .primary-border { border-color: var(--primary); }
+  
+    .on-primary { color: var(--on-primary); }
+    .on-primary-bg { background-color: var(--on-primary); }
+    .on-primary-border { border-color: var(--on-primary); }
+  
+    .primary-container { color: var(--primary-container); }
+    .primary-container-bg { background-color: var(--primary-container); }
+    .primary-container-border { border-color: var(--primary-container); }
+  
+    .on-primary-container { color: var(--on-primary-container); }
+    .on-primary-container-bg { background-color: var(--on-primary-container); }
+    .on-primary-container-border { border-color: var(--on-primary-container); }
+  
+    // Secondary Colors
+    .secondary { color: var(--secondary); }
+    .secondary-bg { background-color: var(--secondary); }
+    .secondary-border { border-color: var(--secondary); }
+  
+    .on-secondary { color: var(--on-secondary); }
+    .on-secondary-bg { background-color: var(--on-secondary); }
+    .on-secondary-border { border-color: var(--on-secondary); }
+  
+    .secondary-container { color: var(--secondary-container); }
+    .secondary-container-bg { background-color: var(--secondary-container); }
+    .secondary-container-border { border-color: var(--secondary-container); }
+  
+    .on-secondary-container { color: var(--on-secondary-container); }
+    .on-secondary-container-bg { background-color: var(--on-secondary-container); }
+    .on-secondary-container-border { border-color: var(--on-secondary-container); }
+  
+    // Error Colors
+    .error { color: var(--error); }
+    .error-bg { background-color: var(--error); }
+    .error-border { border-color: var(--error); }
+  
+    .on-error { color: var(--on-error); }
+    .on-error-bg { background-color: var(--on-error); }
+    .on-error-border { border-color: var(--on-error); }
+  
+    .error-container { color: var(--error-container); }
+    .error-container-bg { background-color: var(--error-container); }
+    .error-container-border { border-color: var(--error-container); }
+  
+    .on-error-container { color: var(--on-error-container); }
+    .on-error-container-bg { background-color: var(--on-error-container); }
+    .on-error-container-border { border-color: var(--on-error-container); }
+  
+    // Warning Colors
+    .warning { color: var(--warning); }
+    .warning-bg { background-color: var(--warning); }
+    .warning-border { border-color: var(--warning); }
+  
+    .on-warning { color: var(--on-warning); }
+    .on-warning-bg { background-color: var(--on-warning); }
+    .on-warning-border { border-color: var(--on-warning); }
+  
+    .warning-container { color: var(--warning-container); }
+    .warning-container-bg { background-color: var(--warning-container); }
+    .warning-container-border { border-color: var(--warning-container); }
+  
+    .on-warning-container { color: var(--on-warning-container); }
+    .on-warning-container-bg { background-color: var(--on-warning-container); }
+    .on-warning-container-border { border-color: var(--on-warning-container); }
+  
+    // Success Colors
+    .success { color: var(--success); }
+    .success-bg { background-color: var(--success); }
+    .success-border { border-color: var(--success); }
+  
+    .on-success { color: var(--on-success); }
+    .on-success-bg { background-color: var(--on-success); }
+    .on-success-border { border-color: var(--on-success); }
+  
+    .success-container { color: var(--success-container); }
+    .success-container-bg { background-color: var(--success-container); }
+    .success-container-border { border-color: var(--success-container); }
+  
+    .on-success-container { color: var(--on-success-container); }
+    .on-success-container-bg { background-color: var(--on-success-container); }
+    .on-success-container-border { border-color: var(--on-success-container); }
+  
+    // Extend 1 Colors
+    .extend-1 { color: var(--extend-1); }
+    .extend-1-bg { background-color: var(--extend-1); }
+    .extend-1-border { border-color: var(--extend-1); }
+  
+    .on-extend-1 { color: var(--on-extend-1); }
+    .on-extend-1-bg { background-color: var(--on-extend-1); }
+    .on-extend-1-border { border-color: var(--on-extend-1); }
+  
+    .extend-1-container { color: var(--extend-1-container); }
+    .extend-1-container-bg { background-color: var(--extend-1-container); }
+    .extend-1-container-border { border-color: var(--extend-1-container); }
+  
+    .on-extend-1-container { color: var(--on-extend-1-container); }
+    .on-extend-1-container-bg { background-color: var(--on-extend-1-container); }
+    .on-extend-1-container-border { border-color: var(--on-extend-1-container); }
+  
+    // Extend 2 Colors
+    .extend-2 { color: var(--extend-2); }
+    .extend-2-bg { background-color: var(--extend-2); }
+    .extend-2-border { border-color: var(--extend-2); }
+  
+    .on-extend-2 { color: var(--on-extend-2); }
+    .on-extend-2-bg { background-color: var(--on-extend-2); }
+    .on-extend-2-border { border-color: var(--on-extend-2); }
+  
+    .extend-2-container { color: var(--extend-2-container); }
+    .extend-2-container-bg { background-color: var(--extend-2-container); }
+    .extend-2-container-border { border-color: var(--extend-2-container); }
+  
+    .on-extend-2-container { color: var(--on-extend-2-container); }
+    .on-extend-2-container-bg { background-color: var(--on-extend-2-container); }
+    .on-extend-2-container-border { border-color: var(--on-extend-2-container); }
+  
+    // Extend 3 Colors
+    .extend-3 { color: var(--extend-3); }
+    .extend-3-bg { background-color: var(--extend-3); }
+    .extend-3-border { border-color: var(--extend-3); }
+  
+    .on-extend-3 { color: var(--on-extend-3); }
+    .on-extend-3-bg { background-color: var(--on-extend-3); }
+    .on-extend-3-border { border-color: var(--on-extend-3); }
+  
+    .extend-3-container { color: var(--extend-3-container); }
+    .extend-3-container-bg { background-color: var(--extend-3-container); }
+    .extend-3-container-border { border-color: var(--extend-3-container); }
+  
+    .on-extend-3-container { color: var(--on-extend-3-container); }
+    .on-extend-3-container-bg { background-color: var(--on-extend-3-container); }
+    .on-extend-3-container-border { border-color: var(--on-extend-3-container); }
+  }
+  
+  // Generate the theme color classes
+  @include generate-theme-color-classes();
 }
