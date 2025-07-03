@@ -2,6 +2,44 @@ import { Meta } from "@storybook/blocks";
 
 <Meta title="Tokens/Typography/Type Classes" />
 
+export const CopyButton = ({ text }) => {
+  const [buttonText, setButtonText] = React.useState('Copy');
+  const handleCopy = async () => {
+    try {
+      await navigator.clipboard.writeText(text);
+      setButtonText('Copied!');
+      setTimeout(() => {
+        setButtonText('Copy');
+      }, 1000);
+    } catch (err) {
+      console.error('Failed to copy:', err);
+      setButtonText('Failed');
+      setTimeout(() => {
+        setButtonText('Copy');
+      }, 1000);
+    }
+  };
+
+  return (
+    <button 
+      onClick={handleCopy}
+      style={{
+        cursor: 'pointer',
+        position: 'absolute',
+        right: '8px',
+        top: '50%',
+        transform: 'translateY(-50%)',
+        padding: '4px 8px',
+        fontSize: '12px',
+        color: buttonText === 'Copied!' ? 'rgb(200 16 16)' : buttonText === 'Failed' ? '#f00' : '#666',
+        transition: 'color 0.2s ease',
+      }}
+    >
+      {buttonText}
+    </button>
+  );
+};
+
 export const typography = {
   typeScale: {
     display: {
@@ -265,7 +303,10 @@ export const typography = {
           {Object.entries(typography.typeScale.display).map(([className, styles]) => (
             <div className="sb-type-scale-item" key={className}>
               <div className="sb-type-scale-info">
+              <div className="code-wrapper">
                 <code>{className}</code>
+                <CopyButton text={className} />
+              </div>
                 <small>
                   Font Size Class: {styles.fontSize.class}<br/>
                   Line Height Class: {styles.lineHeight.class}<br/>
@@ -294,7 +335,10 @@ export const typography = {
           {Object.entries(typography.typeScale.heading).map(([className, styles]) => (
             <div className="sb-type-scale-item" key={className}>
               <div className="sb-type-scale-info">
+              <div className="code-wrapper">
                 <code>{className}</code>
+                <CopyButton text={className} />
+              </div>
                 <small>
                   Font Size Class: {styles.fontSize.class}<br/>
                   Line Height Class: {styles.lineHeight.class}<br/>
@@ -323,7 +367,10 @@ export const typography = {
           {Object.entries(typography.typeScale.body).map(([className, styles]) => (
             <div className="sb-type-scale-item" key={className}>
               <div className="sb-type-scale-info">
+              <div className="code-wrapper">
                 <code>{className}</code>
+                <CopyButton text={className} />
+              </div>
                 <small>
                   Font Size Class: {styles.fontSize.class}<br/>
                   Line Height Class: {styles.lineHeight.class}<br/>
@@ -438,7 +485,7 @@ export const typography = {
       border-bottom: 2px solid #E6E6E6;
     }
 
-        .fluid-typography-section {
+    .fluid-typography-section {
       margin-bottom: 48px;
     }
 
@@ -452,6 +499,11 @@ export const typography = {
       border-radius: 8px;
       margin: 16px 0;
       position: relative;
+    }
+
+    .code-wrapper {
+      position: relative;
+      display: block;
     }
   `}
 </style>

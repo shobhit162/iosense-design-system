@@ -67,8 +67,9 @@
           [ngClass]="{
             'example-text': example.applicationType === 'color',
             'example-background': example.applicationType === 'background',
-            'example-border': example.applicationType === 'border'
+            'example-border': example.applicationType === 'border',
           }"
+          [ngClass]="getExampleClasses(example)"
         >
           {{ example.text }}
         </div>

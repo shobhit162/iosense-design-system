@@ -1,0 +1,28 @@
+<mat-form-field>
+  <mat-label *ngIf="label" class="BodyLargeRegular">
+    {{ label }}
+  </mat-label>
+  <mat-icon matPrefix *ngIf="prefixIcon" class="material-icons">{{ prefixIcon }}</mat-icon>
+  <input
+    matInput
+    [type]="type"
+    [formControl]="formControl"
+    [readonly]="readonly"
+    [disabled]="disabled"
+    [placeholder]="placeholder"
+    [maxlength]="maxlength"
+    (input)="onInput($event)" />
+  <mat-icon matSuffix *ngIf="suffixIcon" class="material-icons">{{ suffixIcon }}</mat-icon>
+  <mat-hint *ngIf="hint" class="on-surface-low">{{ hint }}</mat-hint>
+  <mat-error *ngIf="showError" class="BodySmallRegular">
+    <ng-container *ngIf="formControl.errors?.['required']">
+      {{ label }} is <strong>required</strong>
+    </ng-container>
+    <ng-container *ngIf="formControl.errors?.['email']">
+      Please enter a <strong>valid</strong> email address
+    </ng-container>
+    <ng-container *ngIf="formControl.errors?.['maxlength']">
+      Maximum {{ maxlength }} characters allowed
+    </ng-container>
+  </mat-error>
+</mat-form-field>

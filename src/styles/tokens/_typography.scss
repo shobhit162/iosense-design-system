@@ -9,12 +9,12 @@
 $breakpoint-mobile: 768px;
 
 * {
-  font-family: 'Noto Sans', sans-serif;    // to be confirmed later
+  font-family: 'Noto Sans',
 }
 
 // Font Family
 $font-family: (
-  'text': ('Noto Sans', sans-serif)
+  'text': ('Noto Sans')
 );
 
 // ============================================ Font Size SCSS Start ============================================================

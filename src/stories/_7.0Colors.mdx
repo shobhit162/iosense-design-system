@@ -1436,17 +1436,21 @@ export const colors = {
   <h4>Option 1 (Recommended): Using CSS Classes</h4>
   <p>
     Apply color classes directly to HTML elements:
-    <code>&lt;div class="global-red-500 global-red-bg-50 global-red-border-100"&gt;Example&lt;/div&gt;</code>
-    <code>&lt;p class="global-blue-700"&gt;Blue Text&lt;/p&gt;</code>
-    <code>&lt;button class="global-green-bg-100 global-green-border-500"&gt;Green Button&lt;/button&gt;</code>
+    ```html
+    <div class="global-red-500 global-red-bg-50 global-red-border-100">Red Div</div>
+    <p class="global-blue-700">Blue Text</p>
+    <button class="global-green-bg-100 global-green-border-500">Green Button</Button>
+    ```
   </p>
 
   <h4>Option 2: Using CSS Variables</h4>
   <p>
     You can use these global color variables directly in your CSS as:
-    <code>color: var(--global-red-200);</code>
-    <code>background-color: var(--global-blue-500);</code>
-    <code>border-color: var(--global-green-100);</code>
+    ```css
+    color: var(--global-red-200);
+    background-color: var(--global-blue-500);
+    border-color: var(--global-green-100);
+    ```
   </p>
 </div>
 
@@ -1575,6 +1579,7 @@ export const colors = {
       flex-direction: column;
       gap: 8px;
       margin-top: 0px;
+      margin-bottom: 0px;
     }
 
     .color-variables h4 {
