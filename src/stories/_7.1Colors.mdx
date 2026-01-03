@@ -3,6 +3,128 @@ import { Meta } from "@storybook/blocks";
 <Meta title="Tokens/Colors/Theme Classes" />
 
 export const colors = {
+  backgroundNew: {
+    brand: [
+      { name: '--background-brand-default', class: 'background-brand-default' },
+      { name: '--background-brand-default-hover', class: 'background-brand-default-hover' },
+      { name: '--background-brand-secondary', class: 'background-brand-secondary' },
+      { name: '--background-brand-secondary-hover', class: 'background-brand-secondary-hover' },
+      { name: '--background-brand-disabled', class: 'background-brand-disabled' }
+    ],
+    positive: [
+      { name: '--background-positive-default', class: 'background-positive-default' },
+      { name: '--background-positive-default-hover', class: 'background-positive-default-hover' },
+      { name: '--background-positive-secondary', class: 'background-positive-secondary' },
+      { name: '--background-positive-secondary-hover', class: 'background-positive-secondary-hover' },
+      { name: '--background-positive-disabled', class: 'background-positive-disabled' }
+    ],
+    error: [
+      { name: '--background-error-default', class: 'background-error-default' },
+      { name: '--background-error-default-hover', class: 'background-error-default-hover' },
+      { name: '--background-error-secondary', class: 'background-error-secondary' },
+      { name: '--background-error-secondary-hover', class: 'background-error-secondary-hover' },
+      { name: '--background-error-disabled', class: 'background-error-disabled' }
+    ],
+    warning: [
+      { name: '--background-warning-default', class: 'background-warning-default' },
+      { name: '--background-warning-default-hover', class: 'background-warning-default-hover' },
+      { name: '--background-warning-secondary', class: 'background-warning-secondary' },
+      { name: '--background-warning-secondary-hover', class: 'background-warning-secondary-hover' },
+      { name: '--background-warning-disabled', class: 'background-warning-disabled' }
+    ],
+    info: [
+      { name: '--background-info-default', class: 'background-info-default' },
+      { name: '--background-info-default-hover', class: 'background-info-default-hover' },
+      { name: '--background-info-secondary', class: 'background-info-secondary' },
+      { name: '--background-info-secondary-hover', class: 'background-info-secondary-hover' },
+      { name: '--background-info-disabled', class: 'background-info-disabled' }
+    ],
+    default: [
+      { name: '--background-default-subtle', class: 'background-default-subtle' },
+      { name: '--background-default-moderate', class: 'background-default-moderate' },
+      { name: '--background-default-intense', class: 'background-default-intense' }
+    ],
+    secondary: [
+      { name: '--background-secondary-default', class: 'background-secondary-default' },
+      { name: '--background-secondary-hover-dark', class: 'background-secondary-hover-dark' },
+      { name: '--background-secondary-hover-light', class: 'background-secondary-hover-light' },
+      { name: '--background-secondary-disabled', class: 'background-secondary-disabled' }
+    ]
+  },
+  textNew: {
+    default: [
+      { name: '--text-default-primary', class: 'text-default-primary' },
+      { name: '--text-default-secondary', class: 'text-default-secondary' },
+      { name: '--text-default-tertiary', class: 'text-default-tertiary' },
+      { name: '--text-default-disabled', class: 'text-default-disabled' }
+    ],
+    brand: [
+      { name: '--text-brand-default', class: 'text-brand-default' },
+      { name: '--text-brand-on-brand', class: 'text-brand-on-brand' },
+      { name: '--text-brand-on-secondary', class: 'text-brand-on-secondary' },
+      { name: '--text-brand-disabled', class: 'text-brand-disabled' }
+    ],
+    positive: [
+      { name: '--text-positive-default', class: 'text-positive-default' },
+      { name: '--text-positive-on-positive', class: 'text-positive-on-positive' },
+      { name: '--text-positive-on-secondary', class: 'text-positive-on-secondary' },
+      { name: '--text-positive-disabled', class: 'text-positive-disabled' }
+    ],
+    warning: [
+      { name: '--text-warning-default', class: 'text-warning-default' },
+      { name: '--text-warning-on-warning', class: 'text-warning-on-warning' },
+      { name: '--text-warning-on-secondary', class: 'text-warning-on-secondary' },
+      { name: '--text-warning-disabled', class: 'text-warning-disabled' }
+    ],
+    error: [
+      { name: '--text-error-default', class: 'text-error-default' },
+      { name: '--text-error-on-error', class: 'text-error-on-error' },
+      { name: '--text-error-on-secondary', class: 'text-error-on-secondary' },
+      { name: '--text-error-disabled', class: 'text-error-disabled' }
+    ],
+    info: [
+      { name: '--text-info-default', class: 'text-info-default' },
+      { name: '--text-info-on-info', class: 'text-info-on-info' },
+      { name: '--text-info-on-secondary', class: 'text-info-on-secondary' },
+      { name: '--text-info-disabled', class: 'text-info-disabled' }
+    ]
+  },
+  borderNew: {
+    focused: [
+      { name: '--border-focused-default', class: 'border-focused-default' }
+    ],
+    warning: [
+      { name: '--border-warning-default', class: 'border-warning-default' },
+      { name: '--border-warning-hover', class: 'border-warning-hover' },
+      { name: '--border-warning-disabled', class: 'border-warning-disabled' }
+    ],
+    error: [
+      { name: '--border-error-default', class: 'border-error-default' },
+      { name: '--border-error-hover', class: 'border-error-hover' },
+      { name: '--border-error-disabled', class: 'border-error-disabled' }
+    ],
+    brand: [
+      { name: '--border-brand-default', class: 'border-brand-default' },
+      { name: '--border-brand-hover', class: 'border-brand-hover' },
+      { name: '--border-brand-disabled', class: 'border-brand-disabled' }
+    ],
+    info: [
+      { name: '--border-info-default', class: 'border-info-default' },
+      { name: '--border-info-hover', class: 'border-info-hover' },
+      { name: '--border-info-disabled', class: 'border-info-disabled' }
+    ],
+    gray: [
+      { name: '--border-gray-default', class: 'border-gray-default' },
+      { name: '--border-gray-subtle', class: 'border-gray-subtle' },
+      { name: '--border-gray-muted', class: 'border-gray-muted' },
+      { name: '--border-gray-disabled', class: 'border-gray-disabled' }
+    ],
+    positive: [
+      { name: '--border-positive-default', class: 'border-positive-default' },
+      { name: '--border-positive-hover', class: 'border-positive-hover' },
+      { name: '--border-positive-disabled', class: 'border-positive-disabled' }
+    ]
+  },
   surface: [
     { 
       name: '--surface-bright', 
@@ -680,6 +802,82 @@ export const colors = {
                     <code>{name}</code>
                   </div>
                   <span>{global}</span>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+
+  <div className="sb-section">
+    <div className="sb-colors-demo">
+      <h2>Background Classes (Newly added as on Dec 2025)</h2>
+      {Object.entries(colors.backgroundNew).map(([categoryName, items]) => (
+        <div key={categoryName} className="color-section">
+          <h3>{categoryName.charAt(0).toUpperCase() + categoryName.slice(1)}</h3>
+          <div className="color-grid">
+            {items.map(({ name, class: className }, index) => (
+              <div key={index} className="color-item">
+                <div className="color-preview" style={{ backgroundColor: `var(${name})` }}></div>
+                <div className="color-info">
+                  <div className="color-classes">
+                    <h4>Class</h4>
+                    <code>{className}</code>
+                  </div>
+                  <div className="color-variables">
+                    <h4>Variable</h4>
+                    <code>{name}</code>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      ))}
+
+      <h2>Text Classes (Newly added as on Dec 2025)</h2>
+      {Object.entries(colors.textNew).map(([categoryName, items]) => (
+        <div key={categoryName} className="color-section">
+          <h3>{categoryName.charAt(0).toUpperCase() + categoryName.slice(1)}</h3>
+          <div className="color-grid">
+            {items.map(({ name, class: className }, index) => (
+              <div key={index} className="color-item">
+                <div className="color-preview" style={{ backgroundColor: `var(${name})` }}></div>
+                <div className="color-info">
+                  <div className="color-classes">
+                    <h4>Class</h4>
+                    <code>{className}</code>
+                  </div>
+                  <div className="color-variables">
+                    <h4>Variable</h4>
+                    <code>{name}</code>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      ))}
+
+      <h2>Border Classes (Newly added as on Dec 2025)</h2>
+      {Object.entries(colors.borderNew).map(([categoryName, items]) => (
+        <div key={categoryName} className="color-section">
+          <h3>{categoryName.charAt(0).toUpperCase() + categoryName.slice(1)}</h3>
+          <div className="color-grid">
+            {items.map(({ name, class: className }, index) => (
+              <div key={index} className="color-item">
+                <div className="color-preview" style={{ backgroundColor: `var(${name})` }}></div>
+                <div className="color-info">
+                  <div className="color-classes">
+                    <h4>Class</h4>
+                    <code>{className}</code>
+                  </div>
+                  <div className="color-variables">
+                    <h4>Variable</h4>
+                    <code>{name}</code>
+                  </div>
                 </div>
               </div>
             ))}

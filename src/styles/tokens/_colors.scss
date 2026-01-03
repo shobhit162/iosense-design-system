@@ -173,6 +173,99 @@ $charcoal-blue-colors: (
   'a200': rgba(#1F5C7A, 0.32)
 );
 
+// ============================================
+// CHROMATIC COLORS
+// ============================================
+// Nested structure for better maintainability
+// To add a new chromatic color, simply add it to this map
+$chromatic-colors: (
+  'brand': (
+    '50': #E3E5E7,
+    '100': #C7CBD0,
+    '200': #919AA3,
+    '300': #5F6B78,
+    '400': #465564,
+    '500': #2F4050,
+    '600': #25313C,
+    '700': #1D2832,
+    '800': #1B232A,
+    '900': #171E25,
+    '1000': #111519,
+    'a50': rgba(#2F4050, 0.09),
+    'a100': rgba(#2F4050, 0.18),
+    'a150': rgba(#2F4050, 0.24),
+    'a200': rgba(#2F4050, 0.32)
+  ),
+  'green': (
+    '50': #EBFAF3,
+    '100': #DAF5E8,
+    '200': #B6ECD1,
+    '300': #91E3BA,
+    '400': #48D08C,
+    '500': #00BE5F,
+    '600': #00A251,
+    '700': #008743,
+    '800': #006C36,
+    '900': #005128,
+    '1000': #00361B,
+    'a50': rgba(#00A251, 0.09),
+    'a100': rgba(#00A251, 0.18),
+    'a150': rgba(#00A251, 0.24),
+    'a200': rgba(#00A251, 0.32)
+  ),
+  'red': (
+    '50': #FFF5F5,
+    '100': #FEE4E2,
+    '200': #FEC6C3,
+    '300': #FD9D96,
+    '400': #F96C62,
+    '500': #F04438,
+    '600': #D92D20,
+    '700': #B42318,
+    '800': #9A0E0E,
+    '900': #880C0C,
+    '1000': #750A0A,
+    'a50': rgba(#D92D20, 0.09),
+    'a100': rgba(#D92D20, 0.18),
+    'a150': rgba(#D92D20, 0.24),
+    'a200': rgba(#D92D20, 0.32)
+  ),
+  'orange': (
+    '50': #FFF3EB,
+    '100': #FFE1CC,
+    '200': #FFC499,
+    '300': #FFAC70,
+    '400': #FF9040,
+    '500': #FF7A1A,
+    '600': #E9690C,
+    '700': #C65C10,
+    '800': #A24D10,
+    '900': #813E0E,
+    '1000': #5D2C09,
+    'a50': rgba(#E9690C, 0.09),
+    'a100': rgba(#E9690C, 0.18),
+    'a150': rgba(#E9690C, 0.24),
+    'a200': rgba(#E9690C, 0.32)
+  ),
+  'blue': (
+    '50': #E7F6FE,
+    '100': #CFEDFC,
+    '200': #A8DFFA,
+    '300': #79CEF8,
+    '400': #57C1F6,
+    '500': #15B0F3,
+    '600': #1291D0,
+    '700': #0F78AD,
+    '800': #0C608A,
+    '900': #094868,
+    '1000': #063145,
+    'a50': rgba(#1291D0, 0.09),
+    'a100': rgba(#1291D0, 0.18),
+    'a150': rgba(#1291D0, 0.24),
+    'a200': rgba(#1291D0, 0.32)
+  )
+);
+
 // Neutral Colors
 $neutral-colors: (
   '10': #F4F5F6,
@@ -192,6 +285,43 @@ $neutral-colors: (
   '1000': #111111
 );
 
+// ============================================
+// NEUTRAL COLORS
+// ============================================
+// Nested structure for better maintainability
+// To add a new neutral color, simply add it to this map
+$neutral-colors-new: (
+  'gray': (
+    '00': #FFFFFF,
+    '50': #F8FAFC,
+    '100': #F1F5FA,
+    '200': #E3EAF3,
+    '300': #CBD5E2,
+    '400': #B1C1D2,
+    '500': #90A5BB,
+    '600': #768EA7,
+    '700': #6C849D,
+    '800': #58728D,
+    '900': #40566D,
+    '1000': #2F4256,
+    '1100': #243547,
+    '1200': #192839,
+    '1300': #0C1927,
+    'a25': rgba(#6C849D, 0.06),
+    'a50': rgba(#6C849D, 0.09),
+    'a75': rgba(#6C849D, 0.12),
+    'a100': rgba(#6C849D, 0.18),
+    'a200': rgba(#6C849D, 0.32),
+    'a400': rgba(#6C849D, 0.64)
+  ),
+  'white': (
+    '500': #FFFFFF
+  ),
+  'black': (
+    '500': #000000
+  )
+);
+
 // Other Colors
 $other-colors: (
   'black': #000000,
@@ -202,6 +332,15 @@ $other-colors: (
 @mixin generate-color-variables($color-map, $prefix) {
   @each $color, $value in $color-map {
     --#{$prefix}-#{$color}: #{$value};
+  }
+}
+
+// Generate CSS Variables from nested color structure (chromatic/neutral)
+@mixin generate-nested-color-variables($nested-map, $parent-prefix) {
+  @each $category, $color-map in $nested-map {
+    @each $shade, $value in $color-map {
+      --#{$parent-prefix}-#{$category}-#{$shade}: #{$value};
+    }
   }
 }
 
@@ -232,6 +371,12 @@ $other-colors: (
   @include generate-color-variables($charcoal-blue-colors, 'global-charcoal-blue');
   @include generate-color-variables($neutral-colors, 'global-neutral');
   @include generate-color-variables($other-colors, 'global');
+
+  // Chromatic Colors (nested structure)
+  @include generate-nested-color-variables($chromatic-colors, 'global-chromatic');
+
+  // Neutral Colors (nested structure)
+  @include generate-nested-color-variables($neutral-colors-new, 'global-neutral');
 
   // Generate classes for each color palette
   @include generate-color-classes($red-colors, 'global-red');
@@ -315,6 +460,122 @@ $other-colors: (
   --on-extend-3: var(--global-white);
   --extend-3-container: var(--global-sky-blue-50);
   --on-extend-3-container: var(--global-sky-blue-600);
+
+  // Background Brand Variables
+  --background-brand-default: var(--global-chromatic-brand-500);
+  --background-brand-default-hover: var(--global-chromatic-brand-600);
+  --background-brand-secondary: var(--global-chromatic-brand-a50);
+  --background-brand-secondary-hover: var(--global-chromatic-brand-a50);
+  --background-brand-disabled: var(--global-chromatic-brand-a50);
+
+  // Background Positive Variables
+  --background-positive-default: var(--global-chromatic-green-600);
+  --background-positive-default-hover: var(--global-chromatic-green-700);
+  --background-positive-secondary: var(--global-chromatic-green-a50);
+  --background-positive-secondary-hover: var(--global-chromatic-green-a100);
+  --background-positive-disabled: var(--global-chromatic-green-a50);
+
+  // Background Error Variables
+  --background-error-default: var(--global-chromatic-red-600);
+  --background-error-default-hover: var(--global-chromatic-red-700);
+  --background-error-secondary: var(--global-chromatic-red-a50);
+  --background-error-secondary-hover: var(--global-chromatic-red-a100);
+  --background-error-disabled: var(--global-chromatic-red-a50);
+
+  // Background Warning Variables
+  --background-warning-default: var(--global-chromatic-orange-600);
+  --background-warning-default-hover: var(--global-chromatic-orange-700);
+  --background-warning-secondary: var(--global-chromatic-orange-a50);
+  --background-warning-secondary-hover: var(--global-chromatic-orange-a100);
+  --background-warning-disabled: var(--global-chromatic-orange-a50);
+
+  // Background Info Variables
+  --background-info-default: var(--global-chromatic-blue-600);
+  --background-info-default-hover: var(--global-chromatic-blue-700);
+  --background-info-secondary: var(--global-chromatic-blue-a50);
+  --background-info-secondary-hover: var(--global-chromatic-blue-a100);
+  --background-info-disabled: var(--global-chromatic-blue-a50);
+
+  // Background Default Variables
+  --background-default-subtle: var(--global-neutral-gray-100);
+  --background-default-moderate: var(--global-neutral-gray-50);
+  --background-default-intense: var(--global-neutral-gray-00);
+
+  // Background Secondary Variables
+  --background-secondary-default: var(--global-neutral-gray-a75);
+  --background-secondary-hover-dark: var(--global-neutral-gray-a100);
+  --background-secondary-hover-light: var(--global-neutral-gray-a25);
+  --background-secondary-disabled: var(--global-neutral-gray-a50);
+
+  // Text Default Variables
+  --text-default-primary: var(--global-neutral-gray-1200);
+  --text-default-secondary: var(--global-neutral-gray-900);
+  --text-default-tertiary: var(--global-neutral-gray-600);
+  --text-default-disabled: var(--global-neutral-gray-a200);
+
+  // Text Brand Variables
+  --text-brand-default: var(--global-chromatic-brand-500);
+  --text-brand-on-brand: var(--global-neutral-white-500);
+  --text-brand-on-secondary: var(--global-chromatic-brand-600);
+  --text-brand-disabled: var(--global-chromatic-brand-a100);
+
+  // Text Positive Variables
+  --text-positive-default: var(--global-chromatic-green-700);
+  --text-positive-on-positive: var(--global-neutral-white-500);
+  --text-positive-on-secondary: var(--global-chromatic-green-700);
+  --text-positive-disabled: var(--global-chromatic-green-a200);
+
+  // Text Warning Variables
+  --text-warning-default: var(--global-chromatic-orange-700);
+  --text-warning-on-warning: var(--global-neutral-white-500);
+  --text-warning-on-secondary: var(--global-chromatic-orange-700);
+  --text-warning-disabled: var(--global-chromatic-orange-a200);
+
+  // Text Error Variables
+  --text-error-default: var(--global-chromatic-red-600);
+  --text-error-on-error: var(--global-neutral-white-500);
+  --text-error-on-secondary: var(--global-chromatic-red-600);
+  --text-error-disabled: var(--global-chromatic-red-a200);
+
+  // Text Info Variables
+  --text-info-default: var(--global-chromatic-blue-700);
+  --text-info-on-info: var(--global-neutral-white-500);
+  --text-info-on-secondary: var(--global-chromatic-blue-700);
+  --text-info-disabled: var(--global-chromatic-blue-a200);
+
+  // Border Focused Variables
+  --border-focused-default: var(--global-chromatic-brand-a100);
+
+  // Border Warning Variables
+  --border-warning-default: var(--global-chromatic-orange-600);
+  --border-warning-hover: var(--global-chromatic-orange-700);
+  --border-warning-disabled: var(--global-chromatic-orange-a100);
+
+  // Border Error Variables
+  --border-error-default: var(--global-chromatic-red-600);
+  --border-error-hover: var(--global-chromatic-red-700);
+  --border-error-disabled: var(--global-chromatic-red-a100);
+
+  // Border Brand Variables
+  --border-brand-default: var(--global-chromatic-brand-500);
+  --border-brand-hover: var(--global-chromatic-brand-600);
+  --border-brand-disabled: var(--global-chromatic-brand-a100);
+
+  // Border Info Variables
+  --border-info-default: var(--global-chromatic-blue-600);
+  --border-info-hover: var(--global-chromatic-blue-700);
+  --border-info-disabled: var(--global-chromatic-blue-a100);
+
+  // Border Gray Variables
+  --border-gray-default: var(--global-neutral-gray-400);
+  --border-gray-subtle: var(--global-neutral-gray-300);
+  --border-gray-muted: var(--global-neutral-gray-a100);
+  --border-gray-disabled: var(--global-neutral-gray-200);
+
+  // Border Positive Variables
+  --border-positive-default: var(--global-chromatic-green-600);
+  --border-positive-hover: var(--global-chromatic-green-700);
+  --border-positive-disabled: var(--global-chromatic-green-a100);
 
   @mixin generate-theme-color-classes {
     // Surface Colors
@@ -516,4 +777,328 @@ $other-colors: (
   
   // Generate the theme color classes
   @include generate-theme-color-classes();
+
+  // Background Brand Classes
+  .background-brand-default {
+    background-color: var(--background-brand-default);
+  }
+  
+  .background-brand-default-hover {
+    background-color: var(--background-brand-default-hover);
+  }
+  
+  .background-brand-secondary {
+    background-color: var(--background-brand-secondary);
+  }
+  
+  .background-brand-secondary-hover {
+    background-color: var(--background-brand-secondary-hover);
+  }
+  
+  .background-brand-disabled {
+    background-color: var(--background-brand-disabled);
+  }
+
+  // Background Positive Classes
+  .background-positive-default {
+    background-color: var(--background-positive-default);
+  }
+  
+  .background-positive-default-hover {
+    background-color: var(--background-positive-default-hover);
+  }
+  
+  .background-positive-secondary {
+    background-color: var(--background-positive-secondary);
+  }
+  
+  .background-positive-secondary-hover {
+    background-color: var(--background-positive-secondary-hover);
+  }
+  
+  .background-positive-disabled {
+    background-color: var(--background-positive-disabled);
+  }
+
+  // Background Error Classes
+  .background-error-default {
+    background-color: var(--background-error-default);
+  }
+  
+  .background-error-default-hover {
+    background-color: var(--background-error-default-hover);
+  }
+  
+  .background-error-secondary {
+    background-color: var(--background-error-secondary);
+  }
+  
+  .background-error-secondary-hover {
+    background-color: var(--background-error-secondary-hover);
+  }
+  
+  .background-error-disabled {
+    background-color: var(--background-error-disabled);
+  }
+
+  // Background Warning Classes
+  .background-warning-default {
+    background-color: var(--background-warning-default);
+  }
+  
+  .background-warning-default-hover {
+    background-color: var(--background-warning-default-hover);
+  }
+  
+  .background-warning-secondary {
+    background-color: var(--background-warning-secondary);
+  }
+  
+  .background-warning-secondary-hover {
+    background-color: var(--background-warning-secondary-hover);
+  }
+  
+  .background-warning-disabled {
+    background-color: var(--background-warning-disabled);
+  }
+
+  // Background Info Classes
+  .background-info-default {
+    background-color: var(--background-info-default);
+  }
+  
+  .background-info-default-hover {
+    background-color: var(--background-info-default-hover);
+  }
+  
+  .background-info-secondary {
+    background-color: var(--background-info-secondary);
+  }
+  
+  .background-info-secondary-hover {
+    background-color: var(--background-info-secondary-hover);
+  }
+  
+  .background-info-disabled {
+    background-color: var(--background-info-disabled);
+  }
+
+  // Background Default Classes
+  .background-default-subtle {
+    background-color: var(--background-default-subtle);
+  }
+  
+  .background-default-moderate {
+    background-color: var(--background-default-moderate);
+  }
+  
+  .background-default-intense {
+    background-color: var(--background-default-intense);
+  }
+
+  // Background Secondary Classes
+  .background-secondary-default {
+    background-color: var(--background-secondary-default);
+  }
+  
+  .background-secondary-hover-dark {
+    background-color: var(--background-secondary-hover-dark);
+  }
+  
+  .background-secondary-hover-light {
+    background-color: var(--background-secondary-hover-light);
+  }
+  
+  .background-secondary-disabled {
+    background-color: var(--background-secondary-disabled);
+  }
+
+  // Text Default Classes
+  .text-default-primary {
+    color: var(--text-default-primary);
+  }
+  
+  .text-default-secondary {
+    color: var(--text-default-secondary);
+  }
+  
+  .text-default-tertiary {
+    color: var(--text-default-tertiary);
+  }
+  
+  .text-default-disabled {
+    color: var(--text-default-disabled);
+  }
+
+  // Text Brand Classes
+  .text-brand-default {
+    color: var(--text-brand-default);
+  }
+  
+  .text-brand-on-brand {
+    color: var(--text-brand-on-brand);
+  }
+  
+  .text-brand-on-secondary {
+    color: var(--text-brand-on-secondary);
+  }
+  
+  .text-brand-disabled {
+    color: var(--text-brand-disabled);
+  }
+
+  // Text Positive Classes
+  .text-positive-default {
+    color: var(--text-positive-default);
+  }
+  
+  .text-positive-on-positive {
+    color: var(--text-positive-on-positive);
+  }
+  
+  .text-positive-on-secondary {
+    color: var(--text-positive-on-secondary);
+  }
+  
+  .text-positive-disabled {
+    color: var(--text-positive-disabled);
+  }
+
+  // Text Warning Classes
+  .text-warning-default {
+    color: var(--text-warning-default);
+  }
+  
+  .text-warning-on-warning {
+    color: var(--text-warning-on-warning);
+  }
+  
+  .text-warning-on-secondary {
+    color: var(--text-warning-on-secondary);
+  }
+  
+  .text-warning-disabled {
+    color: var(--text-warning-disabled);
+  }
+
+  // Text Error Classes
+  .text-error-default {
+    color: var(--text-error-default);
+  }
+  
+  .text-error-on-error {
+    color: var(--text-error-on-error);
+  }
+  
+  .text-error-on-secondary {
+    color: var(--text-error-on-secondary);
+  }
+  
+  .text-error-disabled {
+    color: var(--text-error-disabled);
+  }
+
+  // Text Info Classes
+  .text-info-default {
+    color: var(--text-info-default);
+  }
+  
+  .text-info-on-info {
+    color: var(--text-info-on-info);
+  }
+  
+  .text-info-on-secondary {
+    color: var(--text-info-on-secondary);
+  }
+  
+  .text-info-disabled {
+    color: var(--text-info-disabled);
+  }
+
+  // Border Focused Classes
+  .border-focused-default {
+    border-color: var(--border-focused-default);
+  }
+
+  // Border Warning Classes
+  .border-warning-default {
+    border-color: var(--border-warning-default);
+  }
+  
+  .border-warning-hover {
+    border-color: var(--border-warning-hover);
+  }
+  
+  .border-warning-disabled {
+    border-color: var(--border-warning-disabled);
+  }
+
+  // Border Error Classes
+  .border-error-default {
+    border-color: var(--border-error-default);
+  }
+  
+  .border-error-hover {
+    border-color: var(--border-error-hover);
+  }
+  
+  .border-error-disabled {
+    border-color: var(--border-error-disabled);
+  }
+
+  // Border Brand Classes
+  .border-brand-default {
+    border-color: var(--border-brand-default);
+  }
+  
+  .border-brand-hover {
+    border-color: var(--border-brand-hover);
+  }
+  
+  .border-brand-disabled {
+    border-color: var(--border-brand-disabled);
+  }
+
+  // Border Info Classes
+  .border-info-default {
+    border-color: var(--border-info-default);
+  }
+  
+  .border-info-hover {
+    border-color: var(--border-info-hover);
+  }
+  
+  .border-info-disabled {
+    border-color: var(--border-info-disabled);
+  }
+
+  // Border Gray Classes
+  .border-gray-default {
+    border-color: var(--border-gray-default);
+  }
+  
+  .border-gray-subtle {
+    border-color: var(--border-gray-subtle);
+  }
+  
+  .border-gray-muted {
+    border-color: var(--border-gray-muted);
+  }
+  
+  .border-gray-disabled {
+    border-color: var(--border-gray-disabled);
+  }
+
+  // Border Positive Classes
+  .border-positive-default {
+    border-color: var(--border-positive-default);
+  }
+  
+  .border-positive-hover {
+    border-color: var(--border-positive-hover);
+  }
+  
+  .border-positive-disabled {
+    border-color: var(--border-positive-disabled);
+  }
 }

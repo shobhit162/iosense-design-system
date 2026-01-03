@@ -27,6 +27,126 @@ export const convertHexRgba = (value) => {
 };
 
 export const colors = {
+  baseNew: {
+    chromatic: {
+      brand: {
+        50: { name: '--global-chromatic-brand-50', value: '#E3E5E7' },
+        100: { name: '--global-chromatic-brand-100', value: '#C7CBD0' },
+        200: { name: '--global-chromatic-brand-200', value: '#919AA3' },
+        300: { name: '--global-chromatic-brand-300', value: '#5F6B78' },
+        400: { name: '--global-chromatic-brand-400', value: '#465564' },
+        500: { name: '--global-chromatic-brand-500', value: '#2F4050' },
+        600: { name: '--global-chromatic-brand-600', value: '#25313C' },
+        700: { name: '--global-chromatic-brand-700', value: '#1D2832' },
+        800: { name: '--global-chromatic-brand-800', value: '#1B232A' },
+        900: { name: '--global-chromatic-brand-900', value: '#171E25' },
+        1000: { name: '--global-chromatic-brand-1000', value: '#111519' },
+        a50: { name: '--global-chromatic-brand-a50', value: 'rgba(#2F4050, 0.09)' },
+        a100: { name: '--global-chromatic-brand-a100', value: 'rgba(#2F4050, 0.18)' },
+        a150: { name: '--global-chromatic-brand-a150', value: 'rgba(#2F4050, 0.24)' },
+        a200: { name: '--global-chromatic-brand-a200', value: 'rgba(#2F4050, 0.32)' }
+      },
+      green: {
+        50: { name: '--global-chromatic-green-50', value: '#EBFAF3' },
+        100: { name: '--global-chromatic-green-100', value: '#DAF5E8' },
+        200: { name: '--global-chromatic-green-200', value: '#B6ECD1' },
+        300: { name: '--global-chromatic-green-300', value: '#91E3BA' },
+        400: { name: '--global-chromatic-green-400', value: '#48D08C' },
+        500: { name: '--global-chromatic-green-500', value: '#00BE5F' },
+        600: { name: '--global-chromatic-green-600', value: '#00A251' },
+        700: { name: '--global-chromatic-green-700', value: '#008743' },
+        800: { name: '--global-chromatic-green-800', value: '#006C36' },
+        900: { name: '--global-chromatic-green-900', value: '#005128' },
+        1000: { name: '--global-chromatic-green-1000', value: '#00361B' },
+        a50: { name: '--global-chromatic-green-a50', value: 'rgba(#00A251, 0.09)' },
+        a100: { name: '--global-chromatic-green-a100', value: 'rgba(#00A251, 0.18)' },
+        a150: { name: '--global-chromatic-green-a150', value: 'rgba(#00A251, 0.24)' },
+        a200: { name: '--global-chromatic-green-a200', value: 'rgba(#00A251, 0.32)' }
+      },
+      red: {
+        50: { name: '--global-chromatic-red-50', value: '#FFF5F5' },
+        100: { name: '--global-chromatic-red-100', value: '#FEE4E2' },
+        200: { name: '--global-chromatic-red-200', value: '#FEC6C3' },
+        300: { name: '--global-chromatic-red-300', value: '#FD9D96' },
+        400: { name: '--global-chromatic-red-400', value: '#F96C62' },
+        500: { name: '--global-chromatic-red-500', value: '#F04438' },
+        600: { name: '--global-chromatic-red-600', value: '#D92D20' },
+        700: { name: '--global-chromatic-red-700', value: '#B42318' },
+        800: { name: '--global-chromatic-red-800', value: '#9A0E0E' },
+        900: { name: '--global-chromatic-red-900', value: '#880C0C' },
+        1000: { name: '--global-chromatic-red-1000', value: '#750A0A' },
+        a50: { name: '--global-chromatic-red-a50', value: 'rgba(#D92D20, 0.09)' },
+        a100: { name: '--global-chromatic-red-a100', value: 'rgba(#D92D20, 0.18)' },
+        a150: { name: '--global-chromatic-red-a150', value: 'rgba(#D92D20, 0.24)' },
+        a200: { name: '--global-chromatic-red-a200', value: 'rgba(#D92D20, 0.32)' }
+      },
+      orange: {
+        50: { name: '--global-chromatic-orange-50', value: '#FFF3EB' },
+        100: { name: '--global-chromatic-orange-100', value: '#FFE1CC' },
+        200: { name: '--global-chromatic-orange-200', value: '#FFC499' },
+        300: { name: '--global-chromatic-orange-300', value: '#FFAC70' },
+        400: { name: '--global-chromatic-orange-400', value: '#FF9040' },
+        500: { name: '--global-chromatic-orange-500', value: '#FF7A1A' },
+        600: { name: '--global-chromatic-orange-600', value: '#E9690C' },
+        700: { name: '--global-chromatic-orange-700', value: '#C65C10' },
+        800: { name: '--global-chromatic-orange-800', value: '#A24D10' },
+        900: { name: '--global-chromatic-orange-900', value: '#813E0E' },
+        1000: { name: '--global-chromatic-orange-1000', value: '#5D2C09' },
+        a50: { name: '--global-chromatic-orange-a50', value: 'rgba(#E9690C, 0.09)' },
+        a100: { name: '--global-chromatic-orange-a100', value: 'rgba(#E9690C, 0.18)' },
+        a150: { name: '--global-chromatic-orange-a150', value: 'rgba(#E9690C, 0.24)' },
+        a200: { name: '--global-chromatic-orange-a200', value: 'rgba(#E9690C, 0.32)' }
+      },
+      blue: {
+        50: { name: '--global-chromatic-blue-50', value: '#E7F6FE' },
+        100: { name: '--global-chromatic-blue-100', value: '#CFEDFC' },
+        200: { name: '--global-chromatic-blue-200', value: '#A8DFFA' },
+        300: { name: '--global-chromatic-blue-300', value: '#79CEF8' },
+        400: { name: '--global-chromatic-blue-400', value: '#57C1F6' },
+        500: { name: '--global-chromatic-blue-500', value: '#15B0F3' },
+        600: { name: '--global-chromatic-blue-600', value: '#1291D0' },
+        700: { name: '--global-chromatic-blue-700', value: '#0F78AD' },
+        800: { name: '--global-chromatic-blue-800', value: '#0C608A' },
+        900: { name: '--global-chromatic-blue-900', value: '#094868' },
+        1000: { name: '--global-chromatic-blue-1000', value: '#063145' },
+        a50: { name: '--global-chromatic-blue-a50', value: 'rgba(#1291D0, 0.09)' },
+        a100: { name: '--global-chromatic-blue-a100', value: 'rgba(#1291D0, 0.18)' },
+        a150: { name: '--global-chromatic-blue-a150', value: 'rgba(#1291D0, 0.24)' },
+        a200: { name: '--global-chromatic-blue-a200', value: 'rgba(#1291D0, 0.32)' }
+      }
+    },
+    neutral: {
+      gray: {
+        '00': { name: '--global-neutral-gray-00', value: '#FFFFFF' },
+        50: { name: '--global-neutral-gray-50', value: '#F8FAFC' },
+        100: { name: '--global-neutral-gray-100', value: '#F1F5FA' },
+        200: { name: '--global-neutral-gray-200', value: '#E3EAF3' },
+        300: { name: '--global-neutral-gray-300', value: '#CBD5E2' },
+        400: { name: '--global-neutral-gray-400', value: '#B1C1D2' },
+        500: { name: '--global-neutral-gray-500', value: '#90A5BB' },
+        600: { name: '--global-neutral-gray-600', value: '#768EA7' },
+        700: { name: '--global-neutral-gray-700', value: '#6C849D' },
+        800: { name: '--global-neutral-gray-800', value: '#58728D' },
+        900: { name: '--global-neutral-gray-900', value: '#40566D' },
+        1000: { name: '--global-neutral-gray-1000', value: '#2F4256' },
+        1100: { name: '--global-neutral-gray-1100', value: '#243547' },
+        1200: { name: '--global-neutral-gray-1200', value: '#192839' },
+        1300: { name: '--global-neutral-gray-1300', value: '#0C1927' },
+        a25: { name: '--global-neutral-gray-a25', value: 'rgba(#6C849D, 0.06)' },
+        a50: { name: '--global-neutral-gray-a50', value: 'rgba(#6C849D, 0.09)' },
+        a75: { name: '--global-neutral-gray-a75', value: 'rgba(#6C849D, 0.12)' },
+        a100: { name: '--global-neutral-gray-a100', value: 'rgba(#6C849D, 0.18)' },
+        a200: { name: '--global-neutral-gray-a200', value: 'rgba(#6C849D, 0.32)' },
+        a400: { name: '--global-neutral-gray-a400', value: 'rgba(#6C849D, 0.64)' }
+      },
+      white: {
+        500: { name: '--global-neutral-white-500', value: '#FFFFFF' }
+      },
+      black: {
+        500: { name: '--global-neutral-black-500', value: '#000000' }
+      }
+    }
+  },
   base: {
     red: {
       50: { 
@@ -1471,6 +1591,54 @@ export const colors = {
                     <code>Background: {classes.background}</code>
                     <code>Border: {classes.border}</code>
                   </div>
+                  <div className="color-variables">
+                    <h4>Variable</h4>
+                    <code>{name}</code>
+                  </div>
+                  <span>{value}</span>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+
+    <div className="sb-section">
+    <div className="sb-colors-demo">
+      <h2>Base Classes (Newly added as on Dec 2025)</h2>
+      
+      <h3>Chromatic Colors</h3>
+      {Object.entries(colors.baseNew.chromatic).map(([colorName, shades]) => (
+        <div key={colorName} className="color-section">
+          <h4>{colorName.charAt(0).toUpperCase() + colorName.slice(1)}</h4>
+          <div className="color-grid">
+            {Object.entries(shades).map(([shade, { name, value }]) => (
+              <div key={shade} className="color-item">
+                <div className="color-preview" style={{ backgroundColor: convertHexRgba(value) }}></div>
+                <div className="color-info">
+                  <div className="color-variables">
+                    <h4>Variable</h4>
+                    <code>{name}</code>
+                  </div>
+                  <span>{value}</span>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      ))}
+
+      <h3>Neutral Colors</h3>
+      {Object.entries(colors.baseNew.neutral).map(([colorName, shades]) => (
+        <div key={colorName} className="color-section">
+          <h4>{colorName.charAt(0).toUpperCase() + colorName.slice(1)}</h4>
+          <div className="color-grid">
+            {Object.entries(shades).map(([shade, { name, value }]) => (
+              <div key={shade} className="color-item">
+                <div className="color-preview" style={{ backgroundColor: convertHexRgba(value) }}></div>
+                <div className="color-info">
                   <div className="color-variables">
                     <h4>Variable</h4>
                     <code>{name}</code>
