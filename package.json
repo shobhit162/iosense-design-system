@@ -9,7 +9,6 @@
     "test": "ng test",
     "storybook": "ng run iosense-design-system:storybook",
     "build-storybook": "ng run iosense-design-system:build-storybook",
-    "chromatic": "npx chromatic --project-token=chpt_7599e8420dc5969"
   },
   "private": true,
   "dependencies": {
