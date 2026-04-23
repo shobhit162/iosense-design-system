@@ -19,6 +19,175 @@ export const spacing = {
   ]
 };
 
+export const TokenSearchBar = ({ value, onChange, placeholder, matches, total }) => (
+  <div className="token-search-wrap">
+    <div className="token-search">
+      <span className="token-search-icon" aria-hidden="true">{'\u{1F50D}'}</span>
+      <input
+        type="text"
+        className="token-search-input"
+        value={value}
+        onChange={(e) => onChange(e.target.value)}
+        placeholder={placeholder || 'Search tokens...'}
+      />
+      {value && (
+        <button
+          type="button"
+          className="token-search-clear"
+          onClick={() => onChange('')}
+          aria-label="Clear search"
+        >
+          {'✕'}
+        </button>
+      )}
+    </div>
+    {value && (
+      <div className="token-search-meta">
+        {matches} of {total} tokens match "<b>{value}</b>"
+      </div>
+    )}
+  </div>
+);
+
+export const GapDemo = () => {
+  const [query, setQuery] = React.useState('');
+  const q = query.trim().toLowerCase();
+
+  const matches = (...fields) =>
+    !q || fields.some((f) => f != null && String(f).toLowerCase().includes(q));
+
+  const filterByPrefix = (prefix) =>
+    spacing.values.filter((item) =>
+      matches(`${prefix}-${item.key}`, item.key, item.name, item.value)
+    );
+
+  const gap = filterByPrefix('global-gap');
+  const gapX = filterByPrefix('global-gap-x');
+  const gapY = filterByPrefix('global-gap-y');
+
+  const total = spacing.values.length * 3;
+  const matchCount = gap.length + gapX.length + gapY.length;
+
+  const hasAny = matchCount > 0;
+
+  return (
+    <>
+      <TokenSearchBar
+        value={query}
+        onChange={setQuery}
+        placeholder="Search gap tokens (e.g. global-gap-x-05, 16px)..."
+        matches={matchCount}
+        total={total}
+      />
+
+      {!hasAny && (
+        <div className="token-search-empty">
+          No gap tokens match "<b>{query}</b>".
+        </div>
+      )}
+
+      <h2>Gap Utilities</h2>
+      <div className="sb-demo-section">
+        {gap.length > 0 && (
+          <div className="sb-utility-group">
+            <h3>Gap</h3>
+            <div className="sb-demo-box">
+              {gap.map((item) => (
+                <div key={item.key} className="sb-demo-content">
+                  <div
+                    style={{
+                      display: 'flex',
+                      gap: item.value,
+                      flexWrap: 'wrap',
+                      background: '#F0F0F0',
+                      padding: '10px'
+                    }}
+                  >
+                    {Array(3)
+                      .fill(null)
+                      .map((_, i) => (
+                        <div
+                          key={i}
+                          style={{ width: '100px', height: '100px', background: '#E5E7EB' }}
+                        />
+                      ))}
+                  </div>
+                  <code>.global-gap-{item.key}</code>
+                  <p>Gap: {item.name} ({item.value})</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        )}
+
+        {gapX.length > 0 && (
+          <div className="sb-utility-group">
+            <h3>Horizontal Gap (gap-x)</h3>
+            <div className="sb-demo-box">
+              {gapX.map((item) => (
+                <div key={item.key} className="sb-demo-content">
+                  <div
+                    style={{
+                      display: 'flex',
+                      columnGap: item.value,
+                      flexWrap: 'wrap',
+                      background: '#F0F0F0',
+                      padding: '10px'
+                    }}
+                  >
+                    {Array(3)
+                      .fill(null)
+                      .map((_, i) => (
+                        <div
+                          key={i}
+                          style={{ width: '100px', height: '100px', background: '#E5E7EB' }}
+                        />
+                      ))}
+                  </div>
+                  <code>.global-gap-x-{item.key}</code>
+                  <p>Horizontal Gap: {item.name} ({item.value})</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        )}
+
+        {gapY.length > 0 && (
+          <div className="sb-utility-group">
+            <h3>Vertical Gap (gap-y)</h3>
+            <div className="sb-demo-box">
+              {gapY.map((item) => (
+                <div key={item.key} className="sb-demo-content">
+                  <div
+                    style={{
+                      display: 'flex',
+                      flexDirection: 'column',
+                      rowGap: item.value,
+                      background: '#F0F0F0',
+                      padding: '10px'
+                    }}
+                  >
+                    {Array(3)
+                      .fill(null)
+                      .map((_, i) => (
+                        <div
+                          key={i}
+                          style={{ width: '100%', height: '100px', background: '#E5E7EB' }}
+                        />
+                      ))}
+                  </div>
+                  <code>.global-gap-y-{item.key}</code>
+                  <p>Vertical Gap: {item.name} ({item.value})</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        )}
+      </div>
+    </>
+  );
+};
+
 <div className="sb-container">
   <div className="sb-section-title">
     # Spacing
@@ -26,98 +195,7 @@ export const spacing = {
 
   <div className="sb-section">
 
-<h2>Gap Utilities</h2>
-<div className="sb-demo-section">
-  <div className="sb-utility-group">
-    <h3>Gap</h3>
-    <div className="sb-demo-box">
-      {spacing.values.map((item) => (
-        <div key={item.key} className="sb-demo-content">
-          <div style={{ 
-            display: 'flex', 
-            gap: item.value, 
-            flexWrap: 'wrap',
-            background: '#F0F0F0',
-            padding: '10px'
-          }}>
-            {Array(3).fill(null).map((_, i) => (
-              <div 
-                key={i}
-                style={{ 
-                  width: '100px', 
-                  height: '100px', 
-                  background: '#E5E7EB' 
-                }}
-              />
-            ))}
-          </div>
-          <code>.global-gap-{item.key}</code>
-          <p>Gap: {item.name} ({item.value})</p>
-        </div>
-      ))}
-    </div>
-  </div>
-
-  <div className="sb-utility-group">
-    <h3>Horizontal Gap (gap-x)</h3>
-    <div className="sb-demo-box">
-      {spacing.values.map((item) => (
-        <div key={item.key} className="sb-demo-content">
-          <div style={{ 
-            display: 'flex', 
-            columnGap: item.value, 
-            flexWrap: 'wrap',
-            background: '#F0F0F0',
-            padding: '10px'
-          }}>
-            {Array(3).fill(null).map((_, i) => (
-              <div 
-                key={i}
-                style={{ 
-                  width: '100px', 
-                  height: '100px', 
-                  background: '#E5E7EB' 
-                }}
-              />
-            ))}
-          </div>
-          <code>.global-gap-x-{item.key}</code>
-          <p>Horizontal Gap: {item.name} ({item.value})</p>
-        </div>
-      ))}
-    </div>
-  </div>
-
-  <div className="sb-utility-group">
-    <h3>Vertical Gap (gap-y)</h3>
-    <div className="sb-demo-box">
-      {spacing.values.map((item) => (
-        <div key={item.key} className="sb-demo-content">
-          <div style={{ 
-            display: 'flex', 
-            flexDirection: 'column',
-            rowGap: item.value, 
-            background: '#F0F0F0',
-            padding: '10px'
-          }}>
-            {Array(3).fill(null).map((_, i) => (
-              <div 
-                key={i}
-                style={{ 
-                  width: '100%', 
-                  height: '100px', 
-                  background: '#E5E7EB' 
-                }}
-              />
-            ))}
-          </div>
-          <code>.global-gap-y-{item.key}</code>
-          <p>Vertical Gap: {item.name} ({item.value})</p>
-        </div>
-      ))}
-    </div>
-  </div>
-</div>
+    <GapDemo />
 
     <h2>Usage Examples</h2>
     <div className="sb-code-block">
@@ -235,6 +313,80 @@ export const spacing = {
       margin: 0;
       font-size: 16px;
       color: #374151;
+    }
+
+    .token-search-wrap {
+      position: sticky;
+      top: 0;
+      z-index: 5;
+      background: #FFFFFF;
+      padding: 12px 0 8px;
+      margin-bottom: 16px;
+      border-bottom: 1px solid #E6E6E6;
+    }
+
+    .token-search {
+      position: relative;
+      display: flex;
+      align-items: center;
+    }
+
+    .token-search-icon {
+      position: absolute;
+      left: 12px;
+      font-size: 14px;
+      color: #6B7280;
+      pointer-events: none;
+    }
+
+    .token-search-input {
+      width: 100%;
+      padding: 10px 36px 10px 36px;
+      font-size: 14px;
+      border: 1px solid #D1D5DB;
+      border-radius: 6px;
+      outline: none;
+      transition: border-color 0.15s ease, box-shadow 0.15s ease;
+      background: #FFFFFF;
+      color: #111827;
+    }
+
+    .token-search-input:focus {
+      border-color: #2F4050;
+      box-shadow: 0 0 0 3px rgba(47, 64, 80, 0.15);
+    }
+
+    .token-search-clear {
+      position: absolute;
+      right: 8px;
+      background: transparent;
+      border: none;
+      cursor: pointer;
+      color: #6B7280;
+      font-size: 14px;
+      padding: 4px 8px;
+      border-radius: 4px;
+    }
+
+    .token-search-clear:hover {
+      background: #F3F4F6;
+      color: #111827;
+    }
+
+    .token-search-meta {
+      margin-top: 6px;
+      font-size: 12px;
+      color: #6B7280;
+    }
+
+    .token-search-empty {
+      padding: 24px;
+      text-align: center;
+      color: #6B7280;
+      background: #F9FAFB;
+      border: 1px dashed #E5E7EB;
+      border-radius: 8px;
+      margin: 24px 0;
     }
   `}
 </style>

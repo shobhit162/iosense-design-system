@@ -1315,6 +1315,21 @@
   box-shadow: 0px 7px 8px -4px rgba(0, 0, 0, 0.1), 0px 12px 17px 2px rgba(0, 0, 0, 0.1), 0px 5px 22px 4px rgba(0, 0, 0, 0.1);
 }
 
+:root {
+  --spacing-00: 0px;
+  --spacing-01: 2px;
+  --spacing-02: 4px;
+  --spacing-03: 8px;
+  --spacing-04: 12px;
+  --spacing-05: 16px;
+  --spacing-06: 20px;
+  --spacing-07: 24px;
+  --spacing-08: 32px;
+  --spacing-09: 40px;
+  --spacing-10: 48px;
+  --spacing-11: 56px;
+}
+
 .global-gap-00 {
   gap: 0px;
 }

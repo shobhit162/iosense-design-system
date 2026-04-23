@@ -35,6 +35,13 @@ $spacing-properties: (
   'py': (padding-top, padding-bottom)
 );
 
+// Generate CSS Properties for Spacing
+:root {
+  @each $size-key, $size-value in $spacing-values {
+    --spacing-#{$size-key}: #{$size-value};
+  }
+}
+
 // Generate Global Spacing Classes
 @each $size-key, $size-value in $spacing-values {
   // Gap utilities

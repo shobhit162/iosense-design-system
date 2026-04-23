@@ -289,112 +289,142 @@ export const typography = {
   },
 };
 
+export const TokenSearchBar = ({ value, onChange, placeholder, matches, total }) => (
+  <div className="token-search-wrap">
+    <div className="token-search">
+      <span className="token-search-icon" aria-hidden="true">{'\u{1F50D}'}</span>
+      <input
+        type="text"
+        className="token-search-input"
+        value={value}
+        onChange={(e) => onChange(e.target.value)}
+        placeholder={placeholder || 'Search tokens...'}
+      />
+      {value && (
+        <button
+          type="button"
+          className="token-search-clear"
+          onClick={() => onChange('')}
+          aria-label="Clear search"
+        >
+          {'✕'}
+        </button>
+      )}
+    </div>
+    {value && (
+      <div className="token-search-meta">
+        {matches} of {total} tokens match "<b>{value}</b>"
+      </div>
+    )}
+  </div>
+);
+
+export const TypeScaleDemo = () => {
+  const [query, setQuery] = React.useState('');
+  const q = query.trim().toLowerCase();
+
+  const matches = (...fields) =>
+    !q || fields.some((f) => f != null && String(f).toLowerCase().includes(q));
+
+  const filterGroup = (group) =>
+    Object.entries(group).filter(([className, styles]) =>
+      matches(
+        className,
+        styles.fontSize.class,
+        styles.lineHeight.class,
+        styles.letterSpacing.class,
+        styles.fontWeight.class,
+        styles.paragraphSpacing.class
+      )
+    );
+
+  const display = filterGroup(typography.typeScale.display);
+  const heading = filterGroup(typography.typeScale.heading);
+  const body = filterGroup(typography.typeScale.body);
+
+  const total =
+    Object.keys(typography.typeScale.display).length +
+    Object.keys(typography.typeScale.heading).length +
+    Object.keys(typography.typeScale.body).length;
+
+  const matchCount = display.length + heading.length + body.length;
+
+  const renderGroup = (title, entries, example) =>
+    entries.length > 0 && (
+      <>
+        <h3>{title}</h3>
+        <div className="sb-type-scale-section">
+          {entries.map(([className, styles]) => (
+            <div className="sb-type-scale-item" key={className}>
+              <div className="sb-type-scale-info">
+                <div className="code-wrapper">
+                  <code>{className}</code>
+                  <CopyButton text={className} />
+                </div>
+                <small>
+                  Font Size Class: {styles.fontSize.class}
+                  <br />
+                  Line Height Class: {styles.lineHeight.class}
+                  <br />
+                  Letter Spacing: {styles.letterSpacing.class} ({styles.letterSpacing.value})
+                  <br />
+                  Font Weight: {styles.fontWeight.class} ({styles.fontWeight.value})
+                  <br />
+                  Paragraph Spacing: {styles.paragraphSpacing.class} ({styles.paragraphSpacing.value})
+                </small>
+              </div>
+              <div className={className}>
+                <div
+                  style={{
+                    fontSize: styles.fontSize.desktop,
+                    lineHeight: styles.lineHeight.desktop,
+                    letterSpacing: styles.letterSpacing.value,
+                    fontWeight: styles.fontWeight.value,
+                    marginBottom: styles.paragraphSpacing.value
+                  }}
+                >
+                  {example}
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </>
+    );
+
+  return (
+    <div className="sb-typography-demo">
+      <TokenSearchBar
+        value={query}
+        onChange={setQuery}
+        placeholder="Search type classes (e.g. DisplayLarge, HeadingSmall, font-size-500)..."
+        matches={matchCount}
+        total={total}
+      />
+
+      {matchCount === 0 && (
+        <div className="token-search-empty">
+          No type classes match "<b>{query}</b>".
+        </div>
+      )}
+
+      <h2>Type Scale Classes</h2>
+      <div className="sb-type-scale-demo">
+        {renderGroup('Display Types', display, 'Hello, Faclon! This is a display class example.')}
+        {renderGroup('Heading Types', heading, 'Hello, Faclon! This is a heading classes example.')}
+        {renderGroup('Body Types', body, 'Hello, Faclon! This is a body class example.')}
+      </div>
+    </div>
+  );
+};
+
 <div className="sb-container">
   <div className="sb-section-title">
     # Typography 
   </div>
 
   <div className="sb-section">
-    <div className="sb-typography-demo">
-      <h2>Type Scale Classes</h2>
-      <div className="sb-type-scale-demo">
-        <h3>Display Types</h3>
-        <div className="sb-type-scale-section">
-          {Object.entries(typography.typeScale.display).map(([className, styles]) => (
-            <div className="sb-type-scale-item" key={className}>
-              <div className="sb-type-scale-info">
-              <div className="code-wrapper">
-                <code>{className}</code>
-                <CopyButton text={className} />
-              </div>
-                <small>
-                  Font Size Class: {styles.fontSize.class}<br/>
-                  Line Height Class: {styles.lineHeight.class}<br/>
-                  Letter Spacing: {styles.letterSpacing.class} ({styles.letterSpacing.value})<br/>
-                  Font Weight: {styles.fontWeight.class} ({styles.fontWeight.value})<br/>
-                  Paragraph Spacing: {styles.paragraphSpacing.class} ({styles.paragraphSpacing.value})
-                </small>
-              </div>
-              <div className={className}>
-                <div style={{
-                  fontSize : styles.fontSize.desktop,
-                  lineHeight: styles.lineHeight.desktop,
-                  letterSpacing: styles.letterSpacing.value,
-                  fontWeight: styles.fontWeight.value,
-                  marginBottom: styles.paragraphSpacing.value
-                }}>
-                  Hello, Faclon! This is a display class example.
-                </div>
-              </div>
-            </div>
-          ))}
-        </div>
-
-        <h3>Heading Types</h3>
-        <div className="sb-type-scale-section">
-          {Object.entries(typography.typeScale.heading).map(([className, styles]) => (
-            <div className="sb-type-scale-item" key={className}>
-              <div className="sb-type-scale-info">
-              <div className="code-wrapper">
-                <code>{className}</code>
-                <CopyButton text={className} />
-              </div>
-                <small>
-                  Font Size Class: {styles.fontSize.class}<br/>
-                  Line Height Class: {styles.lineHeight.class}<br/>
-                  Letter Spacing: {styles.letterSpacing.class} ({styles.letterSpacing.value})<br/>
-                  Font Weight: {styles.fontWeight.class} ({styles.fontWeight.value})<br/>
-                  Paragraph Spacing: {styles.paragraphSpacing.class} ({styles.paragraphSpacing.value})
-                </small>
-              </div>
-              <div className={className}>
-                <div style={{
-                  fontSize : styles.fontSize.desktop,
-                  lineHeight: styles.lineHeight.desktop,
-                  letterSpacing: styles.letterSpacing.value,
-                  fontWeight: styles.fontWeight.value,
-                  marginBottom: styles.paragraphSpacing.value
-                }}>
-                  Hello, Faclon! This is a heading classes example.
-                </div>
-              </div>
-            </div>
-          ))}
-        </div>
-
-        <h3>Body Types</h3>
-        <div className="sb-type-scale-section">
-          {Object.entries(typography.typeScale.body).map(([className, styles]) => (
-            <div className="sb-type-scale-item" key={className}>
-              <div className="sb-type-scale-info">
-              <div className="code-wrapper">
-                <code>{className}</code>
-                <CopyButton text={className} />
-              </div>
-                <small>
-                  Font Size Class: {styles.fontSize.class}<br/>
-                  Line Height Class: {styles.lineHeight.class}<br/>
-                  Letter Spacing: {styles.letterSpacing.class} ({styles.letterSpacing.value})<br/>
-                  Font Weight: {styles.fontWeight.class} ({styles.fontWeight.value})<br/>
-                  Paragraph Spacing: {styles.paragraphSpacing.class} ({styles.paragraphSpacing.value})
-                </small>
-              </div>
-              <div className={className}>
-                <div style={{
-                  fontSize : styles.fontSize.desktop,
-                  lineHeight: styles.lineHeight.desktop,
-                  letterSpacing: styles.letterSpacing.value,
-                  fontWeight: styles.fontWeight.value,
-                  marginBottom: styles.paragraphSpacing.value
-                }}>
-                  Hello, Faclon! This is a body class example.
-                </div>
-              </div>
-            </div>
-          ))}
-        </div>
-      </div>
-    </div>
+    <TypeScaleDemo />
   </div>
 </div>
 
@@ -504,6 +534,80 @@ export const typography = {
     .code-wrapper {
       position: relative;
       display: block;
+    }
+
+    .token-search-wrap {
+      position: sticky;
+      top: 0;
+      z-index: 5;
+      background: #FFFFFF;
+      padding: 12px 0 8px;
+      margin-bottom: 16px;
+      border-bottom: 1px solid #E6E6E6;
+    }
+
+    .token-search {
+      position: relative;
+      display: flex;
+      align-items: center;
+    }
+
+    .token-search-icon {
+      position: absolute;
+      left: 12px;
+      font-size: 14px;
+      color: #6B7280;
+      pointer-events: none;
+    }
+
+    .token-search-input {
+      width: 100%;
+      padding: 10px 36px 10px 36px;
+      font-size: 14px;
+      border: 1px solid #D1D5DB;
+      border-radius: 6px;
+      outline: none;
+      transition: border-color 0.15s ease, box-shadow 0.15s ease;
+      background: #FFFFFF;
+      color: #111827;
+    }
+
+    .token-search-input:focus {
+      border-color: #2F4050;
+      box-shadow: 0 0 0 3px rgba(47, 64, 80, 0.15);
+    }
+
+    .token-search-clear {
+      position: absolute;
+      right: 8px;
+      background: transparent;
+      border: none;
+      cursor: pointer;
+      color: #6B7280;
+      font-size: 14px;
+      padding: 4px 8px;
+      border-radius: 4px;
+    }
+
+    .token-search-clear:hover {
+      background: #F3F4F6;
+      color: #111827;
+    }
+
+    .token-search-meta {
+      margin-top: 6px;
+      font-size: 12px;
+      color: #6B7280;
+    }
+
+    .token-search-empty {
+      padding: 24px;
+      text-align: center;
+      color: #6B7280;
+      background: #F9FAFB;
+      border: 1px dashed #E5E7EB;
+      border-radius: 8px;
+      margin: 24px 0;
     }
   `}
 </style>

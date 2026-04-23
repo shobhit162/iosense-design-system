@@ -47,6 +47,105 @@ export const elevation = {
   }
 };
 
+export const TokenSearchBar = ({ value, onChange, placeholder, matches, total }) => (
+  <div className="token-search-wrap">
+    <div className="token-search">
+      <span className="token-search-icon" aria-hidden="true">{'\u{1F50D}'}</span>
+      <input
+        type="text"
+        className="token-search-input"
+        value={value}
+        onChange={(e) => onChange(e.target.value)}
+        placeholder={placeholder || 'Search tokens...'}
+      />
+      {value && (
+        <button
+          type="button"
+          className="token-search-clear"
+          onClick={() => onChange('')}
+          aria-label="Clear search"
+        >
+          {'✕'}
+        </button>
+      )}
+    </div>
+    {value && (
+      <div className="token-search-meta">
+        {matches} of {total} tokens match "<b>{value}</b>"
+      </div>
+    )}
+  </div>
+);
+
+export const ElevationDemo = () => {
+  const [query, setQuery] = React.useState('');
+  const q = query.trim().toLowerCase();
+
+  const matches = (...fields) =>
+    !q || fields.some((f) => f != null && String(f).toLowerCase().includes(q));
+
+  const shadowEntries = Object.entries(elevation.shadows).filter(([key, { name }]) =>
+    matches(key, name)
+  );
+
+  const total = Object.keys(elevation.shadows).length;
+
+  return (
+    <div className="sb-elevation-demo">
+      <TokenSearchBar
+        value={query}
+        onChange={setQuery}
+        placeholder="Search elevation tokens (e.g. highRaised, global-el-mid)..."
+        matches={shadowEntries.length}
+        total={total}
+      />
+
+      {shadowEntries.length === 0 && (
+        <div className="token-search-empty">
+          No elevation tokens match "<b>{query}</b>".
+        </div>
+      )}
+
+      {shadowEntries.length > 0 && (
+        <>
+          <h2>Elevation Levels</h2>
+          <div className="sb-demo-section">
+            {shadowEntries.map(([key, { name, layers }]) => (
+              <div className="sb-demo-item" key={key}>
+                <div className="sb-demo-info">
+                  <code>{name}</code>
+                  <div className="sb-shadow-layers">
+                    {layers.map((layer, index) => (
+                      <div key={index} className="sb-shadow-layer">
+                        <small>
+                          Layer {index + 1}: {layer.x}px {layer.y}px {layer.blur}px {layer.spread}px
+                        </small>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+                <div
+                  className="sb-demo-box"
+                  style={{
+                    boxShadow: layers
+                      .map(
+                        (layer) =>
+                          `${layer.x}px ${layer.y}px ${layer.blur}px ${layer.spread}px rgba(0,0,0,0.1)`
+                      )
+                      .join(', ')
+                  }}
+                >
+                  {key}
+                </div>
+              </div>
+            ))}
+          </div>
+        </>
+      )}
+    </div>
+  );
+};
+
 <div className="sb-container">
   <div className="sb-section-title">
     # Elevation
@@ -54,84 +153,54 @@ export const elevation = {
   </div>
 
   <div className="sb-section">
-    <div className="sb-elevation-demo">
-      <h2>Elevation Levels</h2>
-      <div className="sb-demo-section">
-        {Object.entries(elevation.shadows).map(([key, { name, layers }]) => (
-          <div className="sb-demo-item" key={key}>
-            <div className="sb-demo-info">
-              <code>{name}</code>
-              <div className="sb-shadow-layers">
-                {layers.map((layer, index) => (
-                  <div key={index} className="sb-shadow-layer">
-                    <small>
-                      Layer {index + 1}: {layer.x}px {layer.y}px {layer.blur}px {layer.spread}px
-                    </small>
-                  </div>
-                ))}
-              </div>
-            </div>
+    <ElevationDemo />
+
+    <h2>Custom Color Shadows</h2>
+    <div>
+      <div className="sb-demo-item">
+        <div className="sb-demo-info">
+          <code>@mixin elevation($level, $color)</code>
+          <small>Customize shadow color using the elevation mixin</small>
+        </div>
+        <div className="sb-color-examples">
+          {['#0066FF', '#FF0066', '#66FF00'].map((color) => (
             <div 
+              key={color}
               className="sb-demo-box"
               style={{ 
-                boxShadow: layers.map(layer => 
-                  `${layer.x}px ${layer.y}px ${layer.blur}px ${layer.spread}px rgba(0,0,0,0.1)`
+                boxShadow: elevation.shadows.midRaised.layers.map(layer => 
+                  `${layer.x}px ${layer.y}px ${layer.blur}px ${layer.spread}px ${color}33`
                 ).join(', ')
               }}
             >
-              {key}
+              Color: {color}
             </div>
-          </div>
-        ))}
-      </div>
-
-      <h2>Custom Color Shadows</h2>
-      <div>
-        <div className="sb-demo-item">
-          <div className="sb-demo-info">
-            <code>@mixin elevation($level, $color)</code>
-            <small>Customize shadow color using the elevation mixin</small>
-          </div>
-          <div className="sb-color-examples">
-            {['#0066FF', '#FF0066', '#66FF00'].map((color) => (
-              <div 
-                key={color}
-                className="sb-demo-box"
-                style={{ 
-                  boxShadow: elevation.shadows.midRaised.layers.map(layer => 
-                    `${layer.x}px ${layer.y}px ${layer.blur}px ${layer.spread}px ${color}33`
-                  ).join(', ')
-                }}
-              >
-                Color: {color}
-              </div>
-            ))}
-          </div>
+          ))}
         </div>
       </div>
+    </div>
 
-      <h2>Usage Examples</h2>
-      <div className="sb-code-block">
-        ```html
-        <!-- Basic elevation -->
-        <div class="global-el-ultraLowRaised">
-          Ultra Low Raised Element
-        </div>
-
-        <!-- Higher elevation -->
-        <div class="global-el-highRaised">
-          High Raised Element
-        </div>
-
-        ```
-
-        ```scss
-        // Custom color using mixin
-        .custom-shadow {
-          @include elevation('midRaised', rgba(0, 102, 255, 0.2));
-        }
-        ```
+    <h2>Usage Examples</h2>
+    <div className="sb-code-block">
+      ```html
+      <!-- Basic elevation -->
+      <div class="global-el-ultraLowRaised">
+        Ultra Low Raised Element
       </div>
+
+      <!-- Higher elevation -->
+      <div class="global-el-highRaised">
+        High Raised Element
+      </div>
+
+      ```
+
+      ```scss
+      // Custom color using mixin
+      .custom-shadow {
+        @include elevation('midRaised', rgba(0, 102, 255, 0.2));
+      }
+      ```
     </div>
   </div>
 </div>
@@ -242,6 +311,80 @@ export const elevation = {
     h3 {
       margin: 16px 0;
       font-size: 16px;
+    }
+
+    .token-search-wrap {
+      position: sticky;
+      top: 0;
+      z-index: 5;
+      background: #FFFFFF;
+      padding: 12px 0 8px;
+      margin-bottom: 16px;
+      border-bottom: 1px solid #E6E6E6;
+    }
+
+    .token-search {
+      position: relative;
+      display: flex;
+      align-items: center;
+    }
+
+    .token-search-icon {
+      position: absolute;
+      left: 12px;
+      font-size: 14px;
+      color: #6B7280;
+      pointer-events: none;
+    }
+
+    .token-search-input {
+      width: 100%;
+      padding: 10px 36px 10px 36px;
+      font-size: 14px;
+      border: 1px solid #D1D5DB;
+      border-radius: 6px;
+      outline: none;
+      transition: border-color 0.15s ease, box-shadow 0.15s ease;
+      background: #FFFFFF;
+      color: #111827;
+    }
+
+    .token-search-input:focus {
+      border-color: #2F4050;
+      box-shadow: 0 0 0 3px rgba(47, 64, 80, 0.15);
+    }
+
+    .token-search-clear {
+      position: absolute;
+      right: 8px;
+      background: transparent;
+      border: none;
+      cursor: pointer;
+      color: #6B7280;
+      font-size: 14px;
+      padding: 4px 8px;
+      border-radius: 4px;
+    }
+
+    .token-search-clear:hover {
+      background: #F3F4F6;
+      color: #111827;
+    }
+
+    .token-search-meta {
+      margin-top: 6px;
+      font-size: 12px;
+      color: #6B7280;
+    }
+
+    .token-search-empty {
+      padding: 24px;
+      text-align: center;
+      color: #6B7280;
+      background: #F9FAFB;
+      border: 1px dashed #E5E7EB;
+      border-radius: 8px;
+      margin: 24px 0;
     }
   `}
 </style>

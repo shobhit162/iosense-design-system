@@ -1,0 +1,472 @@
+import { Meta } from "@storybook/blocks";
+
+<Meta title="Tokens/Colors/Theme Classes (New)" />
+
+export const colors = {
+  backgroundNew: {
+    brand: [
+      { name: '--background-brand-default', class: 'background-brand-default' },
+      { name: '--background-brand-default-hover', class: 'background-brand-default-hover' },
+      { name: '--background-brand-secondary', class: 'background-brand-secondary' },
+      { name: '--background-brand-secondary-hover', class: 'background-brand-secondary-hover' },
+      { name: '--background-brand-disabled', class: 'background-brand-disabled' }
+    ],
+    positive: [
+      { name: '--background-positive-default', class: 'background-positive-default' },
+      { name: '--background-positive-default-hover', class: 'background-positive-default-hover' },
+      { name: '--background-positive-secondary', class: 'background-positive-secondary' },
+      { name: '--background-positive-secondary-hover', class: 'background-positive-secondary-hover' },
+      { name: '--background-positive-disabled', class: 'background-positive-disabled' }
+    ],
+    error: [
+      { name: '--background-error-default', class: 'background-error-default' },
+      { name: '--background-error-default-hover', class: 'background-error-default-hover' },
+      { name: '--background-error-secondary', class: 'background-error-secondary' },
+      { name: '--background-error-secondary-hover', class: 'background-error-secondary-hover' },
+      { name: '--background-error-disabled', class: 'background-error-disabled' }
+    ],
+    warning: [
+      { name: '--background-warning-default', class: 'background-warning-default' },
+      { name: '--background-warning-default-hover', class: 'background-warning-default-hover' },
+      { name: '--background-warning-secondary', class: 'background-warning-secondary' },
+      { name: '--background-warning-secondary-hover', class: 'background-warning-secondary-hover' },
+      { name: '--background-warning-disabled', class: 'background-warning-disabled' }
+    ],
+    info: [
+      { name: '--background-info-default', class: 'background-info-default' },
+      { name: '--background-info-default-hover', class: 'background-info-default-hover' },
+      { name: '--background-info-secondary', class: 'background-info-secondary' },
+      { name: '--background-info-secondary-hover', class: 'background-info-secondary-hover' },
+      { name: '--background-info-disabled', class: 'background-info-disabled' }
+    ],
+    default: [
+      { name: '--background-default-subtle', class: 'background-default-subtle' },
+      { name: '--background-default-moderate', class: 'background-default-moderate' },
+      { name: '--background-default-intense', class: 'background-default-intense' }
+    ],
+    secondary: [
+      { name: '--background-secondary-default', class: 'background-secondary-default' },
+      { name: '--background-secondary-hover-dark', class: 'background-secondary-hover-dark' },
+      { name: '--background-secondary-hover-light', class: 'background-secondary-hover-light' },
+      { name: '--background-secondary-disabled', class: 'background-secondary-disabled' }
+    ]
+  },
+  textNew: {
+    default: [
+      { name: '--text-default-primary', class: 'text-default-primary' },
+      { name: '--text-default-secondary', class: 'text-default-secondary' },
+      { name: '--text-default-tertiary', class: 'text-default-tertiary' },
+      { name: '--text-default-disabled', class: 'text-default-disabled' }
+    ],
+    brand: [
+      { name: '--text-brand-default', class: 'text-brand-default' },
+      { name: '--text-brand-on-brand', class: 'text-brand-on-brand' },
+      { name: '--text-brand-on-secondary', class: 'text-brand-on-secondary' },
+      { name: '--text-brand-disabled', class: 'text-brand-disabled' }
+    ],
+    positive: [
+      { name: '--text-positive-default', class: 'text-positive-default' },
+      { name: '--text-positive-on-positive', class: 'text-positive-on-positive' },
+      { name: '--text-positive-on-secondary', class: 'text-positive-on-secondary' },
+      { name: '--text-positive-disabled', class: 'text-positive-disabled' }
+    ],
+    warning: [
+      { name: '--text-warning-default', class: 'text-warning-default' },
+      { name: '--text-warning-on-warning', class: 'text-warning-on-warning' },
+      { name: '--text-warning-on-secondary', class: 'text-warning-on-secondary' },
+      { name: '--text-warning-disabled', class: 'text-warning-disabled' }
+    ],
+    error: [
+      { name: '--text-error-default', class: 'text-error-default' },
+      { name: '--text-error-on-error', class: 'text-error-on-error' },
+      { name: '--text-error-on-secondary', class: 'text-error-on-secondary' },
+      { name: '--text-error-disabled', class: 'text-error-disabled' }
+    ],
+    info: [
+      { name: '--text-info-default', class: 'text-info-default' },
+      { name: '--text-info-on-info', class: 'text-info-on-info' },
+      { name: '--text-info-on-secondary', class: 'text-info-on-secondary' },
+      { name: '--text-info-disabled', class: 'text-info-disabled' }
+    ]
+  },
+  borderNew: {
+    focused: [
+      { name: '--border-focused-default', class: 'border-focused-default' }
+    ],
+    warning: [
+      { name: '--border-warning-default', class: 'border-warning-default' },
+      { name: '--border-warning-hover', class: 'border-warning-hover' },
+      { name: '--border-warning-disabled', class: 'border-warning-disabled' }
+    ],
+    error: [
+      { name: '--border-error-default', class: 'border-error-default' },
+      { name: '--border-error-hover', class: 'border-error-hover' },
+      { name: '--border-error-disabled', class: 'border-error-disabled' }
+    ],
+    brand: [
+      { name: '--border-brand-default', class: 'border-brand-default' },
+      { name: '--border-brand-hover', class: 'border-brand-hover' },
+      { name: '--border-brand-disabled', class: 'border-brand-disabled' }
+    ],
+    info: [
+      { name: '--border-info-default', class: 'border-info-default' },
+      { name: '--border-info-hover', class: 'border-info-hover' },
+      { name: '--border-info-disabled', class: 'border-info-disabled' }
+    ],
+    gray: [
+      { name: '--border-gray-default', class: 'border-gray-default' },
+      { name: '--border-gray-subtle', class: 'border-gray-subtle' },
+      { name: '--border-gray-muted', class: 'border-gray-muted' },
+      { name: '--border-gray-disabled', class: 'border-gray-disabled' }
+    ],
+    positive: [
+      { name: '--border-positive-default', class: 'border-positive-default' },
+      { name: '--border-positive-hover', class: 'border-positive-hover' },
+      { name: '--border-positive-disabled', class: 'border-positive-disabled' }
+    ]
+  }
+};
+
+export const TokenSearchBar = ({ value, onChange, placeholder, matches, total }) => (
+  <div className="token-search-wrap">
+    <div className="token-search">
+      <span className="token-search-icon" aria-hidden="true">{'\u{1F50D}'}</span>
+      <input
+        type="text"
+        className="token-search-input"
+        value={value}
+        onChange={(e) => onChange(e.target.value)}
+        placeholder={placeholder || 'Search tokens...'}
+      />
+      {value && (
+        <button
+          type="button"
+          className="token-search-clear"
+          onClick={() => onChange('')}
+          aria-label="Clear search"
+        >
+          {'✕'}
+        </button>
+      )}
+    </div>
+    {value && (
+      <div className="token-search-meta">
+        {matches} of {total} tokens match "<b>{value}</b>"
+      </div>
+    )}
+  </div>
+);
+
+export const ThemeNewColorsDemo = () => {
+  const [query, setQuery] = React.useState('');
+  const q = query.trim().toLowerCase();
+
+  const matches = (...fields) =>
+    !q || fields.some((f) => f != null && String(f).toLowerCase().includes(q));
+
+  const filterList = (list) =>
+    list.filter((item) => matches(item.name, item.class));
+
+  const filterGroups = (groupsObj) =>
+    Object.entries(groupsObj)
+      .map(([name, list]) => [name, filterList(list)])
+      .filter(([, list]) => list.length > 0);
+
+  const backgroundNewGroups = filterGroups(colors.backgroundNew);
+  const textNewGroups = filterGroups(colors.textNew);
+  const borderNewGroups = filterGroups(colors.borderNew);
+
+  const countList = (groupsObj) =>
+    Object.values(groupsObj).reduce((n, v) => n + v.length, 0);
+  const countGroups = (groupEntries) =>
+    groupEntries.reduce((n, [, list]) => n + list.length, 0);
+
+  const total =
+    countList(colors.backgroundNew) +
+    countList(colors.textNew) +
+    countList(colors.borderNew);
+
+  const matchCount =
+    countGroups(backgroundNewGroups) +
+    countGroups(textNewGroups) +
+    countGroups(borderNewGroups);
+
+  const renderNewGrouped = (title, groupEntries) =>
+    groupEntries.length > 0 && (
+      <>
+        <h2>{title}</h2>
+        {groupEntries.map(([groupName, list]) => (
+          <div key={groupName} className="color-section">
+            <h3>{groupName.charAt(0).toUpperCase() + groupName.slice(1)}</h3>
+            <div className="color-grid">
+              {list.map(({ name, class: className }, index) => (
+                <div key={index} className="color-item">
+                  <div
+                    className="color-preview"
+                    style={{ backgroundColor: `var(${name})` }}
+                  ></div>
+                  <div className="color-info">
+                    <div className="color-classes">
+                      <h4>Class</h4>
+                      <code>{className}</code>
+                    </div>
+                    <div className="color-variables">
+                      <h4>Variable</h4>
+                      <code>{name}</code>
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        ))}
+      </>
+    );
+
+  return (
+    <>
+      <TokenSearchBar
+        value={query}
+        onChange={setQuery}
+        placeholder="Search theme colors (e.g. background-brand-default, --text-error-default)..."
+        matches={matchCount}
+        total={total}
+      />
+
+      {matchCount === 0 && (
+        <div className="token-search-empty">
+          No theme color tokens match "<b>{query}</b>".
+        </div>
+      )}
+
+      {(backgroundNewGroups.length > 0 ||
+        textNewGroups.length > 0 ||
+        borderNewGroups.length > 0) && (
+        <div className="sb-section">
+          <div className="sb-colors-demo">
+            {renderNewGrouped('Background Classes (Newly added as on Dec 2025)', backgroundNewGroups)}
+            {renderNewGrouped('Text Classes (Newly added as on Dec 2025)', textNewGroups)}
+            {renderNewGrouped('Border Classes (Newly added as on Dec 2025)', borderNewGroups)}
+          </div>
+        </div>
+      )}
+    </>
+  );
+};
+
+<div className="sb-container">
+  <div className="sb-section-title">
+    # Theme Classes (New)
+    These are the newly added theme color classes (as on Dec 2025). Apply them directly to HTML elements for background, text, and border styling.
+  </div>
+
+  <div className="color-usage-guide">
+    <h3>Quick Usage Guide</h3>
+
+    <h4>Option 1 (Recommended): Using CSS Classes</h4>
+    <p>
+      Apply these classes directly to HTML elements:
+      ```html
+      <div class="background-brand-default">Brand background</div>
+      <p class="text-error-default">Error text</p>
+      <button class="border-positive-default">Positive border</button>
+      ```
+    </p>
+
+    <h4>Option 2: Using CSS Variables</h4>
+    <p>
+      Or reference the CSS variables in your own styles:
+      ```css
+      background-color: var(--background-brand-default);
+      color: var(--text-error-default);
+      border-color: var(--border-positive-default);
+      ```
+    </p>
+  </div>
+
+  <ThemeNewColorsDemo />
+</div>
+
+<style>
+  {`
+    .sb-container {
+      margin-bottom: 48px;
+    }
+
+    .sb-section-title {
+      margin-bottom: 32px;
+    }
+
+    .sb-colors-demo {
+      width: 100%;
+    }
+
+    h2 {
+      margin: 32px 0 16px;
+      padding-bottom: 8px;
+      border-bottom: 1px solid #E6E6E6;
+    }
+
+    h3 {
+      margin-top: 24px;
+      margin-bottom: 16px;
+    }
+
+    .color-section {
+      margin-bottom: 32px;
+    }
+
+    .color-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      gap: 16px;
+      margin-bottom: 24px;
+    }
+
+    .color-item {
+      border: 1px solid #E6E6E6;
+      border-radius: 4px;
+      overflow: hidden;
+    }
+
+    .color-preview {
+      height: 100px;
+      border-bottom: 1px solid #E6E6E6;
+    }
+
+    .color-info {
+      padding: 12px;
+      background: #FFFFFF;
+    }
+
+    .color-info code {
+      margin-bottom: 4px;
+      font-family: monospace;
+      font-size: 12px;
+      color: #666;
+    }
+
+    .color-info span {
+      font-size: 14px;
+      color: #333;
+    }
+
+    .color-item:hover {
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+
+    .color-classes {
+      overflow-y: hidden;
+    }
+
+    .color-variables h4 {
+      margin-top: 10px !important;
+    }
+
+    .color-usage-guide {
+      background-color: #f4f4f4;
+      padding: 15px;
+      border-radius: 4px;
+      margin-top: 15px;
+      margin-bottom: 15px;
+    }
+
+    .color-usage-guide h3 {
+      margin-bottom: 0px;
+      color: #333;
+    }
+
+    .color-usage-guide h4 {
+      margin-top: 16px !important;
+    }
+
+    .color-usage-guide p {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      margin-top: 0px;
+      margin-bottom: 0px;
+    }
+
+    .color-usage-guide code {
+      background-color: #e5e7eb;
+      padding: 5px;
+      border-radius: 4px;
+      font-family: monospace;
+    }
+
+    .token-search-wrap {
+      position: sticky;
+      top: 0;
+      z-index: 5;
+      background: #FFFFFF;
+      padding: 12px 0 8px;
+      margin-bottom: 16px;
+      border-bottom: 1px solid #E6E6E6;
+    }
+
+    .token-search {
+      position: relative;
+      display: flex;
+      align-items: center;
+    }
+
+    .token-search-icon {
+      position: absolute;
+      left: 12px;
+      font-size: 14px;
+      color: #6B7280;
+      pointer-events: none;
+    }
+
+    .token-search-input {
+      width: 100%;
+      padding: 10px 36px 10px 36px;
+      font-size: 14px;
+      border: 1px solid #D1D5DB;
+      border-radius: 6px;
+      outline: none;
+      transition: border-color 0.15s ease, box-shadow 0.15s ease;
+      background: #FFFFFF;
+      color: #111827;
+    }
+
+    .token-search-input:focus {
+      border-color: #2F4050;
+      box-shadow: 0 0 0 3px rgba(47, 64, 80, 0.15);
+    }
+
+    .token-search-clear {
+      position: absolute;
+      right: 8px;
+      background: transparent;
+      border: none;
+      cursor: pointer;
+      color: #6B7280;
+      font-size: 14px;
+      padding: 4px 8px;
+      border-radius: 4px;
+    }
+
+    .token-search-clear:hover {
+      background: #F3F4F6;
+      color: #111827;
+    }
+
+    .token-search-meta {
+      margin-top: 6px;
+      font-size: 12px;
+      color: #6B7280;
+    }
+
+    .token-search-empty {
+      padding: 24px;
+      text-align: center;
+      color: #6B7280;
+      background: #F9FAFB;
+      border: 1px dashed #E5E7EB;
+      border-radius: 8px;
+      margin: 24px 0;
+    }
+  `}
+</style>

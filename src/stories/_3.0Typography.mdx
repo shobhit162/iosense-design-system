@@ -293,6 +293,483 @@ export const typography = {
   },
 };
 
+export const TokenSearchBar = ({ value, onChange, placeholder, matches, total }) => (
+  <div className="token-search-wrap">
+    <div className="token-search">
+      <span className="token-search-icon" aria-hidden="true">{'\u{1F50D}'}</span>
+      <input
+        type="text"
+        className="token-search-input"
+        value={value}
+        onChange={(e) => onChange(e.target.value)}
+        placeholder={placeholder || 'Search tokens...'}
+      />
+      {value && (
+        <button
+          type="button"
+          className="token-search-clear"
+          onClick={() => onChange('')}
+          aria-label="Clear search"
+        >
+          {'✕'}
+        </button>
+      )}
+    </div>
+    {value && (
+      <div className="token-search-meta">
+        {matches} of {total} tokens match "<b>{value}</b>"
+      </div>
+    )}
+  </div>
+);
+
+export const TypographyDemo = () => {
+  const [query, setQuery] = React.useState('');
+  const q = query.trim().toLowerCase();
+
+  const matches = (...fields) =>
+    !q || fields.some((f) => f != null && String(f).toLowerCase().includes(q));
+
+  const filterEntries = (obj, getFields) =>
+    Object.entries(obj).filter(([key, v]) => matches(key, ...getFields(key, v)));
+
+  const fontWeight = filterEntries(typography.fontWeight, (key, v) => [v.name, v.value, v.label]);
+  const fontWeightScale = filterEntries(typography.fontWeightScale, (key, v) => [
+    v.name,
+    v.desktop.value,
+    v.desktop.label,
+    v.mobile.value,
+    v.mobile.label
+  ]);
+  const fontSize = filterEntries(typography.fontSize, (key, v) => [v.name, v.value, v.px]);
+  const fontSizeScale = filterEntries(typography.fontSizeScale, (key, v) => [
+    v.name,
+    v.desktop.size,
+    v.desktop.value,
+    v.mobile.size,
+    v.mobile.value
+  ]);
+  const lineHeight = filterEntries(typography.lineHeight, (key, v) => [v.name, v.value, v.px]);
+  const lineHeightScale = filterEntries(typography.lineHeightScale, (key, v) => [
+    v.name,
+    v.desktop.size,
+    v.desktop.value,
+    v.mobile.size,
+    v.mobile.value
+  ]);
+  const letterSpacing = filterEntries(typography.letterSpacing, (key, v) => [v.name, v.value]);
+  const letterSpacingScale = filterEntries(typography.letterSpacingScale, (key, v) => [
+    v.name,
+    v.desktop.value,
+    v.desktop.label,
+    v.mobile.value,
+    v.mobile.label
+  ]);
+  const paragraphSpacing = filterEntries(typography.paragraphSpacing, (key, v) => [
+    v.name,
+    v.value,
+    v.px
+  ]);
+  const paragraphSpacingScale = filterEntries(typography.paragraphSpacingScale, (key, v) => [
+    v.name,
+    v.desktop.size,
+    v.desktop.value,
+    v.mobile.size,
+    v.mobile.value
+  ]);
+  const listSpacing = filterEntries(typography.listSpacing, (key, v) => [v.name, v.value, v.px]);
+  const listSpacingScale = filterEntries(typography.listSpacingScale, (key, v) => [
+    v.name,
+    v.desktop.size,
+    v.desktop.value,
+    v.mobile.size,
+    v.mobile.value
+  ]);
+
+  const total =
+    Object.keys(typography.fontWeight).length +
+    Object.keys(typography.fontWeightScale).length +
+    Object.keys(typography.fontSize).length +
+    Object.keys(typography.fontSizeScale).length +
+    Object.keys(typography.lineHeight).length +
+    Object.keys(typography.lineHeightScale).length +
+    Object.keys(typography.letterSpacing).length +
+    Object.keys(typography.letterSpacingScale).length +
+    Object.keys(typography.paragraphSpacing).length +
+    Object.keys(typography.paragraphSpacingScale).length +
+    Object.keys(typography.listSpacing).length +
+    Object.keys(typography.listSpacingScale).length;
+
+  const matchCount =
+    fontWeight.length +
+    fontWeightScale.length +
+    fontSize.length +
+    fontSizeScale.length +
+    lineHeight.length +
+    lineHeightScale.length +
+    letterSpacing.length +
+    letterSpacingScale.length +
+    paragraphSpacing.length +
+    paragraphSpacingScale.length +
+    listSpacing.length +
+    listSpacingScale.length;
+
+  return (
+    <div className="sb-typography-demo">
+      <TokenSearchBar
+        value={query}
+        onChange={setQuery}
+        placeholder="Search typography tokens (e.g. global-fz-16, font-weight-500, SemiBold)..."
+        matches={matchCount}
+        total={total}
+      />
+
+      {matchCount === 0 && (
+        <div className="token-search-empty">
+          No typography tokens match "<b>{query}</b>".
+        </div>
+      )}
+
+      {fontWeight.length > 0 && (
+        <>
+          <h2>Font Weight</h2>
+          <table className="sb-table">
+            <thead>
+              <tr>
+                <th>Token Name</th>
+                <th>Value</th>
+                <th>Example</th>
+              </tr>
+            </thead>
+            <tbody>
+              {fontWeight.map(([key, { name, value, label }]) => (
+                <tr key={key}>
+                  <td>{name}</td>
+                  <td>{label}</td>
+                  <td>
+                    <span style={{ fontWeight: value }}>Hello, Faclon!</span>
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </>
+      )}
+
+      {fontWeightScale.length > 0 && (
+        <>
+          <h2>Font Weight Scale Classes</h2>
+          <table className="sb-table">
+            <thead>
+              <tr>
+                <th>Token Name</th>
+                <th>Desktop Value</th>
+                <th>Mobile Value</th>
+              </tr>
+            </thead>
+            <tbody>
+              {fontWeightScale.map(([key, { name, desktop, mobile }]) => (
+                <tr key={key}>
+                  <td>{name}</td>
+                  <td>{desktop.value}</td>
+                  <td>{mobile.value}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </>
+      )}
+
+      {fontSize.length > 0 && (
+        <>
+          <h2>Font Size</h2>
+          <table className="sb-table">
+            <thead>
+              <tr>
+                <th>Token Name</th>
+                <th>Value</th>
+                <th>Example</th>
+              </tr>
+            </thead>
+            <tbody>
+              {fontSize.map(([key, { name, value, px }]) => (
+                <tr key={key}>
+                  <td>{name}</td>
+                  <td>{px}</td>
+                  <td>
+                    <span style={{ fontSize: value, lineHeight: value }}>Hello, Faclon!</span>
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </>
+      )}
+
+      {fontSizeScale.length > 0 && (
+        <>
+          <h2>Font Size Scale Classes</h2>
+          <table className="sb-table">
+            <thead>
+              <tr>
+                <th>Token Name</th>
+                <th>Desktop Value</th>
+                <th>Mobile Value</th>
+              </tr>
+            </thead>
+            <tbody>
+              {fontSizeScale.map(([key, { name, desktop, mobile }]) => (
+                <tr key={key}>
+                  <td>{name}</td>
+                  <td>{desktop.size}</td>
+                  <td>{mobile.size}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </>
+      )}
+
+      {lineHeight.length > 0 && (
+        <>
+          <h2>Line Height</h2>
+          <table className="sb-table">
+            <thead>
+              <tr>
+                <th>Token Name</th>
+                <th>Value</th>
+                <th>Example</th>
+              </tr>
+            </thead>
+            <tbody>
+              {lineHeight.map(([key, { name, value, px }]) => (
+                <tr key={key}>
+                  <td>{name}</td>
+                  <td>{px}</td>
+                  <td>
+                    <p style={{ lineHeight: value, border: '1px dashed #ccc', margin: 0 }}>
+                      Hello, Faclon!
+                      <br />
+                      This is an example of {px} line height.
+                    </p>
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </>
+      )}
+
+      {lineHeightScale.length > 0 && (
+        <>
+          <h2>Line Height Scale Classes</h2>
+          <table className="sb-table">
+            <thead>
+              <tr>
+                <th>Token Name</th>
+                <th>Desktop Value</th>
+                <th>Mobile Value</th>
+              </tr>
+            </thead>
+            <tbody>
+              {lineHeightScale.map(([key, { name, desktop, mobile }]) => (
+                <tr key={key}>
+                  <td>{name}</td>
+                  <td>{desktop.size}</td>
+                  <td>{mobile.size}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </>
+      )}
+
+      {letterSpacing.length > 0 && (
+        <>
+          <h2>Letter Spacing</h2>
+          <table className="sb-table">
+            <thead>
+              <tr>
+                <th>Token Name</th>
+                <th>Value</th>
+                <th>Example</th>
+              </tr>
+            </thead>
+            <tbody>
+              {letterSpacing.map(([key, { name, value }]) => (
+                <tr key={key}>
+                  <td>{name}</td>
+                  <td>{value}</td>
+                  <td>
+                    <span style={{ letterSpacing: value }}>Hello, Faclon!</span>
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </>
+      )}
+
+      {letterSpacingScale.length > 0 && (
+        <>
+          <h2>Letter Spacing Scale Classes</h2>
+          <table className="sb-table">
+            <thead>
+              <tr>
+                <th>Token Name</th>
+                <th>Desktop Value</th>
+                <th>Mobile Value</th>
+              </tr>
+            </thead>
+            <tbody>
+              {letterSpacingScale.map(([key, { name, desktop, mobile }]) => (
+                <tr key={key}>
+                  <td>{name}</td>
+                  <td>{desktop.value}</td>
+                  <td>{mobile.value}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </>
+      )}
+
+      {paragraphSpacing.length > 0 && (
+        <>
+          <h2>Paragraph Spacing</h2>
+          <table className="sb-table">
+            <thead>
+              <tr>
+                <th>Token Name</th>
+                <th>Value</th>
+                <th>Example</th>
+              </tr>
+            </thead>
+            <tbody>
+              {paragraphSpacing.map(([key, { name, value, px }]) => (
+                <tr key={key}>
+                  <td>{name}</td>
+                  <td>{px}</td>
+                  <td>
+                    <div style={{ border: '1px dashed #ccc' }}>
+                      <p style={{ marginBottom: value, margin: 0 }}>First paragraph</p>
+                      <p style={{ margin: 0 }}>Second paragraph</p>
+                    </div>
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </>
+      )}
+
+      {paragraphSpacingScale.length > 0 && (
+        <>
+          <h2>Paragraph Spacing Scale Classes</h2>
+          <table className="sb-table">
+            <thead>
+              <tr>
+                <th>Token Name</th>
+                <th>Desktop Value</th>
+                <th>Mobile Value</th>
+              </tr>
+            </thead>
+            <tbody>
+              {paragraphSpacingScale.map(([key, { name, desktop, mobile }]) => (
+                <tr key={key}>
+                  <td>{name}</td>
+                  <td>{desktop.size}</td>
+                  <td>{mobile.size}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </>
+      )}
+
+      {listSpacing.length > 0 && (
+        <>
+          <h2>List Spacing</h2>
+          <div className="sb-list-spacing-demo">
+            <h3>Traditional List</h3>
+            {listSpacing.map(([key, { name, value, px }]) => (
+              <div key={key} className="sb-list-example">
+                <code>
+                  {name} ({px})
+                </code>
+                <ul className={`list-traditional ${name}`}>
+                  <li>First item</li>
+                  <li>Second item</li>
+                  <li>Third item</li>
+                </ul>
+              </div>
+            ))}
+
+            <h3>Flex List</h3>
+            {listSpacing.map(([key, { name, value, px }]) => (
+              <div key={key} className="sb-list-example">
+                <code>
+                  {name} ({px})
+                </code>
+                <ul className={`list-flex ${name}`} style={{ gap: value }}>
+                  <li>First item</li>
+                  <li>Second item</li>
+                  <li>Third item</li>
+                </ul>
+              </div>
+            ))}
+
+            <h3>Grid List</h3>
+            {listSpacing.map(([key, { name, value, px }]) => (
+              <div key={key} className="sb-list-example">
+                <code>
+                  {name} ({px})
+                </code>
+                <ul
+                  className={`list-grid ${name}`}
+                  style={{ display: 'grid', gap: value, gridTemplateColumns: 'repeat(3, 1fr)' }}
+                >
+                  <li>First item</li>
+                  <li>Second item</li>
+                  <li>Third item</li>
+                </ul>
+              </div>
+            ))}
+          </div>
+        </>
+      )}
+
+      {listSpacingScale.length > 0 && (
+        <>
+          <h2>List Spacing Scale Classes</h2>
+          <table className="sb-table">
+            <thead>
+              <tr>
+                <th>Token Name</th>
+                <th>Desktop Value</th>
+                <th>Mobile Value</th>
+              </tr>
+            </thead>
+            <tbody>
+              {listSpacingScale.map(([key, { name, desktop, mobile }]) => (
+                <tr key={key}>
+                  <td>{name}</td>
+                  <td>
+                    {desktop.size} ({desktop.value})
+                  </td>
+                  <td>
+                    {mobile.size} ({mobile.value})
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </>
+      )}
+    </div>
+  );
+};
+
 <div className="sb-container">
   <div className="sb-section-title">
     # Typography 
@@ -302,402 +779,89 @@ export const typography = {
   </div>
 
   <div className="sb-section">
-    <div className="sb-typography-demo">
-      <h2>Font Weight</h2>
-      <table className="sb-table">
-        <thead>
-          <tr>
-            <th>Token Name</th>
-            <th>Value</th>
-            <th>Example</th>
-          </tr>
-        </thead>
-        <tbody>
-          {Object.entries(typography.fontWeight).map(
-            ([key, { name, value, label }]) => (
-              <tr key={key}>
-                <td>{name}</td>
-                <td>{label}</td>
-                <td>
-                  <span style={{ fontWeight: value }}>Hello, Faclon!</span>
-                </td>
-              </tr>
-            ),
-          )}
-        </tbody>
-      </table>
-      <h2>Font Weight Scale Classes</h2>
-      <table className="sb-table">
-        <thead>
-          <tr>
-            <th>Token Name</th>
-            <th>Desktop Value</th>
-            <th>Mobile Value</th>
-          </tr>
-        </thead>
-        <tbody>
-          {Object.entries(typography.fontWeightScale).map(
-            ([key, { name, desktop, mobile }]) => (
-              <tr key={key}>
-                <td>{name}</td>
-                <td>{desktop.value}</td>
-                <td>{mobile.value}</td>
-              </tr>
-            ),
-          )}
-        </tbody>
-      </table>
-      <h2>Font Size</h2>
-      <table className="sb-table">
-        <thead>
-          <tr>
-            <th>Token Name</th>
-            <th>Value</th>
-            <th>Example</th>
-          </tr>
-        </thead>
-        <tbody>
-          {Object.entries(typography.fontSize).map(([key, { name, value, px }]) => (
-            <tr key={key}>
-              <td>{name}</td>
-              <td>{px}</td>
-              <td>
-                <span style={{ fontSize: value, lineHeight: value }}>
-                  Hello, Faclon!
-                </span>
-              </td>
-            </tr>
-          ))}
-        </tbody>
-      </table>
-      <h2>Font Size Scale Classes</h2>
-      <table className="sb-table">
-        <thead>
-          <tr>
-            <th>Token Name</th>
-            <th>Desktop Value</th>
-            <th>Mobile Value</th>
-          </tr>
-        </thead>
-        <tbody>
-          {Object.entries(typography.fontSizeScale).map(
-            ([key, { name, desktop, mobile }]) => (
-              <tr key={key}>
-                <td>{name}</td>
-                <td>{desktop.size}</td>
-                <td>{mobile.size}</td>
-              </tr>
-            ),
-          )}
-        </tbody>
-      </table>{" "}
-      <h2>Line Height</h2>
-      <table className="sb-table">
-        <thead>
-          <tr>
-            <th>Token Name</th>
-            <th>Value</th>
-            <th>Example</th>
-          </tr>
-        </thead>
-        <tbody>
-          {Object.entries(typography.lineHeight).map(
-            ([key, { name, value, px }]) => (
-              <tr key={key}>
-                <td>{name}</td>
-                <td>{px}</td>
-                <td>
-                  <p
-                    style={{
-                      lineHeight: value,
-                      border: "1px dashed #ccc",
-                      margin: 0,
-                    }}
-                  >
-                    Hello, Faclon!
-                    <br />
-                    This is an example of {px} line height.
-                  </p>
-                </td>
-              </tr>
-            ),
-          )}
-        </tbody>
-      </table>
-      <h2>Line Height Scale Classes</h2>
-      <table className="sb-table">
-        <thead>
-          <tr>
-            <th>Token Name</th>
-            <th>Desktop Value</th>
-            <th>Mobile Value</th>
-          </tr>
-        </thead>
-        <tbody>
-          {Object.entries(typography.lineHeightScale).map(
-            ([key, { name, desktop, mobile }]) => (
-              <tr key={key}>
-                <td>{name}</td>
-                <td>{desktop.size}</td>
-                <td>{mobile.size}</td>
-              </tr>
-            ),
-          )}
-        </tbody>
-      </table>{" "}
-      <h2>Letter Spacing</h2>
-      <table className="sb-table">
-        <thead>
-          <tr>
-            <th>Token Name</th>
-            <th>Value</th>
-            <th>Example</th>
-          </tr>
-        </thead>
-        <tbody>
-          {Object.entries(typography.letterSpacing).map(
-            ([key, { name, value }]) => (
-              <tr key={key}>
-                <td>{name}</td>
-                <td>{value}</td>
-                <td>
-                  <span style={{ letterSpacing: value }}>Hello, Faclon!</span>
-                </td>
-              </tr>
-            ),
-          )}
-        </tbody>
-      </table>
-      <h2>Letter Spacing Scale Classes</h2>
-      <table className="sb-table">
-        <thead>
-          <tr>
-            <th>Token Name</th>
-            <th>Desktop Value</th>
-            <th>Mobile Value</th>
-          </tr>
-        </thead>
-        <tbody>
-          {Object.entries(typography.letterSpacingScale).map(
-            ([key, { name, desktop, mobile }]) => (
-              <tr key={key}>
-                <td>{name}</td>
-                <td>{desktop.value}</td>
-                <td>{mobile.value}</td>
-              </tr>
-            ),
-          )}
-        </tbody>
-      </table>{" "}
-      <h2>Paragraph Spacing</h2>
-      <table className="sb-table">
-        <thead>
-          <tr>
-            <th>Token Name</th>
-            <th>Value</th>
-            <th>Example</th>
-          </tr>
-        </thead>
-        <tbody>
-          {Object.entries(typography.paragraphSpacing).map(
-            ([key, { name, value, px }]) => (
-              <tr key={key}>
-                <td>{name}</td>
-                <td>{px}</td>
-                <td>
-                  <div style={{ border: "1px dashed #ccc" }}>
-                    <p style={{ marginBottom: value, margin: 0 }}>
-                      First paragraph
-                    </p>
-                    <p style={{ margin: 0 }}>Second paragraph</p>
-                  </div>
-                </td>
-              </tr>
-            ),
-          )}
-        </tbody>
-      </table>
-      <h2>Paragraph Spacing Scale Classes</h2>
-      <table className="sb-table">
-        <thead>
-          <tr>
-            <th>Token Name</th>
-            <th>Desktop Value</th>
-            <th>Mobile Value</th>
-          </tr>
-        </thead>
-        <tbody>
-          {Object.entries(typography.paragraphSpacingScale).map(
-            ([key, { name, desktop, mobile }]) => (
-              <tr key={key}>
-                <td>{name}</td>
-                <td>{desktop.size}</td>
-                <td>{mobile.size}</td>
-              </tr>
-            ),
-          )}
-        </tbody>
-      </table>
-      <h2>List Spacing</h2>
-      <div className="sb-list-spacing-demo">
-        <h3>Traditional List</h3>
-        {Object.entries(typography.listSpacing).map(
-          ([key, { name, value, px }]) => (
-            <div key={key} className="sb-list-example">
-              <code>
-                {name} ({px})
-              </code>
-              <ul className={`list-traditional ${name}`}>
-                <li>First item</li>
-                <li>Second item</li>
-                <li>Third item</li>
-              </ul>
-            </div>
-          ),
-        )}
+    <TypographyDemo />
 
-        <h3>Flex List</h3>
-        {Object.entries(typography.listSpacing).map(
-          ([key, { name, value, px }]) => (
-            <div key={key} className="sb-list-example">
-              <code>
-                {name} ({px})
-              </code>
-              <ul className={`list-flex ${name}`} style={{ gap: value }}>
-                <li>First item</li>
-                <li>Second item</li>
-                <li>Third item</li>
-              </ul>
-            </div>
-          ),
-        )}
+    <h2>Fluid Typography</h2>
+    <div className="fluid-typography-section">
+      <p>
+        The fluid typography mixin provides smooth font scaling based on viewport width, 
+        eliminating the need for multiple breakpoints. It uses CSS clamp() to create 
+        a fluid scaling between minimum and maximum font sizes.
+      </p>
 
-        <h3>Grid List</h3>
-        {Object.entries(typography.listSpacing).map(
-          ([key, { name, value, px }]) => (
-            <div key={key} className="sb-list-example">
-              <code>
-                {name} ({px})
-              </code>
-              <ul
-                className={`list-grid ${name}`}
-                style={{
-                  display: "grid",
-                  gap: value,
-                  gridTemplateColumns: "repeat(3, 1fr)",
-                }}
-              >
-                <li>First item</li>
-                <li>Second item</li>
-                <li>Third item</li>
-              </ul>
-            </div>
-          ),
-        )}
+      <div className="mixin-documentation">
+        <h3>Mixin Signature</h3>
+        <div className="code-block">
+          ```scss
+          @mixin fluid-type(
+            $min-font-size,    // Minimum font size (for mobile)
+            $max-font-size,    // Maximum font size (for desktop)
+            $min-vw: 320,      // Minimum viewport width
+            $max-vw: 1200      // Maximum viewport width
+          )
+          ```
+        </div>
       </div>
-      <h2>List Spacing Scale Classes</h2>
-      <table className="sb-table">
-        <thead>
-          <tr>
-            <th>Token Name</th>
-            <th>Desktop Value</th>
-            <th>Mobile Value</th>
-          </tr>
-        </thead>
-        <tbody>
-          {Object.entries(typography.listSpacingScale).map(
-            ([key, { name, desktop, mobile }]) => (
-              <tr key={key}>
-                <td>{name}</td>
-                <td>{desktop.size} ({desktop.value})</td>
-                <td>{mobile.size} ({mobile.value})</td>
-              </tr>
-            ),
-          )}
-        </tbody>
-      </table>
-      <h2>Fluid Typography</h2>
-      <div className="fluid-typography-section">
-        <p>
-          The fluid typography mixin provides smooth font scaling based on viewport width, 
-          eliminating the need for multiple breakpoints. It uses CSS clamp() to create 
-          a fluid scaling between minimum and maximum font sizes.
-        </p>
 
-        <div className="mixin-documentation">
-          <h3>Mixin Signature</h3>
-          <div className="code-block">
-            ```scss
-            @mixin fluid-type(
-              $min-font-size,    // Minimum font size (for mobile)
-              $max-font-size,    // Maximum font size (for desktop)
-              $min-vw: 320,      // Minimum viewport width
-              $max-vw: 1200      // Maximum viewport width
-            )
-            ```
+      <div className="usage-examples">
+        <h3>Basic Usage</h3>
+        <div className="code-block">
+          ```scss
+          .my-heading {
+            @include fluid-type(16, 32);
+          }
+          ```
+          <div className="code-description">
+            This will create text that scales from 16px at 320px viewport to 32px at 1200px viewport. 
+            <p> <b>Note:</b> This class is not pre-defined. You have to declare it as per your requirements.</p>
           </div>
         </div>
 
-        <div className="usage-examples">
-          <h3>Basic Usage</h3>
-          <div className="code-block">
-            ```scss
-            .my-heading {
-              @include fluid-type(16, 32);
-            }
-            ```
-            <div className="code-description">
-              This will create text that scales from 16px at 320px viewport to 32px at 1200px viewport. 
-              <p> <b>Note:</b> This class is not pre-defined. You have to declare it as per your requirements.</p>
-            </div>
-          </div>
-
-          <h3>Custom Viewport Range</h3>
-          <div className="code-block">
-            ```scss
-            .hero-title {
-              @include fluid-type(24, 64, 375, 1600);
-            }
-            ```
-            <div className="code-description">
-              Scales from 24px at 375px viewport to 64px at 1600px viewport.
-              <p> <b>Note:</b> This class is not pre-defined. You have to declare it as per your requirements.</p>
-            </div>
+        <h3>Custom Viewport Range</h3>
+        <div className="code-block">
+          ```scss
+          .hero-title {
+            @include fluid-type(24, 64, 375, 1600);
+          }
+          ```
+          <div className="code-description">
+            Scales from 24px at 375px viewport to 64px at 1600px viewport.
+            <p> <b>Note:</b> This class is not pre-defined. You have to declare it as per your requirements.</p>
           </div>
         </div>
+      </div>
 
-        <div className="fluid-typography-tips">
-          <h3>Best Practices</h3>
-          <ul>
-            <li>Use for important headings and hero text that need smooth scaling</li>
-            <li>Consider readability limits when setting min/max sizes</li>
-            <li>Test across different devices to ensure proper scaling</li>
-            <li>Use appropriate viewport ranges for your design needs</li>
-          </ul>
-        </div>
+      <div className="fluid-typography-tips">
+        <h3>Best Practices</h3>
+        <ul>
+          <li>Use for important headings and hero text that need smooth scaling</li>
+          <li>Consider readability limits when setting min/max sizes</li>
+          <li>Test across different devices to ensure proper scaling</li>
+          <li>Use appropriate viewport ranges for your design needs</li>
+        </ul>
+      </div>
 
-        <div className="common-use-cases">
-          <h3>Common Use Cases</h3>
-          <div className="code-block">
-            ```scss
-            // Hero Heading
-            .hero-heading {
-              @include fluid-type(32, 96);
-            }
+      <div className="common-use-cases">
+        <h3>Common Use Cases</h3>
+        <div className="code-block">
+          ```scss
+          // Hero Heading
+          .hero-heading {
+            @include fluid-type(32, 96);
+          }
 
-            // Section Title
-            .section-title {
-              @include fluid-type(24, 48);
-            }
+          // Section Title
+          .section-title {
+            @include fluid-type(24, 48);
+          }
 
-            // Large Paragraph
-            .lead-text {
-              @include fluid-type(16, 24);
-            }
-            ```
-            <div className="code-description">
-             <p> <b>Note:</b> These classes are not pre-defined. You have to declare them as per your requirements.</p>
-            </div>
+          // Large Paragraph
+          .lead-text {
+            @include fluid-type(16, 24);
+          }
+          ```
+          <div className="code-description">
+           <p> <b>Note:</b> These classes are not pre-defined. You have to declare them as per your requirements.</p>
           </div>
         </div>
       </div>
@@ -876,6 +1040,80 @@ export const typography = {
 
     .common-use-cases {
       margin-top: 32px;
+    }
+
+    .token-search-wrap {
+      position: sticky;
+      top: 0;
+      z-index: 5;
+      background: #FFFFFF;
+      padding: 12px 0 8px;
+      margin-bottom: 16px;
+      border-bottom: 1px solid #E6E6E6;
+    }
+
+    .token-search {
+      position: relative;
+      display: flex;
+      align-items: center;
+    }
+
+    .token-search-icon {
+      position: absolute;
+      left: 12px;
+      font-size: 14px;
+      color: #6B7280;
+      pointer-events: none;
+    }
+
+    .token-search-input {
+      width: 100%;
+      padding: 10px 36px 10px 36px;
+      font-size: 14px;
+      border: 1px solid #D1D5DB;
+      border-radius: 6px;
+      outline: none;
+      transition: border-color 0.15s ease, box-shadow 0.15s ease;
+      background: #FFFFFF;
+      color: #111827;
+    }
+
+    .token-search-input:focus {
+      border-color: #2F4050;
+      box-shadow: 0 0 0 3px rgba(47, 64, 80, 0.15);
+    }
+
+    .token-search-clear {
+      position: absolute;
+      right: 8px;
+      background: transparent;
+      border: none;
+      cursor: pointer;
+      color: #6B7280;
+      font-size: 14px;
+      padding: 4px 8px;
+      border-radius: 4px;
+    }
+
+    .token-search-clear:hover {
+      background: #F3F4F6;
+      color: #111827;
+    }
+
+    .token-search-meta {
+      margin-top: 6px;
+      font-size: 12px;
+      color: #6B7280;
+    }
+
+    .token-search-empty {
+      padding: 24px;
+      text-align: center;
+      color: #6B7280;
+      background: #F9FAFB;
+      border: 1px dashed #E5E7EB;
+      border-radius: 8px;
+      margin: 24px 0;
     }
   `}
 </style>

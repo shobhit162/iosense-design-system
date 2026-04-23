@@ -19,6 +19,207 @@ export const spacing = {
   ]
 };
 
+export const TokenSearchBar = ({ value, onChange, placeholder, matches, total }) => (
+  <div className="token-search-wrap">
+    <div className="token-search">
+      <span className="token-search-icon" aria-hidden="true">{'\u{1F50D}'}</span>
+      <input
+        type="text"
+        className="token-search-input"
+        value={value}
+        onChange={(e) => onChange(e.target.value)}
+        placeholder={placeholder || 'Search tokens...'}
+      />
+      {value && (
+        <button
+          type="button"
+          className="token-search-clear"
+          onClick={() => onChange('')}
+          aria-label="Clear search"
+        >
+          {'✕'}
+        </button>
+      )}
+    </div>
+    {value && (
+      <div className="token-search-meta">
+        {matches} of {total} tokens match "<b>{value}</b>"
+      </div>
+    )}
+  </div>
+);
+
+export const GutterDemo = () => {
+  const [query, setQuery] = React.useState('');
+  const q = query.trim().toLowerCase();
+
+  const matches = (...fields) =>
+    !q || fields.some((f) => f != null && String(f).toLowerCase().includes(q));
+
+  const filterByPrefix = (prefix) =>
+    spacing.values.filter((item) =>
+      matches(`${prefix}-${item.key}`, item.key, item.name, item.value)
+    );
+
+  const gutter = filterByPrefix('global-gutter');
+  const gutterX = filterByPrefix('global-gutter-x');
+  const gutterY = filterByPrefix('global-gutter-y');
+
+  const total = spacing.values.length * 3;
+  const matchCount = gutter.length + gutterX.length + gutterY.length;
+
+  const hasAny = matchCount > 0;
+
+  return (
+    <>
+      <TokenSearchBar
+        value={query}
+        onChange={setQuery}
+        placeholder="Search gutter tokens (e.g. global-gutter-x-05, 16px)..."
+        matches={matchCount}
+        total={total}
+      />
+
+      {!hasAny && (
+        <div className="token-search-empty">
+          No gutter tokens match "<b>{query}</b>".
+        </div>
+      )}
+
+      <h2>Gutter Utilities</h2>
+      <div className="sb-demo-section">
+        {gutter.length > 0 && (
+          <div className="sb-utility-group">
+            <h3>Gutter</h3>
+            <div className="sb-demo-box">
+              {gutter.map((item) => (
+                <div key={item.key} className="sb-demo-content">
+                  <div
+                    style={{
+                      margin: `calc(${item.value} * -1)`,
+                      background: '#F0F0F0',
+                      padding: '10px'
+                    }}
+                  >
+                    <div
+                      style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)' }}
+                    >
+                      {Array(4)
+                        .fill(null)
+                        .map((_, i) => (
+                          <div
+                            key={i}
+                            style={{
+                              padding: item.value,
+                              background: '#E5E7EB',
+                              margin: '5px'
+                            }}
+                          >
+                            Gutter Item
+                          </div>
+                        ))}
+                    </div>
+                  </div>
+                  <div style={{ marginTop: item.value, marginBottom: item.value }}>
+                    <code>.global-gutter-{item.key}</code>
+                    <p>Gutter: {item.name} ({item.value})</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        )}
+
+        {gutterX.length > 0 && (
+          <div className="sb-utility-group">
+            <h3>Horizontal Gutter (gutter-x)</h3>
+            <div className="sb-demo-box">
+              {gutterX.map((item) => (
+                <div key={item.key} className="sb-demo-content">
+                  <div
+                    style={{
+                      marginLeft: `calc(${item.value} * -1)`,
+                      marginRight: `calc(${item.value} * -1)`,
+                      background: '#F0F0F0',
+                      padding: '10px'
+                    }}
+                  >
+                    <div
+                      style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)' }}
+                    >
+                      {Array(4)
+                        .fill(null)
+                        .map((_, i) => (
+                          <div
+                            key={i}
+                            style={{
+                              paddingLeft: item.value,
+                              paddingRight: item.value,
+                              background: '#E5E7EB',
+                              margin: '5px'
+                            }}
+                          >
+                            Gutter X Item
+                          </div>
+                        ))}
+                    </div>
+                  </div>
+                  <code>.global-gutter-x-{item.key}</code>
+                  <p>Horizontal Gutter: {item.name} ({item.value})</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        )}
+
+        {gutterY.length > 0 && (
+          <div className="sb-utility-group">
+            <h3>Vertical Gutter (gutter-y)</h3>
+            <div className="sb-demo-box">
+              {gutterY.map((item) => (
+                <div key={item.key} className="sb-demo-content">
+                  <div
+                    style={{
+                      marginTop: `calc(${item.value} * -1)`,
+                      marginBottom: `calc(${item.value} * -1)`,
+                      background: '#F0F0F0',
+                      padding: '10px'
+                    }}
+                  >
+                    <div
+                      style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)' }}
+                    >
+                      {Array(4)
+                        .fill(null)
+                        .map((_, i) => (
+                          <div
+                            key={i}
+                            style={{
+                              paddingTop: item.value,
+                              paddingBottom: item.value,
+                              background: '#E5E7EB',
+                              margin: '5px'
+                            }}
+                          >
+                            Gutter Y Item
+                          </div>
+                        ))}
+                    </div>
+                  </div>
+                  <div style={{ marginTop: item.value, marginBottom: item.value }}>
+                    <code>.global-gutter-y-{item.key}</code>
+                    <p>Vertical Gutter: {item.name} ({item.value})</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        )}
+      </div>
+    </>
+  );
+};
+
 <div className="sb-container">
   <div className="sb-section-title">
     # Spacing
@@ -26,121 +227,7 @@ export const spacing = {
 
   <div className="sb-section">
 
-<h2>Gutter Utilities</h2>
-<div className="sb-demo-section">
-  <div className="sb-utility-group">
-    <h3>Gutter</h3>
-    <div className="sb-demo-box">
-      {spacing.values.map((item) => (
-        <div key={item.key} className="sb-demo-content">
-          <div style={{ 
-            margin: `calc(${item.value} * -1)`,
-            background: '#F0F0F0',
-            padding: '10px'
-          }}>
-            <div style={{ 
-              display: 'grid', 
-              gridTemplateColumns: 'repeat(2, 1fr)',
-            }}>
-              {Array(4).fill(null).map((_, i) => (
-                <div 
-                  key={i}
-                  style={{ 
-                    padding: item.value,
-                    background: '#E5E7EB',
-                    margin: '5px'
-                  }}
-                >
-                  Gutter Item
-                </div>
-              ))}
-            </div>
-          </div>
-          <div style={{marginTop: item.value, marginBottom: item.value}}>
-          <code>.global-gutter-{item.key}</code>
-          <p>Gutter: {item.name} ({item.value})</p>
-          </div>
-        </div>
-      ))}
-    </div>
-  </div>
-
-  <div className="sb-utility-group">
-    <h3>Horizontal Gutter (gutter-x)</h3>
-    <div className="sb-demo-box">
-      {spacing.values.map((item) => (
-        <div key={item.key} className="sb-demo-content">
-          <div style={{ 
-            marginLeft: `calc(${item.value} * -1)`,
-            marginRight: `calc(${item.value} * -1)`,
-            background: '#F0F0F0',
-            padding: '10px'
-          }}>
-            <div style={{ 
-              display: 'grid', 
-              gridTemplateColumns: 'repeat(2, 1fr)',
-            }}>
-              {Array(4).fill(null).map((_, i) => (
-                <div 
-                  key={i}
-                  style={{ 
-                    paddingLeft: item.value,
-                    paddingRight: item.value,
-                    background: '#E5E7EB',
-                    margin: '5px'
-                  }}
-                >
-                  Gutter X Item
-                </div>
-              ))}
-            </div>
-          </div>
-          <code>.global-gutter-x-{item.key}</code>
-          <p>Horizontal Gutter: {item.name} ({item.value})</p>
-        </div>
-      ))}
-    </div>
-  </div>
-
-  <div className="sb-utility-group">
-    <h3>Vertical Gutter (gutter-y)</h3>
-    <div className="sb-demo-box">
-      {spacing.values.map((item) => (
-        <div key={item.key} className="sb-demo-content">
-          <div style={{ 
-            marginTop: `calc(${item.value} * -1)`,
-            marginBottom: `calc(${item.value} * -1)`,
-            background: '#F0F0F0',
-            padding: '10px'
-          }}>
-            <div style={{ 
-              display: 'grid', 
-              gridTemplateColumns: 'repeat(2, 1fr)',
-            }}>
-              {Array(4).fill(null).map((_, i) => (
-                <div 
-                  key={i}
-                  style={{ 
-                    paddingTop: item.value,
-                    paddingBottom: item.value,
-                    background: '#E5E7EB',
-                    margin: '5px'
-                  }}
-                >
-                  Gutter Y Item
-                </div>
-              ))}
-            </div>
-          </div>
-          <div style={{marginTop: item.value, marginBottom: item.value}}>
-          <code>.global-gutter-y-{item.key}</code>
-          <p>Vertical Gutter: {item.name} ({item.value})</p>
-          </div>
-        </div>
-      ))}
-    </div>
-  </div>
-</div>
+    <GutterDemo />
 
     <h2>Usage Examples</h2>
     <div className="sb-code-block">
@@ -258,6 +345,80 @@ export const spacing = {
       margin: 0;
       font-size: 16px;
       color: #374151;
+    }
+
+    .token-search-wrap {
+      position: sticky;
+      top: 0;
+      z-index: 5;
+      background: #FFFFFF;
+      padding: 12px 0 8px;
+      margin-bottom: 16px;
+      border-bottom: 1px solid #E6E6E6;
+    }
+
+    .token-search {
+      position: relative;
+      display: flex;
+      align-items: center;
+    }
+
+    .token-search-icon {
+      position: absolute;
+      left: 12px;
+      font-size: 14px;
+      color: #6B7280;
+      pointer-events: none;
+    }
+
+    .token-search-input {
+      width: 100%;
+      padding: 10px 36px 10px 36px;
+      font-size: 14px;
+      border: 1px solid #D1D5DB;
+      border-radius: 6px;
+      outline: none;
+      transition: border-color 0.15s ease, box-shadow 0.15s ease;
+      background: #FFFFFF;
+      color: #111827;
+    }
+
+    .token-search-input:focus {
+      border-color: #2F4050;
+      box-shadow: 0 0 0 3px rgba(47, 64, 80, 0.15);
+    }
+
+    .token-search-clear {
+      position: absolute;
+      right: 8px;
+      background: transparent;
+      border: none;
+      cursor: pointer;
+      color: #6B7280;
+      font-size: 14px;
+      padding: 4px 8px;
+      border-radius: 4px;
+    }
+
+    .token-search-clear:hover {
+      background: #F3F4F6;
+      color: #111827;
+    }
+
+    .token-search-meta {
+      margin-top: 6px;
+      font-size: 12px;
+      color: #6B7280;
+    }
+
+    .token-search-empty {
+      padding: 24px;
+      text-align: center;
+      color: #6B7280;
+      background: #F9FAFB;
+      border: 1px dashed #E5E7EB;
+      border-radius: 8px;
+      margin: 24px 0;
     }
   `}
 </style>
